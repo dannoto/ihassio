@@ -947,6 +947,7 @@ class Admin_model extends CI_Model
             $this->db->select('*');
             $this->db->from('campanha_prospection');
             $this->db->where('campanha_id', $campanha_id);
+            $this->db->order_by('id', 'asc');
             $this->db->where('is_deleted', 0);
         
             // Subconsulta para selecionar apenas um registro para cada lead_id diferente de zero
@@ -956,7 +957,7 @@ class Admin_model extends CI_Model
             $this->db->or_where('lead_id', 0);
             $this->db->group_end();
         
-            $this->db->order_by('id', 'desc');
+           
         
             $query = $this->db->get();
         
