@@ -229,7 +229,7 @@
 
                       <span class="text-uppercase"><?=$c->type?></span><br>
                         <div class="input-container">   
-                          <input type="text" id="<?=$c->id?>" class="styled-input" value="oferta.run/<?=$c->code?>" readonly>
+                          <input type="text" id="<?=$c->id?>" class="styled-input" value="https://oferta.run/<?=$c->code?>" readonly>
                           <button class=" btn btn-primary" onclick="copyText(<?=$c->id?>)"><i class="tf-icons bx bxs-paste"></i></button>
                       </div>
                       <br>
