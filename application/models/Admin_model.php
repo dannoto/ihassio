@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-// att
+// att 2
 class Admin_model extends CI_Model
 {
 
