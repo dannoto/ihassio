@@ -33,9 +33,9 @@ if (ENVIRONMENT == "development") {
 	$db['default'] = array(
 		'dsn'	=> '',
 		'hostname' => 'localhost',
-		'username' => 'u785878414_tung',
+		'username' => 'u785878414_hs',
 		'password' => 'Effizienz10*',
-		'database' => 'u785878414_tung',
+		'database' => 'u785878414_hs',
 		'dbdriver' => 'mysqli',
 		'dbprefix' => '',
 		'pconnect' => FALSE,
