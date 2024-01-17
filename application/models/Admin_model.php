@@ -956,7 +956,7 @@ class Admin_model extends CI_Model
             $this->db->or_where('lead_id', 0);
             $this->db->group_end();
         
-            $this->db->order_by('id', 'asc');
+            $this->db->order_by('id', 'desc');
         
             $query = $this->db->get();
         
