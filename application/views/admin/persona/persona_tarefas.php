@@ -190,7 +190,7 @@
 
                      <?php print_r($c); ?>
                      
-                     <?php foreach ($this->admin_model->getTarefasByTag($tag_id)  as $i) {?>
+                     <?php foreach ($this->admin_model->getTarefasByTag($c->tarefa_tag)  as $i) {?>
                       <?php print_r($i); ?>
                       <?php echo "<br--------------br>";?>
                      <?php } ?>
