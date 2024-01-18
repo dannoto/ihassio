@@ -228,9 +228,17 @@
 
                                 <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
 
-                                <td><?php if (strlen($l->links) > 0 ) { echo "SIM"; } else { echo "NÃO"; } ?></td>
+                                <td><?php if (strlen($l->links) > 0) {
+                                      echo "SIM";
+                                    } else {
+                                      echo "NÃO";
+                                    } ?></td>
 
-                                <td><?php if (strlen($l->mencoes) > 0 ) { echo "SIM"; } else { echo "NÃO"; } ?></td>
+                                <td><?php if (strlen($l->mencoes) > 0) {
+                                      echo "SIM";
+                                    } else {
+                                      echo "NÃO";
+                                    } ?></td>
 
                            
 
@@ -249,20 +257,38 @@
 
                                 <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
 
-                                <td><?php if (strlen($l->links) > 0 ) { echo "SIM"; } else { echo "NÃO"; } ?></td>
+                                <td><?php if (strlen($l->links) > 0) {
+                                      echo "SIM";
+                                    } else {
+                                      echo "NÃO";
+                                    } ?></td>
 
-                                <td><?php if (strlen($l->mencoes) > 0 ) { echo "SIM"; } else { echo "NÃO"; } ?></td>
+                                <td><?php if (strlen($l->mencoes) > 0) {
+                                      echo "SIM";
+                                    } else {
+                                      echo "NÃO";
+                                    } ?></td>
 
                            
 
                                 <td><?= $l->email; ?></td>
                                 <td><?= $l->telefone; ?></td>
-                                <td > <button onclick="getInstaLeadDemanda(<?=$l->tarefa_id?>, <?=$l->tag_id?>, '<?=$l->username?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
-                                <td > <button onclick="convertInapto(<?=$l->id?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
+                                <td > <button onclick="getInstaLeadDemanda(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
+                                  <?php if ($l->convertido == 0) { ?>
+                                    <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
+                                  <?php } else { ?>
+                                    <td></td>
+                                  <?php }  ?>
 
-                                <td> <button onclick="getInstaLead(<?=$l->tarefa_id?>, <?=$l->tag_id?>, '<?=$l->username?>')" data-bs-toggle="modal" data-bs-target="#modalEditar"  class="btn btn-warning"><small>EDITAR</small></button>  </td>
-                                <td> <?php if ($l->convertido == 0) {?>
-                                           <button onclick="convertInstaLeadToPerson(<?=$l->tarefa_id?>, <?=$l->tag_id?>, '<?=$l->username?>' )"  class="btn btn-success"><small>CONVERTER</small></button>
+                                  <?php if ($l->convertido == 0) { ?>
+                                      <td> <button onclick="getInstaLead(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')" data-bs-toggle="modal" data-bs-target="#modalEditar"  class="btn btn-warning"><small>EDITAR</small></button>  </td>
+                                  <?php } else { ?>
+                                      <td></td>
+                                  <?php }  ?>
+
+
+                                <td> <?php if ($l->convertido == 0) { ?>
+                                           <button onclick="convertInstaLeadToPerson(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>' )"  class="btn btn-success"><small>CONVERTER</small></button>
                                     <?php } else { ?>
                                            <span  class=" text-black  badge bg-label-success" ><small>CONVERTIDO</small></span>
                                     <?php } ?> </td>
