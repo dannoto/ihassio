@@ -288,11 +288,11 @@
 
                     if (resp.status == "true") {
 
-                        alert('Adicionado com sucesso!')
+                        alert(resp.message)
                         window.location.href = "<?=base_url()?>persona/tarefas"
 
                     } else {
-                        alert('Erro ao adicionar!')
+                      alert(resp.message)
                     }
                 },
                 error: function(data) {
