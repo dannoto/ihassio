@@ -787,7 +787,7 @@ class Persona extends CI_Controller
 
         } else {
             if ($this->admin_model->addTarefa($data)) {
-                $response = array('status' => 'true', 'message' => 'Já existe essa classificaçao.');
+                $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.');
             } else {
                 $response = array('status' => 'false', 'message' => 'Adicionado com sucesso.');
             }
