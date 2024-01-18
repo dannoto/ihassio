@@ -197,14 +197,14 @@
 
 
 
-                    <table class="display " style="width:100%">
+                    <table id="myTable" class="display " style="width:100%">
                         <thead>
                             <tr>
                             <th><small></small></th>
 
-                                <!-- <th><small>NOME</small></th>
+                                <th><small>NOME</small></th>
                                 <th><small>LINKS</small></th>
-                                <th><small>MENÇOES</small></th> -->
+                                <th><small>MENÇOES</small></th>
 
                                 <th><small>EMAIL</small></th>
                                 <th><small>TELEFONE</small></th>
@@ -228,9 +228,9 @@
 
                                 <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
 
-                                <!-- <td><?php //if (strlen($l->links) > 0 ) { echo "SIM"; } else { echo "NÃO"; } ?></td>
+                                <td><?php if (strlen($l->links) > 0 ) { echo "SIM"; } else { echo "NÃO"; } ?></td>
 
-                                <td><?php //if (strlen($l->mencoes) > 0 ) { echo "SIM"; } else { echo "NÃO"; } ?></td> -->
+                                <td><?php if (strlen($l->mencoes) > 0 ) { echo "SIM"; } else { echo "NÃO"; } ?></td>
 
                            
 
