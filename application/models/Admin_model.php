@@ -1311,6 +1311,18 @@ class Admin_model extends CI_Model
 
     // Tarefas
 
+    public function getTarefasDistinct() {
+       
+            $this->db->distinct();
+            $this->db->select('tarefa_tag'); // Seleciona apenas o person_id para resultados distintos
+            $this->db->where('is_deleted', 0);
+            $query = $this->db->get('persona_tarefas');
+        
+            // Retorna os resultados únicos como um array de objetos
+            return $query->result();
+
+    }
+
     public function getTarefas() {
         $this->db->where('is_deleted', 0);
         $this->db->order_by('id','desc');
