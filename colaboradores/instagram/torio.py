@@ -52,7 +52,7 @@ class Scraper:
         
         
         
-        base_url = "http://localhost/ihassio/instaapi/"
+        base_url = "https://ccoanalitica.com/hassio/instaapi/"
         
         
         
