@@ -197,7 +197,7 @@
 
 
 
-                    <table class="display " style="width:100%">
+                    <table id="myTable" class="display " style="width:100%">
                         <thead>
                             <tr>
                             <th><small></small></th>
