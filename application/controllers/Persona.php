@@ -818,7 +818,7 @@ class Persona extends CI_Controller
 
         print_r(json_encode($response));
 
-    }
+    }https://ccoanalitica.com/hassio/instaapi/
 
 public function act_convert_inapto() {
 
