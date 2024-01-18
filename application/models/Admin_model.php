@@ -1372,7 +1372,7 @@ class Admin_model extends CI_Model
     // Instagram Leads
     public function getInstagramLeadsByTask($task_id) {
         $this->db->where('tarefa_id', $task_id);
-        $this->db->order_by('inapto','desc');
+        $this->db->order_by('inapto','ASC');
         return $this->db->get('insta_leads')->result();
     }
     public function getInstagramLeadsByTaskValid($task_id) {
