@@ -210,6 +210,8 @@
                                 <th><small>TELEFONE</small></th>
                                 <th><small>INFO</small></th>
                                 <th><small></small></th>
+
+                                <th><small></small></th>
                                 <th><small></small></th>
 
 
@@ -234,6 +236,8 @@
                                 <td><?= $l->email; ?></td>
                                 <td><?= $l->telefone; ?></td>
                                 <td > <button onclick="getInstaLeadDemanda(<?=$l->tarefa_id?>, <?=$l->tag_id?>, '<?=$l->username?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
+                                <td > <button onclick="convertInapto(<?=$l->id?>)"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-light" ><small>INAPTO</small></button> </td>
+
                                 <td> <button onclick="getInstaLead(<?=$l->tarefa_id?>, <?=$l->tag_id?>, '<?=$l->username?>')" data-bs-toggle="modal" data-bs-target="#modalEditar"  class="btn btn-warning"><small>EDITAR</small></button>  </td>
                                 <td> <?php if ($l->convertido == 0) {?>
                                            <button onclick="convertInstaLeadToPerson(<?=$l->tarefa_id?>, <?=$l->tag_id?>, '<?=$l->username?>' )"  class="btn btn-success"><small>CONVERTER</small></button>
@@ -429,6 +433,37 @@
 </script>
 
 <script>
+
+  function convertInapto(lead_id) {
+
+
+    
+    $.ajax({
+        method: 'POST',
+        url: '<?= base_url() ?>persona/act_convert_inapto',
+        data: {
+            lead_id:lead_id
+        },
+        success: function(data) {
+         
+            var resp = JSON.parse(data)
+
+                if (resp.status == "true") {
+
+                    alert(resp.message)
+                    // location.reload()
+                } else {
+                    alert(resp.message)
+                }
+          
+        },
+        error: function(data) {
+            alert('Ocorreu um erro temporário.');
+        },
+    });
+
+
+  }
 
  function convertInstaLeadToPerson(tarefa_id, tag_id, username) {
     

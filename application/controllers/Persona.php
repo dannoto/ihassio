@@ -820,6 +820,26 @@ class Persona extends CI_Controller
 
     }
 
+public function act_convert_inapto() {
+
+    $lead_id = htmlspecialchars($this->input->post('lead_id'));
+
+    $data = array(
+        'inapto' => 1
+    );
+
+    if ($this->admin_model->updateInstaLead($lead_id,$data)) {
+
+        $response = array('status' => 'true', 'message' => 'Convertido para inapto');
+
+    } else {
+
+        $response = array('status' => 'false', 'message' => 'Falha converter para inapto.');
+    }
+
+    print_r(json_encode($response));
+}
+
     public function act_convert_instalead_to_person() {
         
         $tarefa_id = htmlspecialchars($this->input->post('tarefa_id'));
