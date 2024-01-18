@@ -473,7 +473,7 @@
 
                 if (resp.status == "true") {
 
-                    alert(resp.message)
+                    // alert(resp.message)
                     location.reload()
                 } else {
                     alert(resp.message)
@@ -505,7 +505,7 @@
 
                 if (resp.status == "true") {
 
-                    alert(resp.message)
+                    // alert(resp.message)
                     location.reload()
                 } else {
                     alert(resp.message)
@@ -603,8 +603,8 @@
 
                     if (resp.status == "true") {
 
-                        alert('Atualizado com sucesso!')
-                        // location.reload()
+                        // alert('Atualizado com sucesso!')
+                        location.reload()
 
                     } else {
                         alert('Erro ao atualizado!')
