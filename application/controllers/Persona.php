@@ -12,7 +12,6 @@ class Persona extends CI_Controller
         $this->load->model('admin_model');
         $this->load->model('brevo_model');
         $this->load->model('process_model');
-
     }
 
     public function lista()
@@ -37,7 +36,7 @@ class Persona extends CI_Controller
 
         $this->load->view('admin/persona/persona_tarefas_adicionar', $data);
     }
-    
+
 
     public function tarefas_leads($id)
     {
@@ -54,8 +53,6 @@ class Persona extends CI_Controller
         } else {
             redirect(base_url('persona/tarefas'));
         }
-
-      
     }
 
 
@@ -784,7 +781,6 @@ class Persona extends CI_Controller
 
         if ($this->admin_model->checkTarefaLink($data['tarefa_url'])) {
             $response = array('status' => 'false', 'message' => 'Esta URL já foi processada.');
-
         } else {
             if ($this->admin_model->addTarefa($data)) {
                 $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.');
@@ -793,15 +789,16 @@ class Persona extends CI_Controller
             }
         }
 
-    
+
 
         print_r(json_encode($response));
     }
 
 
-    public function act_update_insta_lead() {
+    public function act_update_insta_lead()
+    {
 
-        
+
         $lead_id = htmlspecialchars($this->input->post('id'));
         $data['full_name'] = htmlspecialchars($this->input->post('full_name'));
         $data['telefone'] = htmlspecialchars($this->input->post('telefone'));
@@ -811,37 +808,36 @@ class Persona extends CI_Controller
         if ($this->admin_model->updateInstaLead($lead_id, $data)) {
 
             $response = array('status' => 'true', 'message' => 'Atualizado com sucesso.');
-
         } else {
             $response = array('status' => 'false', 'message' => 'Erro ao atualizar.');
         }
 
         print_r(json_encode($response));
-
-    }https://ccoanalitica.com/hassio/instaapi/
-
-public function act_convert_inapto() {
-
-    $lead_id = htmlspecialchars($this->input->post('lead_id'));
-
-    $data = array(
-        'inapto' => 1
-    );
-
-    if ($this->admin_model->updateInstaLead($lead_id,$data)) {
-
-        $response = array('status' => 'true', 'message' => 'Convertido para inapto');
-
-    } else {
-
-        $response = array('status' => 'false', 'message' => 'Falha converter para inapto.');
     }
 
-    print_r(json_encode($response));
-}
+    public function act_convert_inapto()
+    {
 
-    public function act_convert_instalead_to_person() {
-        
+        $lead_id = htmlspecialchars($this->input->post('lead_id'));
+
+        $data = array(
+            'inapto' => 1
+        );
+
+        if ($this->admin_model->updateInstaLead($lead_id, $data)) {
+
+            $response = array('status' => 'true', 'message' => 'Convertido para inapto');
+        } else {
+
+            $response = array('status' => 'false', 'message' => 'Falha converter para inapto.');
+        }
+
+        print_r(json_encode($response));
+    }
+
+    public function act_convert_instalead_to_person()
+    {
+
         $tarefa_id = htmlspecialchars($this->input->post('tarefa_id'));
         $tag_id = htmlspecialchars($this->input->post('tag_id'));
         $username = htmlspecialchars($this->input->post('username'));
@@ -851,9 +847,8 @@ public function act_convert_inapto() {
 
 
         $email_ativo = "";
-        if (strlen($lead_data['email']) > 0 ) {
+        if (strlen($lead_data['email']) > 0) {
             $email_ativo = 1;
-
         } else {
             $email_ativo = 0;
         }
@@ -861,16 +856,14 @@ public function act_convert_inapto() {
         $is_private = "";
         if ($lead_data['is_private'] == "true") {
             $is_private = 1;
-
         } else {
             $is_private = 0;
         }
 
 
         $telefone_ativo = "";
-        if (strlen($lead_data['telefone']) > 0 ) {
+        if (strlen($lead_data['telefone']) > 0) {
             $telefone_ativo = 1;
-
         } else {
             $telefone_ativo = 0;
         }
@@ -898,34 +891,31 @@ public function act_convert_inapto() {
                 'data' => $lead_demanda_data['interacao_data'],
                 'is_deleted' => 0
             );
-      
+
             $this->process_model->add_classificacao($tag);
 
             // Status de Coinvertido
             $data = array(
                 'convertido' => 1
             );
-            
-            if ($this->admin_model->updateInstaLead($lead_data['id'],$data)) {
+
+            if ($this->admin_model->updateInstaLead($lead_data['id'], $data)) {
 
                 $response = array('status' => 'true', 'message' => 'Persona já existe. Demanda adicionada com sucesso');
-
             } else {
 
                 $response = array('status' => 'false', 'message' => 'Falha ao adicionar demanda. Lead já existe.');
             }
 
             print_r(json_encode($response));
-
-
-        }  else {
+        } else {
 
             // Adicionar Persona
 
-            if ($this->process_model->check_email( $lead_data['email']) ) {
+            if ($this->process_model->check_email($lead_data['email'])) {
                 $response = array('status' => 'false', 'message' => 'Email ja existe.');
                 print_r(json_encode($response));
-            } else if ($this->process_model->check_telefone( $lead_data['telefone'])) {
+            } else if ($this->process_model->check_telefone($lead_data['telefone'])) {
 
                 $response = array('status' => 'false', 'message' => 'Telefone ja existe.');
                 print_r(json_encode($response));
@@ -945,7 +935,7 @@ public function act_convert_inapto() {
                 $person_id = $this->process_model->add_person($person);
 
                 // Adicionar Email
-                if (strlen($lead_data['email']) > 0 ) {
+                if (strlen($lead_data['email']) > 0) {
 
                     $email['person_id'] = $person_id;
                     $email['email'] =  $lead_data['email'];
@@ -954,10 +944,10 @@ public function act_convert_inapto() {
 
                     $this->process_model->add_email($email);
                 }
-               
+
 
                 // Adicionar Telefone
-                if (strlen($lead_data['telefone']) > 0 ) {
+                if (strlen($lead_data['telefone']) > 0) {
 
                     $telefone['person_id'] = $person_id;
                     $telefone['telefone'] = $lead_data['telefone'];
@@ -966,57 +956,51 @@ public function act_convert_inapto() {
 
                     $this->process_model->add_telefone($telefone);
                 }
-               
-               //  Adicionando Rede Social
 
-               if (!$this->process_model->check_social( $lead_data['username']) ) {
+                //  Adicionando Rede Social
+
+                if (!$this->process_model->check_social($lead_data['username'])) {
 
                     $social['person_id'] = $person_id;
                     $social['username'] = $lead_data['username'];
                     $social['nome'] = 'instagram';
-                    $social['url'] =  'https://www.instagram.com/'.$lead_data['username'];
+                    $social['url'] =  'https://www.instagram.com/' . $lead_data['username'];
                     $social['status'] = $is_private;
                     $social['intensividade'] = '1';
                     $social['is_deleted'] = 0;
 
                     $this->process_model->add_social($social);
-
                 }
 
                 // Adicionando tags
-               $tag = array(
-                   'person_id' => $person_id,
-                   'categoria_id' => $item_data['categoria_id'],
-                   'subcategoria_id' => $item_data['subcategoria_id'],
-                   'tag_id' => $lead_data['tag_id'],
-                   'intensividade_id' => $intensidade,
-                   'data' => $lead_demanda_data['interacao_data'],
-                   'is_deleted' => 0
-               );
-         
-               $this->process_model->add_classificacao($tag);
+                $tag = array(
+                    'person_id' => $person_id,
+                    'categoria_id' => $item_data['categoria_id'],
+                    'subcategoria_id' => $item_data['subcategoria_id'],
+                    'tag_id' => $lead_data['tag_id'],
+                    'intensividade_id' => $intensidade,
+                    'data' => $lead_demanda_data['interacao_data'],
+                    'is_deleted' => 0
+                );
 
-         
+                $this->process_model->add_classificacao($tag);
+
+
                 $data = array(
-                   'convertido' => 1
-               );
-               
-               if ($this->admin_model->updateInstaLead($lead_data['id'],$data)) {
+                    'convertido' => 1
+                );
 
-                   $response = array('status' => 'true', 'message' => 'Adicionado com sucesso');
+                if ($this->admin_model->updateInstaLead($lead_data['id'], $data)) {
 
-               } else {
+                    $response = array('status' => 'true', 'message' => 'Adicionado com sucesso');
+                } else {
 
-                   $response = array('status' => 'false', 'message' => 'Falha ao adicionar lead.');
-               }
+                    $response = array('status' => 'false', 'message' => 'Falha ao adicionar lead.');
+                }
 
-               print_r(json_encode($response));
-
+                print_r(json_encode($response));
             }
-            
         }
-
-
     }
 
     public function act_delete_tarefa()
@@ -1036,13 +1020,14 @@ public function act_convert_inapto() {
     }
 
 
-    public function act_get_insta_lead_demanda() {
+    public function act_get_insta_lead_demanda()
+    {
 
         $tarefa_id = htmlspecialchars($this->input->post('tarefa_id'));
         $tag_id = htmlspecialchars($this->input->post('tag_id'));
         $username = htmlspecialchars($this->input->post('username'));
 
-           
+
         if ($this->admin_model->getInstaLeadDemanda($tarefa_id, $tag_id, $username)) {
 
             $lead_demanda_data = $this->admin_model->getInstaLeadDemanda($tarefa_id, $tag_id, $username);
@@ -1053,32 +1038,32 @@ public function act_convert_inapto() {
             <div class="row">
                         <div class="col-md-12">
                             <p  style="font-weight:bold" >NOME </p>
-                            <p>'.$lead_data['full_name'].'</p>
+                            <p>' . $lead_data['full_name'] . '</p>
                         </div>
                 </div>
 
                 <div class="row">
                         <div class="col-md-12">
                             <p  style="font-weight:bold" >BIOGRAFIA </p>
-                            <p>'.$lead_data['biografia'].'</p>
+                            <p>' . $lead_data['biografia'] . '</p>
                         </div>
                 </div>
                 <div class="row">
                 <div class="col-md-6">
                     <p style="font-weight:bold">DATA INTERAÇÃO</p>
-                    <p>'.$lead_demanda_data['interacao_data'].'</p>
+                    <p>' . $lead_demanda_data['interacao_data'] . '</p>
 
                 </div>
                 <div class="col-md-6">
                     <p style="font-weight:bold" >TIPO INTERAÇÃO</p>
-                    <p>'.$lead_demanda_data['interacao_tipo'].'</p>
+                    <p>' . $lead_demanda_data['interacao_tipo'] . '</p>
                 </div>
                 </div>
 
                 <div class="row">
                         <div class="col-md-12">
                             <p  style="font-weight:bold" >CONTEÚDO INTERAÇÃO</p>
-                            <p>'.$lead_demanda_data['interacao_conteudo'].'</p>
+                            <p>' . $lead_demanda_data['interacao_conteudo'] . '</p>
                         </div>
                 </div>
 
@@ -1087,14 +1072,14 @@ public function act_convert_inapto() {
                 <div class="row" id="info-links">
                         <ul>';
 
-                        $links = explode(",", $lead_data['links']);
+            $links = explode(",", $lead_data['links']);
 
-                        foreach ($links as $l) {
-                            echo '<li><a target="_blank" href="'.str_replace(" ", "",$l).'">'.str_replace(" ", "",$l).'</a></li>';
-                        }
-                            
-                         
-                echo    '</ul>
+            foreach ($links as $l) {
+                echo '<li><a target="_blank" href="' . str_replace(" ", "", $l) . '">' . str_replace(" ", "", $l) . '</a></li>';
+            }
+
+
+            echo    '</ul>
                 </div>
 
                 <hr>
@@ -1103,36 +1088,33 @@ public function act_convert_inapto() {
                 <div class="row" id="info-links">
                         <ul>';
 
-                        $mencoes = explode(",", $lead_data['mencoes']);
+            $mencoes = explode(",", $lead_data['mencoes']);
 
-                        foreach ($mencoes as $l) {
-                            echo '<li><a target="_blank" href="https://instagram.com/'.str_replace(" ", "",$l).'">'.str_replace(" ", "",$l).'</a></li>';
-                        }
-                            
-                        
-                 echo   '</ul>
+            foreach ($mencoes as $l) {
+                echo '<li><a target="_blank" href="https://instagram.com/' . str_replace(" ", "", $l) . '">' . str_replace(" ", "", $l) . '</a></li>';
+            }
+
+
+            echo   '</ul>
                 </div>
             ';
-
-        }  else {
+        } else {
             echo "nada encontrado.";
         }
-      
-
     }
 
 
-    public function act_get_insta_lead() {
+    public function act_get_insta_lead()
+    {
         $tarefa_id = htmlspecialchars($this->input->post('tarefa_id'));
         $tag_id = htmlspecialchars($this->input->post('tag_id'));
         $username = htmlspecialchars($this->input->post('username'));
-        
 
-        
+
+
         if ($this->admin_model->getInstaLead($tarefa_id, $tag_id, $username)) {
 
             $response = $this->admin_model->getInstaLead($tarefa_id, $tag_id, $username);
-
         } else {
             $response = array('status' => 'false', 'message' => 'Adicionado com sucesso.');
         }
