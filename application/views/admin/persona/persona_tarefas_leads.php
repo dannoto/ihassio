@@ -258,7 +258,7 @@
                                 <td><?= $l->email; ?></td>
                                 <td><?= $l->telefone; ?></td>
                                 <td > <button onclick="getInstaLeadDemanda(<?=$l->tarefa_id?>, <?=$l->tag_id?>, '<?=$l->username?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
-                                <td > <button onclick="convertInapto(<?=$l->id?>)"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-light" ><small>INAPTO</small></button> </td>
+                                <td > <button onclick="convertInapto(<?=$l->id?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
 
                                 <td> <button onclick="getInstaLead(<?=$l->tarefa_id?>, <?=$l->tag_id?>, '<?=$l->username?>')" data-bs-toggle="modal" data-bs-target="#modalEditar"  class="btn btn-warning"><small>EDITAR</small></button>  </td>
                                 <td> <?php if ($l->convertido == 0) {?>
@@ -474,7 +474,7 @@
                 if (resp.status == "true") {
 
                     alert(resp.message)
-                    // location.reload()
+                    location.reload()
                 } else {
                     alert(resp.message)
                 }
@@ -506,7 +506,7 @@
                 if (resp.status == "true") {
 
                     alert(resp.message)
-                    // location.reload()
+                    location.reload()
                 } else {
                     alert(resp.message)
                 }
