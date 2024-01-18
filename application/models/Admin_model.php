@@ -1323,6 +1323,13 @@ class Admin_model extends CI_Model
 
     }
 
+    public function getTarefasByTag($tag_id) {
+        $this->db->where('is_deleted', 0);
+        $this->db->where('tarefa_tag', $tag_id);
+
+        $this->db->order_by('id','desc');
+        return $this->db->get('persona_tarefas')->result();
+    }
     public function getTarefas() {
         $this->db->where('is_deleted', 0);
         $this->db->order_by('id','desc');

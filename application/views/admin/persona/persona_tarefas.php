@@ -188,7 +188,14 @@
 
                     <?php foreach ($this->admin_model->getTarefasDistinct()  as $c) {?>
 
-                     <?php print_r($c); echo "<br>===============<br>";?>
+                     <?php print_r($c); ?>
+                     
+                     <?php foreach ($this->admin_model->getTarefasByTag($tag_id)  as $i) {?>
+                      <?php print_r($i); ?>
+                      <?php echo "<br--------------br>";?>
+                     <?php } ?>
+                     
+                     <?php echo "<br>===============<br>";?>
 
 
                       <?php } ?>
