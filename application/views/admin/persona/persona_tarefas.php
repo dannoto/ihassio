@@ -183,59 +183,41 @@
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-
-                   
-
-                    <?php foreach ($this->admin_model->getTarefasDistinct()  as $c) { ?>
-
-                     <?php print_r($c); ?>
-                     
-                     <?php foreach ($this->admin_model->getTarefasByTag($c->tarefa_tag)  as $i) { ?>
-                      <?php print_r($i); ?>
-                      <?php echo "<br--------------br>"; ?>
-                     <?php } ?>
-                     
-                     <?php echo "<br>===============<br>"; ?>
-
-
-                      <?php } ?>
-
-                        <?php foreach ($this->admin_model->getTarefasDistinct() as $i) {
+                        <?php foreach ($this->admin_model->getTarefas() as $c) { 
                         ?>
                       <tr>
-                        <td style="text-transform: uppercase;" ><small><?= $c->tarefa_nome ?></small></td>
-                        <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
-                        <td style="text-transform: uppercase;" ><small><a href="<?= base_url() ?>persona/tarefas_leads/<?= $c->id ?>">VER</a></small></td>
+                        <td style="text-transform: uppercase;" ><small><?=$c->tarefa_nome?></small></td>
+                        <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?=$this->admin_model->get_item($c->tarefa_tag)['nome']?></span></td>
+                        <td style="text-transform: uppercase;" ><small><a href="<?=base_url()?>persona/tarefas_leads/<?=$c->id?>">VER</a></small></td>
 
-                        <td style="text-transform: uppercase;"><small>(<?= count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) ?> / <?= count($this->admin_model->getInstagramLeadsByTask($c->id)) ?>) - <?php
-                                                                                                                                                                                                                      if (count($this->admin_model->getInstagramLeadsByTask($c->id))  != 0) {
-                                                                                                                                                                                                                        echo round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 2);
-                                                                                                                                                                                                                      } ?>%</small></td>
+                        <td style="text-transform: uppercase;"><small>(<?=count($this->admin_model->getInstagramLeadsByTaskValid($c->id))?> / <?=count($this->admin_model->getInstagramLeadsByTask($c->id))?>) - <?php
+                         if (count($this->admin_model->getInstagramLeadsByTask($c->id))  != 0) 
+                         { echo round(( count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id)) ) * 100, 2); }?>%</small></td>
 
-                        <td style="text-transform: uppercase;"><small></small></td>
+                        <td style="text-transform: uppercase;"><small><a target="_blank" href="<?=$c->tarefa_url?>">ACESSAR</a></small></td>
 
                         <td style="text-transform: uppercase;" ><span class=" text-black badge bg-label-success"><?php
 
-                                                                                                                  if ($c->tarefa_status == 1) {
-                                                                                                                    echo "ATIVO";
-                                                                                                                  } else if ($c->tarefa_status == 2) {
-                                                                                                                    echo "PROCESSANDO";
-                                                                                                                  } else if ($c->tarefa_status == 3) {
-                                                                                                                    echo "FINALIZADO";
-                                                                                                                  } else if ($c->tarefa_status == 4) {
-                                                                                                                    echo "INATIVO";
-                                                                                                                  }
-                                                                                                                  ?></span></td>
+                            if ($c->tarefa_status == 1) {
+                                echo "ATIVO";
+                            } else if ($c->tarefa_status == 2) {
+                                echo "PROCESSANDO";
+                            } else if ($c->tarefa_status == 3) {
+                                echo "FINALIZADO";
+                            } else if ($c->tarefa_status == 4){
+                                echo "INATIVO";
+                            }
+                        ?></span></td>
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a  class="dropdown-item" href="<?= base_url() ?>persona/tarefas_editar/<?= $c->id ?>"
+                              <a  class="dropdown-item" href="<?= base_url() ?>persona/tarefas_editar/<?=$c->id?>"
                                 ><i class="bx bx-edit-alt me-1"></i> Editar</a
                               >
-                              <a onclick="delete_tarefa(<?= $c->id ?>)" class="dropdown-item" href="javascript:void(0);"
+                              <a onclick="delete_tarefa(<?=$c->id?>)" class="dropdown-item" href="javascript:void(0);"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>
@@ -243,50 +225,6 @@
                         </td>
 
                       </tr>
-                      <?php foreach ($this->admin_model->getTarefasByTag($c->tarefa_tag)  as $c) { ?>
-
-                        <tr>
-                        <td style="text-transform: uppercase;" ><small><?= $c->tarefa_nome ?></small></td>
-                        <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
-                        <td style="text-transform: uppercase;" ><small><a href="<?= base_url() ?>persona/tarefas_leads/<?= $c->id ?>">VER</a></small></td>
-
-                        <td style="text-transform: uppercase;"><small>(<?= count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) ?> / <?= count($this->admin_model->getInstagramLeadsByTask($c->id)) ?>) - <?php
-                                                                                                                                                                                                                      if (count($this->admin_model->getInstagramLeadsByTask($c->id))  != 0) {
-                                                                                                                                                                                                                        echo round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 2);
-                                                                                                                                                                                                                      } ?>%</small></td>
-
-                        <td style="text-transform: uppercase;"><small><a target="_blank" href="<?= $c->tarefa_url ?>">ACESSAR</a></small></td>
-
-                        <td style="text-transform: uppercase;" ><span class=" text-black badge bg-label-success"><?php
-
-                                                                                                                  if ($c->tarefa_status == 1) {
-                                                                                                                    echo "ATIVO";
-                                                                                                                  } else if ($c->tarefa_status == 2) {
-                                                                                                                    echo "PROCESSANDO";
-                                                                                                                  } else if ($c->tarefa_status == 3) {
-                                                                                                                    echo "FINALIZADO";
-                                                                                                                  } else if ($c->tarefa_status == 4) {
-                                                                                                                    echo "INATIVO";
-                                                                                                                  }
-                                                                                                                  ?></span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a  class="dropdown-item" href="<?= base_url() ?>persona/tarefas_editar/<?= $c->id ?>"
-                                ><i class="bx bx-edit-alt me-1"></i> Editar</a
-                              >
-                              <a onclick="delete_tarefa(<?= $c->id ?>)" class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-
-                      </tr>
-                        <?php } ?>
                 
                       <?php } ?>
                     </tbody>
