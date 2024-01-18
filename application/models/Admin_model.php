@@ -1341,6 +1341,14 @@ class Admin_model extends CI_Model
         return $this->db->get('persona_tarefas')->row_array();
     }
 
+    public function checkTarefaLink($tarefa_url) {
+        
+        $this->db->where('tarefa_url', $tarefa_url);
+        $this->db->where('is_deleted', 0);
+
+        return $this->db->get('persona_tarefas')->row_array();
+    }
+
     public function addTarefa($data){
         return $this->db->insert('persona_tarefas', $data);
     } 

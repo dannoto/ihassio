@@ -781,11 +781,19 @@ class Persona extends CI_Controller
         $data['tarefa_tipo'] = htmlspecialchars($this->input->post('tarefa_tipo'));
         $data['tarefa_url'] = htmlspecialchars($this->input->post('tarefa_url'));
 
-        if ($this->admin_model->addTarefa($data)) {
-            $response = array('status' => 'true', 'message' => 'Já existe essa classificaçao.');
+
+        if ($this->admin_model->checkTarefaLink($data['tarefa_url'])) {
+            $response = array('status' => 'false', 'message' => 'Esta URL já foi processada.');
+
         } else {
-            $response = array('status' => 'false', 'message' => 'Adicionado com sucesso.');
+            if ($this->admin_model->addTarefa($data)) {
+                $response = array('status' => 'true', 'message' => 'Já existe essa classificaçao.');
+            } else {
+                $response = array('status' => 'false', 'message' => 'Adicionado com sucesso.');
+            }
         }
+
+    
 
         print_r(json_encode($response));
     }
