@@ -223,7 +223,7 @@
 
                         
                             
-                            <tr>
+                            <tr class="mt-3 mb-3">
                             <td><?= $l->id; ?></td>
 
                                 <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
