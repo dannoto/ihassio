@@ -186,8 +186,7 @@
                         <?php foreach ($this->admin_model->getTarefas() as $c) {
                         ?>
 
-                        <?php $count = round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 0);
-                          echo "count: " . $count; ?>
+                        <?php $count = round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 0); ?>
 
                         <?php if ($count >= 100) { ?>
                            
