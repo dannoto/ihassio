@@ -1375,7 +1375,8 @@ class Admin_model extends CI_Model
        
         $this->db->where('inapto', 0);
 
-        $this->db->order_by('inapto','asc');
+        $this->db->order_by('convertido','asc');
+        
         return $this->db->get('insta_leads')->result();
     }
     public function getInstagramLeadsByTaskValid($task_id) {
