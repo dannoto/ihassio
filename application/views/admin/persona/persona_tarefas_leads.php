@@ -223,7 +223,7 @@
 
                         
                             
-                            <tr class="mt-3 mb-3">
+                            <tr class="mt-5 mb-5">
                             <td><?= $l->id; ?></td>
 
                                 <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
@@ -265,7 +265,7 @@
                                     <?php } ?> </td>
 
                             </tr>
-                           <br>
+                           
 
                         <?php } ?>
 
