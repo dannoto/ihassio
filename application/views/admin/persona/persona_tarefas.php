@@ -186,7 +186,7 @@
                         <?php foreach ($this->admin_model->getTarefas() as $c) {
                         ?>
 
-                        <?php if (round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 0) >= 100 || strlen(
+                        <?php if (round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 0) >= 100.0 || strlen(
                           round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 0) ) == 0) 
                           
                           { ?>
