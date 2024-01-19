@@ -223,8 +223,8 @@
 
                         
                             
-                            <tr class="pt-3 pb-3">
-                              <td><?= $l->id; ?></td>
+                            <tr class="mt-3 mb-3">
+                            <td><?= $l->id; ?></td>
 
                                 <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
 
@@ -265,7 +265,7 @@
                                     <?php } ?> </td>
 
                             </tr>
-                           
+                           <br>
 
                         <?php } ?>
 
