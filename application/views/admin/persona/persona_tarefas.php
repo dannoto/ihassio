@@ -186,10 +186,13 @@
                         <?php foreach ($this->admin_model->getTarefas() as $c) {
                         ?>
 
-                        <?php $count = round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 0) ; echo "count: ".$count;?>
+                        <?php $count = round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 0);
+                          echo "count: " . $count; ?>
 
-                        <?php if ($count >= 100)       { ?>
-                            <tr>
+                        <?php if ($count >= 100) { ?>
+                           
+                      <?php } else {  ?>
+                        <tr>
                               <td style="text-transform: uppercase;" ><small><?= $c->tarefa_nome ?></small></td>
                               <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
                               <td style="text-transform: uppercase;" ><small><a href="<?= base_url() ?>persona/tarefas_leads/<?= $c->id ?>">VER</a></small></td>
@@ -230,8 +233,8 @@
                               </td>
 
                             </tr>
-                      <?php } ?>
-                     
+                            <?php } ?>
+
                       <?php } ?>
                     </tbody>
                   </table>
