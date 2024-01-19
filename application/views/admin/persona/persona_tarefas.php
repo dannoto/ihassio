@@ -186,7 +186,9 @@
                         <?php foreach ($this->admin_model->getTarefas() as $c) {
                         ?>
 
-              
+                        <?php $count = round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 0) ; echo "count: ".$count;?>
+
+                        <?php if ($count >= 100)       { ?>
                             <tr>
                               <td style="text-transform: uppercase;" ><small><?= $c->tarefa_nome ?></small></td>
                               <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
@@ -228,7 +230,7 @@
                               </td>
 
                             </tr>
-                    
+                      <?php } ?>
                      
                       <?php } ?>
                     </tbody>
