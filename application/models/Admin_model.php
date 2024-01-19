@@ -1373,6 +1373,7 @@ class Admin_model extends CI_Model
     public function getInstagramLeadsByTask($task_id) {
         $this->db->where('tarefa_id', $task_id);
         $this->db->order_by('convertido','desc');
+        $this->db->where('inapto', 0);
         return $this->db->get('insta_leads')->result();
     }
     public function getInstagramLeadsByTaskValid($task_id) {

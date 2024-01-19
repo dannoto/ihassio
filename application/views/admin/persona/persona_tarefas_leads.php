@@ -221,36 +221,7 @@
 
                         <?php foreach ($this->admin_model->getInstagramLeadsByTask($t['id']) as $l) { ?>
 
-                          <?php if ($l->inapto == 1) {  ?>
-
-                            <tr>
-                            <td><?= $l->id; ?></td>
-
-                                <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
-
-                                <td><?php if (strlen($l->links) > 0) {
-                                      echo "SIM";
-                                    } else {
-                                      echo "NÃO";
-                                    } ?></td>
-
-                                <td><?php if (strlen($l->mencoes) > 0) {
-                                      echo "SIM";
-                                    } else {
-                                      echo "NÃO";
-                                    } ?></td>
-
-                           
-
-                                <td><?= $l->email; ?></td>
-                                <td><?= $l->telefone; ?></td>
-                                <td >  </td>
-                                <td ></td>
-
-                                <td>  </td>
-                                <td></td>
-                            </tr>
-                          <?php } else { ?>
+                        
                             
                             <tr>
                             <td><?= $l->id; ?></td>
@@ -294,7 +265,7 @@
                                     <?php } ?> </td>
 
                             </tr>
-                            <?php } ?>
+                           
 
                         <?php } ?>
 
