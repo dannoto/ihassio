@@ -157,6 +157,33 @@
             </div>
           </nav>
 
+          <?php
+          
+          function compactarIPv6($ipv6) {
+            // Explode o endereço IPv6 em grupos de dígitos
+            $grupos = explode(':', $ipv6);
+        
+            // Loop para remover os zeros à esquerda de cada grupo
+            foreach ($grupos as &$grupo) {
+                $grupo = ltrim($grupo, '0');
+            }
+        
+            // Encontre a posição onde dois pontos duplos '::' podem ser inseridos
+            $posicaoDuplos = array_search('', $grupos);
+        
+            // Se houver dois pontos duplos, remova os grupos consecutivos de zeros
+            if ($posicaoDuplos !== false) {
+                $zerosConsecutivos = array_fill(0, 8 - count($grupos), '0');
+                array_splice($grupos, $posicaoDuplos, 1, $zerosConsecutivos);
+            }
+        
+            // Junte os grupos de volta em um endereço IPv6 compactado
+            $ipv6Compacto = implode(':', $grupos);
+        
+            return $ipv6Compacto;
+        }
+          
+          ?>
           <!-- / Navbar -->
 
           <!-- Content wrapper -->
@@ -213,7 +240,7 @@
                         <?php foreach ($this->admin_model->get_prospecoes_by_campanha($campanha['id']) as $c ) { ?>
                             <tr>
                                 <td><small><?php if ($this->admin_model->get_person($c->lead_id)) { echo $this->admin_model->get_person($c->lead_id)['nome'] ;} ;?></small></td>
-                                <td><small><?=$c->lead_ip?></small></td>
+                                <td><small><?=compactarIPv6($c->lead_ip)?></small></td>
 
                                 <td><small><?php if ($this->admin_model->get_telefones_validated($c->lead_id) )  { echo $this->admin_model->get_telefones_validated($c->lead_id)['ddd'] .$this->admin_model->get_telefones_validated($c->lead_id)['telefone'] ;} else { echo "-"; } ?></small></td>
                                 <td><small class="text-uppercase"><?=$c->origem_type?></small></td>
