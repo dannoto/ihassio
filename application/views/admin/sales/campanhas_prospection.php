@@ -224,8 +224,9 @@
                         <thead>
                             <tr>
                                 <th><small>NOME</small></th>
-                                <th><small>DISPOSITIVO</small></th>
                                 <th><small>TELEFONE</small></th>
+                                <th><small>DISPOSITIVO</small></th>
+
                                 <th><small>ORIGEM</small></th>
                                 <th><small>ENTRADA</small></th>
                                 <th><small>CONTACTADO</small></th>
@@ -240,9 +241,10 @@
                         <?php foreach ($this->admin_model->get_prospecoes_by_campanha($campanha['id']) as $c ) { ?>
                             <tr>
                                 <td><small><?php if ($this->admin_model->get_person($c->lead_id)) { echo $this->admin_model->get_person($c->lead_id)['nome'] ;} ;?></small></td>
-                                <td><small style="text-transform: uppercase;"><?=$c->lead_dispositivo?></small></td>
 
                                 <td><small><?php if ($this->admin_model->get_telefones_validated($c->lead_id) )  { echo $this->admin_model->get_telefones_validated($c->lead_id)['ddd'] .$this->admin_model->get_telefones_validated($c->lead_id)['telefone'] ;} else { echo "-"; } ?></small></td>
+                                <td><small style="text-transform: uppercase;"><?=$c->lead_dispositivo?></small></td>
+
                                 <td><small class="text-uppercase"><?=$c->origem_type?></small></td>
                                 <td><small><?=$c->data_acesso?></small></td>
                                 <td><small><?php
