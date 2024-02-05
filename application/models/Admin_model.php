@@ -1375,6 +1375,11 @@ class Admin_model extends CI_Model
        
         $this->db->where('inapto', 0);
         // $this->db->limit(100);
+        $this->db->where('email IS NOT NULL AND email !=', '');
+        $this->db->where('telefone IS NOT NULL AND telefone !=', '');
+        $this->db->where('links IS NOT NULL AND links !=', '');
+        $this->db->where('mencoes IS NOT NULL AND mencoes !=', '');
+
 
         $this->db->order_by('convertido','asc');
 

@@ -28,7 +28,7 @@ class Scraper:
             'Accept': '*/*',
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
-            'Cookie': 'ig_did=393560CC-54FB-4EC2-B039-675BE71DC24B; datr=MdZSZY-jagBUo9wTQKzc-gBv; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; mid=ZaS_XQALAAHjqL_c82_6N8_woF1-; ds_user_id=42804341242; csrftoken=ymiF9RzcNgigcSB3rCnkhv8Xt4LdCLsQ; ps_n=0; ps_l=0; shbid="11631\05442804341242\0541738635362:01f756f996ab13849746689eac2f87d294313706b0b9fd46a6c203ede800810742794604"; shbts="1707099362\05442804341242\0541738635362:01f7263fd15917667fd59ec586416b6e2c94f127f7ab2c8a9df14a74c917052b3b47838e"; sessionid=42804341242%3APYMfL3cYxVBKmN%3A1%3AAYeSXw0PcQXsKtx1yli0Okmz1ooT6nCan7uN1_yOQto; fbsr_124024574287414=Sa66k9IlRKQDFLlKjHbbnudxRp-gio8rLlqqKd66_Mk.eyJ1c2VyX2lkIjoiMTAwMDg5NDAyNTYzMTE3IiwiY29kZSI6IkFRQjBKeGV6LW04aGFCTEpVWEozZDk0aTZsZ2NCdmxGOXVOM2l1UXExMktkaG1EcUl1dzYyYjlkc21Ed1ZRSDlnUG0yOEZod0dyQ3p5a2prU3hRTGV4bHVxVFVwaE9YelhVcDNHM3hoTUJDUzRidTJ0MjN5UmR4a19GSG1yNExLeWJqeFQ2R2d1NXpPNmpLSlNBd2JOY1FGOUszNUR5dVhqbnZiS0V6S0lyQy1FNGx1Nmphakl1bGFyRW0wbnF3eWJXSzVobzJRWVpZZzFhbFIxUE5LaWFFcGR4a3ZRQVNuRndlaEVPZEdWeUhHZzIzT3VYYmRtS0toRDB5VWVGVlpNdklfdGYxM25fSDNDcS1VU05KSmlNUm9SckE0N3c2MHEtc3lVRC1hVDAtTjF3Tm10M0JXZHdwb3FkSlR5MTdPMnJ2UGpqUGtRalBPZnJFbHZ0cnpSN3h4ajB4ZmdoX0NYdlFMSHVoUy0wMDJ5USIsIm9hdXRoX3Rva2VuIjoiRUFBQnd6TGl4bmpZQk82eE5PRXB5ZWpZeDBzdnluelJsQ3ppNWNmT1pDV1d5TTl2blBkVGJ4NE53T3JFYVpBR2M5bE91RlpDN0FzZnZtaHNEY1RzWkNGNWpCYnNiRVdIdmt5WGVVeUtDUFpDN3RyNGY4akxONHBPVkg4VzlqNmM3b0hscGJOd0RLdEx4QVJCaHkxRlpDOTE3TW5TalUyWkJFaWxjdXhHenFvU082THJkTVdRTEdaQXFpYTl1aGVFaWswS0tSVXNaRCIsImFsZ29yaXRobSI6IkhNQUMtU0hBMjU2IiwiaXNzdWVkX2F0IjoxNzA3MTEyNjE0fQ; rur="RVA\05442804341242\0541738648644:01f7a736aa53e7874d5e5a30a40e782760fa88a03357b11968d6e72d886d3a71f67c0d55"',
+            'Cookie': 'ig_did=393560CC-54FB-4EC2-B039-675BE71DC24B; datr=MdZSZY-jagBUo9wTQKzc-gBv; ig_nrcb=1; mid=ZVLWMgALAAE9_lzPYkNGpAX8syLZ; fbm_124024574287414=base_domain=.instagram.com; shbid="7447\05461013886138\0541736281530:01f7e6f2ca54fae6835fc34adf4e7734a20e22e1775dba712ea0d0aa1deccd375fa9bfc6"; shbts="1704745530\05461013886138\0541736281530:01f77ffe7b4b9b0bcf8d5af8e8ccb4d635b73eb2a866f195cb40d033fffd7d00c38bea72"; csrftoken=xl32QuXdjPdCJv5Cj43OO4GJytGwQG3z; ds_user_id=61013886138; fbsr_124024574287414=MWeRkWYmMm_Qk-gJFQu11lOKQGtv82eqzpgAR-QfhKY.eyJ1c2VyX2lkIjoiMTAwMDg5NDAyNTYzMTE3IiwiY29kZSI6IkFRRHpuUDMxRkdrYUJIVUJIR0VuU3l2b1RtdnZSbW5tb1VHZ1lqUEdCYTVuVy1TRllURlNIZzZHeVNRY21DaFZnX2xzRTFvcVJRdktDbkRJdUM0OXNqNTlvNFEwNlhmZk9wQzVsLVA2ZGljRmk1S09rbHU1NVJLbXZZamVNa2JzSV9pR1M5YmpVM1ZhTDFwWmE4eEZta3JUQ2NOb29zcWFfZ2RFMkZEMS1yem8zaFZQMEExNF8yNjhBczI5M281VWZONnV3NV8yQ19VRFdCSllpWmpvdVFfUVZ6TnNGd0dYS3NJRGQtUjl4YWlhQmxIQmpBclM4QVZuREN4ckotajdCVlh4UjBRZmhqLUt6Ukt4SXp5Um5mLS1EamZHVVVLQzlPOHRISUhMMHVCUVNfSlNvUzMzVDMtNnFlTWJMTVRiYnF3aERaZm9yc0ZUM2VRQ3QxQTZ0SHgzT3FQTnhmSDhPX0g4RG15eExuSHRhdyIsIm9hdXRoX3Rva2VuIjoiRUFBQnd6TGl4bmpZQk94akxsaWF2MUlKdlpBSjd1cE5pV0lzYTVRMUUxWXU1SllBc244bWJjY29sZ0pMNU45NDNERWM0Qml0MGJvUkZuVjlFNUFnSm1jQzVCMXVublpDN0NzVUh6eXJaQnF6VmRBR1NlS0p4d1BJWFpDbm1OM3RyZ3lkSlFNQ0FkYTB0QnNja2dHcWpkcVJ2N3diNkkzS3BxQkpPWVlkSVZNOVNrZTZhbkVKa2w4SE1PbjF4Z0RDYXdld1pEIiwiYWxnb3JpdGhtIjoiSE1BQy1TSEEyNTYiLCJpc3N1ZWRfYXQiOjE3MDQ3NDk3ODF9; sessionid=61013886138%3APm1MnN0e4YHBcg%3A0%3AAYeN2T5DAXz1PRQ3ZrKBbiJsNybNe_P2OT8bO7N-ww; fbsr_124024574287414=MWeRkWYmMm_Qk-gJFQu11lOKQGtv82eqzpgAR-QfhKY.eyJ1c2VyX2lkIjoiMTAwMDg5NDAyNTYzMTE3IiwiY29kZSI6IkFRRHpuUDMxRkdrYUJIVUJIR0VuU3l2b1RtdnZSbW5tb1VHZ1lqUEdCYTVuVy1TRllURlNIZzZHeVNRY21DaFZnX2xzRTFvcVJRdktDbkRJdUM0OXNqNTlvNFEwNlhmZk9wQzVsLVA2ZGljRmk1S09rbHU1NVJLbXZZamVNa2JzSV9pR1M5YmpVM1ZhTDFwWmE4eEZta3JUQ2NOb29zcWFfZ2RFMkZEMS1yem8zaFZQMEExNF8yNjhBczI5M281VWZONnV3NV8yQ19VRFdCSllpWmpvdVFfUVZ6TnNGd0dYS3NJRGQtUjl4YWlhQmxIQmpBclM4QVZuREN4ckotajdCVlh4UjBRZmhqLUt6Ukt4SXp5Um5mLS1EamZHVVVLQzlPOHRISUhMMHVCUVNfSlNvUzMzVDMtNnFlTWJMTVRiYnF3aERaZm9yc0ZUM2VRQ3QxQTZ0SHgzT3FQTnhmSDhPX0g4RG15eExuSHRhdyIsIm9hdXRoX3Rva2VuIjoiRUFBQnd6TGl4bmpZQk94akxsaWF2MUlKdlpBSjd1cE5pV0lzYTVRMUUxWXU1SllBc244bWJjY29sZ0pMNU45NDNERWM0Qml0MGJvUkZuVjlFNUFnSm1jQzVCMXVublpDN0NzVUh6eXJaQnF6VmRBR1NlS0p4d1BJWFpDbm1OM3RyZ3lkSlFNQ0FkYTB0QnNja2dHcWpkcVJ2N3diNkkzS3BxQkpPWVlkSVZNOVNrZTZhbkVKa2w4SE1PbjF4Z0RDYXdld1pEIiwiYWxnb3JpdGhtIjoiSE1BQy1TSEEyNTYiLCJpc3N1ZWRfYXQiOjE3MDQ3NDk3ODF9; rur="NHA\05461013886138\0541736286104:01f7c01305a83dd28ab99d8eb3588d003f041400719e10bd58c582627384a44bc6768429"',
             'Dpr': '1',
             'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
             'Sec-Ch-Prefers-Color-Scheme': 'light',
@@ -44,7 +44,7 @@ class Scraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 OPR/105.0.0.0',
             'Viewport-Width': '1312',
             'X-Asbd-Id': '129477',
-            'X-Csrftoken': 'ymiF9RzcNgigcSB3rCnkhv8Xt4LdCLsQ',
+            'X-Csrftoken': 'xl32QuXdjPdCJv5Cj43OO4GJytGwQG3z',
             'X-Ig-App-Id': '936619743392459',
             'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
             'X-Requested-With': 'XMLHttpRequest'
@@ -725,7 +725,7 @@ class Scraper:
                         'mencoes': mencoes,
                         'categoria': user_data['data']['user']['category_name'],
                         'email': self.extractEmail(user_data['data']['user']['business_email'], user_data['data']['user']['biography'], links),
-                        'telefone': self.extractTelefone(user_data['data']['user']['business_phone_number'], links),
+                        'telefone': self.extractTelefone(user_data['data']['user']['business_phone_number'], links, user_data['data']['user']['biography'], mencoes),
                     }
                 
                 
@@ -751,8 +751,25 @@ class Scraper:
         else:
             print('verificando email link externo')
             return False
+        
+    def extrair_numeros_bio(self, biografia):
+        # Remover caracteres especiais e letras
+        numeros = re.sub(r'[^0-9]', '', biografia)
+
+        # Padronizar para o formato desejado
+        match = re.match(r'^(55)?(\d{2})?(9\d{8})$', numeros)
+
+        if match:
+            codigo_pais = match.group(1) if match.group(1) else '55'
+            ddd = match.group(2) if match.group(2) else ''
+            numero = match.group(3)
             
-    def extractTelefone(self, telefone, links):
+            numero_formatado = f'{codigo_pais}{ddd}{numero}'
+            return numero_formatado
+        else:
+            return False
+                
+    def extractTelefone(self, telefone, links, biografia, mencoes):
         
         if  telefone != None:
             print('verificando telefone')
@@ -761,9 +778,17 @@ class Scraper:
         
         elif self.extrair_numero_whatsapp(links) != False:
             
+            print('verificando telefone no link')
+            
+            return self.extrair_numero_whatsapp( links)
+        
+        elif self.extrair_numeros_bio(biografia) != False:
+            
             print('verificando telefone na bio')
             
             return self.extrair_numero_whatsapp( links)
+        elif self.extrait_numero_mencoes(mencoes):
+            
         
         else:
             print('verificando telefone link externo')
