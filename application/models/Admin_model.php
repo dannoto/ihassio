@@ -1334,10 +1334,8 @@ class Admin_model extends CI_Model
 
         $this->db->where('is_deleted', 0);
 
-        $this->db->where('tarefa_status', 1);
-        $this->db->where('tarefa_status', 2);
-        $this->db->where('tarefa_status', 3);
-        $this->db->where('tarefa_status', 4);
+        $this->db->where('tarefa_status !=', 5);
+     
 
         $this->db->order_by('id','desc');
         return $this->db->get('persona_tarefas')->result();
