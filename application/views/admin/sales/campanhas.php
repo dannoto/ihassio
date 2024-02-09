@@ -182,7 +182,7 @@
                       <tr>
                         <td style="text-transform: uppercase;"><small><?= $c->nome ?></small></td>
                         <td style="text-transform: uppercase;"> <small> <a target="_blank" href=" <?= $c->pagina_de_vendas ?>"><small>VISITAR O LINK</small></a></small></td>
-                        <td><a href="<?=base_url()?>sales/campanhas_produtos/<?=$c->id?>"><button class="btn btn-primary">VER CAMPANHAS</button></a></td>
+                        <td><a href="<?=base_url()?>sales/campanhas_produtos/<?=$c->id?>"><button class="btn btn-primary"><small>VER CAMPANHAS</small></button></a></td>
                        
                       </tr>
                 
