@@ -164,7 +164,7 @@
                   <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
               </a>
               <br>
-              <div class="card p-5">
+              <div class="card p-2 mb-5">
                 <H4>Filtro</H4>
                 
                 <form method="GET" >
@@ -191,7 +191,7 @@
                           </div>
                           <div class="col-md-4">
                             <p></p>
-                            <button class="btn btn-primary" type="submit">Buscar</button>
+                            <button class="btn btn-primary" style="margin-top: 20px;" type="submit">Buscar</button>
                           </div>
                     </div>
                   </form>
@@ -222,7 +222,7 @@
 
                     
                         <tr>
-                              <td style="text-transform: uppercase;" ><small>[#<?=$c->id?>]<?= $c->tarefa_nome ?></small></td>
+                              <td style="text-transform: uppercase;" ><small>[#<?=$c->id?>] <?= $c->tarefa_nome ?></small></td>
                               <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
                               <td style="text-transform: uppercase;" ><small><a href="<?= base_url() ?>persona/tarefas_leads/<?= $c->id ?>">VER</a></small></td>
 
