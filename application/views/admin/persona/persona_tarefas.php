@@ -171,7 +171,7 @@
                     <div class="row">
                           <div class="col-md-4">
                             <p>Status</p>
-                            <select required name="tarefa_status" class="form-select"  >
+                            <select  name="tarefa_status" class="form-select"  >
                               <option value="">Selecionar</option>
                               <option value="1">ATIVO</option>
                               <option value="2">PROCESSANDO</option>
@@ -182,7 +182,7 @@
                           </div>
                           <div class="col-md-4">
                             <p>Tag</p>
-                            <select required name="tarefa_tag" class="form-select"  >
+                            <select  name="tarefa_tag" class="form-select"  >
                               <option value="">Selecionar</option>
                                 <?php foreach ($this->admin_model->get_itens() as $c) { ?>            
                                   <option value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
