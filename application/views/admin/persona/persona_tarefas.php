@@ -210,7 +210,7 @@
               </div>
 
               <div class="card">
-          
+              <?php if (count($tarefas) > 0) { ?>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>
@@ -230,7 +230,7 @@
                     <tbody class="table-border-bottom-0">
 
 
-                    <?php if (count($tarefas) > 0 )  { ?>
+                
                         <?php foreach ($tarefas as $c) { ?>
 
                              <tr>
@@ -277,17 +277,18 @@
 
                             </tr>
                         <?php } ?>
-                    <?php } else { ?>
-
-                      <div class="mt-5 mb-5">
-                        <p class="text-center">Nenhum resultado encontrado.</p>
-                      </div>
-
-                    <?php } ?>
+                
                      
                     </tbody>
                   </table>
                 </div>
+                <?php } else { ?>
+
+<div class="mt-5 mb-5">
+  <p class="text-center">Nenhum resultado encontrado.</p>
+</div>
+
+<?php } ?>
               </div>
               <!--/ Basic Bootstrap Table -->
 
