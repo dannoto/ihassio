@@ -171,7 +171,7 @@
                     <thead>
                       <tr>
                         <th>Nome do produto</th>
-                        <th>preço</th>
+                        <th>campanhas</th>
                         <th>página de vendas</th>
                         <th></th>
 
@@ -181,7 +181,7 @@
                         <?php foreach ($this->admin_model->get_produtos() as $c) { ?>
                           <tr>
                           <td style="text-transform: uppercase;"><small><?= $c->nome ?></small></td>
-                        <td style="text-transform: uppercase;"> <small>R$ <?= $c->preco ?></small></td>
+                        <td style="text-transform: uppercase;"> <small><?= count($this->admin_model->get_campanhas_by_produto($c->id) )?></small></td>
                         <td style="text-transform: uppercase;"> <small> <a target="_blank" href=" <?= $c->pagina_de_vendas ?>"><small>VISITAR O LINK</small></a></small></td>
                  
                             <td><a href="<?=base_url()?>sales/campanhas_produtos/<?=$c->id?>"><button class="btn btn-primary"><small>VER CAMPANHAS</small></button></a></td>
