@@ -26,7 +26,23 @@ class Persona extends CI_Controller
 
     public function tarefas()
     {
-        $data = array();
+
+        if ($this->input->get()) {
+
+            $tag = htmlspecialchars($this->input->get('tarefa_tag'));
+            $status = htmlspecialchars($this->input->get('tarefa_status'));
+
+            $data = array(
+                'tarefas' => $this->admin_model->getTarefasSearch($tag, $status)
+            );
+
+        } else {
+
+            $data = array(
+                'tarefas' => $this->admin_model->getTarefas()
+            );
+        }
+
         $this->load->view('admin/persona/persona_tarefas', $data);
     }
 
