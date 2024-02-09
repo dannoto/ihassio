@@ -1433,7 +1433,7 @@ class Admin_model extends CI_Model
 
         if (strlen($convertido) > 0) {
 
-            $this->db->where('inapto', $convertido);
+            $this->db->where('convertido', $convertido);
         }
         // $this->db->limit(100);
         $this->db->group_start();
