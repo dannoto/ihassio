@@ -285,7 +285,7 @@
                 <?php } else { ?>
 
 <div class="mt-5 mb-5">
-  <p class="text-center">Nenhum resultado encontrado.</p>
+  <p class="text-center text-uppercase">Nenhum resultado encontrado.</p>
 </div>
 
 <?php } ?>
