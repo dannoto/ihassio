@@ -188,7 +188,14 @@
                     <tbody class="table-border-bottom-0">
                         <?php foreach ($this->admin_model->get_campanhas_by_produto($produto) as $c) { ?>
                       <tr>
-                        <td style="text-transform: uppercase;"><small> <?php if ($c->classificacao == "1") { echo "<span class='badge badge-danger'>PROSP</span>"; } else if ($c->classificacao == "2") { echo "<span class='badge badge-primary'>ATV</span>"; } else if ($c->classificacao == "3") { echo "<span class='badge badge-success'>REC</span>"; }?> <?= $c->nome ?></small></td>
+                        <td style="text-transform: uppercase;"><small> <?php 
+                        if ($c->classificacao == "1"){ 
+                          echo "<span class='badge badge-primary' style='background: cadetblue;' ><small>PROSPECÇÃO</small></span>"; } 
+                        else if ($c->classificacao == "2") { 
+                          echo "<span class='badge badge-primary' style='background: brown;' ><small>ATIVAÇÃO</small></span>"; } 
+                        else if ($c->classificacao == "3") { 
+                          echo "<span class='badge badge-primary' style='background: chartreuse;' ><small>RECUPERAÇÃO</small></span>"; 
+                        }?> <?= $c->nome ?></small></td>
                         <td style="text-transform: uppercase;"> <small><?=$this->admin_model->get_tipo( $c->tipo ) ['nome']?></small></td>
                         <td style="text-transform: uppercase;">  <small><a href="<?= base_url() ?>sales/campanhas_links/<?= $c->id ?>">VER LINKS</a></small></td>
                         <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>sales/campanhas_prospection/<?= $c->id ?>">PROSPECÇOES</a></small></td>
