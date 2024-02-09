@@ -242,7 +242,7 @@
                         <?php foreach ($this->admin_model->get_prospecoes_by_campanha($campanha['id']) as $c) { ?>
                             <tr>
                                 <td><small><?php if ($this->admin_model->get_person($c->lead_id)) {
-                                              echo "<a href='<?=base_url()?>persona/editar/".$c->id."' target='_blank'>$this->admin_model->get_person($c->lead_id)['nome']</a>";
+                                              echo "<a href='<?=base_url()?>persona/editar/".$c->id."' target='_blank'>".$this->admin_model->get_person($c->lead_id)['nome']."</a>";
                                             }; ?></small></td>
 
                                 <td><small><?php if ($this->admin_model->get_telefones_validated($c->lead_id)) {
