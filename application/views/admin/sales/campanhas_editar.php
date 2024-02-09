@@ -366,7 +366,7 @@
                     if (resp.status == "true") {
 
                         alert('Adicionado com sucesso!')
-                        window.location.href = "<?=base_url()?>sales/campanhas"
+                        window.location.href = "<?=base_url()?>sales/campanhas_produtos/<?=$campanha['produto']?>"
 
                     } else {
                         alert('Erro ao adicionar!')
