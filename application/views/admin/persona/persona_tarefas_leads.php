@@ -281,9 +281,9 @@
                                   <td><?= $l->telefone; ?></td>
                                   <td class="mb-5" > <button onclick="getInstaLeadDemanda(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
                                   <?php if ($l->convertido == 0) { ?>
-                                    <?php if ($l->convertido == 0) { ?>
+                                    <?php if ($l->inapto == 0) { ?>
                                       <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
-                                    <?php } else if ($l->convertido == 1) { ?>
+                                    <?php } else if ($l->inapto == 1) { ?>
                                       <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-danger" ><small>APTO</small></button> </td>
 
                                     <?php }  ?>
