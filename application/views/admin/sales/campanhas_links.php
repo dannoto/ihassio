@@ -197,7 +197,7 @@
  
             <div class="container-xxl flex-grow-1 container-p-y">
             <div class="mb-3 mt-1">
-                <a href="<?= base_url() ?>sales/campanhas_produtos/<?=$campanha['id']?>">
+                <a href="<?= base_url() ?>sales/campanhas_produtos/<?=$campanha['produto']?>">
                 <button class="btn btn-light text-primary border border-0"> <span class="bx bx-left-arrow-alt"></span> VOLTAR    </button>
                 </a>
               </div>
