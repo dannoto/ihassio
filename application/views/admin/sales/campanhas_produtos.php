@@ -157,6 +157,11 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="mb-3 mt-1">
+                <a href="<?= base_url() ?>sales/campanhas">
+                <button class="btn btn-light text-primary border border-0"> <span class="bx bx-left-arrow-alt"></span> VOLTAR    </button>
+                </a>
+              </div>
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Campanhas /</span> Lista</h4>
 
               <!-- Basic Bootstrap Table -->

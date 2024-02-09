@@ -158,31 +158,32 @@
           </nav>
 
           <?php
-          
-          function compactarIPv6($ipv6) {
+
+          function compactarIPv6($ipv6)
+          {
             // Explode o endereço IPv6 em grupos de dígitos
             $grupos = explode(':', $ipv6);
-        
+
             // Loop para remover os zeros à esquerda de cada grupo
             foreach ($grupos as &$grupo) {
-                $grupo = ltrim($grupo, '0');
+              $grupo = ltrim($grupo, '0');
             }
-        
+
             // Encontre a posição onde dois pontos duplos '::' podem ser inseridos
             $posicaoDuplos = array_search('', $grupos);
-        
+
             // Se houver dois pontos duplos, remova os grupos consecutivos de zeros
             if ($posicaoDuplos !== false) {
-                $zerosConsecutivos = array_fill(0, 8 - count($grupos), '0');
-                array_splice($grupos, $posicaoDuplos, 1, $zerosConsecutivos);
+              $zerosConsecutivos = array_fill(0, 8 - count($grupos), '0');
+              array_splice($grupos, $posicaoDuplos, 1, $zerosConsecutivos);
             }
-        
+
             // Junte os grupos de volta em um endereço IPv6 compactado
             $ipv6Compacto = implode(':', $grupos);
-        
+
             return $ipv6Compacto;
-        }
-          
+          }
+
           ?>
           <!-- / Navbar -->
 
@@ -238,36 +239,42 @@
                         </thead>
                         <tbody>
 
-                        <?php foreach ($this->admin_model->get_prospecoes_by_campanha($campanha['id']) as $c ) { ?>
+                        <?php foreach ($this->admin_model->get_prospecoes_by_campanha($campanha['id']) as $c) { ?>
                             <tr>
-                                <td><small><?php if ($this->admin_model->get_person($c->lead_id)) { echo $this->admin_model->get_person($c->lead_id)['nome'] ;} ;?></small></td>
+                                <td><small><?php if ($this->admin_model->get_person($c->lead_id)) {
+                                              echo $this->admin_model->get_person($c->lead_id)['nome'];
+                                            }; ?></small></td>
 
-                                <td><small><?php if ($this->admin_model->get_telefones_validated($c->lead_id) )  { echo $this->admin_model->get_telefones_validated($c->lead_id)['ddd'] .$this->admin_model->get_telefones_validated($c->lead_id)['telefone'] ;} else { echo "-"; } ?></small></td>
-                                <td><small title="<?=$c->lead_ip?>" style="text-transform: uppercase;"><?=$c->lead_dispositivo?></small></td>
+                                <td><small><?php if ($this->admin_model->get_telefones_validated($c->lead_id)) {
+                                              echo $this->admin_model->get_telefones_validated($c->lead_id)['ddd'] . $this->admin_model->get_telefones_validated($c->lead_id)['telefone'];
+                                            } else {
+                                              echo "-";
+                                            } ?></small></td>
+                                <td><small title="<?= $c->lead_ip ?>" style="text-transform: uppercase;"><?= $c->lead_dispositivo ?></small></td>
 
-                                <td><small class="text-uppercase"><?=$c->origem_type?></small></td>
-                                <td><small><?=$c->data_acesso?></small></td>
+                                <td><small class="text-uppercase"><?= $c->origem_type ?></small></td>
+                                <td><small><?= $c->data_acesso ?></small></td>
                                 <td><small><?php
 
-if ($c->contactado == 0) {
-  echo "NAO";
-} else if ($c->contactado == 1) {
-  echo "SIM";
-} else {
-  echo "-";
-}
+                                            if ($c->contactado == 0) {
+                                              echo "NAO";
+                                            } else if ($c->contactado == 1) {
+                                              echo "SIM";
+                                            } else {
+                                              echo "-";
+                                            }
 
 
-?></small></td>
-                                <td><small class="text-uppercase"><?=$c->contactado_via?></small></td>
-                                <td><?=$this->admin_model->convertDate($c->contactado_data)?></td>
+                                            ?></small></td>
+                                <td><small class="text-uppercase"><?= $c->contactado_via ?></small></td>
+                                <td><?= $this->admin_model->convertDate($c->contactado_data) ?></td>
     <td>       
                                 <div class="dropdown">
                                   <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                     <i class="bx bx-dots-vertical-rounded"></i>
                                   </button>
                                   <div class="dropdown-menu">
-                                    <a  class="dropdown-item"  onclick="openEdit(<?=$c->id?>)" data-bs-toggle="modal" data-bs-target="#modalAdicionarEvento"  href="#"
+                                    <a  class="dropdown-item"  onclick="openEdit(<?= $c->id ?>)" data-bs-toggle="modal" data-bs-target="#modalAdicionarEvento"  href="#"
                                       ><i class="bx bx-edit-alt me-1"></i> Editar</a >
 
 
@@ -399,34 +406,33 @@ if ($c->contactado == 0) {
     <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 
     <?php
-   
-        $c = [];
 
-        foreach ($this->admin_model->get_prospecoes_by_campanha($campanha['id']) as $l) { 
+    $c = [];
+
+    foreach ($this->admin_model->get_prospecoes_by_campanha($campanha['id']) as $l) {
 
 
-            if ($l->contactado == 0) {
-              $contactado = "NAO";
-            } else if ($l->contactado == 1) {
-              $contactado = "SIM";
-            } else {
-              $contactado = "";
-            }
+      if ($l->contactado == 0) {
+        $contactado = "NAO";
+      } else if ($l->contactado == 1) {
+        $contactado = "SIM";
+      } else {
+        $contactado = "";
+      }
 
-            array_push($c, array(
-              "NOME" => $this->admin_model->get_person($l->lead_id)['nome'],
-              "TELEFONE" => $this->admin_model->get_telefones_validated($l->lead_id)['telefone'],
-              "ORIGEM" => $l->origem_type,
-              "ENTRADA" => $this->admin_model->convertDate($l->data_acesso),
-              "CONTACTADO" => $contactado,
-              "VIA" => $l->contactado_via,
-              "DATA CONTATO" => $this->admin_model->convertDate($l->contactado_data)
+      array_push($c, array(
+        "NOME" => $this->admin_model->get_person($l->lead_id)['nome'],
+        "TELEFONE" => $this->admin_model->get_telefones_validated($l->lead_id)['telefone'],
+        "ORIGEM" => $l->origem_type,
+        "ENTRADA" => $this->admin_model->convertDate($l->data_acesso),
+        "CONTACTADO" => $contactado,
+        "VIA" => $l->contactado_via,
+        "DATA CONTATO" => $this->admin_model->convertDate($l->contactado_data)
 
-            ));
+      ));
+    }
 
-        } 
-
-        $leads_json = json_encode($c);
+    $leads_json = json_encode($c);
 
     ?>
 
@@ -455,7 +461,7 @@ if ($c->contactado == 0) {
           var blob = new Blob([s2ab(excelData)], {
               type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           });
-          saveAs(blob, "prospeccoes-<?=str_replace( " ", "-", $campanha['nome'])?>.xlsx");
+          saveAs(blob, "prospeccoes-<?= str_replace(" ", "-", $campanha['nome']) ?>.xlsx");
       });
 
       // s2ab function (converts string to ArrayBuffer)
@@ -539,7 +545,7 @@ if ($c->contactado == 0) {
                           $('#update_contactado_data').val(contactado_data)
 
                         } else {
-                          $('#update_contactado_data').val("<?=date('d-m-Y H:i:s')?>")
+                          $('#update_contactado_data').val("<?= date('d-m-Y H:i:s') ?>")
 
                         }
 
