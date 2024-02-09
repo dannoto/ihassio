@@ -13,11 +13,7 @@ class Sales extends CI_Controller {
         
 	}
 
-    public function campanhas()
-	{
-
-		$this->load->view('admin/sales/campanhas');
-	}
+   
 
     public function produtos()
 	{
@@ -62,6 +58,8 @@ class Sales extends CI_Controller {
 		
 	}
 
+   
+
     public function lista_editar($id)
 	{
         $id = htmlspecialchars($id);
@@ -85,6 +83,28 @@ class Sales extends CI_Controller {
         }
 	}
 
+    public function campanhas()
+	{
+		$this->load->view('admin/sales/campanhas');
+	}
+
+    public function campanhas_produtos($produt_id) {
+        $produto = $this->admin_model->get_produto($produt_id);
+
+        if ($produto) {
+
+
+            $data = array(
+                'produto' => $produt_id
+
+            );
+
+            $this->load->view('admin/sales/campanhas_produtos', $data);
+
+        } else {
+            redirect(base_url('sales/campanhas'));
+        }
+    }
 
     public function campanhas_adicionar()
 	{

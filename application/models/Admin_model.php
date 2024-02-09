@@ -779,6 +779,16 @@ class Admin_model extends CI_Model
 
         return $this->db->get('campanhas')->result();
     }
+
+    public function get_campanhas_by_produto($produto_id)
+    {
+        $this->db->where('is_deleted', 0);
+        $this->db->where('produto', $produto_id);
+
+        $this->db->order_by('id', 'desc');
+
+        return $this->db->get('campanhas')->result();
+    }
     public function get_campanha($id)
     {
         $this->db->where('id', $id);

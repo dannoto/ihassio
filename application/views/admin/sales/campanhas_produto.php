@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Lista de Produtos</title>
+    <title>Lista de Campanhas</title>
 
     <meta name="description" content="" />
 
@@ -160,9 +160,9 @@
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Campanhas /</span> Lista</h4>
 
               <!-- Basic Bootstrap Table -->
-              <!-- <a href="<?=base_url()?>sales/produtos_adicionar">
+              <a href="<?= base_url() ?>sales/campanhas_adicionar">
                   <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
-              </a> -->
+              </a>
 
               <div class="card">
               <h4></h4>
@@ -170,18 +170,42 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>NOME</th>
-                      
-                        <th></th>
+                        <th>Nome</th>
+                        <th>TIPO</th>
+                        <th>DIVULGAÇAO</th>
+                        <th>PROSPECÇAO</th>
+                        <th>VENDAS</th>
+
+                        <th>RELATÓRIO</th>
 
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <?php foreach ($this->admin_model->get_produtos() as $c) { ?>
+                        <?php foreach ($this->admin_model->get_campanhas_by_produto($produto) as $c) { ?>
                       <tr>
                         <td style="text-transform: uppercase;"><small><?= $c->nome ?></small></td>
-                        <td><a href="<?=base_url()?>sales/campanhas_produto/<?=$c->produto?>"><button class="btn btn-primary">VER CAMPANHAS</button></a></td>
-                       
+                        <td style="text-transform: uppercase;"> <small><?=$this->admin_model->get_tipo( $c->tipo ) ['nome']?></small></td>
+                        <td style="text-transform: uppercase;">  <small><a href="<?= base_url() ?>sales/campanhas_links/<?= $c->id ?>">VER LINKS</a></small></td>
+                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>sales/campanhas_prospection/<?= $c->id ?>">PROSPECÇOES</a></small></td>
+                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>sales/campanhas_sales/<?= $c->id ?>">VENDAS</a></small></td>
+
+                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>sales/campanhas_reports/<?= $c->id ?>">RELATÓRIOS</a></small></td>
+
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a  class="dropdown-item" href="<?= base_url() ?>sales/campanhas_editar/<?= $c->id ?>"
+                                ><i class="bx bx-edit-alt me-1"></i> Editar</a
+                              >
+                              <a onclick="delete_campanha(<?= $c->id ?>)" class="dropdown-item" href="javascript:void(0);"
+                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              >
+                            </div>
+                          </div>
+                        </td>
                       </tr>
                 
                       <?php } ?>
@@ -214,18 +238,39 @@
 
     <script>
 
+      function get_categoria(categoria_id) 
+    {
 
-        function delete_produto(id) {
+      $.ajax({
+                          method: 'POST',
+                          url: '<?= base_url() ?>persona/act_get_categoria',
+                          data: {categoria_id:categoria_id},
+                          success: function(data) {
+                              var resp = JSON.parse(data)
+
+                                  $('#update_categoria_id').val(resp.id)
+                                  $('#update_categoria_nome').val(resp.nome)
+                                  $('#update_categoria_slug').val(resp.slug)
+                                  $('#update_categoria_descricao').val(resp.descricao)
+
+                          },
+                          error: function(data) {
+                              alert('Ocorreu um erro temporário.');
+                          },
+                      });
+
+    }
+
+        function delete_campanha(id) {
 
           var resposta = confirm("Você deseja excluir?");
-
           if (resposta === true) {
               // O usuário pressionou "OK"
 
               
               $.ajax({
                           method: 'POST',
-                          url: '<?= base_url() ?>sales/act_delete_produto',
+                          url: '<?= base_url() ?>sales/act_delete_campanha',
                           data: {id:id},
                           success: function(data) {
                               var resp = JSON.parse(data)
@@ -247,9 +292,6 @@
           } 
         }
 
-      
-
-     
     </script>
 
   </body>
