@@ -338,11 +338,12 @@ class Sales extends CI_Controller {
         $provedor = htmlspecialchars($this->input->post('provedor'));
         $provedor_campanha_id = htmlspecialchars($this->input->post('provedor_campanha_id'));
         $lista = htmlspecialchars($this->input->post('lista'));
+        $classificacao = htmlspecialchars($this->input->post('classificacao'));
 
 
 
 
-        if ($this->admin_model->add_campanha( $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista)) {
+        if ($this->admin_model->add_campanha( $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista, $classificacao)) {
 
             $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.'  ) ;
 
@@ -368,10 +369,11 @@ class Sales extends CI_Controller {
         $provedor = htmlspecialchars($this->input->post('provedor'));
         $provedor_campanha_id = htmlspecialchars($this->input->post('provedor_campanha_id'));
         $lista = htmlspecialchars($this->input->post('lista'));
+        $classificacao = htmlspecialchars($this->input->post('classificacao'));
 
 
 
-        if ($this->admin_model->update_campanha( $id, $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista)) {
+        if ($this->admin_model->update_campanha( $id, $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista, $classificacao)) {
 
             $response = array('status' => 'true', 'message' => 'Atualizado com sucesso.'  ) ;
 

@@ -252,6 +252,17 @@
                             </div>
                         </div>
                      
+                        <div class="row mb-3">
+                          <label for="html5-date-input" class="col-md-2 col-form-label">CLASSIFICAÇÃO</label>
+                          <div class="col-sm-10">
+                                <select  required name="classificacao" class="form-select"  >
+                                  <option value="">Selecionar</option>
+                                  <option <?php if ($campanha['classificacao'] == "1") { echo "selected";} ?> value="1">Prospecção</option>
+                                  <option <?php if ($campanha['classificacao'] == "2") { echo "selected";} ?> value="2">Ativação</option>
+                                  <option <?php if ($campanha['classificacao'] == "3") { echo "selected";} ?> value="3">Recuperação</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="row mb-3">
                           <label for="html5-date-input" class="col-md-2 col-form-label">PROVEDOR</label>
