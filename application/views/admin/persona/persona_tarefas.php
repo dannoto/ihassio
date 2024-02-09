@@ -170,7 +170,7 @@
                 <form method="GET" >
                     <div class="row">
                           <div class="col-md-4">
-                            <p>Status</p>
+                            <p class="mt-1" >Status</p>
                             <select  name="tarefa_status" class="form-select"  >
                               <option  value="">Selecionar</option>
                               <option <?php if ($this->input->get('tarefa_status') == '1' ) {echo "selected";}?> value="1">ATIVO</option>
@@ -181,7 +181,7 @@
                             </select>
                           </div>
                           <div class="col-md-4">
-                            <p>Tag</p>
+                            <p class="mt-1" >Tag</p>
                             <select  name="tarefa_tag" class="form-select"  >
                               <option value="">Selecionar</option>
                                 <?php foreach ($this->admin_model->get_itens() as $c) { ?>            
