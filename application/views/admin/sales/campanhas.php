@@ -170,21 +170,37 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>PRODUTO</th>
-                        <th>PÁGINA DE VENDAS	</th>
-
+                        <th>Nome do produto</th>
+                        <th>preço</th>
+                        <th>página de vendas</th>
+                        <th>DATA DE CRIAÇaO</th>
                         <th></th>
 
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
                         <?php foreach ($this->admin_model->get_produtos() as $c) { ?>
-                      <tr>
-                        <td style="text-transform: uppercase;"><small><?= $c->nome ?></small></td>
+                          <tr>
+                          <td style="text-transform: uppercase;"><small><?= $c->nome ?></small></td>
+                        <td style="text-transform: uppercase;"> <small>R$ <?= $c->preco ?></small></td>
                         <td style="text-transform: uppercase;"> <small> <a target="_blank" href=" <?= $c->pagina_de_vendas ?>"><small>VISITAR O LINK</small></a></small></td>
-                        <td><a href="<?=base_url()?>sales/campanhas_produtos/<?=$c->id?>"><button class="btn btn-primary"><small>VER CAMPANHAS</small></button></a></td>
-                       
-                      </tr>
+                        <td style="text-transform: uppercase;"> <small><?php
+                        
+                        
+                        $datetime = '2023-12-14 15:47:54';
+$timestamp = strtotime($c->data );
+$formatted_date = date('d/m/y', $timestamp);
+
+echo $formatted_date; // Saída: 14-12-23
+
+
+
+
+
+?></small></td>
+                            <td><a href="<?=base_url()?>sales/campanhas_produtos/<?=$c->id?>"><button class="btn btn-primary"><small>VER CAMPANHAS</small></button></a></td>
+                          
+                          </tr>
                 
                       <?php } ?>
                     </tbody>
