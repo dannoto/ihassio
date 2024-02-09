@@ -185,8 +185,9 @@
                                     
                       <div class="d-flex  align-items-center justify-content-between">
                         <div>
-                          <h5>LEADS</h5>
-                          <p><?= $t['tarefa_nome'] ?></p>
+                        <H4>LEADS - Filtro</H4>
+                            <p><?= $t['tarefa_nome'] ?></p>
+
                         </div>
 
 
@@ -204,7 +205,7 @@
        
                     </div>
                     <div class="card p-2 mb-3 pl-3 pt-3 pb-3" style="padding-left: 15px !important;">
-                            <H4>Filtro</H4>
+                          
                             
                             <form method="GET" >
                                 <div class="row">
