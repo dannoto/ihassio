@@ -203,14 +203,14 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>NOME</th>
-                        <th>TAG</th>
-                        <th>LEADS </th>
-                        <th>QTD</th>
-                        <th>FONTE</th>
+                        <th class="p-3" >NOME</th>
+                        <th class="p-3" >TAG</th>
+                        <th class="p-3" >LEADS </th>
+                        <th class="p-3" >QTD</th>
+                        <th class="p-3" >FONTE</th>
 
-                        <th>STATUS</th>
-                        <th></th>
+                        <th class="p-3" >STATUS</th>
+                        <th class="p-3" ></th>
 
 
                       </tr>
