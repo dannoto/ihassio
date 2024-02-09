@@ -211,16 +211,24 @@
                                         <p class="mt-1" >Apto</p>
                                         <select  name="inapto" class="form-select" >
                                           <option  value="">Selecionar</option>
-                                          <option <?php if ($this->input->get('inapto') == '0') { echo "selected"; } ?> value="0">APTO</option>
-                                          <option <?php if ($this->input->get('inapto') == '1') { echo "selected"; } ?> value="1">INAPTO</option>
+                                          <option <?php if ($this->input->get('inapto') == '0') {
+                                                    echo "selected";
+                                                  } ?> value="0">APTO</option>
+                                          <option <?php if ($this->input->get('inapto') == '1') {
+                                                    echo "selected";
+                                                  } ?> value="1">INAPTO</option>
                                         </select>
                                       </div>
                                       <div class="col-md-4">
                                         <p class="mt-1" >Convertido</p>
                                         <select  name="convertido" class="form-select" >
                                           <option  value="">Selecionar</option>
-                                          <option <?php if ($this->input->get('convertido') == '1') { echo "selected"; } ?> value="1">CONVERTIDO</option>
-                                          <option <?php if ($this->input->get('convertido') == '0') { echo "selected"; } ?> value="0">NÃO-CONVERTIDO</option>
+                                          <option <?php if ($this->input->get('convertido') == '1') {
+                                                    echo "selected";
+                                                  } ?> value="1">CONVERTIDO</option>
+                                          <option <?php if ($this->input->get('convertido') == '0') {
+                                                    echo "selected";
+                                                  } ?> value="0">NÃO-CONVERTIDO</option>
                                         </select>
                                       </div>
                                       <div class="col-md-4">
@@ -261,7 +269,7 @@
                               <tr class="mt-5 mb-5" style="margin-bottom:20px">
                               <td><?= $l->id; ?></td>
 
-                                  <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?=substr( $l->full_name 0,20)?></a></td>
+                                  <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= substr($l->full_name, 0, 20) ?></a></td>
 
                                   <td><?php if (strlen($l->links) > 0) {
                                         echo "SIM";
