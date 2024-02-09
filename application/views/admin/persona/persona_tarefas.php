@@ -164,7 +164,7 @@
                   <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
               </a>
               <br>
-              <div class="card p-2 mb-5 pb-3">
+              <div class="card p-2 mb-3 pb-5">
                 <H4>Filtro</H4>
                 
                 <form method="GET" >
