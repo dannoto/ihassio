@@ -196,139 +196,88 @@
                       <button id="btn-concluir" class="btn ml-3 btn-success text-uppercase mb-3"><small>Concluir</small></button>
                     </div>
                  
-                        <div class="card p-2 mb-3 pl-3 pt-3 pb-3" style="padding-left: 15px !important;">
-                            <H4>Filtro</H4>
-                            
-                            <form method="GET" >
-                                <div class="row">
-                                      <div class="col-md-4">
-                                        <p class="mt-1" >Status</p>
-                                        <select  name="tarefa_status" class="form-select"  >
-                                          <option  value="">Selecionar</option>
-                                          <option <?php if ($this->input->get('tarefa_status') == '1') {
-                                                    echo "selected";
-                                                  } ?> value="1">ATIVO</option>
-                                          <option <?php if ($this->input->get('tarefa_status') == '2') {
-                                                    echo "selected";
-                                                  } ?> value="2">PROCESSANDO</option>
-                                          <option <?php if ($this->input->get('tarefa_status') == '3') {
-                                                    echo "selected";
-                                                  } ?> value="3">FINALIZADO</option>
-                                          <option <?php if ($this->input->get('tarefa_status') == '4') {
-                                                    echo "selected";
-                                                  } ?> value="4">INATIVO</option>
-                                          <option <?php if ($this->input->get('tarefa_status') == '5') {
-                                                    echo "selected";
-                                                  } ?> value="5">CONCLUÍDO</option>
-                                        </select>
-                                      </div>
-                                      <div class="col-md-4">
-                                        <p class="mt-1" >Tag</p>
-                                        <select  name="tarefa_tag" class="form-select"  >
-                                          <option value="">Selecionar</option>
-                                            <?php foreach ($this->admin_model->get_itens() as $c) { ?>            
-                                              <option <?php if ($this->input->get('tarefa_tag') == $c->id) {
-                                                        echo "selected";
-                                                      } ?> value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
-                                            <?php } ?>
-                                        </select>
-                                      </div>
-                                      <div class="col-md-4">
-                                        <p></p>
-                                        <button class="btn btn-primary" style="margin-top: 25px;" type="submit">Buscar</button>
-                                      </div>
-                                </div>
-                            </form>
-                      </div>
                   
-
-                    </div>
-     
-       
-                    </div>
                     <div class="card-body">
+                      <table  style="width:100%">
+                          <thead>
+                              <tr>
+                              <th><small></small></th>
+
+                                  <th><small>NOME</small></th>
+                                  <th><small>LINKS</small></th>
+                                  <th><small>MENÇOES</small></th>
+
+                                  <th><small>EMAIL</small></th>
+                                  <th><small>TELEFONE</small></th>
+                                  <th><small>INFO</small></th>
+                                  <th><small></small></th>
+
+                                  <th><small></small></th>
+                                  <th><small></small></th>
 
 
+                              </tr>
+                          </thead>
+                          <tbody>
 
-                    <table  style="width:100%">
-                        <thead>
-                            <tr>
-                            <th><small></small></th>
+                          <?php foreach ($this->admin_model->getInstagramLeadsByTask($t['id']) as $l) { ?>
 
-                                <th><small>NOME</small></th>
-                                <th><small>LINKS</small></th>
-                                <th><small>MENÇOES</small></th>
+                          
+                              
+                              <tr class="mt-5 mb-5" style="margin-bottom:20px">
+                              <td><?= $l->id; ?></td>
 
-                                <th><small>EMAIL</small></th>
-                                <th><small>TELEFONE</small></th>
-                                <th><small>INFO</small></th>
-                                <th><small></small></th>
+                                  <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
 
-                                <th><small></small></th>
-                                <th><small></small></th>
+                                  <td><?php if (strlen($l->links) > 0) {
+                                        echo "SIM";
+                                      } else {
+                                        echo "NÃO";
+                                      } ?></td>
 
+                                  <td><?php if (strlen($l->mencoes) > 0) {
+                                        echo "SIM";
+                                      } else {
+                                        echo "NÃO";
+                                      } ?></td>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        <?php foreach ($this->admin_model->getInstagramLeadsByTask($t['id']) as $l) { ?>
-
-                        
                             
-                            <tr class="mt-5 mb-5" style="margin-bottom:20px">
-                            <td><?= $l->id; ?></td>
 
-                                <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?= $l->full_name; ?></a></td>
-
-                                <td><?php if (strlen($l->links) > 0) {
-                                      echo "SIM";
-                                    } else {
-                                      echo "NÃO";
-                                    } ?></td>
-
-                                <td><?php if (strlen($l->mencoes) > 0) {
-                                      echo "SIM";
-                                    } else {
-                                      echo "NÃO";
-                                    } ?></td>
-
-                           
-
-                                <td><?= $l->email; ?></td>
-                                <td><?= $l->telefone; ?></td>
-                                <td class="mb-5" > <button onclick="getInstaLeadDemanda(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
-                                  <?php if ($l->convertido == 0) { ?>
-                                    <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
-                                  <?php } else { ?>
-                                    <td></td>
-                                  <?php }  ?>
-
-                                  <?php if ($l->convertido == 0) { ?>
-                                      <td> <button onclick="getInstaLead(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')" data-bs-toggle="modal" data-bs-target="#modalEditar"  class="btn btn-warning"><small>EDITAR</small></button>  </td>
-                                  <?php } else { ?>
-                                      <td></td>
-                                  <?php }  ?>
-
-
-                                <td> <?php if ($l->convertido == 0) { ?>
-                                           <button onclick="convertInstaLeadToPerson(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>' )"  class="btn btn-success"><small>CONVERTER</small></button>
+                                  <td><?= $l->email; ?></td>
+                                  <td><?= $l->telefone; ?></td>
+                                  <td class="mb-5" > <button onclick="getInstaLeadDemanda(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
+                                    <?php if ($l->convertido == 0) { ?>
+                                      <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
                                     <?php } else { ?>
-                                           <span  class=" text-black  badge bg-label-success" ><small>CONVERTIDO</small></span>
-                                    <?php } ?> </td>
+                                      <td></td>
+                                    <?php }  ?>
 
-                            </tr>
-                           
+                                    <?php if ($l->convertido == 0) { ?>
+                                        <td> <button onclick="getInstaLead(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')" data-bs-toggle="modal" data-bs-target="#modalEditar"  class="btn btn-warning"><small>EDITAR</small></button>  </td>
+                                    <?php } else { ?>
+                                        <td></td>
+                                    <?php }  ?>
 
-                        <?php } ?>
 
-                           
+                                  <td> <?php if ($l->convertido == 0) { ?>
+                                            <button onclick="convertInstaLeadToPerson(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>' )"  class="btn btn-success"><small>CONVERTER</small></button>
+                                      <?php } else { ?>
+                                            <span  class=" text-black  badge bg-label-success" ><small>CONVERTIDO</small></span>
+                                      <?php } ?> </td>
+
+                              </tr>
+                            
+
+                          <?php } ?>
+
+                            
+                          
+                            
+                          </tbody>
                         
-                           
-                        </tbody>
-                      
-                    </table>
+                      </table>
                     </div>
+
                   </div>
                 </div>
                 <!-- Basic with Icons -->
