@@ -213,8 +213,8 @@
                                         <p class="mt-1" >Apto</p>
                                         <select  name="inapto" class="form-select" >
                                           <option  value="">Selecionar</option>
-                                          <option <?php if ($this->input->get('inativo') == '1') { echo "selected"; } ?> value="sim">APTO</option>
-                                          <option <?php if ($this->input->get('inativo') == '1') { echo "selected"; } ?> value="">INAPTO</option>
+                                          <option <?php if ($this->input->get('inativo') == '1') { echo "selected"; } ?> value="0">APTO</option>
+                                          <option <?php if ($this->input->get('inativo') == '1') { echo "selected"; } ?> value="1">INAPTO</option>
                                         </select>
                                       </div>
                                       <div class="col-md-4">
@@ -222,7 +222,7 @@
                                         <select  name="convertido" class="form-select" >
                                           <option  value="">Selecionar</option>
                                           <option <?php if ($this->input->get('tarefa_status') == '1') { echo "selected"; } ?> value="1">CONVERTIDO</option>
-                                          <option <?php if ($this->input->get('tarefa_status') == '1') { echo "selected"; } ?> value="1">NÃO-CONVERTIDO</option>
+                                          <option <?php if ($this->input->get('tarefa_status') == '1') { echo "selected"; } ?> value="0">NÃO-CONVERTIDO</option>
                                         </select>
                                       </div>
                                       <div class="col-md-4">
