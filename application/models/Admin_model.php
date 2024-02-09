@@ -1429,6 +1429,8 @@ class Admin_model extends CI_Model
         if (strlen($inapto) > 0) {
 
             $this->db->where('inapto', $inapto);
+        } else {
+            $this->db->where('inapto', 0);
         }
 
         if (strlen($convertido) > 0) {

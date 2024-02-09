@@ -292,7 +292,7 @@
                                     <?php if ($l->inapto == 0) { ?>
                                       <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
                                     <?php } else if ($l->inapto == 1) { ?>
-                                      <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-danger" ><small>APTO</small></button> </td>
+                                      <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-success" ><small>APTO</small></button> </td>
 
                                     <?php }  ?>
                                   <?php }  ?>
