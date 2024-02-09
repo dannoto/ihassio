@@ -283,7 +283,8 @@
                                     <?php if ($l->convertido == 0) { ?>
                                       <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
                                     <?php } else { ?>
-                                      <td></td>
+                                      <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-gray" ><small>APTO</small></button> </td>
+
                                     <?php }  ?>
 
                                     <?php if ($l->convertido == 0) { ?>
