@@ -1349,6 +1349,8 @@ class Admin_model extends CI_Model
 
         if (strlen($status) > 0 ) {
             $this->db->where('tarefa_status', $status);
+        } else {
+            $this->db->where('tarefa_status !=', 5);
         }
 
         $this->db->where('is_deleted', 0);
