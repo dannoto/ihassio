@@ -243,7 +243,7 @@
                       <table  style="width:100%">
                           <thead>
                               <tr>
-                              <th><small></small></th>
+                            
 
                                   <th><small>NOME</small></th>
                                   <th><small>LINKS</small></th>
@@ -267,9 +267,9 @@
                           
                               
                               <tr class="mt-5 mb-5" style="margin-bottom:20px">
-                              <td><?= $l->id; ?></td>
+                             
 
-                                  <td><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?php if (strlen($l->full_name) > 10) { echo substr($l->full_name, 0, 10)."..."; } else { echo $l->full_name; } ?></a></td>
+                                  <td title="<?= $l->id; ?>"><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?php if (strlen($l->full_name) > 15) { echo substr($l->full_name, 0, 15)."..."; } else { echo $l->full_name; } ?></a></td>
 
                                   <td><?php if (strlen($l->links) > 0) {
                                         echo "SIM";
