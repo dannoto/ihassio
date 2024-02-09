@@ -210,7 +210,7 @@
                             <form method="GET" >
                                 <div class="row">
                                       <div class="col-md-4">
-                                        <p class="mt-1" >Status</p>
+                                        <p class="mt-1" >Apto</p>
                                         <select  name="inapto" class="form-select" >
                                           <option  value="">Selecionar</option>
                                           <option <?php if ($this->input->get('inativo') == '1') { echo "selected"; } ?> value="sim">APTO</option>
@@ -218,7 +218,7 @@
                                         </select>
                                       </div>
                                       <div class="col-md-4">
-                                        <p class="mt-1" >Tag</p>
+                                        <p class="mt-1" >Convertido</p>
                                         <select  name="convertido" class="form-select" >
                                           <option  value="">Selecionar</option>
                                           <option <?php if ($this->input->get('tarefa_status') == '1') { echo "selected"; } ?> value="1">CONVERTIDO</option>
