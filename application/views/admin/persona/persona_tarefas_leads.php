@@ -190,9 +190,11 @@
                 </div>
 
 
-                <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
+               <div>
+               <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
 
-                <button id="btn-concluir" class="btn btn-success text-uppercase mb-3"><small>Concluir</small></button>
+<button id="btn-concluir" class="btn ml-3 btn-success text-uppercase mb-3"><small>Concluir</small></button>
+               </div>
 
               </div>
      
