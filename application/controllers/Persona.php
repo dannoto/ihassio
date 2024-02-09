@@ -848,6 +848,27 @@ class Persona extends CI_Controller
         print_r(json_encode($response));
     }
 
+    
+    public function act_convert_apto()
+    {
+
+        $lead_id = htmlspecialchars($this->input->post('lead_id'));
+
+        $data = array(
+            'inapto' => 0
+        );
+
+        if ($this->admin_model->updateInstaLead($lead_id, $data)) {
+
+            $response = array('status' => 'true', 'message' => 'Convertido para apto');
+        } else {
+
+            $response = array('status' => 'false', 'message' => 'Falha converter para apto.');
+        }
+
+        print_r(json_encode($response));
+    }
+
     public function act_convert_inapto()
     {
 

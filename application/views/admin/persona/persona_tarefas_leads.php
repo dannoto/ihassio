@@ -292,7 +292,7 @@
                                     <?php if ($l->inapto == 0) { ?>
                                       <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
                                     <?php } else if ($l->inapto == 1) { ?>
-                                      <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-success" ><small>APTO</small></button> </td>
+                                      <td > <button onclick="convertApto(<?= $l->id ?>)"   class="btn btn-success" ><small>APTO</small></button> </td>
 
                                     <?php }  ?>
                                   <?php }  ?>
@@ -573,6 +573,37 @@ $('#btn-concluir').on('click', function() {
 
 
   }
+
+  function convertApto(lead_id) {
+
+
+    
+    $.ajax({
+        method: 'POST',
+        url: '<?= base_url() ?>persona/act_convert_apto',
+        data: {
+            lead_id:lead_id
+        },
+        success: function(data) {
+        
+            var resp = JSON.parse(data)
+
+                if (resp.status == "true") {
+
+                    // alert(resp.message)
+                    location.reload()
+                } else {
+                    alert(resp.message)
+                }
+          
+        },
+        error: function(data) {
+            alert('Ocorreu um erro temporário.');
+        },
+    });
+
+
+}
 
  function convertInstaLeadToPerson(tarefa_id, tag_id, username) {
     
