@@ -188,7 +188,12 @@
                   <h5>LEADS</h5>
                   <p><?= $t['tarefa_nome'] ?></p>
                 </div>
+
+
                 <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
+
+                <button id="btn-concluir" class="btn btn-success text-uppercase mb-3"><small>Concluir</small></button>
+
               </div>
      
        
@@ -440,6 +445,9 @@
         saveAs(blob, "leads-<?= str_replace(" ", "-", $t['nome']) ?>.xlsx");
     });
 
+
+   
+
     // s2ab function (converts string to ArrayBuffer)
     function s2ab(s) {
         var buf = new ArrayBuffer(s.length);
@@ -453,6 +461,40 @@
 </script>
 
 <script>
+
+$('#btn-concluir').on('click', function() {
+
+
+
+
+  $.ajax({
+        method: 'POST',
+        url: '<?= base_url() ?>persona/act_update_tarefa_status',
+        data: {
+            tarefa_id:"<?= $t['id'] ?>",
+            tarefa_status: "5"
+        },
+        success: function(data) {
+         
+            var resp = JSON.parse(data)
+
+                if (resp.status == "true") {
+
+                    // alert(resp.message)
+                    // location.reload()
+                    window.location.href="<?= base_url() ?>persona/tarefas"
+                } else {
+                    alert(resp.message)
+                }
+          
+        },
+        error: function(data) {
+            alert('Ocorreu um erro temporário.');
+        },
+    });
+
+
+    });
 
   function convertInapto(lead_id) {
 

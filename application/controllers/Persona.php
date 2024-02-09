@@ -1124,7 +1124,20 @@ class Persona extends CI_Controller
 
 
 
+    public function act_update_tarefa_status()
+    {
+        $tarefa_id = htmlspecialchars($this->input->post('tarefa_id'));
+        $data['tarefa_status'] = htmlspecialchars($this->input->post('tarefa_status'));
 
+
+        if ($this->admin_model->updateTarefa($tarefa_id, $data)) {
+            $response = array('status' => 'true', 'message' => 'Já existe essa classificaçao.');
+        } else {
+            $response = array('status' => 'false', 'message' => 'Adicionado com sucesso.');
+        }
+
+        print_r(json_encode($response));
+    }
 
     public function act_update_tarefa()
     {

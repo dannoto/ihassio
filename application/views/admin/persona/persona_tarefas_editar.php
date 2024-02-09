@@ -209,6 +209,7 @@
                                 <option  <?php if ($t['tarefa_status'] == 2) { echo "selected"; }?> value="2">PROCESSANDO</option>
                                 <option  <?php if ($t['tarefa_status'] == 3) { echo "selected"; }?> value="3">FINALIZADO</option>
                                 <option  <?php if ($t['tarefa_status'] == 4) { echo "selected"; }?> value="4">INATIVO</option>
+                                <option  <?php if ($t['tarefa_status'] == 5) { echo "selected"; }?> value="5">CONCLUÍDO</option>
 
                                 </select>
                             </div>

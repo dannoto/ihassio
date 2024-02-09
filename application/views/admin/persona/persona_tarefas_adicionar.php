@@ -210,6 +210,7 @@
                                 <option value="2">PROCESSANDO</option>
                                 <option value="3">FINALIZADO</option>
                                 <option value="4">INATIVO</option>
+                                <option value="5">CONCLUÍDO</option>
 
                                 </select>
                             </div>
