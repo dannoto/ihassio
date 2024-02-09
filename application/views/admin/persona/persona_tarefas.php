@@ -163,38 +163,38 @@
               <a href="<?= base_url() ?>persona/tarefas_adicionar">
                   <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
               </a>
-              <div class="card">
-
-                <form method="GET" >
-                  <H4>Filtro</H4>
-
-                  <div class="row">
-                    <div class="col-md-4">
-                      <p>Status</p>
-                      <select required name="tarefa_status" class="form-select"  >
-                        <option value="">Selecionar</option>
-                        <option value="1">ATIVO</option>
-                        <option value="2">PROCESSANDO</option>
-                        <option value="3">FINALIZADO</option>
-                        <option value="4">INATIVO</option>
-                        <option value="5">CONCLUÍDO</option>
-                      </select>
-                    </div>
-                    <div class="col-md-4">
-                      <p>Tag</p>
-                      <select required name="tarefa_tag" class="form-select"  >
-                        <option value="">Selecionar</option>
-                          <?php foreach ($this->admin_model->get_itens() as $c) { ?>            
-                            <option value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
-                          <?php } ?>
-                      </select>
-                    </div>
-                    <div class="col-md-4">
-                      <p></p>
-                      <button class="btn btn-primary" type="submit">Buscar</button>
-                    </div>
+              <br>
+              <div class="card p-5">
+                <H4>Filtro</H4>
+                
+                <div class="row">
+                    <form method="GET" >
+                      <div class="col-md-4">
+                        <p>Status</p>
+                        <select required name="tarefa_status" class="form-select"  >
+                          <option value="">Selecionar</option>
+                          <option value="1">ATIVO</option>
+                          <option value="2">PROCESSANDO</option>
+                          <option value="3">FINALIZADO</option>
+                          <option value="4">INATIVO</option>
+                          <option value="5">CONCLUÍDO</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <p>Tag</p>
+                        <select required name="tarefa_tag" class="form-select"  >
+                          <option value="">Selecionar</option>
+                            <?php foreach ($this->admin_model->get_itens() as $c) { ?>            
+                              <option value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
+                            <?php } ?>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <p></p>
+                        <button class="btn btn-primary" type="submit">Buscar</button>
+                      </div>
+                    </form>
                   </div>
-                </form>
               </div>
 
               <div class="card">
