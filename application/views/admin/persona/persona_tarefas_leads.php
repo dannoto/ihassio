@@ -221,8 +221,8 @@
                                         <p class="mt-1" >Convertido</p>
                                         <select  name="convertido" class="form-select" >
                                           <option  value="">Selecionar</option>
-                                          <option <?php if ($this->input->get('tarefa_status') == '1') { echo "selected"; } ?> value="1">CONVERTIDO</option>
-                                          <option <?php if ($this->input->get('tarefa_status') == '1') { echo "selected"; } ?> value="0">NÃO-CONVERTIDO</option>
+                                          <option <?php if ($this->input->get('convertido') == '1') { echo "selected"; } ?> value="1">CONVERTIDO</option>
+                                          <option <?php if ($this->input->get('convertido') == '1') { echo "selected"; } ?> value="0">NÃO-CONVERTIDO</option>
                                         </select>
                                       </div>
                                       <div class="col-md-4">
