@@ -161,7 +161,7 @@
 
               <!-- Basic Bootstrap Table -->
               <a href="<?= base_url() ?>persona/tarefas_adicionar">
-                  <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
+                  <button class="btn btn-primary mt-1 mb-3"  type="button" >+ ADICIONAR</button>
               </a>
               <br>
               <div class="card p-2 mb-3 pl-3 pt-3 pb-3" style="padding-left: 15px !important;">
