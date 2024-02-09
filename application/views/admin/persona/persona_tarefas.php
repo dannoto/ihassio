@@ -172,12 +172,12 @@
                           <div class="col-md-4">
                             <p>Status</p>
                             <select  name="tarefa_status" class="form-select"  >
-                              <option value="">Selecionar</option>
-                              <option value="1">ATIVO</option>
-                              <option value="2">PROCESSANDO</option>
-                              <option value="3">FINALIZADO</option>
-                              <option value="4">INATIVO</option>
-                              <option value="5">CONCLUÍDO</option>
+                              <option  value="">Selecionar</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '1' ) {echo "selected";}?> value="1">ATIVO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '2' ) {echo "selected";}?> value="2">PROCESSANDO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '3' ) {echo "selected";}?> value="3">FINALIZADO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '4' ) {echo "selected";}?> value="4">INATIVO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '5' ) {echo "selected";}?> value="5">CONCLUÍDO</option>
                             </select>
                           </div>
                           <div class="col-md-4">
