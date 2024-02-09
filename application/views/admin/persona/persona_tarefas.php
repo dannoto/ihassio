@@ -228,12 +228,12 @@
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <?php foreach ($tarefas as $c) {
-                        ?>
 
 
-                    
-                        <tr>
+                    <?php if (count($tarefas) > 0 )  { ?>
+                        <?php foreach ($tarefas as $c) { ?>
+
+                             <tr>
                               <td style="text-transform: uppercase;" ><small>[#<?= $c->id ?>] <?= $c->tarefa_nome ?></small></td>
                               <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
                               <td style="text-transform: uppercase;" ><small><a href="<?= base_url() ?>persona/tarefas_leads/<?= $c->id ?>">VER</a></small></td>
@@ -276,8 +276,14 @@
                               </td>
 
                             </tr>
-                            <?php } ?>
+                        <?php } ?>
+                    <?php } else { ?>
 
+                      <div class="mt-5 mb-5">
+                        <p class="text-center">Nenhum resultado encontrado.</p>
+                      </div>
+
+                    <?php } ?>
                      
                     </tbody>
                   </table>

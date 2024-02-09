@@ -205,15 +205,13 @@
        
                     </div>
                     <div class="card p-2 mb-3 pl-3 pt-1 pb-3" style="padding-left: 15px !important;">
-                          
-                            
                             <form method="GET" >
                                 <div class="row">
                                       <div class="col-md-4">
                                         <p class="mt-1" >Apto</p>
                                         <select  name="inapto" class="form-select" >
                                           <option  value="">Selecionar</option>
-                                          <option <?php if ($this->input->get('inativo') == '1') { echo "selected"; } ?> value="0">APTO</option>
+                                          <option <?php if ($this->input->get('inativo') == '0') { echo "selected"; } ?> value="0">APTO</option>
                                           <option <?php if ($this->input->get('inativo') == '1') { echo "selected"; } ?> value="1">INAPTO</option>
                                         </select>
                                       </div>
@@ -222,7 +220,7 @@
                                         <select  name="convertido" class="form-select" >
                                           <option  value="">Selecionar</option>
                                           <option <?php if ($this->input->get('convertido') == '1') { echo "selected"; } ?> value="1">CONVERTIDO</option>
-                                          <option <?php if ($this->input->get('convertido') == '1') { echo "selected"; } ?> value="0">NÃO-CONVERTIDO</option>
+                                          <option <?php if ($this->input->get('convertido') == '0') { echo "selected"; } ?> value="0">NÃO-CONVERTIDO</option>
                                         </select>
                                       </div>
                                       <div class="col-md-4">
@@ -233,9 +231,6 @@
                             </form>
                       </div>
                     <div class="card-body">
-
-
-
                       <table  style="width:100%">
                           <thead>
                               <tr>
