@@ -196,8 +196,17 @@
                       <button id="btn-concluir" class="btn ml-3 btn-success text-uppercase mb-3"><small>Concluir</small></button>
                     </div>
                  
+                     
                   
+
+                    </div>
+     
+       
+                    </div>
                     <div class="card-body">
+
+
+
                       <table  style="width:100%">
                           <thead>
                               <tr>
@@ -277,7 +286,6 @@
                         
                       </table>
                     </div>
-
                   </div>
                 </div>
                 <!-- Basic with Icons -->
