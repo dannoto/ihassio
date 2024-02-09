@@ -64,8 +64,13 @@ class Persona extends CI_Controller
                 $inapto = htmlspecialchars($this->input->get('inapto'));
                 $convertido = htmlspecialchars($this->input->get('convertido'));
 
-                echo $inapto;
-                echo $convertido;
+                // echo $inapto;
+                // echo $convertido;
+
+                $data = array(
+                    't' => $tarefa,
+                    'leads' =>  $this->admin_model->getInstagramLeadsByTaskSearch($task_id, $inapto, $convertido)
+                );
 
             } else {
 

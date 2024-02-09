@@ -11,36 +11,38 @@ class Admin_model extends CI_Model
         // $this->load->database();
     }
 
-    function genLink() {
+    function genLink()
+    {
         $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $max = strlen($characters) - 1;
         $hash = '';
-    
+
         // Generate a 7-character hash
         for ($i = 0; $i < 7; $i++) {
             $randIndex = mt_rand(0, $max);
             $hash .= $characters[$randIndex];
         }
-    
+
         return strtoupper($hash);
     }
 
-    function convertDate($dateString) {
-      
+    function convertDate($dateString)
+    {
 
-        if (strlen($dateString) > 0)  {
+
+        if (strlen($dateString) > 0) {
             // Create a DateTime object from the given date string
-        $date = DateTime::createFromFormat('d-m-Y H:i:s', $dateString);
+            $date = DateTime::createFromFormat('d-m-Y H:i:s', $dateString);
 
-        // Format the date as dd-mm-YYYY
-        $formattedDate = $date->format('d-m-Y');
+            // Format the date as dd-mm-YYYY
+            $formattedDate = $date->format('d-m-Y');
 
-        return $formattedDate; // Output: 19-12-2023
+            return $formattedDate; // Output: 19-12-2023
         } else {
             return "";
         }
     }
-    
+
 
 
     //  Persona Categoria
@@ -116,14 +118,15 @@ class Admin_model extends CI_Model
     }
 
 
-    function countTageddImages($person_id) {
+    function countTageddImages($person_id)
+    {
         $this->db->where('is_deleted', 0);
         $this->db->where('person_id', $person_id);
         return $this->db->get('person_classificacao')->result();
-
     }
 
-    function getLastTageddImage($person_id) {
+    function getLastTageddImage($person_id)
+    {
         $this->db->where('is_deleted', 0);
         $this->db->where('person_id', $person_id);
         $this->db->order_by('id', 'desc');
@@ -132,7 +135,8 @@ class Admin_model extends CI_Model
         return $this->db->get('person_classificacao')->result();
     }
 
-    function getLastTageddImagex($person_id) {
+    function getLastTageddImagex($person_id)
+    {
         $this->db->where('is_deleted', 0);
         $this->db->where('person_id', $person_id);
         $this->db->order_by('id', 'desc');
@@ -142,7 +146,8 @@ class Admin_model extends CI_Model
     }
 
 
-    function getFirstTageddImage($person_id) {
+    function getFirstTageddImage($person_id)
+    {
         $this->db->where('is_deleted', 0);
         $this->db->where('person_id', $person_id);
         $this->db->order_by('id', 'asc');
@@ -151,7 +156,8 @@ class Admin_model extends CI_Model
         return $this->db->get('person_classificacao_imagem')->result();
     }
 
-    function getFirstTageddImagex($person_id) {
+    function getFirstTageddImagex($person_id)
+    {
         $this->db->where('is_deleted', 0);
         $this->db->where('person_id', $person_id);
         $this->db->order_by('id', 'desc');
@@ -161,7 +167,8 @@ class Admin_model extends CI_Model
     }
 
 
-    public function get_img($image_id) {
+    public function get_img($image_id)
+    {
         $this->db->where('id', $image_id);
         return $this->db->get('person_classificacao_imagem')->row_array();
     }
@@ -179,7 +186,8 @@ class Admin_model extends CI_Model
 
 
 
-    function check_classificacao($data) {
+    function check_classificacao($data)
+    {
         $this->db->where('tag_id', $data['tag_id']);
         $this->db->where('person_id', $data['person_id']);
         $this->db->where('imagem_id', $data['imagem_id']);
@@ -318,14 +326,14 @@ class Admin_model extends CI_Model
 
     public function get_itens()
     {
-   
+
         $this->db->where('is_deleted', 0);
         $this->db->order_by('nome', 'asc');
 
         return $this->db->get('database_tags_items')->result();
     }
 
-    
+
     public function get_itens_by_cat($categoria_id, $subcategoria_id)
     {
         $this->db->where('categoria_id', $categoria_id);
@@ -335,7 +343,7 @@ class Admin_model extends CI_Model
         return $this->db->get('database_tags_items')->result();
     }
 
-    public function add_item($nome, $slug, $descricao, $categoria_id, $subcategoria_id )
+    public function add_item($nome, $slug, $descricao, $categoria_id, $subcategoria_id)
     {
 
         $data = array(
@@ -344,14 +352,14 @@ class Admin_model extends CI_Model
             'categoria_id' => $categoria_id,
             'subcategoria_id' => $subcategoria_id,
             'descricao' => $descricao,
-          
+
             'is_deleted' => 0
         );
 
         return $this->db->insert('database_tags_items', $data);
     }
 
-    
+
 
     public function update_item($id, $nome, $slug, $descricao, $categoria_id, $subcategoria_id)
     {
@@ -382,7 +390,7 @@ class Admin_model extends CI_Model
     //  Persona Itens
 
 
-     //  Persona Person
+    //  Persona Person
 
     public function get_person($id)
     {
@@ -395,8 +403,7 @@ class Admin_model extends CI_Model
 
         if ($type != null) {
             $this->db->where('tipo', $type);
-
-        } 
+        }
 
         $this->db->where('is_deleted', 0);
         $this->db->order_by('id', 'desc');
@@ -415,15 +422,15 @@ class Admin_model extends CI_Model
     public function add_person($person_data)
     {
 
-     
+
         return $this->db->insert('person', $person_data);
     }
-    
+
 
     public function add_classificacao($data)
     {
 
-     
+
         return $this->db->insert('person_classificacao', $data);
     }
 
@@ -432,7 +439,7 @@ class Admin_model extends CI_Model
     public function add_classificacao_intensidade($data)
     {
 
-     
+
         return $this->db->insert('person_classificacao_intensidade', $data);
     }
 
@@ -450,7 +457,7 @@ class Admin_model extends CI_Model
     {
 
         $this->db->where('id', $person_id);
-    
+
 
         return $this->db->update('person', $person_data);
     }
@@ -471,14 +478,14 @@ class Admin_model extends CI_Model
 
     public function get_estados()
     {
-   
+
 
         return $this->db->get('estado')->result();
     }
 
     public function get_classificacoes()
     {
-   
+
         $this->db->where('is_deleted', 0);
         $this->db->order_by('id', 'desc');
 
@@ -487,7 +494,7 @@ class Admin_model extends CI_Model
 
     public function get_classificacoes_by_cat($cat_id, $person_id)
     {
-   
+
         $this->db->where('is_deleted', 0);
         $this->db->where('categoria_id', $cat_id);
         $this->db->where('person_id', $person_id);
@@ -505,33 +512,36 @@ class Admin_model extends CI_Model
 
     public function get_cidades_by_estado($estado_id)
     {
-   
+
         $this->db->where('uf', $estado_id);
 
         return $this->db->get('cidade')->result();
     }
 
-    public function get_cidade_label($cidade_id) {
+    public function get_cidade_label($cidade_id)
+    {
 
         $this->db->where('id', $cidade_id);
         return $this->db->get('cidade')->row_array()['nome'];
     }
 
-    public function get_estado_label($estado_id) {
+    public function get_estado_label($estado_id)
+    {
 
         $this->db->where('id', $estado_id);
         return $this->db->get('estado')->row_array()['nome'];
-        
     }
 
-    public function get_emails($person_id) {
+    public function get_emails($person_id)
+    {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_deleted', 0);
 
 
         return $this->db->get('person_email')->result();
     }
-    public function get_telefones($person_id) {
+    public function get_telefones($person_id)
+    {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_deleted', 0);
 
@@ -539,21 +549,24 @@ class Admin_model extends CI_Model
         return $this->db->get('person_telefone')->result();
     }
 
-    public function get_telefones_validated($person_id) {
+    public function get_telefones_validated($person_id)
+    {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_validado', 1);
         $this->db->limit(1);
         return $this->db->get('person_telefone')->row_array();
     }
 
-    public function get_emails_validated($person_id) {
+    public function get_emails_validated($person_id)
+    {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_validado', 1);
         $this->db->limit(1);
         return $this->db->get('person_email')->row_array();
     }
 
-    public function get_sociais($person_id) {
+    public function get_sociais($person_id)
+    {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_deleted', 0);
 
@@ -561,15 +574,16 @@ class Admin_model extends CI_Model
         return $this->db->get('person_socialmedia')->result();
     }
 
-    public function add_emails($data) {
+    public function add_emails($data)
+    {
 
         return $this->db->insert('person_email', $data);
-
     }
 
-    public function delete_email($email_id) {
+    public function delete_email($email_id)
+    {
 
-    
+
         $this->db->where('id', $email_id);
 
         $person_data = array(
@@ -577,59 +591,62 @@ class Admin_model extends CI_Model
         );
 
         return $this->db->update('person_email', $person_data);
-
     }
 
-    public function add_telefone($data) {
-    
+    public function add_telefone($data)
+    {
+
         return $this->db->insert('person_telefone', $data);
-
     }
 
-    
 
-    public function add_social($data) {
-    
+
+    public function add_social($data)
+    {
+
         return $this->db->insert('person_socialmedia', $data);
-
     }
 
-    public function exist_classificacao($person_id,  $categoria_id, $subcategoria_id ,  $tag_id) {
-        
+    public function exist_classificacao($person_id,  $categoria_id, $subcategoria_id,  $tag_id)
+    {
+
         $this->db->where('person_id', $person_id);
         $this->db->where('categoria_id', $categoria_id);
         $this->db->where('subcategoria_id', $subcategoria_id);
         $this->db->where('tag_id', $tag_id);
         $this->db->where('is_deleted', 0);
 
-  
+
 
         return $this->db->get('person_classificacao')->row_array();
     }
 
 
-    public function get_classificacao_intensidade($person_id,  $categoria_id ) {
-        
+    public function get_classificacao_intensidade($person_id,  $categoria_id)
+    {
+
         $this->db->where('person_id', $person_id);
         $this->db->where('categoria_id', $categoria_id);
- 
+
 
         return $this->db->get('person_classificacao_intensidade')->row_array();
     }
 
 
-    public function exist_classificacao_intensidade($person_id,  $categoria_id ) {
-        
+    public function exist_classificacao_intensidade($person_id,  $categoria_id)
+    {
+
         $this->db->where('person_id', $person_id);
         $this->db->where('categoria_id', $categoria_id);
- 
+
 
         return $this->db->get('person_classificacao_intensidade')->row_array();
     }
 
-    public function delete_classificacao($classificacao_id) {
+    public function delete_classificacao($classificacao_id)
+    {
 
-    
+
         $this->db->where('id', $classificacao_id);
 
         $person_data = array(
@@ -637,12 +654,12 @@ class Admin_model extends CI_Model
         );
 
         return $this->db->update('person_classificacao', $person_data);
-
     }
 
-    public function delete_telefone($telefone_id) {
+    public function delete_telefone($telefone_id)
+    {
 
-    
+
         $this->db->where('id', $telefone_id);
 
         $person_data = array(
@@ -650,12 +667,12 @@ class Admin_model extends CI_Model
         );
 
         return $this->db->update('person_telefone', $person_data);
-
     }
 
-    public function delete_social($social_id) {
+    public function delete_social($social_id)
+    {
 
-    
+
         $this->db->where('id', $social_id);
 
         $person_data = array(
@@ -663,546 +680,543 @@ class Admin_model extends CI_Model
         );
 
         return $this->db->update('person_socialmedia', $person_data);
-
     }
 
 
 
 
-        //  Produtos
+    //  Produtos
 
-        public function get_produto($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('produtos')->row_array();
-        }
-    
-        public function get_produtos()
-        {
-            $this->db->where('is_deleted', 0);
-            $this->db->order_by('id', 'desc');
-            return $this->db->get('produtos')->result();
-        }
+    public function get_produto($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('produtos')->row_array();
+    }
 
-        public function get_produto_plataformas()
-        {
-            $this->db->where('is_deleted', 0);
-            return $this->db->get('produtos_plataformas')->result();
-        }
+    public function get_produtos()
+    {
+        $this->db->where('is_deleted', 0);
+        $this->db->order_by('id', 'desc');
+        return $this->db->get('produtos')->result();
+    }
 
-        public function get_produto_categorias()
-        {
-            $this->db->where('is_deleted', 0);
-            return $this->db->get('produtos_categorias')->result();
-        }
+    public function get_produto_plataformas()
+    {
+        $this->db->where('is_deleted', 0);
+        return $this->db->get('produtos_plataformas')->result();
+    }
 
-        public function get_produto_plataforma($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('produtos_plataformas')->row_array();
-        }
+    public function get_produto_categorias()
+    {
+        $this->db->where('is_deleted', 0);
+        return $this->db->get('produtos_categorias')->result();
+    }
 
-        public function get_produto_categoria($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('produtos_categorias')->row_array();
-        }
-    
-        public function add_produto( $nome, $imagem, $preco, $plataforma, $categoria, $pagina_de_vendas, $descricao)
-        {
-    
-            $data = array(
-                'nome' => $nome,
-                'imagem' => $imagem,
-                'preco' => $preco,
-                'plataforma	' => $plataforma	,
-                'data' => date('Y-m-d H:i:s'),
-                'categoria' => $categoria,
-                'pagina_de_vendas' => $pagina_de_vendas,
-                'descricao' => $descricao,
-                'is_deleted' => 0
-            );
-    
-            return $this->db->insert('produtos', $data);
-        }
-    
-        public function update_produto($id, $nome, $imagem, $preco, $plataforma, $categoria	, $pagina_de_vendas, $descricao)
-        {
-    
-            $this->db->where('id', $id);
-    
-            $data = array(
-                'nome' => $nome,
-                'imagem' => $imagem,
-                'preco' => $preco,
-                'plataforma	' => $plataforma	,
-                'categoria' => $categoria,
-                'pagina_de_vendas' => $pagina_de_vendas,
-                'descricao' => $descricao,
-            );
-    
-            return $this->db->update('produtos', $data);
-        }
-    
-        public function delete_produto($id)
-        {
-            $this->db->where('id', $id);
-    
-            $data = array(
-                'is_deleted' => 1
-            );
-    
-            return $this->db->update('produtos', $data);
-        }
-    
-        //  Produtos
-        public function get_campanhas()
-        {
-            $this->db->where('is_deleted', 0);
-            $this->db->order_by('id', 'desc');
+    public function get_produto_plataforma($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('produtos_plataformas')->row_array();
+    }
 
-            return $this->db->get('campanhas')->result();
-        }
-        public function get_campanha($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('campanhas')->row_array();
-        }
+    public function get_produto_categoria($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('produtos_categorias')->row_array();
+    }
 
+    public function add_produto($nome, $imagem, $preco, $plataforma, $categoria, $pagina_de_vendas, $descricao)
+    {
 
+        $data = array(
+            'nome' => $nome,
+            'imagem' => $imagem,
+            'preco' => $preco,
+            'plataforma	' => $plataforma,
+            'data' => date('Y-m-d H:i:s'),
+            'categoria' => $categoria,
+            'pagina_de_vendas' => $pagina_de_vendas,
+            'descricao' => $descricao,
+            'is_deleted' => 0
+        );
+
+        return $this->db->insert('produtos', $data);
+    }
+
+    public function update_produto($id, $nome, $imagem, $preco, $plataforma, $categoria, $pagina_de_vendas, $descricao)
+    {
+
+        $this->db->where('id', $id);
+
+        $data = array(
+            'nome' => $nome,
+            'imagem' => $imagem,
+            'preco' => $preco,
+            'plataforma	' => $plataforma,
+            'categoria' => $categoria,
+            'pagina_de_vendas' => $pagina_de_vendas,
+            'descricao' => $descricao,
+        );
+
+        return $this->db->update('produtos', $data);
+    }
+
+    public function delete_produto($id)
+    {
+        $this->db->where('id', $id);
+
+        $data = array(
+            'is_deleted' => 1
+        );
+
+        return $this->db->update('produtos', $data);
+    }
+
+    //  Produtos
+    public function get_campanhas()
+    {
+        $this->db->where('is_deleted', 0);
+        $this->db->order_by('id', 'desc');
+
+        return $this->db->get('campanhas')->result();
+    }
+    public function get_campanha($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('campanhas')->row_array();
+    }
 
 
-        public function get_campanha_provedor()
-        {
-            // $this->db->where('is_deleted', 0);
-            return $this->db->get('campanha_provedor')->result();
-        }
-        public function get_provedor($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('campanha_provedor')->row_array();
-        }
-
-        public function get_tipo($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('campanha_tipo')->row_array();
-        }
-
-        public function get_campanha_tipo()
-        {
-            // $this->db->where('is_deleted', 0);
-            return $this->db->get('campanha_tipo')->result();
-        }
 
 
-        public function add_campanha( $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista)
-        {
-    
-            $data = array(
-                'nome' => $nome,
-                'descricao' => $descricao,
-                'produto' => $produto,
-                'tipo' => $tipo,
-                'data' => date('Y-m-d H:i:s'),
-                'provedor' => $provedor,
-                'provedor_campanha_id' => $provedor_campanha_id,
-                'lista' => $lista,
+    public function get_campanha_provedor()
+    {
+        // $this->db->where('is_deleted', 0);
+        return $this->db->get('campanha_provedor')->result();
+    }
+    public function get_provedor($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('campanha_provedor')->row_array();
+    }
 
-                // 'url_email' => $this->genLink() ,
-                // 'url_whatsapp' => $this->genLink() ,
-                // 'url_instagram' => $this->genLink() ,
-                // 'url_twitter' => $this->genLink() ,
-                // 'url_tiktok' => $this->genLink() ,
-                // 'url_facebook' => $this->genLink() ,
+    public function get_tipo($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('campanha_tipo')->row_array();
+    }
+
+    public function get_campanha_tipo()
+    {
+        // $this->db->where('is_deleted', 0);
+        return $this->db->get('campanha_tipo')->result();
+    }
 
 
-                'is_deleted' => 0
-            );
-    
-            return $this->db->insert('campanhas', $data);
-        }
+    public function add_campanha($nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista)
+    {
 
-        public function getLeadsToSynchronize($lista_id, $tag_id, $quantidade_max) {
-            $sql = 'SELECT DISTINCT pc.person_id
+        $data = array(
+            'nome' => $nome,
+            'descricao' => $descricao,
+            'produto' => $produto,
+            'tipo' => $tipo,
+            'data' => date('Y-m-d H:i:s'),
+            'provedor' => $provedor,
+            'provedor_campanha_id' => $provedor_campanha_id,
+            'lista' => $lista,
+
+            // 'url_email' => $this->genLink() ,
+            // 'url_whatsapp' => $this->genLink() ,
+            // 'url_instagram' => $this->genLink() ,
+            // 'url_twitter' => $this->genLink() ,
+            // 'url_tiktok' => $this->genLink() ,
+            // 'url_facebook' => $this->genLink() ,
+
+
+            'is_deleted' => 0
+        );
+
+        return $this->db->insert('campanhas', $data);
+    }
+
+    public function getLeadsToSynchronize($lista_id, $tag_id, $quantidade_max)
+    {
+        $sql = 'SELECT DISTINCT pc.person_id
                     FROM person_classificacao pc
-                    WHERE pc.tag_id = '.$tag_id.'
+                    WHERE pc.tag_id = ' . $tag_id . '
                     AND pc.person_id NOT IN (
                         SELECT li.person_id
                         FROM leads_import li
-                        WHERE li.lista_id = '.$lista_id.'
-                    )  LIMIT '.$quantidade_max.'';
-        
-            $query = $this->db->query($sql);
-        
-            return $query->result();
-        }
-        
- 
-        public function get_leads_by_tags($tag_id) {
-            $this->db->distinct();
-            $this->db->select('person_id'); // Seleciona apenas o person_id para resultados distintos
-            $this->db->where('tag_id', $tag_id);
-            $query = $this->db->get('person_classificacao');
-        
-            // Retorna os resultados únicos como um array de objetos
-            return $query->result();
-        }
-        
-    
-        public function update_campanha( $id, $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista)
-        {
+                        WHERE li.lista_id = ' . $lista_id . '
+                    )  LIMIT ' . $quantidade_max . '';
 
-            $this->db->where('id', $id);
+        $query = $this->db->query($sql);
 
-    
-            $data = array(
-                'nome' => $nome,
-                'descricao' => $descricao,
-                'produto' => $produto,
-                'tipo' => $tipo,
-                'data' => date('Y-m-d H:i:s'),
-                'provedor' => $provedor,
-                'provedor_campanha_id' => $provedor_campanha_id,
-                'lista' => $lista,
-                
-            );
-    
-            return $this->db->update('campanhas', $data);
-        }
+        return $query->result();
+    }
 
-        public function delete_campanha($id)
-        {
-            $this->db->where('id', $id);
-    
-            $data = array(
-                'is_deleted' => 1
-            );
-    
-            return $this->db->update('campanhas', $data);
-        }
-    
 
-        public function get_listas()
-        {
+    public function get_leads_by_tags($tag_id)
+    {
+        $this->db->distinct();
+        $this->db->select('person_id'); // Seleciona apenas o person_id para resultados distintos
+        $this->db->where('tag_id', $tag_id);
+        $query = $this->db->get('person_classificacao');
+
+        // Retorna os resultados únicos como um array de objetos
+        return $query->result();
+    }
+
+
+    public function update_campanha($id, $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista)
+    {
+
+        $this->db->where('id', $id);
+
+
+        $data = array(
+            'nome' => $nome,
+            'descricao' => $descricao,
+            'produto' => $produto,
+            'tipo' => $tipo,
+            'data' => date('Y-m-d H:i:s'),
+            'provedor' => $provedor,
+            'provedor_campanha_id' => $provedor_campanha_id,
+            'lista' => $lista,
+
+        );
+
+        return $this->db->update('campanhas', $data);
+    }
+
+    public function delete_campanha($id)
+    {
+        $this->db->where('id', $id);
+
+        $data = array(
+            'is_deleted' => 1
+        );
+
+        return $this->db->update('campanhas', $data);
+    }
+
+
+    public function get_listas()
+    {
+        $this->db->where('is_deleted', 0);
+        $this->db->order_by('id', 'desc');
+
+        return $this->db->get('listas')->result();
+    }
+
+    public function get_lista($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('listas')->row_array();
+    }
+
+    public function add_lista($nome, $descricao, $tag, $lista_id)
+    {
+
+        $data = array(
+            'nome' => $nome,
+            'descricao' => $descricao,
+            'provedor_lista_id' => $lista_id,
+
+            'tag' => $tag,
+            'data' => date('Y-m-d H:i:s'),
+            'is_deleted' => 0
+        );
+
+        return $this->db->insert('listas', $data);
+    }
+
+    public function update_lista($id, $nome, $descricao, $tag)
+    {
+
+        $this->db->where('id', $id);
+
+
+        $data = array(
+            'nome' => $nome,
+            'descricao' => $descricao,
+            'tag' => $tag,
+            'data' => date('Y-m-d H:i:s'),
+            'is_deleted' => 0
+        );
+
+        return $this->db->update('listas', $data);
+    }
+
+    public function delete_lista($id)
+    {
+        $this->db->where('id', $id);
+
+        $data = array(
+            'is_deleted' => 1
+        );
+
+        return $this->db->update('listas', $data);
+    }
+
+
+
+    public function get_prospecoes_by_campanha($campanha_id)
+    {
+        $this->db->select('*');
+        $this->db->from('campanha_prospection');
+        $this->db->where('campanha_id', $campanha_id);
+        $this->db->order_by('id', 'desc');
+        $this->db->where('is_deleted', 0);
+
+        // Subconsulta para selecionar apenas um registro para cada lead_id diferente de zero
+        $subQuery = '(SELECT MIN(id) AS min_id FROM campanha_prospection WHERE campanha_id = ' . $campanha_id . ' AND is_deleted = 0 AND lead_id != 0 GROUP BY lead_id)';
+        $this->db->group_start();
+        $this->db->where("id IN $subQuery", NULL, FALSE);
+        $this->db->or_where('lead_id', 0);
+        $this->db->group_end();
+
+
+
+        $query = $this->db->get();
+
+        return $query->result();
+    }
+
+
+    public function searchLeads($query)
+    {
+
+
+        if (strlen($query) > 0) {
+
+            $this->db->select('person_id');
+            $this->db->from('person_email');
             $this->db->where('is_deleted', 0);
-            $this->db->order_by('id', 'desc');
+            $this->db->where('is_validado', 1);
+            $this->db->like('email', $query);
 
-            return $this->db->get('listas')->result();
-        }
+            $queryEmail = $this->db->get();
 
-        public function get_lista($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('listas')->row_array();
-        }
+            $this->db->reset_query(); // Reinicia a construção da query
 
-        public function add_lista( $nome, $descricao, $tag, $lista_id)
-        {
-    
-            $data = array(
-                'nome' => $nome,
-                'descricao' => $descricao,
-                'provedor_lista_id' => $lista_id,
-
-                'tag' => $tag,
-                'data' => date('Y-m-d H:i:s'),
-                'is_deleted' => 0
-            );
-    
-            return $this->db->insert('listas', $data);
-        }
-
-        public function update_lista( $id, $nome, $descricao, $tag)
-        {
-
-            $this->db->where('id', $id);
-
-    
-            $data = array(
-                'nome' => $nome,
-                'descricao' => $descricao,
-                'tag' => $tag,
-                'data' => date('Y-m-d H:i:s'),
-                'is_deleted' => 0
-            );
-    
-            return $this->db->update('listas', $data);
-        }
-
-        public function delete_lista($id)
-        {
-            $this->db->where('id', $id);
-    
-            $data = array(
-                'is_deleted' => 1
-            );
-    
-            return $this->db->update('listas', $data);
-        }
-
-
-
-        public function get_prospecoes_by_campanha($campanha_id)
-        {
-            $this->db->select('*');
-            $this->db->from('campanha_prospection');
-            $this->db->where('campanha_id', $campanha_id);
-            $this->db->order_by('id', 'desc');
+            $this->db->select('person_id');
+            $this->db->from('person_telefone');
             $this->db->where('is_deleted', 0);
-        
-            // Subconsulta para selecionar apenas um registro para cada lead_id diferente de zero
-            $subQuery = '(SELECT MIN(id) AS min_id FROM campanha_prospection WHERE campanha_id = ' . $campanha_id . ' AND is_deleted = 0 AND lead_id != 0 GROUP BY lead_id)';
-            $this->db->group_start();
-            $this->db->where("id IN $subQuery", NULL, FALSE);
-            $this->db->or_where('lead_id', 0);
-            $this->db->group_end();
-        
-           
-        
-            $query = $this->db->get();
-        
-            return $query->result();
-        }
-        
+            $this->db->where('is_validado', 1);
+            $this->db->like('telefone', $query);
 
-        public function searchLeads($query) {
+            $queryTelefone = $this->db->get();
 
-            
-            if (strlen($query) > 0 ) {
+            $results = [];
 
-                $this->db->select('person_id');
-                $this->db->from('person_email');
-                $this->db->where('is_deleted', 0);
-                $this->db->where('is_validado', 1);
-                $this->db->like('email', $query);
-            
-                $queryEmail = $this->db->get();
-            
-                $this->db->reset_query(); // Reinicia a construção da query
-            
-                $this->db->select('person_id');
-                $this->db->from('person_telefone');
-                $this->db->where('is_deleted', 0);
-                $this->db->where('is_validado', 1);
-                $this->db->like('telefone', $query);
-            
-                $queryTelefone = $this->db->get();
-            
-                $results = [];
-            
-                if ($queryEmail->num_rows() > 0) {
-                    foreach ($queryEmail->result() as $row) {
-                        $results[] = $row->person_id;
-                    }
+            if ($queryEmail->num_rows() > 0) {
+                foreach ($queryEmail->result() as $row) {
+                    $results[] = $row->person_id;
                 }
-            
-                if ($queryTelefone->num_rows() > 0) {
-                    foreach ($queryTelefone->result() as $row) {
-                        $results[] = $row->person_id;
-                    }
-                }
-            
-                // Remover duplicatas e manter somente os IDs únicos
-                $results = array_unique($results);
-            
-                return $results;
-
-            } else {
-
-                $this->db->select('person_id');
-                $this->db->from('person_email');
-                $this->db->where('is_deleted', 0);
-                $this->db->where('is_validado', 1);
-                // $this->db->like('email', $query);
-            
-                $queryEmail = $this->db->get();
-            
-                $this->db->reset_query(); // Reinicia a construção da query
-            
-                $this->db->select('person_id');
-                $this->db->from('person_telefone');
-                $this->db->where('is_deleted', 0);
-                $this->db->where('is_validado', 1);
-                // $this->db->like('telefone', $query);
-            
-                $queryTelefone = $this->db->get();
-            
-                $results = [];
-            
-                if ($queryEmail->num_rows() > 0) {
-                    foreach ($queryEmail->result() as $row) {
-                        $results[] = $row->person_id;
-                    }
-                }
-            
-                if ($queryTelefone->num_rows() > 0) {
-                    foreach ($queryTelefone->result() as $row) {
-                        $results[] = $row->person_id;
-                    }
-                }
-            
-                // Remover duplicatas e manter somente os IDs únicos
-                $results = array_unique($results);
-            
-                return $results;
-            }
-        }
-        
-
-        public function get_prospeccao($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('campanha_prospection')->row_array();
-        }
-
-        public function add_prospeccao(  $campanha_id, $produto_id, $encurtador_url, $lead_id,  $origem_url, $origem_type, $lead_dispositivo, $lead_ip)
-        {
-
-        
-            $data = array(
-                'campanha_id' => $campanha_id,
-                'produto_id' => $produto_id,
-                'encurtador_url' => $encurtador_url,
-                'lead_id' => $lead_id,
-                'data_acesso' => date('Y-m-d H:i:s'),
-                'origem_url' => $origem_url,
-                'origem_type' => $origem_type,
-                'lead_dispositivo' => $lead_dispositivo,
-                'lead_ip' => $lead_ip,
-
-
-            );
-    
-            return $this->db->insert('campanha_prospection', $data);
-        }
-
-        public function update_prospeccao( $id, $contactado, $contactado_via, $contactado_data)
-        {
-
-            $this->db->where('id', $id);
-
-    
-            $data = array(
-                'contactado' => $contactado,
-                'contactado_via' => $contactado_via,
-                'contactado_data' => $contactado_data,
-            
-            );
-    
-            return $this->db->update('campanha_prospection', $data);
-        }
-
-        public function delete_prospeccao($id)
-        {
-            $this->db->where('id', $id);
-    
-            $data = array(
-                'is_deleted' => 1
-            );
-    
-            return $this->db->update('campanha_prospection', $data);
-        }
-
-
-
-        public function get_vendas_totais( $tipo = null)
-        {
-       
-            if ($tipo != null) {
-                $this->db->where('tipo', $tipo);
             }
 
-   
-            $this->db->where('is_deleted', 0);
-            $this->db->order_by('id', 'desc');
-
-            return $this->db->get('campanha_vendas')->result();
-
-
-            
-        }
-
-
-        public function get_vendas_by_campanha($campanha_id, $tipo = null)
-        {
-       
-            if ($tipo != null) {
-                $this->db->where('tipo', $tipo);
+            if ($queryTelefone->num_rows() > 0) {
+                foreach ($queryTelefone->result() as $row) {
+                    $results[] = $row->person_id;
+                }
             }
 
-            $this->db->where('campanha_id', $campanha_id);
+            // Remover duplicatas e manter somente os IDs únicos
+            $results = array_unique($results);
+
+            return $results;
+        } else {
+
+            $this->db->select('person_id');
+            $this->db->from('person_email');
             $this->db->where('is_deleted', 0);
-            $this->db->order_by('id', 'desc');
+            $this->db->where('is_validado', 1);
+            // $this->db->like('email', $query);
 
-            return $this->db->get('campanha_vendas')->result();
+            $queryEmail = $this->db->get();
+
+            $this->db->reset_query(); // Reinicia a construção da query
+
+            $this->db->select('person_id');
+            $this->db->from('person_telefone');
+            $this->db->where('is_deleted', 0);
+            $this->db->where('is_validado', 1);
+            // $this->db->like('telefone', $query);
+
+            $queryTelefone = $this->db->get();
+
+            $results = [];
+
+            if ($queryEmail->num_rows() > 0) {
+                foreach ($queryEmail->result() as $row) {
+                    $results[] = $row->person_id;
+                }
+            }
+
+            if ($queryTelefone->num_rows() > 0) {
+                foreach ($queryTelefone->result() as $row) {
+                    $results[] = $row->person_id;
+                }
+            }
+
+            // Remover duplicatas e manter somente os IDs únicos
+            $results = array_unique($results);
+
+            return $results;
+        }
+    }
 
 
-            
+    public function get_prospeccao($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('campanha_prospection')->row_array();
+    }
+
+    public function add_prospeccao($campanha_id, $produto_id, $encurtador_url, $lead_id,  $origem_url, $origem_type, $lead_dispositivo, $lead_ip)
+    {
+
+
+        $data = array(
+            'campanha_id' => $campanha_id,
+            'produto_id' => $produto_id,
+            'encurtador_url' => $encurtador_url,
+            'lead_id' => $lead_id,
+            'data_acesso' => date('Y-m-d H:i:s'),
+            'origem_url' => $origem_url,
+            'origem_type' => $origem_type,
+            'lead_dispositivo' => $lead_dispositivo,
+            'lead_ip' => $lead_ip,
+
+
+        );
+
+        return $this->db->insert('campanha_prospection', $data);
+    }
+
+    public function update_prospeccao($id, $contactado, $contactado_via, $contactado_data)
+    {
+
+        $this->db->where('id', $id);
+
+
+        $data = array(
+            'contactado' => $contactado,
+            'contactado_via' => $contactado_via,
+            'contactado_data' => $contactado_data,
+
+        );
+
+        return $this->db->update('campanha_prospection', $data);
+    }
+
+    public function delete_prospeccao($id)
+    {
+        $this->db->where('id', $id);
+
+        $data = array(
+            'is_deleted' => 1
+        );
+
+        return $this->db->update('campanha_prospection', $data);
+    }
+
+
+
+    public function get_vendas_totais($tipo = null)
+    {
+
+        if ($tipo != null) {
+            $this->db->where('tipo', $tipo);
         }
 
-        public function get_venda($id)
-        {
-            $this->db->where('id', $id);
-            return $this->db->get('campanha_vendas')->row_array();
+
+        $this->db->where('is_deleted', 0);
+        $this->db->order_by('id', 'desc');
+
+        return $this->db->get('campanha_vendas')->result();
+    }
+
+
+    public function get_vendas_by_campanha($campanha_id, $tipo = null)
+    {
+
+        if ($tipo != null) {
+            $this->db->where('tipo', $tipo);
         }
 
-        public function add_venda(  $campanha_id, $produto_id, $lead_id, $data,  $valor, $provedor, $provedor_venda_id, $tipo)
-        {
+        $this->db->where('campanha_id', $campanha_id);
+        $this->db->where('is_deleted', 0);
+        $this->db->order_by('id', 'desc');
 
-        
-            $data = array(
-                'campanha_id' => $campanha_id,
-                'produto_id' => $produto_id,
-                'lead_id' => $lead_id,
-                'data' => $data,
-                'valor' => $valor,
-                'provedor' => $provedor,
-                'tipo' => $tipo,
+        return $this->db->get('campanha_vendas')->result();
+    }
 
-                'provedor_venda_id' =>  $provedor_venda_id,
-                'is_deleted' => 0,
-            );
-    
-            return $this->db->insert('campanha_vendas', $data);
-        }
+    public function get_venda($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get('campanha_vendas')->row_array();
+    }
 
-        public function update_venda( $id, $lead_id, $data, $valor, $provedor, $venda_id)
-        {
-
-            $this->db->where('id', $id);
-
-            $data = array(
-           
-                'lead_id' => $lead_id,
-                'data' => $data,
-                'valor' => $valor,
-                'provedor' => $provedor,
-                'provedor_venda_id', $venda_id,
-                
-            );
-    
-            return $this->db->update('campanha_vendas', $data);
-        }
-
-        public function delete_venda($id)
-        {
-            $this->db->where('id', $id);
-    
-            $data = array(
-                'is_deleted' => 1
-            );
-    
-            return $this->db->update('campanha_vendas', $data);
-        }
+    public function add_venda($campanha_id, $produto_id, $lead_id, $data,  $valor, $provedor, $provedor_venda_id, $tipo)
+    {
 
 
-    public function getLinkByCode($code) {
+        $data = array(
+            'campanha_id' => $campanha_id,
+            'produto_id' => $produto_id,
+            'lead_id' => $lead_id,
+            'data' => $data,
+            'valor' => $valor,
+            'provedor' => $provedor,
+            'tipo' => $tipo,
+
+            'provedor_venda_id' =>  $provedor_venda_id,
+            'is_deleted' => 0,
+        );
+
+        return $this->db->insert('campanha_vendas', $data);
+    }
+
+    public function update_venda($id, $lead_id, $data, $valor, $provedor, $venda_id)
+    {
+
+        $this->db->where('id', $id);
+
+        $data = array(
+
+            'lead_id' => $lead_id,
+            'data' => $data,
+            'valor' => $valor,
+            'provedor' => $provedor,
+            'provedor_venda_id', $venda_id,
+
+        );
+
+        return $this->db->update('campanha_vendas', $data);
+    }
+
+    public function delete_venda($id)
+    {
+        $this->db->where('id', $id);
+
+        $data = array(
+            'is_deleted' => 1
+        );
+
+        return $this->db->update('campanha_vendas', $data);
+    }
+
+
+    public function getLinkByCode($code)
+    {
         $this->db->where('code', $code);
         return $this->db->get('campanha_links')->row_array();
     }
 
-    public function getLinkByCampanha($campanha_id) {
+    public function getLinkByCampanha($campanha_id)
+    {
         $this->db->where('campanha_id', $campanha_id);
         return $this->db->get('campanha_links')->result();
     }
@@ -1235,10 +1249,10 @@ class Admin_model extends CI_Model
     }
 
 
-    public function add_prospecto(  $campanha_id, $produto_id, $encurtador_url, $lead_id, $origem_url, $origem_type, $lead_dispositivo, $lead_ip)
+    public function add_prospecto($campanha_id, $produto_id, $encurtador_url, $lead_id, $origem_url, $origem_type, $lead_dispositivo, $lead_ip)
     {
 
-    
+
         $data = array(
             'campanha_id' => $campanha_id,
             'produto_id' => $produto_id,
@@ -1248,7 +1262,7 @@ class Admin_model extends CI_Model
             'origem_url' => $origem_url,
             'origem_type' => $origem_type,
             'lead_dispositivo' =>  $lead_dispositivo,
-            'contactado' => 0, 
+            'contactado' => 0,
             'lead_ip' => $lead_ip,
             'is_deleted' => 0,
         );
@@ -1257,20 +1271,22 @@ class Admin_model extends CI_Model
     }
 
 
-    public function check_link($campanha_id, $type) {
+    public function check_link($campanha_id, $type)
+    {
 
         $this->db->where('campanha_id', $campanha_id);
         $this->db->where('type', $type);
         return $this->db->get('campanha_links')->row_array();
     }
 
-    public function add_link($campanha_id, $type) {
+    public function add_link($campanha_id, $type)
+    {
 
         $data = array(
             'campanha_id' => $campanha_id,
             'type' => $type,
             'code' => $this->genLink()
-            
+
         );
 
         return $this->db->insert('campanha_links', $data);
@@ -1278,32 +1294,37 @@ class Admin_model extends CI_Model
 
     //  Sincronizaçao
 
-    public function getSincronizacoes($campanha_id) {
+    public function getSincronizacoes($campanha_id)
+    {
         $this->db->where('id', $campanha_id);
         return $this->db->get('leads_import_process')->result();
     }
 
-    public function getSincronizacao($id) {
+    public function getSincronizacao($id)
+    {
         $this->db->where('id', $id);
 
         return $this->db->get('leads_import_process')->row_array();
     }
 
-    
-    public function updateSincronizacao($id, $data) {
+
+    public function updateSincronizacao($id, $data)
+    {
         $this->db->where('id', $id);
 
         return $this->db->get('leads_import_process')->row_array();
     }
 
-    public function addSincronizacao($data) {
+    public function addSincronizacao($data)
+    {
 
         return $this->db->insert('leads_import_process', $data);
     }
 
 
 
-    public function addLeadsSincronizado($data) {
+    public function addLeadsSincronizado($data)
+    {
         return $this->db->insert('leads_import', $data);
     }
 
@@ -1311,90 +1332,126 @@ class Admin_model extends CI_Model
 
     // Tarefas
 
-    public function getTarefasDistinct() {
-       
-            $this->db->distinct();
-            $this->db->select('tarefa_tag'); // Seleciona apenas o person_id para resultados distintos
-            $this->db->where('is_deleted', 0);
-            $query = $this->db->get('persona_tarefas');
-        
-            // Retorna os resultados únicos como um array de objetos
-            return $query->result();
+    public function getTarefasDistinct()
+    {
 
+        $this->db->distinct();
+        $this->db->select('tarefa_tag'); // Seleciona apenas o person_id para resultados distintos
+        $this->db->where('is_deleted', 0);
+        $query = $this->db->get('persona_tarefas');
+
+        // Retorna os resultados únicos como um array de objetos
+        return $query->result();
     }
 
-    public function getTarefasByTag($tag_id) {
+    public function getTarefasByTag($tag_id)
+    {
         $this->db->where('is_deleted', 0);
         $this->db->where('tarefa_tag', $tag_id);
 
-        $this->db->order_by('id','desc');
+        $this->db->order_by('id', 'desc');
         return $this->db->get('persona_tarefas')->result();
     }
-    public function getTarefas() {
+    public function getTarefas()
+    {
 
         $this->db->where('is_deleted', 0);
 
         $this->db->where('tarefa_status !=', 5);
-     
 
-        $this->db->order_by('id','desc');
+
+        $this->db->order_by('id', 'desc');
         return $this->db->get('persona_tarefas')->result();
     }
 
-    public function getTarefasSearch($tag, $status) {
+    public function getTarefasSearch($tag, $status)
+    {
 
-        if (strlen($tag) > 0 ) {
+        if (strlen($tag) > 0) {
             $this->db->where('tarefa_tag', $tag);
-        } 
+        }
 
-        if (strlen($status) > 0 ) {
+        if (strlen($status) > 0) {
             $this->db->where('tarefa_status', $status);
         } else {
             $this->db->where('tarefa_status !=', 5);
         }
 
         $this->db->where('is_deleted', 0);
-        $this->db->order_by('id','desc');
+        $this->db->order_by('id', 'desc');
         return $this->db->get('persona_tarefas')->result();
     }
 
-    public function getTarefa($id) {
+    public function getTarefa($id)
+    {
         $this->db->where('id', $id);
         return $this->db->get('persona_tarefas')->row_array();
     }
 
-    public function checkTarefaLink($tarefa_url) {
-        
+    public function checkTarefaLink($tarefa_url)
+    {
+
         $this->db->where('tarefa_url', $tarefa_url);
         $this->db->where('is_deleted', 0);
 
         return $this->db->get('persona_tarefas')->row_array();
     }
 
-    public function addTarefa($data){
+    public function addTarefa($data)
+    {
         return $this->db->insert('persona_tarefas', $data);
-    } 
+    }
 
-    public function updateTarefa($id, $data){
+    public function updateTarefa($id, $data)
+    {
         $this->db->where('id', $id);
         return $this->db->update('persona_tarefas', $data);
     }
 
-    public function deleteTarefa($id) {
+    public function deleteTarefa($id)
+    {
 
         $this->db->where('id', $id);
 
         $data = array(
-            'is_deleted' => 1 
+            'is_deleted' => 1
         );
 
         return $this->db->update('persona_tarefas', $data);
     }
 
     // Instagram Leads
-    public function getInstagramLeadsByTask($task_id) {
+
+    public function getInstagramLeadsByTaskSearch($task_id, $inapto, $convertido)
+    {
         $this->db->where('tarefa_id', $task_id);
-       
+
+        if (strlen($inapto) > 0) {
+
+            $this->db->where('inapto', $inapto);
+        }
+
+        if (strlen($convertido) > 0) {
+
+            $this->db->where('inapto', $convertido);
+        }
+        // $this->db->limit(100);
+        $this->db->group_start();
+        $this->db->where('email IS NOT NULL AND email !=', '');
+        $this->db->or_where('telefone IS NOT NULL AND telefone !=', '');
+        $this->db->or_where('links IS NOT NULL AND links !=', '');
+        $this->db->or_where('mencoes IS NOT NULL AND mencoes !=', '');
+        $this->db->group_end();
+
+        $this->db->order_by('convertido', 'asc');
+
+        return $this->db->get('insta_leads')->result();
+    }
+
+    public function getInstagramLeadsByTask($task_id)
+    {
+        $this->db->where('tarefa_id', $task_id);
+
         $this->db->where('inapto', 0);
         // $this->db->limit(100);
         $this->db->group_start();
@@ -1404,50 +1461,53 @@ class Admin_model extends CI_Model
         $this->db->or_where('mencoes IS NOT NULL AND mencoes !=', '');
         $this->db->group_end();
 
-        $this->db->order_by('convertido','asc');
+        $this->db->order_by('convertido', 'asc');
 
         return $this->db->get('insta_leads')->result();
     }
-    public function getInstagramLeadsByTaskValid($task_id) {
+    public function getInstagramLeadsByTaskValid($task_id)
+    {
         $this->db->where('tarefa_id', $task_id);
         $data =  $this->db->get('insta_leads')->result();
 
         $valid = array();
 
-        foreach($data as $d) {
+        foreach ($data as $d) {
 
 
-            if (strlen($d->email) > 0 || strlen($d->telefone) > 0 ) {
+            if (strlen($d->email) > 0 || strlen($d->telefone) > 0) {
                 array_push($valid, $d);
-                
             }
-
         }
 
         return $valid;
     }
 
-    public function addInstagramLead($data) {
+    public function addInstagramLead($data)
+    {
         return $this->db->insert('insta_leads', $data);
     }
 
-    public function updateInstaLead($id, $data) {
+    public function updateInstaLead($id, $data)
+    {
         $this->db->where('id', $id);
         return $this->db->update('insta_leads', $data);
     }
 
-    public function deleteInstagramLeads($id) {
+    public function deleteInstagramLeads($id)
+    {
 
         $this->db->where('id', $id);
 
         $data = array(
-            'is_deleted' => 1 
+            'is_deleted' => 1
         );
 
         return $this->db->update('insta_leads', $data);
     }
 
-    public function getInstaLeadDemanda($tarefa_id, $tag_id, $username) {
+    public function getInstaLeadDemanda($tarefa_id, $tag_id, $username)
+    {
         $this->db->where('tarefa_id', $tarefa_id);
         $this->db->where('tag_id', $tag_id);
         $this->db->where('username', $username);
@@ -1456,15 +1516,16 @@ class Admin_model extends CI_Model
     }
 
 
-    public function getPersonByMediaUsername($username) {
+    public function getPersonByMediaUsername($username)
+    {
         $this->db->where('username', $username);
         $this->db->where('nome', 'instagram');
         $this->db->where('is_deleted', 0);
 
         return $this->db->get('person_socialmedia')->row_array();
-
     }
-    public function getInstaLead($tarefa_id, $tag_id, $username) {
+    public function getInstaLead($tarefa_id, $tag_id, $username)
+    {
         $this->db->where('tarefa_id', $tarefa_id);
         $this->db->where('tag_id', $tag_id);
         $this->db->where('username', $username);

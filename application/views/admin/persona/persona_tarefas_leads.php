@@ -211,8 +211,8 @@
                                         <p class="mt-1" >Apto</p>
                                         <select  name="inapto" class="form-select" >
                                           <option  value="">Selecionar</option>
-                                          <option <?php if ($this->input->get('inativo') == '0') { echo "selected"; } ?> value="0">APTO</option>
-                                          <option <?php if ($this->input->get('inativo') == '1') { echo "selected"; } ?> value="1">INAPTO</option>
+                                          <option <?php if ($this->input->get('inapto') == '0') { echo "selected"; } ?> value="0">APTO</option>
+                                          <option <?php if ($this->input->get('inapto') == '1') { echo "selected"; } ?> value="1">INAPTO</option>
                                         </select>
                                       </div>
                                       <div class="col-md-4">
