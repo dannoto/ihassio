@@ -191,7 +191,7 @@
                           </div>
                           <div class="col-md-4">
                             <p></p>
-                            <button class="btn btn-primary" style="margin-top: 22px;" type="submit">Buscar</button>
+                            <button class="btn btn-primary" style="margin-top: 25px;" type="submit">Buscar</button>
                           </div>
                     </div>
                   </form>
