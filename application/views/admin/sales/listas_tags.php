@@ -180,7 +180,7 @@
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <?php foreach ($this->admin_model->get_listasby_tag($tag) as $c) { ?>
+                        <?php foreach ($this->admin_model->get_listas() as $c) { ?>
                       <tr>
                         <td style="text-transform: uppercase;"><?= $c->nome ?></td>
                         <td style="text-transform: uppercase;"><?= $this->admin_model->get_item($c->tag)['nome']; ?></td>

@@ -58,8 +58,28 @@ class Sales extends CI_Controller {
 		
 	}
 
-   
+    public function listas_produtos($tag_id)
+	{
 
+        $tag = $this->admin_model->get_item($tag_id);
+
+        if ($tag) {
+
+
+            $data = array(
+                'tag' => $tag['id']
+
+            );
+
+            $this->load->view('admin/sales/listas_tags', $data);
+
+        } else {
+            redirect(base_url('sales/listas'));
+        }
+		
+	}
+
+   
     public function lista_editar($id)
 	{
         $id = htmlspecialchars($id);

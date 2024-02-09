@@ -921,6 +921,16 @@ class Admin_model extends CI_Model
         return $this->db->get('listas')->result();
     }
 
+    public function get_listasby_tag($tag_id)
+    {
+        $this->db->where('is_deleted', 0);
+        $this->db->where('tag_id', $tag_id);
+
+        $this->db->order_by('id', 'desc');
+
+        return $this->db->get('listas')->result();
+    }
+
     public function get_lista($id)
     {
         $this->db->where('id', $id);
