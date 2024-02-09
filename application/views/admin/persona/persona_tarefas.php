@@ -185,7 +185,7 @@
                             <select  name="tarefa_tag" class="form-select"  >
                               <option value="">Selecionar</option>
                                 <?php foreach ($this->admin_model->get_itens() as $c) { ?>            
-                                  <option value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
+                                  <option <?php if ($this->input->get('tarefa_tag') == $c->id ) {echo "selected";}?> value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
                                 <?php } ?>
                             </select>
                           </div>
