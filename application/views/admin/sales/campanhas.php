@@ -170,8 +170,9 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>NOME</th>
-                      
+                        <th>PRODUTO</th>
+                        <th>PÁGINA DE VENDAS	</th>
+
                         <th></th>
 
                       </tr>
@@ -180,6 +181,7 @@
                         <?php foreach ($this->admin_model->get_produtos() as $c) { ?>
                       <tr>
                         <td style="text-transform: uppercase;"><small><?= $c->nome ?></small></td>
+                        <td style="text-transform: uppercase;"> <small> <a target="_blank" href=" <?= $c->pagina_de_vendas ?>"><small>VISITAR O LINK</small></a></small></td>
                         <td><a href="<?=base_url()?>sales/campanhas_produtos/<?=$c->id?>"><button class="btn btn-primary">VER CAMPANHAS</button></a></td>
                        
                       </tr>
