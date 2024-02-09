@@ -173,11 +173,21 @@
                             <p class="mt-1" >Status</p>
                             <select  name="tarefa_status" class="form-select"  >
                               <option  value="">Selecionar</option>
-                              <option <?php if ($this->input->get('tarefa_status') == '1' ) {echo "selected";}?> value="1">ATIVO</option>
-                              <option <?php if ($this->input->get('tarefa_status') == '2' ) {echo "selected";}?> value="2">PROCESSANDO</option>
-                              <option <?php if ($this->input->get('tarefa_status') == '3' ) {echo "selected";}?> value="3">FINALIZADO</option>
-                              <option <?php if ($this->input->get('tarefa_status') == '4' ) {echo "selected";}?> value="4">INATIVO</option>
-                              <option <?php if ($this->input->get('tarefa_status') == '5' ) {echo "selected";}?> value="5">CONCLUÍDO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '1') {
+                                        echo "selected";
+                                      } ?> value="1">ATIVO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '2') {
+                                        echo "selected";
+                                      } ?> value="2">PROCESSANDO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '3') {
+                                        echo "selected";
+                                      } ?> value="3">FINALIZADO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '4') {
+                                        echo "selected";
+                                      } ?> value="4">INATIVO</option>
+                              <option <?php if ($this->input->get('tarefa_status') == '5') {
+                                        echo "selected";
+                                      } ?> value="5">CONCLUÍDO</option>
                             </select>
                           </div>
                           <div class="col-md-4">
@@ -185,7 +195,9 @@
                             <select  name="tarefa_tag" class="form-select"  >
                               <option value="">Selecionar</option>
                                 <?php foreach ($this->admin_model->get_itens() as $c) { ?>            
-                                  <option <?php if ($this->input->get('tarefa_tag') == $c->id ) {echo "selected";}?> value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
+                                  <option <?php if ($this->input->get('tarefa_tag') == $c->id) {
+                                            echo "selected";
+                                          } ?> value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
                                 <?php } ?>
                             </select>
                           </div>
@@ -194,7 +206,7 @@
                             <button class="btn btn-primary" style="margin-top: 25px;" type="submit">Buscar</button>
                           </div>
                     </div>
-                  </form>
+                </form>
               </div>
 
               <div class="card">
@@ -222,7 +234,7 @@
 
                     
                         <tr>
-                              <td style="text-transform: uppercase;" ><small>[#<?=$c->id?>] <?= $c->tarefa_nome ?></small></td>
+                              <td style="text-transform: uppercase;" ><small>[#<?= $c->id ?>] <?= $c->tarefa_nome ?></small></td>
                               <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
                               <td style="text-transform: uppercase;" ><small><a href="<?= base_url() ?>persona/tarefas_leads/<?= $c->id ?>">VER</a></small></td>
 

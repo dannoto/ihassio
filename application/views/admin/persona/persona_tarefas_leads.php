@@ -182,21 +182,67 @@
                       <small class="text-muted float-end">Default label</small> -->
                     </div>
                     <div class="card-body">
-                               
-              <div class="d-flex  align-items-center justify-content-between">
-                <div>
-                  <h5>LEADS</h5>
-                  <p><?= $t['tarefa_nome'] ?></p>
-                </div>
+                                    
+                      <div class="d-flex  align-items-center justify-content-between">
+                        <div>
+                          <h5>LEADS</h5>
+                          <p><?= $t['tarefa_nome'] ?></p>
+                        </div>
 
 
-               <div>
-               <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
+                      <div>
+                      <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
 
-<button id="btn-concluir" class="btn ml-3 btn-success text-uppercase mb-3"><small>Concluir</small></button>
-               </div>
+                      <button id="btn-concluir" class="btn ml-3 btn-success text-uppercase mb-3"><small>Concluir</small></button>
+                    </div>
+                    <div class="card-body">
+                        <div class="card p-2 mb-3 pl-3 pt-3 pb-3" style="padding-left: 15px !important;">
+                            <H4>Filtro</H4>
+                            
+                            <form method="GET" >
+                                <div class="row">
+                                      <div class="col-md-4">
+                                        <p class="mt-1" >Status</p>
+                                        <select  name="tarefa_status" class="form-select"  >
+                                          <option  value="">Selecionar</option>
+                                          <option <?php if ($this->input->get('tarefa_status') == '1') {
+                                                    echo "selected";
+                                                  } ?> value="1">ATIVO</option>
+                                          <option <?php if ($this->input->get('tarefa_status') == '2') {
+                                                    echo "selected";
+                                                  } ?> value="2">PROCESSANDO</option>
+                                          <option <?php if ($this->input->get('tarefa_status') == '3') {
+                                                    echo "selected";
+                                                  } ?> value="3">FINALIZADO</option>
+                                          <option <?php if ($this->input->get('tarefa_status') == '4') {
+                                                    echo "selected";
+                                                  } ?> value="4">INATIVO</option>
+                                          <option <?php if ($this->input->get('tarefa_status') == '5') {
+                                                    echo "selected";
+                                                  } ?> value="5">CONCLUÍDO</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <p class="mt-1" >Tag</p>
+                                        <select  name="tarefa_tag" class="form-select"  >
+                                          <option value="">Selecionar</option>
+                                            <?php foreach ($this->admin_model->get_itens() as $c) { ?>            
+                                              <option <?php if ($this->input->get('tarefa_tag') == $c->id) {
+                                                        echo "selected";
+                                                      } ?> value="<?= $c->id ?>"><?= $c->nome ?> - <?= $this->admin_model->get_categoria($c->categoria_id)['nome'] ?></option>
+                                            <?php } ?>
+                                        </select>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <p></p>
+                                        <button class="btn btn-primary" style="margin-top: 25px;" type="submit">Buscar</button>
+                                      </div>
+                                </div>
+                            </form>
+                      </div>
+                    </div>
 
-              </div>
+                    </div>
      
        
                     </div>
