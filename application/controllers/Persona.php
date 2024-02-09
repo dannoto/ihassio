@@ -35,7 +35,6 @@ class Persona extends CI_Controller
             $data = array(
                 'tarefas' => $this->admin_model->getTarefasSearch($tag, $status)
             );
-
         } else {
 
             $data = array(
@@ -61,11 +60,24 @@ class Persona extends CI_Controller
 
         if ($tarefa) {
 
-            $data = array(
-                't' => $tarefa
-            );
+            if ($this->input->get()) {
+                $inapto = htmlspecialchars($this->input->get('inapto'));
+                $convertido = htmlspecialchars($this->input->get('convertido'));
+
+                echo $inapto;
+                echo $convertido;
+
+            } else {
+
+                $data = array(
+                    't' => $tarefa,
+                    'leads' => $this->admin_model->getInstagramLeadsByTask($tarefa['id'])
+                );
+
+            }
 
             $this->load->view('admin/persona/persona_tarefas_leads', $data);
+
         } else {
             redirect(base_url('persona/tarefas'));
         }

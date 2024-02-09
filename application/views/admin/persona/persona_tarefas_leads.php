@@ -204,7 +204,7 @@
      
        
                     </div>
-                    <div class="card p-2 mb-3 pl-3 pt-1 pb-3" style="padding-left: 15px !important;">
+                    <div class=" p-2 mb-3 pl-3 pt-1 pb-3" style="padding-left: 15px !important;">
                             <form method="GET" >
                                 <div class="row">
                                       <div class="col-md-4">
@@ -231,6 +231,7 @@
                             </form>
                       </div>
                     <div class="card-body">
+                    <?php if (count($leads) > 0) { ?>
                       <table  style="width:100%">
                           <thead>
                               <tr>
@@ -253,7 +254,7 @@
                           </thead>
                           <tbody>
 
-                          <?php foreach ($this->admin_model->getInstagramLeadsByTask($t['id']) as $l) { ?>
+                          <?php foreach ($leads as $l) { ?>
 
                           
                               
@@ -309,6 +310,13 @@
                           </tbody>
                         
                       </table>
+                      <?php } else { ?>
+
+<div class="mt-5 mb-5">
+  <p class="text-center text-uppercase">Nenhum resultado encontrado.</p>
+</div>
+
+<?php } ?>
                     </div>
                   </div>
                 </div>
