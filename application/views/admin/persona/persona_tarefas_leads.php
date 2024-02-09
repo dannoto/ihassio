@@ -195,7 +195,7 @@
 
                       <button id="btn-concluir" class="btn ml-3 btn-success text-uppercase mb-3"><small>Concluir</small></button>
                     </div>
-                    <div class="card-body">
+                 
                         <div class="card p-2 mb-3 pl-3 pt-3 pb-3" style="padding-left: 15px !important;">
                             <H4>Filtro</H4>
                             
@@ -240,7 +240,7 @@
                                 </div>
                             </form>
                       </div>
-                    </div>
+                  
 
                     </div>
      
