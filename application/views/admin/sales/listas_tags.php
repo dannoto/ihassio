@@ -162,11 +162,11 @@
                 <button class="btn btn-light text-primary border border-0"> <span class="bx bx-left-arrow-alt"></span> VOLTAR    </button>
                 </a>
               </div>
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Listas - <?= $this->admin_model->get_item($c->tag)['nome']; ?></h4>
+              <h4 class="fw-bold py-3 mb-1"><span class="text-muted fw-light"></span> Listas - <?= $this->admin_model->get_item($c->tag)['nome']; ?></h4>
 
               <!-- Basic Bootstrap Table -->
               <a href="<?= base_url() ?>sales/lista_adicionar">
-                  <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
+                  <button class="btn btn-primary mt-1 mb-3"  type="button" >+ ADICIONAR</button>
               </a>
 
               <div class="card">
