@@ -207,7 +207,7 @@
                         <div class="row mb-3">
                           <label for="html5-date-input" class="col-md-2 col-form-label">IMPORTAÇÃO</label>
                           <div class="col-sm-10">
-                                <select  required name="importacao" class="form-select"  >
+                                <select  required name="importacao" id="importacao" class="form-select"  >
                                   <option value="">Selecionar</option>
                                   <option <?php if ($lista['importacao'] == "1") { echo "selected";} ?> value="1">Automática (TAG)</option>
                                   <option <?php if ($lista['importacao'] == "2") { echo "selected";} ?> value="2">Manual</option>
@@ -215,10 +215,10 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">PARENTESCO</label>
+                        <div class="row mb-3" id="campanha_associada" style="display: none;">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">CAMPANHA ASSOCIADA</label>
                           <div class="col-sm-10">
-                            <input  type="text" name="parentesco" value="" class="form-control" id="basic-default-name" placeholder="" />
+                            <input  type="text" name="campanha_associada" value="" class="form-control" id="basic-default-name" placeholder="" />
                           </div>
                         </div>
 
@@ -273,6 +273,16 @@
     <script>
 
 
+
+$('#importacao').on('change', function(e) {
+        var importacao = $(this).val()
+
+        if (importacao == 2) {
+          $('#campanha_associada').css('display', 'block')
+        } else if (importacao == 1) {
+          $('#campanha_associada').css('display', 'none')
+        }
+    })
 
     $('#form-add-lista').on('submit', function(e) {
             e.preventDefault()

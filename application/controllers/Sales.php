@@ -434,7 +434,7 @@ class Sales extends CI_Controller {
         $tag = htmlspecialchars($this->input->post('tag'));
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
         $importacao = htmlspecialchars($this->input->post('importacao'));
-        $parentesco = htmlspecialchars($this->input->post('parentesco'));
+        $campanha_associada = htmlspecialchars($this->input->post('campanha_associada'));
 
         if ($classificacao == 1) {
            $nome =  "[prosp] ".$nome;
@@ -444,12 +444,12 @@ class Sales extends CI_Controller {
             $nome =  "[rec] ".$nome;
         }
 
-        if ($importacao == 2 && strlen($parentesco) > 0 ) {
+        if ($importacao == 2 && strlen($campanha_associada) > 0 ) {
             
           
             $lista_id = $this->brevo_model->createList($nome)['id'];
 
-            if ($this->admin_model->add_lista( $nome, $descricao, $tag, $lista_id, $classificacao, $importacao, $parentesco)) {
+            if ($this->admin_model->add_lista($nome, $descricao, $tag, $lista_id, $classificacao, $importacao, $campanha_associada)) {
                 $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.'  ) ;
             } else {
                 $response = array('status' => 'false', 'message' => 'Erro ao adicionar.'  ) ;
@@ -457,7 +457,7 @@ class Sales extends CI_Controller {
 
         } else {
 
-            $response = array('status' => 'false', 'message' => 'Adicione o parentesco para importação manual..'  ) ;
+            $response = array('status' => 'false', 'message' => 'Adicione uma campanha associada para importação manual..'  ) ;
         }
 
         print_r(json_encode($response));
