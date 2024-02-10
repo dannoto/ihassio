@@ -186,7 +186,7 @@
               <div class="d-flex  align-items-center justify-content-between">
                 <div>
                   <h5>LEADS</h5>
-                  <p>Lista de leads segmentados para esta lista.</p>
+                  <p><?php print_r($this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista['id'], $lista['campanha_associada'], 100000000))?>Lista de leads segmentados para esta lista.</p>
                   <p>importacao: <?= $lista['importacao'] ?></p>
                 </div>
                 <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
