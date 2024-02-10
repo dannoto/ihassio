@@ -241,22 +241,22 @@
 
                                         <option selected value="<?= $c->id ?>"><?php 
                         if ($c->classificacao == "1"){ 
-                          echo "<span class='badge badge-primary' style='background: cadetblue;' ><small>PROSPECÇÃO</small></span>"; } 
+                          echo "<span class='badge badge-primary' style='background: cadetblue;' ><small>[PROSP]</small></span>"; } 
                         else if ($c->classificacao == "2") { 
-                          echo "<span class='badge badge-primary' style='background: brown;' ><small>ATIVAÇÃO</small></span>"; } 
+                          echo "<span class='badge badge-primary' style='background: brown;' ><small>[ATV]</small></span>"; } 
                         else if ($c->classificacao == "3") { 
-                          echo "<span class='badge badge-primary' style='background: chartreuse;' ><small>RECUPERAÇÃO</small></span>"; 
+                          echo "<span class='badge badge-primary' style='background: chartreuse;' ><small>[REC]</small></span>"; 
                         }?>  <?= $c->nome ?></option>
 
                                     <?php } else { ?>
 
                                         <option value="<?= $c->id ?>"><?php 
                         if ($c->classificacao == "1"){ 
-                          echo "<span class='badge badge-primary' style='background: cadetblue;' ><small>PROSPECÇÃO</small></span>"; } 
+                          echo "<span class='badge badge-primary' style='background: cadetblue;' ><small>[PROSP]</small></span>"; } 
                         else if ($c->classificacao == "2") { 
-                          echo "<span class='badge badge-primary' style='background: brown;' ><small>ATIVAÇÃO</small></span>"; } 
+                          echo "<span class='badge badge-primary' style='background: brown;' ><small>[ATV]</small></span>"; } 
                         else if ($c->classificacao == "3") { 
-                          echo "<span class='badge badge-primary' style='background: chartreuse;' ><small>RECUPERAÇÃO</small></span>"; 
+                          echo "<span class='badge badge-primary' style='background: chartreuse;' ><small>[REC]</small></span>"; 
                         }?>  <?= $c->nome ?></option>
 
                                     <?php } ?>
