@@ -434,6 +434,14 @@ class Sales extends CI_Controller {
         $tag = htmlspecialchars($this->input->post('tag'));
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
 
+        if ($classificacao == 1) {
+           $nome =  "[PROP] ".$nome;
+        } else if ($classificacao == 2) {
+            $nome =  "[ATV] ".$nome;
+        }  else if ($classificacao == 3) {
+            $nome =  "[REC] ".$nome;
+        }
+
 
         $lista_id = $this->brevo_model->createList($nome)['id'];
 
