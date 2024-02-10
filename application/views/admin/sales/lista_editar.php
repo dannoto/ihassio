@@ -347,7 +347,7 @@ if (importacao == 2) {
         var importacao = $(this).val()
 
         if (importacao == 2) {
-          $('#campanha_associada').css('display', 'block')
+          $('#campanha_associada').css('display', 'flex')
         } else if (importacao == 1) {
           $('#campanha_associada').css('display', 'none')
         }
@@ -373,7 +373,7 @@ if (importacao == 2) {
                         window.location.href = "<?= base_url() ?>sales/listas_tags/<?= $lista['tag'] ?>"
 
                     } else {
-                        alert('Erro ao adicionar!')
+                        alert(res.message)
                     }
                 },
                 error: function(data) {
