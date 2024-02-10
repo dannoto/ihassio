@@ -193,6 +193,19 @@
                           </div>
                         </div>
 
+                        
+                        <div class="row mb-3">
+                          <label for="html5-date-input" class="col-md-2 col-form-label">CLASSIFICAÇÃO</label>
+                          <div class="col-sm-10">
+                                <select  required name="classificacao" class="form-select"  >
+                                  <option value="">Selecionar</option>
+                                  <option <?php if ($lista['classificacao'] == "1") { echo "selected";} ?> value="1">Prospecção</option>
+                                  <option <?php if ($lista['classificacao'] == "2") { echo "selected";} ?> value="2">Ativação</option>
+                                  <option <?php if ($lista['classificacao'] == "3") { echo "selected";} ?> value="3">Recuperação</option>
+                                </select>
+                            </div>
+                        </div>
+
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">TAG</label>
                             <div class="col-sm-10">
