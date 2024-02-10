@@ -157,11 +157,11 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Listas</h4>
+              <h4 class="fw-bold py-3 mb-1"><span class="text-muted fw-light"></span> Listas</h4>
 
               <!-- Basic Bootstrap Table -->
               <a href="<?= base_url() ?>sales/lista_adicionar">
-                  <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
+                  <button class="btn btn-primary mt-1 mb-3"  type="button" >+ ADICIONAR</button>
               </a>
 
               <div class="card">
