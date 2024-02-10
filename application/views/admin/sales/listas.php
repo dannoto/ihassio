@@ -171,7 +171,8 @@
                     <thead>
                       <tr>
                         <th>TAG</th>
-                       
+                        <th>LISTAS</th>
+
                         <th></th>
 
 
@@ -179,14 +180,11 @@
                     </thead>
                     <tbody class="table-border-bottom-0">
                         <?php foreach ($this->admin_model->get_tag_by_listas($tag) as $c) { ?>
-
-                        
                           <tr>
                             <td style="text-transform: uppercase;"><?= $this->admin_model->get_item($c->tag)['nome'] ?></td>
+                            <td style="text-transform: uppercase;"><center><small><?=count($this->admin_model->get_listas_by_tag($c->tag))?></small></center></td>
                             <td><a href="<?=base_url()?>sales/listas_tags/<?=$c->tag?>"><button class="btn btn-primary"><small>VER CAMPANHAS</small></button></a></td>
-
                           </tr>
-                
                       <?php } ?>
                     </tbody>
                   </table>
