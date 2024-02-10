@@ -179,11 +179,9 @@
                     </thead>
                     <tbody class="table-border-bottom-0">
                         <?php foreach ($this->admin_model->get_tag_by_listas($tag) as $c) { ?>
-                      <tr>
-                        <td style="text-transform: uppercase;"><?= $this->administrador_model->get_item($c->tag_id)['nome'] ?></td>
-                        <td><a href="<?=base_url()?>sales/listas_tags/<?=$c->tag_id?>"><button class="btn btn-primary"><small>VER CAMPANHAS</small></button></a></td>
 
-                      </tr>
+                          <?php print_r($c); ?>
+                   
                 
                       <?php } ?>
                     </tbody>
