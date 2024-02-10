@@ -198,7 +198,7 @@
               <?php if ($lista['importacao'] == 1) { ?>
                   <?php $total =  (count($this->admin_model->get_leads_by_tags($lista['tag'])) -  count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
               <?php } else if ($lista['importacao'] == 2) { ?>
-                <?php $total =  (count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) ) -  count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
+                <?php $total =  (count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) ) -  count($this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista['id'], $lista['campanha_associada'], 100000000))); ?>
               <?php } ?>
 
 

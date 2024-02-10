@@ -850,6 +850,23 @@ class Admin_model extends CI_Model
         return $this->db->insert('campanhas', $data);
     }
 
+    
+    public function getLeadsToSynchronizeCampanhaAssociada($lista_id, $campanha_id, $quantidade_max)
+    {
+        $sql = 'SELECT DISTINCT pc.lead_id
+                    FROM campanha_prospection pc
+                    WHERE pc.campanha_id = ' . $campanha_id . '
+                    AND pc.lead_id NOT IN (
+                        SELECT li.person_id
+                        FROM leads_import li
+                        WHERE li.lista_id = ' . $lista_id . '
+                    )  LIMIT ' . $quantidade_max . '';
+
+        $query = $this->db->query($sql);
+
+        return $query->result();
+    }
+
     public function getLeadsToSynchronize($lista_id, $tag_id, $quantidade_max)
     {
         $sql = 'SELECT DISTINCT pc.person_id
