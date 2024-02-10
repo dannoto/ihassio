@@ -187,7 +187,15 @@
                     <tbody class="table-border-bottom-0">
                         <?php foreach ($this->admin_model->get_listas_by_tag($tag) as $c) { ?>
                       <tr>
-                        <td style="text-transform: uppercase;"><?= $c->nome ?></td>
+                        <td style="text-transform: uppercase;"><small> <?php 
+                        if ($c->classificacao == "1"){ 
+                          echo "<span class='badge badge-primary' style='background: cadetblue;' ><small>PROSPECÇÃO</small></span>"; } 
+                        else if ($c->classificacao == "2") { 
+                          echo "<span class='badge badge-primary' style='background: brown;' ><small>ATIVAÇÃO</small></span>"; } 
+                        else if ($c->classificacao == "3") { 
+                          echo "<span class='badge badge-primary' style='background: chartreuse;' ><small>RECUPERAÇÃO</small></span>"; 
+                        }?> <?= $c->nome ?></small></td>
+
                         <td style="text-transform: uppercase;"><?= $this->admin_model->get_item($c->tag)['nome']; ?></td>
                         <td style="text-transform: uppercase;"> <a href="<?= base_url() ?>sales/lista_leads/<?= $c->id ?>">VER LEADS </a></td>
 
