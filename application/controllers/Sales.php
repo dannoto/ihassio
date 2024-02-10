@@ -410,8 +410,12 @@ class Sales extends CI_Controller
             $nome =  "[rec] " . $nome;
         }
 
-        if ($importacao == 2 && strlen($campanha_associada) > 0) {
+        if ($importacao == 2 && strlen($campanha_associada) == 0) {
 
+            $response = array('status' => 'false', 'message' => 'Adicione uma campanha associada para importação manual..');
+
+            
+        } else {
 
             $lista_id = $this->brevo_model->createList($nome)['id'];
 
@@ -420,9 +424,7 @@ class Sales extends CI_Controller
             } else {
                 $response = array('status' => 'false', 'message' => 'Erro ao adicionar.');
             }
-        } else {
 
-            $response = array('status' => 'false', 'message' => 'Adicione uma campanha associada para importação manual..');
         }
 
         print_r(json_encode($response));
@@ -439,7 +441,11 @@ class Sales extends CI_Controller
         $campanha_associada = htmlspecialchars($this->input->post('campanha_associada'));
 
 
-        if ($importacao == 2 && strlen($campanha_associada) > 0) {
+        if ($importacao == 2 && strlen($campanha_associada) == 0) {
+
+            $response = array('status' => 'false', 'message' => 'Adicione uma campanha associada para importação manual..');
+         
+        } else {
 
             if ($this->admin_model->update_lista($id, $nome, $descricao, $tag, $classificacao, $importacao, $campanha_associada)) {
 
@@ -448,8 +454,6 @@ class Sales extends CI_Controller
 
                 $response = array('status' => 'false', 'message' => 'Erro ao adicionar.');
             }
-        } else {
-            $response = array('status' => 'false', 'message' => 'Adicione uma campanha associada para importação manual..');
 
         }
 
