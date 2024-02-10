@@ -435,11 +435,11 @@ class Sales extends CI_Controller {
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
 
         if ($classificacao == 1) {
-           $nome =  "[PROP] ".$nome;
+           $nome =  "[prosp] ".$nome;
         } else if ($classificacao == 2) {
-            $nome =  "[ATV] ".$nome;
+            $nome =  "[atv] ".$nome;
         }  else if ($classificacao == 3) {
-            $nome =  "[REC] ".$nome;
+            $nome =  "[rec] ".$nome;
         }
 
 
