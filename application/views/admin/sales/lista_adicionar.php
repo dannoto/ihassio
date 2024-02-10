@@ -215,7 +215,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3" id="campanha_associada" style="display: none;">
+                        <div class="row mb-3" id="campanha_associada" style="display: inline;">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">CAMP. ASSOC</label>
                           <div class="col-sm-10">
                             <input  type="text" name="campanha_associada" value="" class="form-control" id="basic-default-name" placeholder="" />
