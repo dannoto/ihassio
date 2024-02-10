@@ -884,6 +884,7 @@ class Admin_model extends CI_Model
         $this->db->distinct();
         $this->db->select('lead_id'); // Seleciona apenas o person_id para resultados distintos
         $this->db->where('campanha_id', $tag_id);
+        $this->db->where('is_deleted',0 );
         $query = $this->db->get('campanha_prospection');
 
         return $query->result();
