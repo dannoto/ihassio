@@ -170,37 +170,19 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>NOME</th>
                         <th>TAG</th>
-
-                        <th>LEADS</th>
+                       
                         <th></th>
 
 
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <?php foreach ($this->admin_model->get_listasby_tag($tag) as $c) { ?>
+                        <?php foreach ($this->admin_model->get_tag_by_listas($tag) as $c) { ?>
                       <tr>
-                        <td style="text-transform: uppercase;"><?= $c->nome ?></td>
-                        <td style="text-transform: uppercase;"><?= $this->admin_model->get_item($c->tag)['nome']; ?></td>
-                        <td style="text-transform: uppercase;"> <a href="<?= base_url() ?>sales/lista_leads/<?= $c->id ?>">VER LEADS </a></td>
+                        <td style="text-transform: uppercase;"><?= $this->administrador_model->get_item($c->tag_id)['nome'] ?></td>
+                        <td><a href="<?=base_url()?>sales/listas_tags/<?=$c->tag_id?>"><button class="btn btn-primary"><small>VER CAMPANHAS</small></button></a></td>
 
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a  class="dropdown-item" href="<?= base_url() ?>sales/lista_editar/<?= $c->id ?>"
-                                ><i class="bx bx-edit-alt me-1"></i> Editar</a
-                              >
-                              <a onclick="delete_listas(<?= $c->id ?>)" class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
                       </tr>
                 
                       <?php } ?>

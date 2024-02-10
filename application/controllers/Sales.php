@@ -58,7 +58,7 @@ class Sales extends CI_Controller {
 		
 	}
 
-    public function listas_produtos($tag_id)
+    public function listas_tags($tag_id)
 	{
 
         $tag = $this->admin_model->get_item($tag_id);
