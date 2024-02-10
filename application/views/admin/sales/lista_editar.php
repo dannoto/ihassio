@@ -219,7 +219,7 @@
 
 
                         <div class="row mb-3" id="campanha_associada" style="display: none;">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">CAMPANHA ASSOCIADA</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">CAMP. ASSOC.</label>
                           <div class="col-sm-10">
                             <input required type="text" name="campanha_associada" value="<?= $lista['campanha_associada'] ?>" class="form-control" id="basic-default-name" placeholder="" />
                           </div>
