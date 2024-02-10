@@ -219,31 +219,48 @@
                         </thead>
                         <tbody>
 
-                        <?php foreach ($this->admin_model->get_leads_by_tags($lista['tag']) as $l) { ?>
 
+                        <?php if ($lista['importacao'] == 1) { ?>
 
-                            <tr>
-                                <td><?= $this->admin_model->get_person($l->person_id)['nome']; ?></td>
-                                <td><?php if ($this->admin_model->get_emails_validated($l->person_id)) {
-                                      echo $this->admin_model->get_emails_validated($l->person_id)['email'];
-                                    } else {
-                                      echo "-";
-                                    }; ?></td>
-                                <td><?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
-                                      echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
-                                    } else {
-                                      echo "-";
-                                    } ?></td>
-                              
-                               
+                          <?php foreach ($this->admin_model->get_leads_by_tags($lista['tag']) as $l) { ?>
+                              <tr>
+                                  <td><?= $this->admin_model->get_person($l->person_id)['nome']; ?></td>
+                                  <td><?php if ($this->admin_model->get_emails_validated($l->person_id)) {
+                                        echo $this->admin_model->get_emails_validated($l->person_id)['email'];
+                                      } else {
+                                        echo "-";
+                                      }; ?></td>
+                                  <td><?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
+                                        echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
+                                      } else {
+                                        echo "-";
+                                      } ?></td>
 
-                            </tr>
+                              </tr>
+                          <?php } ?>
 
-                        <?php } ?>
+                        <?php } else if ($lista['importacao'] == 2) { ?>
 
-                           
+                          <?php foreach ($this->admin_model->get_leads_by_campanha_associada($lista['tag']) as $l) { ?>
+                              <tr>
+                                  <td><?= $this->admin_model->get_person($l->person_id)['nome']; ?></td>
+                                  <td><?php if ($this->admin_model->get_emails_validated($l->person_id)) {
+                                        echo $this->admin_model->get_emails_validated($l->person_id)['email'];
+                                      } else {
+                                        echo "-";
+                                      }; ?></td>
+                                  <td><?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
+                                        echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
+                                      } else {
+                                        echo "-";
+                                      } ?></td>
+
+                              </tr>
+                          <?php } ?>
+
+                        <?php } ?> 
                         
-                           
+                        
                         </tbody>
                       
                     </table>

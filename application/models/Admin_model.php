@@ -879,6 +879,17 @@ class Admin_model extends CI_Model
     }
 
 
+    public function get_leads_by_campanha_associada($tag_id)
+    {
+        $this->db->distinct();
+        $this->db->select('lead_id'); // Seleciona apenas o person_id para resultados distintos
+        $this->db->where('campanha_id', $tag_id);
+        $query = $this->db->get('campanha_prospection');
+
+        return $query->result();
+    }
+
+
     public function update_campanha($id, $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista, $classificacao)
     {
 
