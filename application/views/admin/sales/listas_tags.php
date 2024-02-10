@@ -157,7 +157,12 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Listas</h4>
+            <div class="mb-3 mt-1">
+                <a href="<?= base_url() ?>sales/listas">
+                <button class="btn btn-light text-primary border border-0"> <span class="bx bx-left-arrow-alt"></span> VOLTAR    </button>
+                </a>
+              </div>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> Listas - <?= $this->admin_model->get_item($c->tag)['nome']; ?></h4>
 
               <!-- Basic Bootstrap Table -->
               <a href="<?= base_url() ?>sales/lista_adicionar">
