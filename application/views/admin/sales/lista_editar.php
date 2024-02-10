@@ -211,11 +211,21 @@
                           <div class="col-sm-10">
                                 <select  required name="importacao" class="form-select"  >
                                   <option value="">Selecionar</option>
-                                  <option <?php if ($lista['importacao'] == "1") { echo "selected";} ?> value="1">Automática (tag)</option>
+                                  <option <?php if ($lista['importacao'] == "1") { echo "selected";} ?> value="1">Automática (TAG)</option>
                                   <option <?php if ($lista['importacao'] == "2") { echo "selected";} ?> value="2">Manual</option>
                                 </select>
                             </div>
                         </div>
+
+
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">PARENTESCO</label>
+                          <div class="col-sm-10">
+                            <input required type="text" name="parentesco" value="<?= $lista['parentesco'] ?>" class="form-control" id="basic-default-name" placeholder="" />
+                          </div>
+                        </div>
+
+                        
 
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">TAG</label>

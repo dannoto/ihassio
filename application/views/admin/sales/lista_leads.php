@@ -189,7 +189,7 @@
                   <p>Lista de leads segmentados para esta lista.</p>
                 </div>
                 <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
-                <button data-bs-toggle="modal" data-bs-target="#modalAddProbe"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Probe</small></button>
+                <!-- <button data-bs-toggle="modal" data-bs-target="#modalAddProbe"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Probe</small></button> -->
 
                 <button data-bs-toggle="modal" data-bs-target="#modalAddBrevo"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Brevo</small></button>
               </div>

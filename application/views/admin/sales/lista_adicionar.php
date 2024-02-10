@@ -215,6 +215,14 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">PARENTESCO</label>
+                          <div class="col-sm-10">
+                            <input required type="text" name="parentesco" value="" class="form-control" id="basic-default-name" placeholder="" />
+                          </div>
+                        </div>
+
+
 
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">TAG</label>
