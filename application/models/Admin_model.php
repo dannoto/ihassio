@@ -933,7 +933,7 @@ class Admin_model extends CI_Model
     public function get_listas_by_tag($tag_id)
     {
         $this->db->where('is_deleted', 0);
-        $this->db->where('tag_id', $tag_id);
+        $this->db->where('tag', $tag_id);
 
         $this->db->order_by('id', 'desc');
 
