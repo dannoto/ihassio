@@ -292,7 +292,7 @@
                         window.location.href = "<?=base_url()?>sales/listas"
 
                     } else {
-                        alert('Erro ao adicionar!')
+                        alert(resp.message)
                     }
                 },
                 error: function(data) {
