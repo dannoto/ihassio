@@ -432,12 +432,13 @@ class Sales extends CI_Controller {
         $nome = htmlspecialchars($this->input->post('nome'));
         $descricao = htmlspecialchars($this->input->post('descricao'));
         $tag = htmlspecialchars($this->input->post('tag'));
+        $classificacao = htmlspecialchars($this->input->post('classificacao'));
 
 
         $lista_id = $this->brevo_model->createList($nome)['id'];
 
 
-        if ($this->admin_model->add_lista( $nome, $descricao, $tag, $lista_id)) {
+        if ($this->admin_model->add_lista( $nome, $descricao, $tag, $lista_id, $classificacao)) {
 
             $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.'  ) ;
 
@@ -457,8 +458,9 @@ class Sales extends CI_Controller {
         $descricao = htmlspecialchars($this->input->post('descricao'));
         $tag = htmlspecialchars($this->input->post('tag'));
 
+        $classificacao = htmlspecialchars($this->input->post('classificacao'));
 
-        if ($this->admin_model->update_lista($id, $nome, $descricao, $tag)) {
+        if ($this->admin_model->update_lista($id, $nome, $descricao, $tag, $classificacao)) {
 
             $response = array('status' => 'true', 'message' => 'Atualizado com sucesso.'  ) ;
 

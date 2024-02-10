@@ -947,15 +947,15 @@ class Admin_model extends CI_Model
         return $this->db->get('listas')->row_array();
     }
 
-    public function add_lista($nome, $descricao, $tag, $lista_id)
+    public function add_lista($nome, $descricao, $tag, $lista_id, $classificacao)
     {
 
         $data = array(
             'nome' => $nome,
             'descricao' => $descricao,
             'provedor_lista_id' => $lista_id,
-
             'tag' => $tag,
+            'classificacao' => $classificacao,
             'data' => date('Y-m-d H:i:s'),
             'is_deleted' => 0
         );
@@ -963,7 +963,7 @@ class Admin_model extends CI_Model
         return $this->db->insert('listas', $data);
     }
 
-    public function update_lista($id, $nome, $descricao, $tag)
+    public function update_lista($id, $nome, $descricao, $tag, $classificacao)
     {
 
         $this->db->where('id', $id);
@@ -973,6 +973,7 @@ class Admin_model extends CI_Model
             'nome' => $nome,
             'descricao' => $descricao,
             'tag' => $tag,
+            'classificacao' => $classificacao,
             'data' => date('Y-m-d H:i:s'),
             'is_deleted' => 0
         );
