@@ -926,6 +926,7 @@ class Admin_model extends CI_Model
         $this->db->distinct();
         $this->db->select('tag');
         $this->db->where('is_deleted', 0);
+        $this->db->order_by('id', 'desc');
 
         return $this->db->get('listas')->result();
     }
