@@ -922,9 +922,9 @@ class Admin_model extends CI_Model
     }
 
     public function get_tag_by_listas() {
-        
+
         $this->db->distinct();
-        $this->db->select('tag_id');
+        $this->db->select('tag');
         $this->db->where('is_deleted', 0);
 
         return $this->db->get('listas')->result();
