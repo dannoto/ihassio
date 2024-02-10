@@ -165,8 +165,8 @@
  
             <div class="container-xxl flex-grow-1 container-p-y">
             <div class="mb-3 mt-1">
-                <a href="<?= base_url() ?>sales/listas_tags/<?=$lista['tag']?>">
-                <button class="btn btn-light text-primary border border-0"> <span class="bx bx-left-arrow-alt"></span> VOLTAR    </button>
+                <a href="<?= base_url() ?>sales/listas_tags/<?= $lista['tag'] ?>">
+                <button class="btn btn-light text-primary border border-0"> <span class="bx bx-left-arrow-alt"></span>VOLTAR</button>
                 </a>
               </div>
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><?= $lista['nome'] ?></h4>
@@ -187,19 +187,21 @@
                 <div>
                   <h5>LEADS</h5>
                   <p>Lista de leads segmentados para esta lista.</p>
+                  <p>importacao: <?= $lista['importacao'] ?></p>
                 </div>
                 <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
                 <!-- <button data-bs-toggle="modal" data-bs-target="#modalAddProbe"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Probe</small></button> -->
 
                 <button data-bs-toggle="modal" data-bs-target="#modalAddBrevo"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Brevo</small></button>
               </div>
-              <?php $total =  ( 
-                  count($this->admin_model->get_leads_by_tags($lista['tag']))  
-                  - 
-                  count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))   );?>
-              <div>
-                <p><?php echo "<small>SINCRONIZADOS: </small>(".$total." / ".count($this->admin_model->get_leads_by_tags($lista['tag'])).") - ";  echo round((($total/count($this->admin_model->get_leads_by_tags($lista['tag']))) * 100), 2)."%"?></p>
-              </div>
+                  <?php $total =  (
+                    count($this->admin_model->get_leads_by_tags($lista['tag']))
+                    -
+                    count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
+                  <div>
+                    <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_tags($lista['tag'])) . ") - ";
+                        echo round((($total / count($this->admin_model->get_leads_by_tags($lista['tag']))) * 100), 2) . "%" ?></p>
+                  </div>
                     </div>
                     <div class="card-body">
 

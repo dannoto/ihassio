@@ -678,7 +678,6 @@ class Sales extends CI_Controller
                 // print_r($leads_data);
             }
 
-
             $import_process = $this->brevo_model->importContatos($lista_data['provedor_lista_id'], $json_data);
 
             // print_r($import_process);
