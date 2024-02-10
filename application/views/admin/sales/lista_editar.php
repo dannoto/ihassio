@@ -285,7 +285,7 @@
                     if (resp.status == "true") {
 
                         alert('Adicionado com sucesso!')
-                        window.location.href = "<?=base_url()?>sales/listas"
+                        window.location.href = "<?=base_url()?>sales/listas_tags/<?=$lista['tag']?>"
 
                     } else {
                         alert('Erro ao adicionar!')
