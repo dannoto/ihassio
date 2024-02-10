@@ -433,6 +433,7 @@ class Sales extends CI_Controller {
         $descricao = htmlspecialchars($this->input->post('descricao'));
         $tag = htmlspecialchars($this->input->post('tag'));
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
+        $importacao = htmlspecialchars($this->input->post('importacao'));
 
         if ($classificacao == 1) {
            $nome =  "[prosp] ".$nome;
@@ -446,7 +447,7 @@ class Sales extends CI_Controller {
         $lista_id = $this->brevo_model->createList($nome)['id'];
 
 
-        if ($this->admin_model->add_lista( $nome, $descricao, $tag, $lista_id, $classificacao)) {
+        if ($this->admin_model->add_lista( $nome, $descricao, $tag, $lista_id, $classificacao, $importacao)) {
 
             $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.'  ) ;
 
@@ -466,9 +467,11 @@ class Sales extends CI_Controller {
         $descricao = htmlspecialchars($this->input->post('descricao'));
         $tag = htmlspecialchars($this->input->post('tag'));
 
+        $importacao = htmlspecialchars($this->input->post('importacao'));
+
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
 
-        if ($this->admin_model->update_lista($id, $nome, $descricao, $tag, $classificacao)) {
+        if ($this->admin_model->update_lista($id, $nome, $descricao, $tag, $classificacao, $importacao)) {
 
             $response = array('status' => 'true', 'message' => 'Atualizado com sucesso.'  ) ;
 

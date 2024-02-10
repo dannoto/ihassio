@@ -207,6 +207,17 @@
                         </div>
 
                         <div class="row mb-3">
+                          <label for="html5-date-input" class="col-md-2 col-form-label">IMPORTAÇÃO</label>
+                          <div class="col-sm-10">
+                                <select  required name="importacao" class="form-select"  >
+                                  <option value="">Selecionar</option>
+                                  <option <?php if ($lista['importacao'] == "1") { echo "selected";} ?> value="1">Automática (tag)</option>
+                                  <option <?php if ($lista['importacao'] == "2") { echo "selected";} ?> value="2">Manual</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">TAG</label>
                             <div class="col-sm-10">
                                 <select required name="tag" class="form-select"  >
