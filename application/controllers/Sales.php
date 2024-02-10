@@ -67,8 +67,7 @@ class Sales extends CI_Controller {
 
 
             $data = array(
-                'tag' => $tag['id']
-
+                'tag' => $tag_id
             );
 
             $this->load->view('admin/sales/listas_tags', $data);
