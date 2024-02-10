@@ -289,17 +289,15 @@
 
     <script>
 
-      $(document).ready() {
-        
+      $(document).ready(function(e) {
         var importacao = "<?=$lista['importacao']?>"
 
-        if (importacao == 2) {
-          $('#campanha_associada').css('display', 'block')
-        } else if (importacao == 1) {
-          $('#campanha_associada').css('display', 'none')
-        }
-
-      }
+if (importacao == 2) {
+  $('#campanha_associada').css('display', 'block')
+} else if (importacao == 1) {
+  $('#campanha_associada').css('display', 'none')
+}
+      })
 
 
     $('#importacao').on('change', function(e) {
