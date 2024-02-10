@@ -241,7 +241,7 @@
 
                         <?php } else if ($lista['importacao'] == 2) { ?>
 
-                          <?php foreach ($this->admin_model->get_leads_by_campanha_associada($lista['tag']) as $l) { ?>
+                          <?php foreach ($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) as $l) { ?>
                               <tr>
                                   <td><?= $this->admin_model->get_person($l->person_id)['nome']; ?></td>
                                   <td><?php if ($this->admin_model->get_emails_validated($l->person_id)) {
