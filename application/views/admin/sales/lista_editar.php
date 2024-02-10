@@ -159,7 +159,7 @@
  
             <div class="container-xxl flex-grow-1 container-p-y">
             <div class="mb-3 mt-1">
-                <a href="<?= base_url() ?>sales/listas_tags/<?=$lista['tag']?>">
+                <a href="<?= base_url() ?>sales/listas_tags/<?= $lista['tag'] ?>">
                 <button class="btn btn-light text-primary border border-0"> <span class="bx bx-left-arrow-alt"></span> VOLTAR    </button>
                 </a>
               </div>
@@ -199,9 +199,15 @@
                           <div class="col-sm-10">
                                 <select  required name="classificacao" class="form-select"  >
                                   <option value="">Selecionar</option>
-                                  <option <?php if ($lista['classificacao'] == "1") { echo "selected";} ?> value="1">Prospecção</option>
-                                  <option <?php if ($lista['classificacao'] == "2") { echo "selected";} ?> value="2">Ativação</option>
-                                  <option <?php if ($lista['classificacao'] == "3") { echo "selected";} ?> value="3">Recuperação</option>
+                                  <option <?php if ($lista['classificacao'] == "1") {
+                                            echo "selected";
+                                          } ?> value="1">Prospecção</option>
+                                  <option <?php if ($lista['classificacao'] == "2") {
+                                            echo "selected";
+                                          } ?> value="2">Ativação</option>
+                                  <option <?php if ($lista['classificacao'] == "3") {
+                                            echo "selected";
+                                          } ?> value="3">Recuperação</option>
                                 </select>
                             </div>
                         </div>
@@ -211,8 +217,12 @@
                           <div class="col-sm-10">
                                 <select  required name="importacao" id="importacao" class="form-select"  >
                                   <option value="">Selecionar</option>
-                                  <option <?php if ($lista['importacao'] == "1") { echo "selected";} ?> value="1">Automática (TAG)</option>
-                                  <option <?php if ($lista['importacao'] == "2") { echo "selected";} ?> value="2">Manual</option>
+                                  <option <?php if ($lista['importacao'] == "1") {
+                                            echo "selected";
+                                          } ?> value="1">Automática (TAG)</option>
+                                  <option <?php if ($lista['importacao'] == "2") {
+                                            echo "selected";
+                                          } ?> value="2">Manual</option>
                                 </select>
                             </div>
                         </div>
@@ -221,7 +231,26 @@
                         <div class="row mb-3" id="campanha_associada" style="display: none;">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">CAMPANHA ASSOCIADA</label>
                           <div class="col-sm-10">
-                            <input required type="text" name="campanha_associada" value="<?= $lista['campanha_associada'] ?>" class="form-control" id="basic-default-name" placeholder="" />
+
+
+                            <select  name="campanha_associada" class="form-select"  >
+                                <option value="">Selecionar</option>
+                                <?php foreach ($this->admin_model->get_campanhas() as $c) { ?>
+
+                                    <?php if ($c->id == $lista['campanha_associada']) { ?>
+
+                                        <option selected value="<?= $c->id ?>"><?= $c->nome ?></option>
+
+                                    <?php } else { ?>
+
+                                        <option value="<?= $c->id ?>"><?= $c->nome ?></option>
+
+                                    <?php } ?>
+
+                                <?php } ?>
+
+
+                                </select>
                           </div>
                         </div>
 
@@ -290,7 +319,7 @@
     <script>
 
       $(document).ready(function(e) {
-        var importacao = "<?=$lista['importacao']?>"
+        var importacao = "<?= $lista['importacao'] ?>"
 
 if (importacao == 2) {
   $('#campanha_associada').css('display', 'flex')
@@ -327,7 +356,7 @@ if (importacao == 2) {
                     if (resp.status == "true") {
 
                         alert('Adicionado com sucesso!')
-                        window.location.href = "<?=base_url()?>sales/listas_tags/<?=$lista['tag']?>"
+                        window.location.href = "<?= base_url() ?>sales/listas_tags/<?= $lista['tag'] ?>"
 
                     } else {
                         alert('Erro ao adicionar!')
