@@ -239,11 +239,25 @@
 
                                     <?php if ($c->id == $lista['campanha_associada']) { ?>
 
-                                        <option selected value="<?= $c->id ?>"><?= $c->nome ?></option>
+                                        <option selected value="<?= $c->id ?>"><?php 
+                        if ($c->classificacao == "1"){ 
+                          echo "<span class='badge badge-primary' style='background: cadetblue;' ><small>PROSPECÇÃO</small></span>"; } 
+                        else if ($c->classificacao == "2") { 
+                          echo "<span class='badge badge-primary' style='background: brown;' ><small>ATIVAÇÃO</small></span>"; } 
+                        else if ($c->classificacao == "3") { 
+                          echo "<span class='badge badge-primary' style='background: chartreuse;' ><small>RECUPERAÇÃO</small></span>"; 
+                        }?>  <?= $c->nome ?></option>
 
                                     <?php } else { ?>
 
-                                        <option value="<?= $c->id ?>"><?= $c->nome ?></option>
+                                        <option value="<?= $c->id ?>"><?php 
+                        if ($c->classificacao == "1"){ 
+                          echo "<span class='badge badge-primary' style='background: cadetblue;' ><small>PROSPECÇÃO</small></span>"; } 
+                        else if ($c->classificacao == "2") { 
+                          echo "<span class='badge badge-primary' style='background: brown;' ><small>ATIVAÇÃO</small></span>"; } 
+                        else if ($c->classificacao == "3") { 
+                          echo "<span class='badge badge-primary' style='background: chartreuse;' ><small>RECUPERAÇÃO</small></span>"; 
+                        }?>  <?= $c->nome ?></option>
 
                                     <?php } ?>
 
