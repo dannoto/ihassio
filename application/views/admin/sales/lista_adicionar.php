@@ -209,7 +209,7 @@
                           <div class="col-sm-10">
                                 <select  required name="importacao" class="form-select"  >
                                   <option value="">Selecionar</option>
-                                  <option <?php if ($lista['importacao'] == "1") { echo "selected";} ?> value="1">Automática (tag)</option>
+                                  <option <?php if ($lista['importacao'] == "1") { echo "selected";} ?> value="1">Automática (TAG)</option>
                                   <option <?php if ($lista['importacao'] == "2") { echo "selected";} ?> value="2">Manual</option>
                                 </select>
                             </div>
