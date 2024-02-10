@@ -194,14 +194,26 @@
 
                 <button data-bs-toggle="modal" data-bs-target="#modalAddBrevo"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Brevo</small></button>
               </div>
-                  <?php $total =  (
-                    count($this->admin_model->get_leads_by_tags($lista['tag']))
-                    -
-                    count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
+
+              <?php if ($lista['importacao'] == 1) { ?>
+                  <?php $total =  (count($this->admin_model->get_leads_by_tags($lista['tag'])) -  count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
+              <?php } else if ($lista['importacao'] == 2) { ?>
+                <?php $total =  (count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) ) -  count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
+              <?php } ?>
+
+
+              <?php if ($lista['importacao'] == 1) { ?>
                   <div>
                     <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_tags($lista['tag'])) . ") - ";
                         echo round((($total / count($this->admin_model->get_leads_by_tags($lista['tag']))) * 100), 2) . "%" ?></p>
                   </div>
+                <?php } else if ($lista['importacao'] == 2) { ?>
+                  <div>
+                    <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) ) . ") - ";
+                        echo round((($total / count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) )) * 100), 2) . "%" ?></p>
+                  </div>
+                <?php } ?>
+
                     </div>
                     <div class="card-body">
 
