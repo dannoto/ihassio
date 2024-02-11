@@ -187,7 +187,7 @@
                 <div>
                   <h5>LEADS</h5>
                   <p>Lista de leads segmentados para esta lista.</p>
-                  <p>importacao: <?= $lista['importacao'] ?></p>
+                  <p>Importação: <?php if ($lista['importacao'] == 1) { echo "Automático - Tag"; } else if ($lista['importacao'] == 2) { echo "Manual - Prospecção"; } ?></p>
                 </div>
                 <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
                 <!-- <button data-bs-toggle="modal" data-bs-target="#modalAddProbe"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Probe</small></button> -->
