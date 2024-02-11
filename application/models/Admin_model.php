@@ -882,24 +882,38 @@ class Admin_model extends CI_Model
     }
 
 
+    // public function getLeadsToSynchronize($lista_id, $tag_id, $quantidade_max)
+    // {
+    //     $sql = 'SELECT DISTINCT pc.person_id
+    //                 FROM person_classificacao pc
+    //                 WHERE pc.tag_id = ' . $tag_id . '
+                    
+    //                 AND pc.person_id NOT IN (
+    //                     SELECT li.person_id
+    //                     FROM leads_import li
+    //                     WHERE li.lista_id = ' . $lista_id . '
+    //                 )  LIMIT ' . $quantidade_max . '';
+
+    //     $query = $this->db->query($sql);
+
+    //     return $query->result();
+    // }
+
     public function getLeadsToSynchronize($lista_id, $tag_id, $quantidade_max)
     {
-        $sql = 'SELECT DISTINCT pc.person_id
-                    FROM person_classificacao pc
-                    WHERE pc.tag_id = ' . $tag_id . '
-                    WHERE pc.is_deleted = 0
-                    AND pc.person_id NOT IN (
-                        SELECT li.person_id
-                        FROM leads_import li
-                        WHERE li.lista_id = ' . $lista_id . '
-                    )  LIMIT ' . $quantidade_max . '';
+        $this->db->distinct();
+        $this->db->select('pc.person_id');
+        $this->db->from('person_classificacao pc');
+        $this->db->where('pc.tag_id', $tag_id);
+        $this->db->where('pc.is_deleted', 0);
 
-        $query = $this->db->query($sql);
-
+        $this->db->where_not_in('pc.person_id', "(SELECT li.person_id FROM leads_import li WHERE li.lista_id = $lista_id)");
+        $this->db->limit($quantidade_max);
+        $query = $this->db->get();
+    
         return $query->result();
     }
-
-
+    
     public function get_leads_by_tags($tag_id)
     {
         $this->db->distinct();
