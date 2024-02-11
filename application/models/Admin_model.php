@@ -850,23 +850,36 @@ class Admin_model extends CI_Model
         return $this->db->insert('campanhas', $data);
     }
 
-    
+
+    // public function getLeadsToSynchronizeCampanhaAssociada($lista_id, $campanha_id, $quantidade_max)
+    // {
+    //     $sql = 'SELECT DISTINCT pc.lead_id
+    //                 FROM campanha_prospection pc
+    //                 WHERE pc.campanha_id = ' . $campanha_id . '
+    //                 WHERE pc.is_deleted = 0
+    //                 AND pc.lead_id NOT IN (
+    //                     SELECT li.person_id
+    //                     FROM leads_import li
+    //                     WHERE li.lista_id = ' . $lista_id . '
+    //                 )  LIMIT ' . $quantidade_max . '';
+
+    //     $query = $this->db->query($sql);
+
+    //     return $query->result();
+    // }
     public function getLeadsToSynchronizeCampanhaAssociada($lista_id, $campanha_id, $quantidade_max)
     {
-        $sql = 'SELECT DISTINCT pc.lead_id
-                    FROM campanha_prospection pc
-                    WHERE pc.campanha_id = ' . $campanha_id . '
-                    WHERE pc.is_deleted = 0
-                    AND pc.lead_id NOT IN (
-                        SELECT li.person_id
-                        FROM leads_import li
-                        WHERE li.lista_id = ' . $lista_id . '
-                    )  LIMIT ' . $quantidade_max . '';
-
-        $query = $this->db->query($sql);
+        $this->db->distinct();
+        $this->db->select('pc.lead_id');
+        $this->db->from('campanha_prospection pc');
+        $this->db->where('pc.campanha_id', $campanha_id);
+        $this->db->where_not_in('pc.lead_id', "(SELECT li.person_id FROM leads_import li WHERE li.lista_id = $lista_id)");
+        $this->db->limit($quantidade_max);
+        $query = $this->db->get();
 
         return $query->result();
     }
+
 
     public function getLeadsToSynchronize($lista_id, $tag_id, $quantidade_max)
     {
@@ -902,7 +915,7 @@ class Admin_model extends CI_Model
         $this->db->distinct();
         $this->db->select('lead_id'); // Seleciona apenas o person_id para resultados distintos
         $this->db->where('campanha_id', $tag_id);
-        $this->db->where('is_deleted',0 );
+        $this->db->where('is_deleted', 0);
         $query = $this->db->get('campanha_prospection');
 
         return $query->result();
@@ -951,7 +964,8 @@ class Admin_model extends CI_Model
         return $this->db->get('listas')->result();
     }
 
-    public function get_tag_by_listas() {
+    public function get_tag_by_listas()
+    {
 
         $this->db->distinct();
         $this->db->select('tag');
