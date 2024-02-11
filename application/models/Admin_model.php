@@ -553,6 +553,8 @@ class Admin_model extends CI_Model
     {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_validado', 1);
+        $this->db->where('is_deleted', 0 );
+
         $this->db->limit(1);
         return $this->db->get('person_telefone')->row_array();
     }
@@ -561,6 +563,7 @@ class Admin_model extends CI_Model
     {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_validado', 1);
+        $this->db->where('is_deleted', 0 );
         $this->db->limit(1);
         return $this->db->get('person_email')->row_array();
     }
