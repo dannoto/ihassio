@@ -873,6 +873,7 @@ class Admin_model extends CI_Model
         $this->db->select('pc.lead_id');
         $this->db->from('campanha_prospection pc');
         $this->db->where('pc.campanha_id', $campanha_id);
+        $this->db->where('pc.is_deleted', 0);
         $this->db->where_not_in('pc.lead_id', "(SELECT li.person_id FROM leads_import li WHERE li.lista_id = $lista_id)");
         $this->db->limit($quantidade_max);
         $query = $this->db->get();
