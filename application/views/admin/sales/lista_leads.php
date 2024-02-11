@@ -319,6 +319,7 @@
                                     <div class="col mb-3">
                                     <input type="hidden" required name="lista_id" value="<?= $lista['id'] ?>" class="form-control"  />
                                     <input type="hidden" required name="importacao" value="<?= $lista['importacao'] ?>" class="form-control"  />
+                                    <input type="hidden" required name="campanha_associada" value="<?= $lista['campanha_associada'] ?>" class="form-control"  />
 
                                     <labelfor="nameBasic" class="form-label">Quantidade Máxima</label>
                                     <input type="number" class="form-control" required  name="quantidade_max">
