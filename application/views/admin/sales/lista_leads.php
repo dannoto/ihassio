@@ -236,7 +236,9 @@
 
                           <?php foreach ($this->admin_model->get_leads_by_tags($lista['tag']) as $l) { ?>
                               <tr>
-                                  <td><?= $this->admin_model->get_person($l->person_id)['nome']; ?></td>
+
+
+                                  <td><a href="<?=base_url()?>persona/editar/<?=$l->person_id?>" target='_blank'><?= $this->admin_model->get_person($l->person_id)['nome']; ?></a></td>
                                   <td><?php if ($this->admin_model->get_emails_validated($l->person_id)) {
                                         echo $this->admin_model->get_emails_validated($l->person_id)['email'];
                                       } else {
@@ -255,7 +257,7 @@
 
                           <?php foreach ($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) as $l) { ?>
                               <tr>
-                                  <td><?= $this->admin_model->get_person($l->lead_id)['nome']; ?></td>
+                              <td><a href="<?=base_url()?>persona/editar/<?=$l->lead_id?>" target='_blank'><?= $this->admin_model->get_person($l->lead_id)['nome']; ?></a></td>
                                   <td><?php if ($this->admin_model->get_emails_validated($l->lead_id)) {
                                         echo $this->admin_model->get_emails_validated($l->lead_id)['email'];
                                       } else {
