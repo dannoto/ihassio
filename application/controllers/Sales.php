@@ -776,7 +776,7 @@ class Sales extends CI_Controller
 
 
         //  Adicionando o processo de leads
-        print_r(json_encode($response));
+        // print_r(json_encode($response));
     }
 
     public function act_add_sincronizacao_probe()
