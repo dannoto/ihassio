@@ -661,9 +661,15 @@ class Sales extends CI_Controller
 
         if ($importacao == 1) {
 
+            echo "IMPORTACAO 1";
+
+
             $persons = $this->admin_model->getLeadsToSynchronize($lista_id, $lista_data['tag'], $quantidade_max);
 
         } else if ($importacao == 2) {
+
+
+            echo "IMPORTACAO 2";
 
             $persons = $this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista_id, $campanha_associada, $quantidade_max);
 
