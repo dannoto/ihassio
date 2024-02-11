@@ -673,100 +673,102 @@ class Sales extends CI_Controller
 
             $persons = $this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista_id, $campanha_associada, $quantidade_max);
 
+            print_r($persons);
+
         }
 
 
         // print_r($json_data);
-        if (count($persons) > 0) {
+        // if (count($persons) > 0) {
 
 
-            //  Sincronizando leads com a Brevo 
-            $json_data = "NOME;SOBRENOME;EMAIL;WHATSAPP;SMS";
+        //     //  Sincronizando leads com a Brevo 
+        //     $json_data = "NOME;SOBRENOME;EMAIL;WHATSAPP;SMS";
 
-            foreach ($persons as $p) {
+        //     foreach ($persons as $p) {
 
-                $leads_data = $this->admin_model->get_person($p->person_id);
+        //         $leads_data = $this->admin_model->get_person($p->person_id);
 
-                $n = explode(" ", $leads_data['nome']);
-
-
-                $json_data .= "\\n" . $n[0] . ";" . $n[1] . "" . $leads_data['email'] . ";" . $this->admin_model->get_emails_validated($p->person_id)['email'] . ";" . $this->admin_model->get_telefones_validated($p->person_id)['telefone'] . ";" . $this->admin_model->get_telefones_validated($p->person_id)['telefone'];
-
-                // print_r($leads_data);
-            }
-
-            $import_process = $this->brevo_model->importContatos($lista_data['provedor_lista_id'], $json_data);
-
-            // print_r($import_process);
-
-            if ($import_process['processId']) {
-
-                $data = array(
-                    'process_id' => $import_process['processId'],
-                    'quantidade' => count($persons),
-                    'quantidade_max' => $quantidade_max,
-                    'lista_id' => $lista_id,
-                    // 'lista_provedor_id' => $lista_data['provedor_lista_id'],
-                    'process_data' => date('d-m-Y H:i:s'),
-                    'status' => 1,
-                );
-
-                if ($this->admin_model->addSincronizacao($data)) {
-
-                    foreach ($persons as $p) {
-
-                        $data = array(
-                            'provedor' => 'brevo',
-                            'person_id' => $p->person_id,
-                            'lista_id' => $lista_id,
-                            'lista_provedor_id' => $lista_data['provedor_lista_id'],
-                            'data' => date('d-m-Y H:i:s'),
-                            'process_id' => $import_process['processId'],
-                            'is_deleted' => 0
-                        );
-
-                        $this->admin_model->addLeadsSincronizado($data);
-                    }
-
-                    $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.');
-                } else {
-
-                    $data = array(
-                        'process_id' => 0,
-                        'quantidade' => count($persons),
-                        'quantidade_max' => $quantidade_max,
-                        'lista_id' => $lista_id,
-                        'process_data' => date('d-m-Y H:i:s'),
-                        'status' => 0,
-                    );
+        //         $n = explode(" ", $leads_data['nome']);
 
 
-                    // Faljou 
-                    $this->admin_model->addSincronizacao($data);
-                    $response = array('status' => 'false', 'message' => 'Erro ao adicionar.');
-                }
-            } else {
+        //         $json_data .= "\\n" . $n[0] . ";" . $n[1] . "" . $leads_data['email'] . ";" . $this->admin_model->get_emails_validated($p->person_id)['email'] . ";" . $this->admin_model->get_telefones_validated($p->person_id)['telefone'] . ";" . $this->admin_model->get_telefones_validated($p->person_id)['telefone'];
 
-                $data = array(
-                    'process_id' => 0,
-                    'quantidade' => count($persons),
-                    'quantidade_max' => $quantidade_max,
-                    'lista_id' => $lista_id,
-                    'process_data' => date('d-m-Y H:i:s'),
-                    'status' => 0,
-                );
+        //         // print_r($leads_data);
+        //     }
+
+        //     $import_process = $this->brevo_model->importContatos($lista_data['provedor_lista_id'], $json_data);
+
+        //     // print_r($import_process);
+
+        //     if ($import_process['processId']) {
+
+        //         $data = array(
+        //             'process_id' => $import_process['processId'],
+        //             'quantidade' => count($persons),
+        //             'quantidade_max' => $quantidade_max,
+        //             'lista_id' => $lista_id,
+        //             // 'lista_provedor_id' => $lista_data['provedor_lista_id'],
+        //             'process_data' => date('d-m-Y H:i:s'),
+        //             'status' => 1,
+        //         );
+
+        //         if ($this->admin_model->addSincronizacao($data)) {
+
+        //             foreach ($persons as $p) {
+
+        //                 $data = array(
+        //                     'provedor' => 'brevo',
+        //                     'person_id' => $p->person_id,
+        //                     'lista_id' => $lista_id,
+        //                     'lista_provedor_id' => $lista_data['provedor_lista_id'],
+        //                     'data' => date('d-m-Y H:i:s'),
+        //                     'process_id' => $import_process['processId'],
+        //                     'is_deleted' => 0
+        //                 );
+
+        //                 $this->admin_model->addLeadsSincronizado($data);
+        //             }
+
+        //             $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.');
+        //         } else {
+
+        //             $data = array(
+        //                 'process_id' => 0,
+        //                 'quantidade' => count($persons),
+        //                 'quantidade_max' => $quantidade_max,
+        //                 'lista_id' => $lista_id,
+        //                 'process_data' => date('d-m-Y H:i:s'),
+        //                 'status' => 0,
+        //             );
+
+
+        //             // Faljou 
+        //             $this->admin_model->addSincronizacao($data);
+        //             $response = array('status' => 'false', 'message' => 'Erro ao adicionar.');
+        //         }
+        //     } else {
+
+        //         $data = array(
+        //             'process_id' => 0,
+        //             'quantidade' => count($persons),
+        //             'quantidade_max' => $quantidade_max,
+        //             'lista_id' => $lista_id,
+        //             'process_data' => date('d-m-Y H:i:s'),
+        //             'status' => 0,
+        //         );
 
 
 
-                // Faljou 
-                $this->admin_model->addSincronizacao($data);
+        //         // Faljou 
+        //         $this->admin_model->addSincronizacao($data);
 
-                $response = array('status' => 'false', 'message' => 'Erro ao adicionar.');
-            }
-        } else {
+        //         $response = array('status' => 'false', 'message' => 'Erro ao adicionar.');
+        //     }
+        // } else {
 
-            $response = array('status' => 'false', 'message' => 'Nao existem mais leads para serem adicionados.');
-        }
+        //     $response = array('status' => 'false', 'message' => 'Nao existem mais leads para serem adicionados.');
+        // }
 
 
         //  Adicionando os leads processados
