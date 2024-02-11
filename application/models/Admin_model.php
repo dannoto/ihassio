@@ -866,7 +866,7 @@ class Admin_model extends CI_Model
     
     //     return $query->result();
     // }
-    public function getLeadsToSynchronizeCampanha($campanha_id, $lista_id, $quantidade_max)
+    public function getLeadsToSynchronizeCampanhaAssociada($campanha_id, $lista_id, $quantidade_max)
 {
     $this->db->distinct();
     $this->db->select('pc.lead_id');
