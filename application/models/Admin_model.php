@@ -905,7 +905,6 @@ class Admin_model extends CI_Model
         $this->db->select('pc.person_id');
         $this->db->from('person_classificacao pc');
         $this->db->where('pc.tag_id', $tag_id);
-        $this->db->where('pc.is_deleted', 0);
 
         $this->db->where_not_in('pc.person_id', "(SELECT li.person_id FROM leads_import li WHERE li.lista_id = $lista_id)");
         $this->db->limit($quantidade_max);
