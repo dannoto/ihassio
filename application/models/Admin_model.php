@@ -852,9 +852,9 @@ class Admin_model extends CI_Model
 
     public function getLeadsToSynchronizeCampanhaAssociada($lista_id, $campanha_id, $quantidade_max)
     {
-        echo "lista_id: ". $lista_id;
-        echo "campanha_id: ". $campanha_id;
-        echo "quantidade_max: ". $quantidade_max;
+        // echo "lista_id: ". $lista_id;
+        // echo "campanha_id: ". $campanha_id;
+        // echo "quantidade_max: ". $quantidade_max;
 
         $sql = 'SELECT DISTINCT pc.lead_id
                     FROM campanha_prospection pc
