@@ -650,7 +650,7 @@ class Sales extends CI_Controller
         $lista_id = htmlspecialchars($this->input->post('lista_id'));
         $quantidade_max =  htmlspecialchars($this->input->post('quantidade_max'));
         $importacao =  htmlspecialchars($this->input->post('importacao'));
-        $campanha_associada =  htmlspecialchars($this->input->post('camp$campanha_associada'));
+        $campanha_associada =  htmlspecialchars($this->input->post('campanha_associada'));
 
         //   $lista_id = 8;
         //   $quantidade_max = 100;
