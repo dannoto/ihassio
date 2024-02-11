@@ -649,6 +649,7 @@ class Sales extends CI_Controller
 
         $lista_id = htmlspecialchars($this->input->post('lista_id'));
         $quantidade_max =  htmlspecialchars($this->input->post('quantidade_max'));
+        $importacao =  htmlspecialchars($this->input->post('importacao'));
 
         //   $lista_id = 8;
         //   $quantidade_max = 100;
@@ -656,7 +657,16 @@ class Sales extends CI_Controller
         $lista_data = $this->admin_model->get_lista($lista_id);
 
         // Capturando os leads baseado na lista e que ainda nao foram processados.
-        $persons = $this->admin_model->getLeadsToSynchronize($lista_id, $lista_data['tag'], $quantidade_max);
+
+        if ($importacao == 1) {
+            
+            $persons = $this->admin_model->getLeadsToSynchronize($lista_id, $lista_data['tag'], $quantidade_max);
+
+        } else if ($importacao == 2) {
+
+            $persons = $this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista_id, $lista_data['tag'], $quantidade_max);
+
+        }
 
 
         // print_r($json_data);
