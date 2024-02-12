@@ -248,11 +248,11 @@
                                       } else {
                                         echo "-";
                                       }; ?></td>
-                                  <td  onclick="copyText(<?=$c->id?>)" ><?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
+                                  <td  onclick="copyText('telefone_dd')" ><span id="telefone_dd"><?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
                                         echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
                                       } else {
                                         echo "-";
-                                      } ?></td>
+                                      } ?></span></td>
                                     <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?=$l->person_id?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
 
                               </tr>
@@ -268,11 +268,11 @@
                                       } else {
                                         echo "-";
                                       }; ?></td>
-                                  <td  onclick="copyText(<?=$c->id?>)" ><?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
+                                  <td  onclick="copyText('telefone_dd')" ><span id="telefone_cc"><?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
                                         echo $this->admin_model->get_telefones_validated($l->lead_id)['telefone'];
                                       } else {
                                         echo "-";
-                                      } ?></td>
+                                      } ?></span></td>
 
                               </tr>
                           <?php } ?>
@@ -414,8 +414,7 @@
 
 <script>
     function copyText(inputId) {
-        const inputElement = $(this).text;
-        alert(inputElement)
+        const inputElement = document.getElementsByClassName(inputId);
         inputElement.select();
         document.execCommand("copy");
     }
