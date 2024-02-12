@@ -248,7 +248,7 @@
                                       } else {
                                         echo "-";
                                       }; ?></td>
-                                  <td><?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
+                                  <td  onclick="copyText(<?=$c->id?>)" ><?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
                                         echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
                                       } else {
                                         echo "-";
@@ -268,7 +268,7 @@
                                       } else {
                                         echo "-";
                                       }; ?></td>
-                                  <td><?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
+                                  <td  onclick="copyText(<?=$c->id?>)" ><?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
                                         echo $this->admin_model->get_telefones_validated($l->lead_id)['telefone'];
                                       } else {
                                         echo "-";
@@ -411,6 +411,16 @@
 
 <!-- SheetJS (XLSX) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+
+<script>
+    function copyText(inputId) {
+        const inputElement = $(this).text;
+        alet(inputElement)
+        inputElement.select();
+        document.execCommand("copy");
+    }
+
+</script>
 
 <script>
 
