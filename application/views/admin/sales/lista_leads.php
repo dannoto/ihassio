@@ -414,10 +414,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
 
 <script>
+
    function deleteClassificacao(classificacao_id) {
 
-
-$.ajax({
+    alert(classificacao_id)
+        $.ajax({
             method: 'POST',
             url: '<?= base_url() ?>sales/act_delete_classificacao',
             data: {classificacao_id:classificacao_id},
@@ -425,10 +426,8 @@ $.ajax({
                 var resp = JSON.parse(data)
 
                 if (resp.status == "true") {
-
                     alert(resp.message)
                     // location.reload()
-
                 } else {
                   alert(resp.message)
                 }
@@ -437,8 +436,8 @@ $.ajax({
                 alert('Ocorreu um erro temporário.');
             },
         });
+  }
 
-}
 </script>
 
 
