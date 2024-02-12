@@ -415,7 +415,7 @@
 <script>
     function copyText(inputId) {
         const inputElement = $(this).text;
-        alet(inputElement)
+        alert(inputElement)
         inputElement.select();
         document.execCommand("copy");
     }
