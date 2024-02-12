@@ -254,7 +254,7 @@
                                       } else {
                                         echo "-";
                                       } ?></td>
-                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?= $l->id ?>)" ><small>X</small></button></td>
+                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao('<?= $l->id ?>')" ><small>X</small></button></td>
 
                               </tr>
                           <?php } ?>
