@@ -908,7 +908,7 @@ class Admin_model extends CI_Model
     public function get_leads_by_tags($tag_id)
     {
         $this->db->distinct();
-        $this->db->select('person_id'); // Seleciona apenas o person_id para resultados distintos
+        $this->db->select('person_id, id'); // Seleciona apenas o person_id para resultados distintos
         $this->db->where('tag_id', $tag_id);
         $query = $this->db->get('person_classificacao');
 

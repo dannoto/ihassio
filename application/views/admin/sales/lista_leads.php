@@ -242,7 +242,6 @@
                           <?php foreach ($this->admin_model->get_leads_by_tags($lista['tag']) as $l) { ?>
                               <tr>
 
-
                                   <td><a href="<?= base_url() ?>persona/editar/<?= $l->person_id ?>" target='_blank'><?= $this->admin_model->get_person($l->person_id)['nome']; ?></a></td>
                                   <td><?php if ($this->admin_model->get_emails_validated($l->person_id)) {
                                         echo $this->admin_model->get_emails_validated($l->person_id)['email'];
