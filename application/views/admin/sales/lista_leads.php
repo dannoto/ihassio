@@ -413,6 +413,34 @@
 <!-- SheetJS (XLSX) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
 
+<script>
+   function deleteClassificacao(classificacao_id) {
+
+
+$.ajax({
+            method: 'POST',
+            url: '<?= base_url() ?>sales/act_delete_classificacao',
+            data: classificacao_id:classificacao_id,
+            success: function(data) {
+                var resp = JSON.parse(data)
+
+                if (resp.status == "true") {
+
+                    // alert(resp.message)
+                    location.reload()
+
+                } else {
+                  alert(resp.message)
+                }
+            },
+            error: function(data) {
+                alert('Ocorreu um erro temporário.');
+            },
+        });
+
+}
+</script>
+
 
 <?php
 // ... Fetch data from your database and store it in $leads ...
@@ -476,31 +504,7 @@ $leads_json = json_encode($c);
 
     <script>
 
-      function deleteClassificacao(classificacao_id) {
-
-
-        $.ajax({
-                    method: 'POST',
-                    url: '<?= base_url() ?>sales/act_delete_classificacao',
-                    data: classificacao_id:classificacao_id,
-                    success: function(data) {
-                        var resp = JSON.parse(data)
-
-                        if (resp.status == "true") {
-
-                            // alert(resp.message)
-                            location.reload()
-
-                        } else {
-                          alert(resp.message)
-                        }
-                    },
-                    error: function(data) {
-                        alert('Ocorreu um erro temporário.');
-                    },
-                });
-
-      }
+     
 
       $('#form-add-sincronizacao-probe').on('submit', function(e) {
 
