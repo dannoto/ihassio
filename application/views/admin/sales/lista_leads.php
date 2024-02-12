@@ -253,7 +253,7 @@
                                       } else {
                                         echo "-";
                                       } ?></td>
-                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?=$l->person_id?>, <?=$l->tag_id?>)" ><small>X</small></button></td>
+                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?=$l->person_id?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
 
                               </tr>
                           <?php } ?>
@@ -424,8 +424,8 @@
                 var resp = JSON.parse(data)
 
                 if (resp.status == "true") {
-                    alert(resp.message)
-                    // location.reload()
+                    // alert(resp.message)
+                    location.reload()
                 } else {
                   alert(resp.message)
                 }
