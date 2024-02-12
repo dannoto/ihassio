@@ -248,11 +248,11 @@
                                       } else {
                                         echo "-";
                                       }; ?></td>
-                                  <td  onclick="copyText('telefone_dd')" ><span id="telefone_dd"><?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
+                                  <td >/tel1 <?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
                                         echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
                                       } else {
                                         echo "-";
-                                      } ?></span></td>
+                                      } ?></td>
                                     <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?=$l->person_id?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
 
                               </tr>
@@ -268,11 +268,11 @@
                                       } else {
                                         echo "-";
                                       }; ?></td>
-                                  <td  onclick="copyText('telefone_dd')" ><span id="telefone_cc"><?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
+                                  <td>/tel1 <?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
                                         echo $this->admin_model->get_telefones_validated($l->lead_id)['telefone'];
                                       } else {
                                         echo "-";
-                                      } ?></span></td>
+                                      } ?></td>
 
                               </tr>
                           <?php } ?>
@@ -411,15 +411,6 @@
 
 <!-- SheetJS (XLSX) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
-
-<script>
-    function copyText(inputId) {
-        const inputElement = document.getElementsByClassName(inputId);
-        inputElement.select();
-        document.execCommand("copy");
-    }
-
-</script>
 
 <script>
 
