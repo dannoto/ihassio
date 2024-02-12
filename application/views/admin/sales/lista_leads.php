@@ -250,7 +250,7 @@
                                       } else {
                                         echo "-";
                                       } ?></td>
-                                    <td> <button class="btn btn-danger" id="delete_classificacao"><i class="fa fa-trash"></i></button></td>
+                                    <td> <button class="btn btn-danger text-white font-weight-bolder" id="delete_classificacao">X</button></td>
 
                               </tr>
                           <?php } ?>
