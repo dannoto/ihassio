@@ -225,7 +225,8 @@
                                 <th><small>NOME</small></th>
                                 <th><small>EMAIL</small></th>
                                 <th><small>TELEFONE</small></th>
-                           
+                                <th></th>
+
 
                             </tr>
                         </thead>
@@ -249,6 +250,7 @@
                                       } else {
                                         echo "-";
                                       } ?></td>
+                                    <td> <button class="btn btn-danger" id="delete_classificacao"><i class="fa fa-trash"></i></button></td>
 
                               </tr>
                           <?php } ?>
