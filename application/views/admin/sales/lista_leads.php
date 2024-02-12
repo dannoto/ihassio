@@ -187,7 +187,11 @@
                 <div>
                   <h5>LEADS</h5>
                   <p>Lista de leads segmentados para esta lista.</p>
-                  <p>Importação: <?php if ($lista['importacao'] == 1) { echo "Automático - Tag"; } else if ($lista['importacao'] == 2) { echo "Manual - Prospecção"; } ?></p>
+                  <p>Importação: <?php if ($lista['importacao'] == 1) {
+                                    echo "Automático - Tag";
+                                  } else if ($lista['importacao'] == 2) {
+                                    echo "Manual - Prospecção";
+                                  } ?></p>
                 </div>
                 <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
                 <!-- <button data-bs-toggle="modal" data-bs-target="#modalAddProbe"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Probe</small></button> -->
@@ -198,7 +202,7 @@
               <?php if ($lista['importacao'] == 1) { ?>
                   <?php $total =  (count($this->admin_model->get_leads_by_tags($lista['tag'])) -  count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
               <?php } else if ($lista['importacao'] == 2) { ?>
-                <?php $total =  (count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) ) -  count($this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista['id'], $lista['campanha_associada'], 100000000))); ?>
+                <?php $total =  (count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) -  count($this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista['id'], $lista['campanha_associada'], 100000000))); ?>
               <?php } ?>
 
 
@@ -209,8 +213,8 @@
                   </div>
                 <?php } else if ($lista['importacao'] == 2) { ?>
                   <div>
-                    <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) ) . ") - ";
-                        echo round((($total / count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) )) * 100), 2) . "%" ?></p>
+                    <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) . ") - ";
+                        echo round((($total / count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']))) * 100), 2) . "%" ?></p>
                   </div>
                 <?php } ?>
 
@@ -239,7 +243,7 @@
                               <tr>
 
 
-                                  <td><a href="<?=base_url()?>persona/editar/<?=$l->person_id?>" target='_blank'><?= $this->admin_model->get_person($l->person_id)['nome']; ?></a></td>
+                                  <td><a href="<?= base_url() ?>persona/editar/<?= $l->person_id ?>" target='_blank'><?= $this->admin_model->get_person($l->person_id)['nome']; ?></a></td>
                                   <td><?php if ($this->admin_model->get_emails_validated($l->person_id)) {
                                         echo $this->admin_model->get_emails_validated($l->person_id)['email'];
                                       } else {
@@ -250,7 +254,7 @@
                                       } else {
                                         echo "-";
                                       } ?></td>
-                                    <td> <button class="btn btn-danger text-white font-weight-bolder" id="delete_classificacao">X</button></td>
+                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?= $l->id ?>)" ><small>X</small></button></td>
 
                               </tr>
                           <?php } ?>
@@ -259,7 +263,7 @@
 
                           <?php foreach ($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']) as $l) { ?>
                               <tr>
-                              <td><a href="<?=base_url()?>persona/editar/<?=$l->lead_id?>" target='_blank'><?= $this->admin_model->get_person($l->lead_id)['nome']; ?></a></td>
+                              <td><a href="<?= base_url() ?>persona/editar/<?= $l->lead_id ?>" target='_blank'><?= $this->admin_model->get_person($l->lead_id)['nome']; ?></a></td>
                                   <td><?php if ($this->admin_model->get_emails_validated($l->lead_id)) {
                                         echo $this->admin_model->get_emails_validated($l->lead_id)['email'];
                                       } else {
@@ -472,6 +476,31 @@ $leads_json = json_encode($c);
 
     <script>
 
+      function deleteClassificacao(classificacao_id) {
+
+
+        $.ajax({
+                    method: 'POST',
+                    url: '<?= base_url() ?>sales/act_delete_classificacao',
+                    data: classificacao_id:classificacao_id,
+                    success: function(data) {
+                        var resp = JSON.parse(data)
+
+                        if (resp.status == "true") {
+
+                            // alert(resp.message)
+                            location.reload()
+
+                        } else {
+                          alert(resp.message)
+                        }
+                    },
+                    error: function(data) {
+                        alert('Ocorreu um erro temporário.');
+                    },
+                });
+
+      }
 
       $('#form-add-sincronizacao-probe').on('submit', function(e) {
 

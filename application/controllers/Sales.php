@@ -304,6 +304,20 @@ class Sales extends CI_Controller
         print_r(json_encode($response));
     }
 
+    public function act_delete_classificacao() {
+        $classificacao_id = htmlspecialchars($this->input->post('classificacao_id'));
+
+        if ($this->admin_model->delete_classificacao($classificacao_id)) {
+
+            $response = array('status' => 'true', 'message' => 'Excluido com sucesso.');
+        } else {
+
+            $response = array('status' => 'false', 'message' => 'Excluido com sucesso.');
+        }
+
+        print_r(json_encode($response));
+    }
+
     public function act_delete_produto()
     {
 
