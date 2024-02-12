@@ -410,7 +410,7 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">CIDADE</label>
                             <div class="col-sm-10">
-                            <select required value="<?= $p['cidade'] ?>" name="cidade" id="cidade" class="form-select">
+                            <select  value="<?= $p['cidade'] ?>" name="cidade" id="cidade" class="form-select">
             
                             </select>
                             </div>
