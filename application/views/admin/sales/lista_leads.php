@@ -416,8 +416,7 @@
 
    function deleteClassificacao(person_id, tag_id) {
 
-    alert(classificacao_id)
-        $.ajax({
+       $.ajax({
             method: 'POST',
             url: '<?= base_url() ?>sales/act_delete_classificacao_special',
             data: {person_id:person_id, tag_id:tag_id},
@@ -425,8 +424,8 @@
                 var resp = JSON.parse(data)
 
                 if (resp.status == "true") {
-                    alert(resp.message)
-                    // location.reload()
+                    // alert(resp.message)
+                    location.reload()
                 } else {
                   alert(resp.message)
                 }
