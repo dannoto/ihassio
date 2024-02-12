@@ -903,6 +903,7 @@ class Admin_model extends CI_Model
         $sql = 'SELECT DISTINCT pc.person_id
                     FROM person_classificacao pc
                     WHERE pc.tag_id = ' . $tag_id . '
+                    AND is_deleted = 0
                     AND pc.person_id NOT IN (
                         SELECT li.person_id
                         FROM leads_import li
