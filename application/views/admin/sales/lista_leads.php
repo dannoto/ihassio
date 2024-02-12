@@ -253,7 +253,7 @@
                                       } else {
                                         echo "-";
                                       } ?></td>
-                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?=$l->id?>)" ><small>X</small></button></td>
+                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?=$l->person_id?>, <?=$l->tag_id?>)" ><small>X</small></button></td>
 
                               </tr>
                           <?php } ?>
@@ -414,13 +414,13 @@
 
 <script>
 
-   function deleteClassificacao(classificacao_id) {
+   function deleteClassificacao(person_id, tag_id) {
 
     alert(classificacao_id)
         $.ajax({
             method: 'POST',
             url: '<?= base_url() ?>sales/act_delete_classificacao_special',
-            data: {classificacao_id:classificacao_id},
+            data: {person_id:person_id, tag_id:tag_id},
             success: function(data) {
                 var resp = JSON.parse(data)
 
