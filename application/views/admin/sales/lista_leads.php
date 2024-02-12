@@ -426,7 +426,7 @@ $.ajax({
 
                 if (resp.status == "true") {
 
-                    // alert(resp.message)
+                    alert(resp.message)
                     location.reload()
 
                 } else {
