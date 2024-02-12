@@ -420,7 +420,7 @@
 $.ajax({
             method: 'POST',
             url: '<?= base_url() ?>sales/act_delete_classificacao',
-            data: classificacao_id:classificacao_id,
+            data: {classificacao_id:classificacao_id},
             success: function(data) {
                 var resp = JSON.parse(data)
 
