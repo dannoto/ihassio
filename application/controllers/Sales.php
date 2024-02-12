@@ -304,10 +304,11 @@ class Sales extends CI_Controller
         print_r(json_encode($response));
     }
 
-    public function act_delete_classificacao() {
-        $classificacao_id = htmlspecialchars($this->input->post('classificacao_id'));
+    public function act_delete_classificacao_special() {
+        $person_id = htmlspecialchars($this->input->post('person_id'));
+        $tag_id = htmlspecialchars($this->input->post('tag_id'));
 
-        if ($this->admin_model->delete_classificacao($classificacao_id)) {
+        if ($this->admin_model->delete_classificacao_especial($person_id, $tag_id)) {
 
             $response = array('status' => 'true', 'message' => 'Excluido com sucesso.');
         } else {

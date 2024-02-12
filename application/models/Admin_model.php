@@ -645,6 +645,16 @@ class Admin_model extends CI_Model
 
         return $this->db->get('person_classificacao_intensidade')->row_array();
     }
+    public function delete_classificacao_especial($person_id, $tag_id) {
+        $this->db->where('person_id', $person_id);
+        $this->db->where('tag_id', $tag_id);
+
+        $person_data = array(
+            'is_deleted' => 1
+        );
+
+        return $this->db->update('person_classificacao', $person_data);
+    }
 
     public function delete_classificacao($classificacao_id)
     {

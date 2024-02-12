@@ -419,7 +419,7 @@
     alert(classificacao_id)
         $.ajax({
             method: 'POST',
-            url: '<?= base_url() ?>sales/act_delete_classificacao',
+            url: '<?= base_url() ?>sales/act_delete_classificacao_special',
             data: {classificacao_id:classificacao_id},
             success: function(data) {
                 var resp = JSON.parse(data)
