@@ -268,7 +268,7 @@
                                       } else {
                                         echo "-";
                                       }; ?></td>
-                                  <td>/tel1 <?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
+                                  <td><?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
                                         echo $this->admin_model->get_telefones_validated($l->lead_id)['telefone'];
                                       } else {
                                         echo "-";
