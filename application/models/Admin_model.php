@@ -898,6 +898,8 @@ class Admin_model extends CI_Model
 // }
 
 
+
+
     public function getLeadsToSynchronize($lista_id, $tag_id, $quantidade_max)
     {
         $sql = 'SELECT DISTINCT pc.person_id
@@ -1638,6 +1640,44 @@ class Admin_model extends CI_Model
     // Instagram Leads
 
     // Tarefas
+
+
+    public function checkNumberCaptured($numero) {
+    
+        // Remover todos os caracteres que não sejam dígitos
+        $numero = preg_replace("/[^0-9]/", "", $numero);
+        
+        // Verificar se o número tem o tamanho esperado após a remoção dos caracteres não numéricos
+        if (strlen($numero) != 13) {
+            return false;
+        }
+        
+        // Verificar se o número começa com "55" (código do Brasil)
+        if (substr($numero, 0, 2) != "55") {
+            return false;
+        }
+        
+        // Verificar se os próximos dois dígitos são o DDD (código de área) com 2 dígitos
+        $ddd = substr($numero, 2, 2);
+        if (!preg_match("/^[1-9][0-9]$/", $ddd)) {
+            return false;
+        }
+        
+        // Verificar se o próximo dígito é "9" (código obrigatório)
+        if (substr($numero, 4, 1) != "9") {
+            return false;
+        }
+        
+        // Verificar se os próximos 8 dígitos formam o número final
+        $numeroFinal = substr($numero, 5);
+        if (!preg_match("/^[0-9]{8}$/", $numeroFinal)) {
+            return false;
+        }
+        
+        // Se todas as verificações passarem, o número é válido
+        return true;
+  
+}
 
 
 }

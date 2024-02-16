@@ -286,7 +286,7 @@
                             
 
                                   <td><?= $l->email; ?></td>
-                                  <td><?= $l->telefone; ?></td>
+                                  <td><?php if ($this->admin_model->checkNumberCaptured($l->telefone)) { echo "<span style='color:green'>".$l->telefone."</span>"; } else { echo "<span style='color:red'>".$l->telefone."</span>";}  ; ?></td>
                                   <td class="mb-5" > <button onclick="getInstaLeadDemanda(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
                                   <?php if ($l->convertido == 0) { ?>
                                     <?php if ($l->inapto == 0) { ?>
