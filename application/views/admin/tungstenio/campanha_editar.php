@@ -356,9 +356,9 @@ if (campanha_tipo == 1) {
 
                                 }  else if (campanha_tipo == 2) {
 
-                                    $('#div-publico-sex').css('display', 'block')
-                                    $('#div-publico-categoria').css('display', 'block')
-                                    $('#div-publico-idade').css('display', 'block')
+                                    $('#div-publico-sex').css('display', 'flex')
+                                    $('#div-publico-categoria').css('display', 'flex')
+                                    $('#div-publico-idade').css('display', 'flex')
                                 }
                             })
                         </script>
