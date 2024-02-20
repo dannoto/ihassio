@@ -276,14 +276,14 @@
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">PRODUTO</label>
                             <div class="col-sm-10">
                                 <select required name="campanha_produto_id" class="form-select"  >
-                                <option value="">Selecionar</option>
+                                <option value="">Selecionar <?=$c['campanha_produto_id']?> - <?=$prod->id?></option>
 
                                     
                                 <?php foreach ($this->stats_model->get_produtos() as $prod) { ?>
                                     <?php if ($c['campanha_produto_id'] == $prod->id) { ?>
-                                            <option selected value="<?= $prod_id ?>"><?= $prod->produto_nome ?></option>
+                                            <option selected value="<?=$prod_id?>" ><?=$prod->produto_nome ?></option>
                                         <?php } else { ?>
-                                            <option value="<?= $prod->id ?>"><?= $prod->produto_nome ?></option>
+                                            <option value="<?=$prod->id?>" ><?=$prod->produto_nome ?></option>
                                         <?php } ?>
                                 <?php } ?>
 
