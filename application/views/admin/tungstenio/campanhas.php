@@ -197,7 +197,7 @@
                           else if ($c->campanha_status == "2") { 
                             echo "<span class='badge badge-primary' style='background: blue; color: #FFF' ><small>ATIVA</small></span>"; } 
                           else if ($c->campanha_status == "3") { 
-                            echo "<span class='badge badge-primary' style='background: yellow; color: #FFF' ><small>PAUSADA</small></span>"; 
+                            echo "<span class='badge badge-primary' style='background: orange; color: #FFF' ><small>PAUSADA</small></span>"; 
                           } else if ($c->campanha_status == "4") { 
                             echo "<span class='badge badge-primary' style='background: red; color: #FFF' ><small>CONCLUÍDA</small></span>"; 
                           }
