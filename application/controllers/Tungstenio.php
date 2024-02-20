@@ -40,25 +40,25 @@ class Tungstenio extends CI_Controller
         }
     }
 
-    public function campanha_links()
+    public function campanhas_links()
     {
 
         $this->load->view('admin/tungstenio/campanha_links');
     }
 
-    public function campanha_cliques()
+    public function campanhas_cliques()
     {
 
         $this->load->view('admin/tungstenio/campanha_cliques');
     }
 
-    public function campanha_vendas()
+    public function campanhas_vendas()
     {
 
         $this->load->view('admin/tungstenio/campanha_vendas');
     }
 
-    public function campanha_relatorios()
+    public function campanhas_relatorios()
     {
 
         $this->load->view('admin/tungstenio/campanha_relatorios');
