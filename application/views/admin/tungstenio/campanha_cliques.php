@@ -239,7 +239,7 @@
                         </thead>
                         <tbody>
 
-                        <?php foreach ($this->stats_model->get_cliques_by_campanha($c['id']) as $c) { ?>
+                        <?php foreach ($this->stats_model->get_cliques_by_campanha($campanha['id']) as $c) { ?>
                             <tr>
                                 <td><small><?= $c->clique_user_cookie ?></small></td>
                                 <td><small><?= $c->clique_campanha_id ?></small></td>
