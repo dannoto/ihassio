@@ -215,8 +215,7 @@
                 <h5>CLIQUES</h5>
                 <p>Relação de cliques que visitaram a página de vendas dessa campanha.x</p>
               </div>
-              <?=$campanha['id']?>
-              <?php print_r($this->stats_model->get_cliques_by_campanha($campanha['id'])); ?>
+
               <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
 
                     </div>
@@ -244,9 +243,9 @@
                         <?php foreach ($this->stats_model->get_cliques_by_campanha($campanha['id']) as $c) { ?>
                             <tr>
                                 <td><small><?= $c->clique_user_cookie ?></small></td>
-                                <td><small><?= $c->clique_campanha_id ?></small></td>
-                                <td><small><?= $c->clique_banner_id ?></small></td>
-                                <td><small><?= $c->clique_target_id ?></small></td>
+                                <td><small><?= $this->stats_model->get_campanha($c->clique_campanha_id)['campanha_nome'] ?></small></td>
+                                <td><small><?=  $this->stats_model->get_campanha($c->clique_banner_id)['banner_nome'] ?></small></td>
+                                <td><small><?=  $this->stats_model->get_campanha($c->clique_target_id)['target_url'] ?></small></td>
                                 <td><small><?= $c->clique_criacao ?></small></td>
                                 <td><small><?= $c->clique_dispositivo ?></small></td>
                                 <td>       
