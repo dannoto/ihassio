@@ -58,6 +58,12 @@ class Tungstenio extends CI_Controller
         $this->load->view('admin/tungstenio/campanha_vendas');
     }
 
+    public function campanhas_banners()
+    {
+
+        $this->load->view('admin/tungstenio/campanha_banners');
+    }
+
     public function campanhas_relatorios()
     {
 
