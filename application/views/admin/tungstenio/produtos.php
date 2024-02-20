@@ -160,7 +160,7 @@
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Produtos /</span> Lista</h4>
 
               <!-- Basic Bootstrap Table -->
-              <a href="<?=base_url()?>sales/produtos_adicionar">
+              <a href="<?=base_url()?>tungstenio/produtos_adicionar">
                   <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
               </a>
 
