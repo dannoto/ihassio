@@ -225,7 +225,7 @@
                     <div class="card-body">
 
 
-                    <?php foreach($this->stats_model->get_links_by_campanha($campanha['id']) as $c) { ?>
+                    <?php foreach($this->stats_model->get_links_by_campanha($c['id']) as $c) { ?>
 
                       <span class="text-uppercase"><?=$c->link_tipo?></span><br>
                         <div class="input-container">   
@@ -282,7 +282,7 @@
                                   <div class="row">
                                     <div class="col mb-3">
 
-                                    <input type="hidden" name="link_campanha_id" value="<?=$campanha['id']?>">
+                                    <input type="hidden" name="link_campanha_id" value="<?=$c['id']?>">
 
                                     <label for="nameBasic" class="form-label">TIPO</label>
                                     <select required id="type" name="link_tipo" class="form-select"  >
