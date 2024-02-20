@@ -299,11 +299,11 @@
 
                               if (resp.status == "true") {
 
-                                  alert(resp.status)
+                                  alert(resp.message)
                                   location.reload()
 
                               } else {
-                                  alert(resp.status)
+                                  alert(resp.message)
                               }
                           },
                           error: function(data) {
