@@ -206,12 +206,12 @@
                         <td style="text-transform: uppercase;"><small> <?php  
                         if ($c->campanha_tipo == 1) 
                         { echo "PÚBLICO AMPLO";  } else if ($c->campanha_tipo == 2) {  echo "SEGMENTADA"; } ?></small></td>
-                        <td style="text-transform: uppercase;">  <small><a href="<?= base_url() ?>tungstenio/campanha_links/<?= $c->id ?>">LINKS</a></small></td>
+                        <td style="text-transform: uppercase;">  <small><a href="<?= base_url() ?>tungstenio/campanhas_links/<?= $c->id ?>">LINKS</a></small></td>
 
-                        <td style="text-transform: uppercase;">  <small><a href="<?= base_url() ?>tungstenio/campanha_banners/<?= $c->id ?>">BANNERS</a></small></td>
-                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>tungstenio/campanha_cliques/<?= $c->id ?>">CLIQUES</a></small></td>
-                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>tungstenio/campanha_vendas/<?= $c->id ?>">VENDAS</a></small></td>
-                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>tungstenio/campanha_relatorios/<?= $c->id ?>">RELATÓRIOS</a></small></td>
+                        <td style="text-transform: uppercase;">  <small><a href="<?= base_url() ?>tungstenio/campanhas_banners/<?= $c->id ?>">BANNERS</a></small></td>
+                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>tungstenio/campanhas_cliques/<?= $c->id ?>">CLIQUES</a></small></td>
+                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>tungstenio/campanhas_vendas/<?= $c->id ?>">VENDAS</a></small></td>
+                        <td style="text-transform: uppercase;"> <small><a href="<?= base_url() ?>tungstenio/campanhas_relatorios/<?= $c->id ?>">RELATÓRIOS</a></small></td>
 
                         <td>
                           <div class="dropdown">
