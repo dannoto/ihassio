@@ -230,20 +230,23 @@
                             </div>
                         </div>
 
-                        <div  id="div-publico-idade" style="display: none;">
+                        <div  class="row mb-3" id="div-publico-idade-min" style="display: none;">
                            
                            <div class="col-md-12">
                               <label for="html5-date-input" class="col-md-2 col-form-label">IDADE MAX. </label>
                                 <input  type="number" name="campanha_publico_idade_max" class="form-control" id="basic-default-name" placeholder="" />
                             </div>
-                            <div class="col-md-12">
+                            
+                           
+                        </div>
+                        <div  class="row mb-3" id="div-publico-idade-max" style="display: none;">
+
+                        <div class="col-md-12">
                                 <label for="html5-date-input" class="col-md-2 col-form-label">IDADE MIN. </label>
                                 <input  type="number" name="campanha_publico_idade_min" class="form-control" id="basic-default-name" placeholder="" />
                             </div>
-                           
-                        </div>
+                            </div>
 
-                      
 
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">PRODUTO</label>
@@ -328,8 +331,8 @@
 
                                     $('#div-publico-sex').css('display', 'flex')
                                     $('#div-publico-categoria').css('display', 'flex')
-                                    $('#div-publico-idade-min').css('display', 'block')
-                                    $('#div-publico-idade-max').css('display', 'block')
+                                    $('#div-publico-idade-min').css('display', 'flex')
+                                    $('#div-publico-idade-max').css('display', 'flex')
 
                                 }
                             })
