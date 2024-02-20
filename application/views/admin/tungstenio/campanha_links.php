@@ -225,12 +225,12 @@
                     <div class="card-body">
 
 
-                    <?php foreach($this->stats_model->get_links_by_campanha($c['id']) as $c) { ?>
+                    <?php foreach($this->stats_model->get_links_by_campanha($c['id']) as $cam) { ?>
 
-                      <span class="text-uppercase"><?=$c->link_tipo?></span><br>
+                      <span class="text-uppercase"><?=$cam->link_tipo?></span><br>
                         <div class="input-container">   
-                          <input type="text" id="<?=$c->id?>" class="styled-input" value="https://gganalytics.click/<?=$c->link_codigo?>" readonly>
-                          <button class=" btn btn-primary" onclick="copyText(<?=$c->id?>)"><i class="tf-icons bx bxs-paste"></i></button>
+                          <input type="text" id="<?=$cam->id?>" class="styled-input" value="https://gganalytics.click/<?=$cam->link_codigo?>" readonly>
+                          <button class=" btn btn-primary" onclick="copyText(<?=$cam->id?>)"><i class="tf-icons bx bxs-paste"></i></button>
                       </div>
                       <br>
 
