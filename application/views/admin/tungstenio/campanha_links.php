@@ -287,7 +287,7 @@
                                     <label for="nameBasic" class="form-label">TIPO</label>
                                     <select required id="type" name="link_tipo" class="form-select"  >
                                         <option  value="">Selecionar</option>
-                                        <option  value="email">Tungstênio</option>
+                                        <option  value="tungstenio">Tungstênio</option>
 
                                         <option  value="email">Email</option>
                                         <option  value="whatsapp">Whatsapp</option>
