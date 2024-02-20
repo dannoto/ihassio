@@ -442,16 +442,10 @@ class stats_model extends CI_Model
         return $this->db->get('hs_campanhas_links')->row_array();
     }
 
-    public function add_link($campanha_id, $type)
+    public function add_link($data)
     {
 
-        $data = array(
-            'link_campanha_id' => $campanha_id,
-            'link_tipo' => $type,
-            'link_codigo' => $this->generate_link()
-
-        );
-
+      
         return $this->db->insert('hs_campanhas_links', $data);
     }
     // Links
