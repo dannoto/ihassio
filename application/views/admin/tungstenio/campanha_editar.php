@@ -236,7 +236,7 @@
                                   <option value="">Selecionar</option>
 
                                     <?php foreach ($this->stats_model->get_categorias() as $cat) { ?>
-                                        <?php if ($c['campanha_publico_categoria'] == $l->id) { ?>
+                                        <?php if ($c['campanha_publico_categoria'] == $cat->id) { ?>
                                             <option selected value="><?= $cat->id ?>"><?= $cat->categoria_nome ?></option>
                                         <?php } else { ?>
                                             <option value="><?= $cat->id ?>"><?= $cat->categoria_nome ?></option>
