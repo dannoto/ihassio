@@ -225,7 +225,7 @@
                     <div class="card-body">
 
 
-                    <?php foreach($this->admin_model->get_links_by_campanha($campanha['id']) as $c) { ?>
+                    <?php foreach($this->stats_model->get_links_by_campanha($campanha['id']) as $c) { ?>
 
                       <span class="text-uppercase"><?=$c->link_tipo?></span><br>
                         <div class="input-container">   
