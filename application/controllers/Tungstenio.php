@@ -108,7 +108,7 @@ class Tungstenio extends CI_Controller
 
     // Actions
     // Campanhas
-    public function act_add_campanha($data)
+    public function act_add_campanha()
     {
 
         $data['campanha_nome'] = htmlspecialchars($this->input->post('campanha_nome'));
