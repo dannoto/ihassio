@@ -148,7 +148,7 @@ class stats_model extends CI_Model
     {
         $this->db->where('clique_campanha_id', $campanha_id);
         $this->db->where('is_deleted', 0);
-        $this->db->get('hs_campanhas_cliques')->result();
+        return $this->db->get('hs_campanhas_cliques')->result();
     }
 
     public function get_cliques_by_banner($banner_id)

@@ -247,7 +247,7 @@
                                 <td><small><?= $c->clique_campanha_id ?></small></td>
                                 <td><small><?= $c->clique_banner_id ?></small></td>
                                 <td><small><?= $c->clique_target_id ?></small></td>
-                                <td><small><?= $this->admin_model->convertDate($c->clique_criacao) ?></small></td>
+                                <td><small><?= $c->clique_criacao ?></small></td>
                                 <td><small><?= $c->clique_dispositivo ?></small></td>
                                 <td>       
                                         <div class="dropdown">
