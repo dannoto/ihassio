@@ -248,7 +248,7 @@
               $.ajax({
                           method: 'POST',
                           url: '<?= base_url() ?>tungstenio/act_delete_produto',
-                          data: {id:id},
+                          data: {produto_id:id},
                           success: function(data) {
                               var resp = JSON.parse(data)
 
