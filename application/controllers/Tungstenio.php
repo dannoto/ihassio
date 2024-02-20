@@ -166,7 +166,7 @@ class Tungstenio extends CI_Controller
         print_r(json_encode($response));
     }
 
-    public function act_delete_campanha($campanha_id)
+    public function act_delete_campanha()
     {
         $campanha_id = htmlspecialchars($this->input->post('campanha_id'));
 
