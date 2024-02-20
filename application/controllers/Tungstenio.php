@@ -36,7 +36,7 @@ class Tungstenio extends CI_Controller
         if ($campanha_data) {
             $this->load->view('admin/tungstenio/campanha_editar', $data);
         } else {
-            redirect(base_url('tungstenio/campanha'));
+            redirect(base_url('tungstenio/campanhas'));
         }
     }
 
@@ -51,7 +51,7 @@ class Tungstenio extends CI_Controller
         if ($campanha_data) {
             $this->load->view('admin/tungstenio/campanha_links', $data);
         } else {
-            redirect(base_url('tungstenio/campanha'));
+            redirect(base_url('tungstenio/campanhas'));
         }
         
 
@@ -70,7 +70,7 @@ class Tungstenio extends CI_Controller
         if ($campanha_data) {
             $this->load->view('admin/tungstenio/campanha_cliques', $data);
         } else {
-            redirect(base_url('tungstenio/campanha'));
+            redirect(base_url('tungstenio/campanhas'));
         }
 
     }
