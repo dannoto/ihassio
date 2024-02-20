@@ -429,7 +429,7 @@ class Tungstenio extends CI_Controller
 
 
     // Produto
-    public function act_add_produto($data)
+    public function act_add_produto()
     {
 
         $data['produto_nome'] = htmlspecialchars($this->input->post('produto_nome'));
