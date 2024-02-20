@@ -215,6 +215,7 @@
                 <h5>CLIQUES</h5>
                 <p>Relação de cliques que visitaram a página de vendas dessa campanha.</p>
               </div>
+              <?php print_r($this->stats_model->get_cliques_by_campanha($campanha['id'])); ?>
               <button id="exportBtn" class="btn btn-primary text-uppercase mb-3"><small>Exportar para Excel</small></button>
 
                     </div>
