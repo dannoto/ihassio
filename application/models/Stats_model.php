@@ -217,6 +217,8 @@ class stats_model extends CI_Model
     public function get_campanhas()
     {
         $this->db->where('is_deleted', 0);
+        $this->db->order_by('id','desc');
+
         return $this->db->get('hs_campanhas')->result();
     }
 
@@ -342,6 +344,8 @@ class stats_model extends CI_Model
 
     public function get_targets() {
         $this->db->where('is_deleted', 0 );
+        $this->db->order_by('id','desc');
+
         return $this->db->get('hs_campanhas_targets')->result();
     }
 
@@ -404,6 +408,8 @@ class stats_model extends CI_Model
 
     public function get_categorias() {
         $this->db->where('is_deleted', 0 );
+        $this->db->order_by('id','desc');
+
         return $this->db->get('hs_campanhas_categorias')->result();
     }
 
@@ -460,6 +466,8 @@ class stats_model extends CI_Model
 
     public function get_produtos() {
         $this->db->where('is_deleted', 0 );
+        $this->db->order_by('id','desc');
+
         return $this->db->get('hs_campanhas_produtos')->result();
     }
 
