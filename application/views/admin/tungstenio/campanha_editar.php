@@ -177,13 +177,13 @@
                     <div class="card-body">
                       <form id="form-add-campanha">
 
-                      <input required type="hidden" name="campanha_id" value="<?=$c['id']?>" class="form-control" id="basic-default-name" placeholder="" />
+                      <input required type="hidden" name="campanha_id" value="<?= $c['id'] ?>" class="form-control" id="basic-default-name" placeholder="" />
 
 
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">NOME</label>
                           <div class="col-sm-10">
-                            <input required type="text" name="campanha_nome" value="<?=$c['campanha_nome']?>" class="form-control" id="basic-default-name" placeholder="" />
+                            <input required type="text" name="campanha_nome" value="<?= $c['campanha_nome'] ?>" class="form-control" id="basic-default-name" placeholder="" />
                           </div>
                         </div>
 
@@ -191,7 +191,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">DESCRIÇAO</label>
                           <div class="col-sm-10">
-                            <textarea required name="campanha_descricao"   class="form-control"><?=$c['campanha_descricao']?></textarea>
+                            <textarea required name="campanha_descricao"   class="form-control"><?= $c['campanha_descricao'] ?></textarea>
                           </div>
                         </div>
 
@@ -201,8 +201,12 @@
                           <div class="col-sm-10">
                                 <select required id="campanha_tipo" required name="campanha_tipo" class="form-select"  >
                                   <option  value="">Selecionar</option>
-                                  <option <?php if ($c['campanha_tipo'] == 1) { echo "selected"; }?> value="1">Público Amplo</option>
-                                  <option <?php if ($c['campanha_tipo'] == 2) { echo "selected"; }?> value="2">Segmentada</option>
+                                  <option <?php if ($c['campanha_tipo'] == 1) {
+                                            echo "selected";
+                                          } ?> value="1">Público Amplo</option>
+                                  <option <?php if ($c['campanha_tipo'] == 2) {
+                                            echo "selected";
+                                          } ?> value="2">Segmentada</option>
                                 </select>
                             </div>
                         </div>
@@ -212,9 +216,15 @@
                           <div class="col-sm-10">
                                 <select name="campanha_publico_sexo" class="form-select"  >
                                   <option value="">Selecionar</option>
-                                  <option <?php if ($c['campanha_publico_sexo'] == 1) { echo "selected"; }?> value="1">Todos</option>
-                                  <option <?php if ($c['campanha_publico_sexo'] == 2) { echo "selected"; }?>  value="2">Masculino</option>
-                                  <option <?php if ($c['campanha_publico_sexo'] == 3) { echo "selected"; }?> value="3">Feminimo</option>
+                                  <option <?php if ($c['campanha_publico_sexo'] == 1) {
+                                            echo "selected";
+                                          } ?> value="1">Todos</option>
+                                  <option <?php if ($c['campanha_publico_sexo'] == 2) {
+                                            echo "selected";
+                                          } ?>  value="2">Masculino</option>
+                                  <option <?php if ($c['campanha_publico_sexo'] == 3) {
+                                            echo "selected";
+                                          } ?> value="3">Feminimo</option>
                                 </select>
                             </div>
                         </div>
@@ -226,7 +236,7 @@
                                   <option value="">Selecionar</option>
 
                                     <?php foreach ($this->stats_model->get_categorias() as $cat) { ?>
-                                        <?php  if ($c['campanha_publico_categoria'] == $l->id) { ?>
+                                        <?php if ($c['campanha_publico_categoria'] == $l->id) { ?>
                                             <option selected value="><?= $cat->id ?>"><?= $cat->categoria_nome ?></option>
                                         <?php } else { ?>
                                             <option value="><?= $cat->id ?>"><?= $cat->categoria_nome ?></option>
@@ -237,16 +247,28 @@
                             </div>
                         </div>
 
-                        <div class="row" id="div-publico-idade" style="display: none;">
-                            <div class="col-md-6">
+                      
+
+                        <div  class="row mb-3" id="div-publico-idade-max" style="display: none;">
+
+<label for="html5-date-input" class="col-md-2 col-form-label">IDADE MIN. </label>
+<div class="col-sm-10">
+
+<input  type="number"  value="<?= $c['campanha_publico_idade_min'] ?>" name="campanha_publico_idade_min" class="form-control" id="basic-default-name" placeholder="" />
+</div>
+</div>
+                        
+                        <div  class="row mb-3" id="div-publico-idade-min" style="display: none;">
+                           
                               <label for="html5-date-input" class="col-md-2 col-form-label">IDADE MAX. </label>
-                                <input  type="number"  value="<?=$c['campanha_publico_idade_max']?>" name="campanha_publico_idade_max" class="form-control" id="basic-default-name" placeholder="" />
+                              <div class="col-sm-10">
+
+                                <input  type="number" value="<?= $c['campanha_publico_idade_max'] ?>" name="campanha_publico_idade_max" class="form-control" id="basic-default-name" placeholder="" />
                             </div>
-                            <div class="col-md-6">
-                                <label for="html5-date-input" class="col-md-2 col-form-label">IDADE MIN. </label>
-                                <input  type="number"  value="<?=$c['campanha_publico_idade_min']?>" name="campanha_publico_idade_min" class="form-control" id="basic-default-name" placeholder="" />
-                            </div>
+                            
+                           
                         </div>
+                      
 
                       
 
@@ -258,7 +280,7 @@
 
                                     
                                 <?php foreach ($this->stats_model->get_produtos() as $prod) { ?>
-                                    <?php  if ($c['campanha_produto_id'] == $prod->id) { ?>
+                                    <?php if ($c['campanha_produto_id'] == $prod->id) { ?>
                                             <option selected value="><?= $prod_id ?>"><?= $prod->produto_nome ?></option>
                                         <?php } else { ?>
                                             <option value="><?= $prod_id ?>"><?= $prod->produto_nome ?></option>
@@ -279,10 +301,18 @@
                           <div class="col-sm-10">
                                 <select  required name="campanha_status" class="form-select"  >
                                   <option  value="">Selecionar</option>
-                                  <option  <?php if ($c['campanha_status'] == 1) { echo "selected"; }?> value="1">Rascunho</option>
-                                  <option  <?php if ($c['campanha_status'] == 2) { echo "selected"; }?> value="2">Ativa</option>
-                                  <option  <?php if ($c['campanha_status'] == 3) { echo "selected"; }?> value="3">Pausada</option>
-                                  <option  <?php if ($c['campanha_status'] == 4) { echo "selected"; }?> value="4">Concluida</option>
+                                  <option  <?php if ($c['campanha_status'] == 1) {
+                                              echo "selected";
+                                            } ?> value="1">Rascunho</option>
+                                  <option  <?php if ($c['campanha_status'] == 2) {
+                                              echo "selected";
+                                            } ?> value="2">Ativa</option>
+                                  <option  <?php if ($c['campanha_status'] == 3) {
+                                              echo "selected";
+                                            } ?> value="3">Pausada</option>
+                                  <option  <?php if ($c['campanha_status'] == 4) {
+                                              echo "selected";
+                                            } ?> value="4">Concluida</option>
 
                                 </select>
                             </div>
@@ -325,20 +355,21 @@
     <script>
         $(document).ready( function(e) {
 
-            var campanha_tipo = "<?=$c['campanha_tipo']?>";
+            var campanha_tipo = "<?= $c['campanha_tipo'] ?>";
 
 if (campanha_tipo == 1) {
-
-    $('#div-publico-sex').css('display', 'none')
-    $('#div-publico-categoria').css('display', 'none')
-    $('#div-publico-idade').css('display', 'none')
+  $('#div-publico-sex').css('display', 'none')
+                                    $('#div-publico-categoria').css('display', 'none')
+                                    $('#div-publico-idade-min').css('display', 'none')
+                                    $('#div-publico-idade-max').css('display', 'none')
 
 
 }  else if (campanha_tipo == 2) {
 
-    $('#div-publico-sex').css('display', 'block')
-    $('#div-publico-categoria').css('display', 'block')
-    $('#div-publico-idade').css('display', 'block')
+  $('#div-publico-sex').css('display', 'flex')
+                                    $('#div-publico-categoria').css('display', 'flex')
+                                    $('#div-publico-idade-min').css('display', 'flex')
+                                    $('#div-publico-idade-max').css('display', 'flex')
 }
 
         })
