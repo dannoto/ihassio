@@ -293,7 +293,7 @@
               $.ajax({
                           method: 'POST',
                           url: '<?= base_url() ?>tungstenio/act_delete_campanha',
-                          data: {id:id},
+                          data: {campanha_id:id},
                           success: function(data) {
                               var resp = JSON.parse(data)
 
