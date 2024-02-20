@@ -407,7 +407,7 @@ if (campanha_tipo == 1) {
 
             $.ajax({
                 method: 'POST',
-                url: '<?= base_url() ?>tungstenio/act_add_campanha',
+                url: '<?= base_url() ?>tungstenio/act_update_campanha',
                 data: form,
                 success: function(data) {
                     var resp = JSON.parse(data)
