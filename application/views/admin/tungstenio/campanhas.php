@@ -188,7 +188,7 @@
                     <tbody class="table-border-bottom-0">
                         <?php foreach ($this->stats_model->get_campanhas() as $c) { ?>
                       <tr>
-                        <td style="text-transform: uppercase;"><small> <?php  $c->campanha_nome ?></small></td>
+                        <td style="text-transform: uppercase;"><small> <?=$c->campanha_nome ?></small></td>
                         <td style="text-transform: uppercase;"><small>
                         <?php
                         
