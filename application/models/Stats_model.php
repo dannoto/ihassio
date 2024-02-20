@@ -263,7 +263,7 @@ class stats_model extends CI_Model
         return $this->db->update('hs_campanhas', $data);
     }
 
-    public function delete_campanha($campanha_id)
+    public function delete_campanha()
     {
         $this->db->where('id', $campanha_id);
 
