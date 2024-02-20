@@ -94,7 +94,7 @@ class Tungstenio extends CI_Controller
         $produto_data = $this->stats_model->get_produto($produto_id);
 
         $data = array(
-            'c' => $produto_data
+            'produto' => $produto_data
         );
 
         if ($produto_data) {
