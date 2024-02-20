@@ -40,10 +40,22 @@ class Tungstenio extends CI_Controller
         }
     }
 
-    public function campanhas_links()
+    public function campanhas_links($campanha_id)
     {
+        $campanha_data = $this->stats_model->get_campanha($campanha_id);
 
-        $this->load->view('admin/tungstenio/campanha_links');
+        $data = array(
+            'c' => $campanha_data
+        );
+
+        if ($campanha_data) {
+            $this->load->view('admin/tungstenio/campanha_links', $data);
+        } else {
+            redirect(base_url('tungstenio/campanha'));
+        }
+        
+
+       
     }
 
     public function campanhas_cliques()
