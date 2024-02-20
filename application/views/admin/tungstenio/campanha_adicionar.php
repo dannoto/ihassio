@@ -320,14 +320,17 @@
 
                                     $('#div-publico-sex').css('display', 'none')
                                     $('#div-publico-categoria').css('display', 'none')
-                                    $('#div-publico-idade').css('display', 'none')
+                                    $('#div-publico-idade-min').css('display', 'none')
+                                    $('#div-publico-idade-max').css('display', 'none')
 
 
                                 }  else if (campanha_tipo == 2) {
 
                                     $('#div-publico-sex').css('display', 'flex')
                                     $('#div-publico-categoria').css('display', 'flex')
-                                    $('#div-publico-idade').css('display', 'block')
+                                    $('#div-publico-idade-min').css('display', 'block')
+                                    $('#div-publico-idade-max').css('display', 'block')
+
                                 }
                             })
                         </script>
