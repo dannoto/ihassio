@@ -323,7 +323,7 @@
     <?php $this->load->view('comp/footer'); ?>
 
     <script>
-        $(document).on('ready' , function(e) {
+        $(document).ready( function(e) {
 
             var campanha_tipo = "<?=$c['campanha_tipo']?>";
 
