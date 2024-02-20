@@ -184,20 +184,7 @@
                         <td style="text-transform: uppercase;"><small><?= $c->produto_nome ?></small></td>
                         <td style="text-transform: uppercase;"> <small>R$ <?= $c->produto_preco ?></small></td>
                         <td style="text-transform: uppercase;"> <small> <a target="_blank" href=" <?= $c->produto_pagina_de_vendas ?>"><small>VISITAR O LINK</small></a></small></td>
-                        <td style="text-transform: uppercase;"> <small><?php
-                        
-                        
-                        $datetime = '2023-12-14 15:47:54';
-$timestamp = strtotime($c->produto_data );
-$formatted_date = date('d/m/y', $timestamp);
-
-echo $formatted_date; // Saída: 14-12-23
-
-
-
-
-
-?></small></td>
+                        <td style="text-transform: uppercase;"> <small><?= $c->produto_data ?></small></td>
 
 
 
