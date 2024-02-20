@@ -27,8 +27,12 @@ class Tungstenio extends CI_Controller
     {
         $campanha_data = $this->stats_model->get_campanha($campanha_id);
 
+        $data = array(
+            'c' => $campanha_data
+        );
+
         if ($campanha_data) {
-            $this->load->view('admin/tungstenio/campanha_editar');
+            $this->load->view('admin/tungstenio/campanha_editar', $data);
         } else {
             redirect(base_url('tungstenio/campanha'));
         }
@@ -87,8 +91,12 @@ class Tungstenio extends CI_Controller
     {
         $produto_data = $this->stats_model->get_produto($produto_id);
 
+        $data = array(
+            'c' => $produto_data
+        );
+
         if ($produto_data) {
-            $this->load->view('admin/tungstenio/produto_editar');
+            $this->load->view('admin/tungstenio/produto_editar', $data);
         } else {
             redirect(base_url('tungstenio/produtos'));
         }
@@ -159,6 +167,8 @@ class Tungstenio extends CI_Controller
     public function act_delete_campanha($campanha_id)
     {
         $campanha_id = htmlspecialchars($this->input->post('campanha_id'));
+
+
 
         if ($this->stats_model->delete_campanha($campanha_id)) {
 
