@@ -230,8 +230,9 @@
                             </div>
                         </div>
 
-                        <div class="row" id="div-publico-idade" style="display: none;">
-                            <div class="col-md-6">
+                        <div  id="div-publico-idade" style="display: none;">
+                           <div class="row">
+                           <div class="col-md-6">
                               <label for="html5-date-input" class="col-md-2 col-form-label">IDADE MAX. </label>
                                 <input  type="number" name="campanha_publico_idade_max" class="form-control" id="basic-default-name" placeholder="" />
                             </div>
@@ -239,6 +240,7 @@
                                 <label for="html5-date-input" class="col-md-2 col-form-label">IDADE MIN. </label>
                                 <input  type="number" name="campanha_publico_idade_min" class="form-control" id="basic-default-name" placeholder="" />
                             </div>
+                           </div>
                         </div>
 
                       
