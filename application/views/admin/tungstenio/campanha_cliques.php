@@ -243,8 +243,8 @@
                         <?php foreach ($this->stats_model->get_cliques_by_campanha($campanha['id']) as $c) { ?>
                             <tr>
                                 <td><small><?= $c->clique_user_cookie ?></small></td>
-                                <td><small><a target="_blank" href="<?=base_url()?>tungstenio/campanha_editar/<?=$c->id?>"><?= $this->stats_model->get_campanha($c->clique_campanha_id)['campanha_nome'] ?></a></small></td>
-                                <td><small><a target="_blank" href="<?=base_url()?>tungstenio/campanha_banners/<?=$c->id?>"><?= $this->stats_model->get_banner($c->clique_banner_id)['banner_nome'] ?></a></small></td>
+                                <td><small><a target="_blank" href="<?=base_url()?>tungstenio/campanha_editar/<?=$c->clique_campanha_id?>"><?= $this->stats_model->get_campanha($c->clique_campanha_id)['campanha_nome'] ?></a></small></td>
+                                <td><small><a target="_blank" href="<?=base_url()?>tungstenio/campanha_banners/<?=$c->clique_campanha_id?>"><?= $this->stats_model->get_banner($c->clique_banner_id)['banner_nome'] ?></a></small></td>
                                 <td><small><a target="_blank" href="https://<?=  $this->stats_model->get_target($c->clique_target_id)['target_url'] ?>"  >https://<?=  $this->stats_model->get_target($c->clique_target_id)['target_url'] ?></a></small></td>
                                 <td><small><?= $c->clique_criacao ?></small></td>
                                 <td><small><?= $c->clique_dispositivo ?></small></td>
