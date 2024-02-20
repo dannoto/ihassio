@@ -281,7 +281,7 @@
                                     
                                 <?php foreach ($this->stats_model->get_produtos() as $prod) { ?>
                                     <?php if ($c['campanha_produto_id'] == $prod->id) { ?>
-                                            <option selected value=""><?= $prod_id ?>"><?= $prod->produto_nome ?></option>
+                                            <option selected value="<?= $prod_id ?>"><?= $prod->produto_nome ?></option>
                                         <?php } else { ?>
                                             <option value="<?= $prod->id ?>"><?= $prod->produto_nome ?></option>
                                         <?php } ?>
