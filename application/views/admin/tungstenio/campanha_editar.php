@@ -283,7 +283,7 @@
                                     <?php if ($c['campanha_produto_id'] == $prod->id) { ?>
                                             <option selected value="><?= $prod_id ?>"><?= $prod->produto_nome ?></option>
                                         <?php } else { ?>
-                                            <option value="><?= $prod_id ?>"><?= $prod->produto_nome ?></option>
+                                            <option value="<?= $prod_id ?>"><?= $prod->produto_nome ?></option>
                                         <?php } ?>
                                 <?php } ?>
 
