@@ -9,6 +9,8 @@ class Tungstenio extends CI_Controller
 
         parent::__construct();
         $this->load->model('stats_model');
+        $this->load->model('admin_model');
+
     }
 
     public function campanhas()
