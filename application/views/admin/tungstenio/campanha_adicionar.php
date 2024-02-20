@@ -223,7 +223,7 @@
                                   <option value="">Selecionar</option>
 
                                     <?php foreach ($this->stats_model->get_categorias() as $c) { ?>
-                                        <option value="><?= $c->id ?>"><?= $c->categoria_nome ?></option>
+                                        <option value="<?= $c->id ?>"><?= $c->categoria_nome ?></option>
                                     <?php } ?>
                                   
                                 </select>
