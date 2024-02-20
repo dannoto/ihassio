@@ -281,7 +281,7 @@
                                     
                                 <?php foreach ($this->stats_model->get_produtos() as $prod) { ?>
                                     <?php if ($c['campanha_produto_id'] == $prod->id) { ?>
-                                            <option selected value="><?= $prod_id ?>"><?= $prod->produto_nome ?></option>
+                                            <option selected value=""><?= $prod_id ?>"><?= $prod->produto_nome ?></option>
                                         <?php } else { ?>
                                             <option value="<?= $prod->id ?>"><?= $prod->produto_nome ?></option>
                                         <?php } ?>
@@ -380,16 +380,18 @@ if (campanha_tipo == 1) {
 
                                 if (campanha_tipo == 1) {
 
-                                    $('#div-publico-sex').css('display', 'none')
+                                  $('#div-publico-sex').css('display', 'none')
                                     $('#div-publico-categoria').css('display', 'none')
-                                    $('#div-publico-idade').css('display', 'none')
+                                    $('#div-publico-idade-min').css('display', 'none')
+                                    $('#div-publico-idade-max').css('display', 'none')
 
 
                                 }  else if (campanha_tipo == 2) {
 
-                                    $('#div-publico-sex').css('display', 'flex')
+                                  $('#div-publico-sex').css('display', 'flex')
                                     $('#div-publico-categoria').css('display', 'flex')
-                                    $('#div-publico-idade').css('display', 'flex')
+                                    $('#div-publico-idade-min').css('display', 'flex')
+                                    $('#div-publico-idade-max').css('display', 'flex')
                                 }
                             })
                         </script>
