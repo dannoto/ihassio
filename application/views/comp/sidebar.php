@@ -67,11 +67,47 @@ $url = $protocol . $host . $uri;
   <div class="menu-inner-shadow"></div>
 
   <ul class="menu-inner py-1">
-    <!-- Dashboard -->
-    <li class="menu-item ">
+    
+    
+  <li class="menu-item ">
       <a href="<?= base_url() ?>dashboard" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Dashboard</div>
+      </a>
+    </li>
+
+
+
+    <li class="menu-header small text-uppercase">
+      <span class="menu-header-text">Tungstênio</span>
+    </li>
+
+    <li class="menu-item <?php if (strpos("campanhas", $uri) !== false) {echo "active";} ?> ">
+      <a href="<?= base_url() ?>tungstenio/campanhas" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <div data-i18n="Basic">Campanhas</div>
+      </a>
+    </li>
+
+    <li class="menu-item <?php if (strpos("categorias", $uri) !== false) {echo "active";} ?> ">
+      <a href="<?= base_url() ?>tungstenio/categorias" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <div data-i18n="Basic">Categorias</div>
+      </a>
+    </li>
+
+    
+    <li class="menu-item <?php if (strpos("parceiros", $uri) !== false) {echo "active";} ?> ">
+      <a href="<?= base_url() ?>tungstenio/parceiros" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <div data-i18n="Basic">Parceiros</div>
+      </a>
+    </li>
+
+    <li class="menu-item <?php if (strpos("produtos", $uri) !== false) {echo "active";} ?> ">
+      <a href="<?= base_url() ?>tungstenio/produtos" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <div data-i18n="Basic">Produtos</div>
       </a>
     </li>
 

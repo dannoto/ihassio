@@ -51,77 +51,79 @@ class Scraper:
             'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
             'X-Requested-With': 'XMLHttpRequest'
         }
+
+        telefone = None
+        links = "https://linktr.ee/alphaautospa"
+        biografia =""
+        mencoes = ""
+        self.extractTelefone( telefone, links, biografia, mencoes, headers)
+        # base_url = "https://ccoanalitica.com/hassio/instaapi/"
         
         
-        base_url = "https://ccoanalitica.com/hassio/instaapi/"
-        
-        
-        while True:
+        # while True:
    
-            tarefas =  self.getTarefasAtivas(base_url) 
+        #     tarefas =  self.getTarefasAtivas(base_url) 
             
-            try:
+        #     try:
             
-                if len(tarefas) > 0 :    
+        #         if len(tarefas) > 0 :    
 
-                    for tarefa in tarefas:
+        #             for tarefa in tarefas:
                         
-                        if (tarefa['tarefa_tipo'] == "post"):
+        #                 if (tarefa['tarefa_tipo'] == "post"):
                             
-                            print('\n [!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+        #                     print('\n [!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
                             
-                            self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
+        #                     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
                             
-                            # Extraindo Informaçoes
-                            self.extractFromPost( headers, base_url,  tarefa['tarefa_url'], tarefa['id'], tarefa['tarefa_tag'])
+        #                     # Extraindo Informaçoes
+        #                     self.extractFromPost( headers, base_url,  tarefa['tarefa_url'], tarefa['id'], tarefa['tarefa_tag'])
                             
-                            self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+        #                     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
 
                     
-                        elif (tarefa['tarefa_tipo'] == "feed"):
+        #                 elif (tarefa['tarefa_tipo'] == "feed"):
                             
-                            print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+        #                     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
                             
-                            self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
+        #                     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
                             
-                            username = self.extrair_username_url(tarefa['tarefa_url'])
-                            print(username)
+        #                     username = self.extrair_username_url(tarefa['tarefa_url'])
+        #                     print(username)
                             
-                            self.extractFromFeed(headers, username, base_url, tarefa['id'], tarefa['tarefa_tag'])
+        #                     self.extractFromFeed(headers, username, base_url, tarefa['id'], tarefa['tarefa_tag'])
                             
-                            self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+        #                     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
 
                         
-                        # elif (tarefa['tarefa_tipo'] == "tag"):
-                        #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+        #                 # elif (tarefa['tarefa_tipo'] == "tag"):
+        #                 #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
                             
-                        #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
+        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
                             
-                        #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
+        #                 #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
                             
-                        #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
 
                             
-                        # elif (tarefa['tarefa_tipo'] == "location"):
+        #                 # elif (tarefa['tarefa_tipo'] == "location"):
                             
-                        #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+        #                 #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
                             
-                        #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
+        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
                             
-                        #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
+        #                 #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
                             
-                        #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
-                else:
+        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+        #         else:
                     
-                    print('\n [!] Nenhnuma tarefa ativa. ')
-                    time.sleep(5)
+        #             print('\n [!] Nenhnuma tarefa ativa. ')
+        #             time.sleep(5)
                     
-            except Exception as e:
-                print('\n [!] Erro no while.')
-                print(e)
+        #     except Exception as e:
+        #         print('\n [!] Erro no while.')
+        #         print(e)
                     
-      
-        
     def updateTarefaStatus(self, base_url, tarefa_id, tarefa_status):
         
         # print('[!] Mudando status para Processando: '+str(tarefa_id)+'')
@@ -738,190 +740,248 @@ class Scraper:
     # Extracao de Telefones
     def extractTelefone(self, telefone, links, biografia, mencoes, headers):
         
+        print('\n =========== [EXTRAÇAO DE TELEFONE] ================ \n')
+        
+        print('\n [**][VERIF. TELEFONE VIA API] \n')
+        
         if  telefone != None:
-            
-            print('[encontrado telefone default do instagram]')
+            print(telefone)            
             return telefone
         
-        # Verificando se existe link do wpp com numero ex: wa.me/5562993616
-        elif self.extrair_numero_whatsapp(links) != False:
-            
-            print('[encontrado telefone no link do instagram]')
-            
-            return self.extrair_numero_whatsapp( links)
+        print('\n [**][VERIF. TELEFONE PELA BIOGRAFIA] \n')
         
-        # Verificando telefone na bio do lead principal
-        elif self.extrair_numeros_bio(biografia) != False:
+        biografia = biografia.replace('(', "")
+        biografia = biografia.replace(')', "")
+        biografia = biografia.replace('-', "")
+
+        treze = r"\b\d{13}\b"
+        # Encontra todos os números no texto
+        numeros_treze = re.findall(treze, biografia)
+        if numeros_treze:
+            numero = str(numeros_treze[0])
+            numero = numero.replace(' ', "")
+           
+            print(numero)
+            return numero
+        
+        onze_espaco = r"\b\d{2}\s\d{9}\b"
+        # Encontra todos os números no texto
+        numeros_onze_espaco = re.findall(onze_espaco, biografia)
+        if numeros_onze_espaco:
+            numero = str(numeros_onze_espaco[0])
+            numero = numero.replace(' ', "")
+            numero = "55"+numero
+            print(numero)
+            return numero
             
-            print('[encontrado telefone na bio do instagram]')
-            return self.extrair_numeros_bio( links)
-        
-        
-        # Verificando telefones nas bios das mencoes do lead principal
-        level_one_mencoes_telefone = self.level_one_mencoes_telefone(mencoes, headers)
-        if level_one_mencoes_telefone != False:
+        onze_sem_espaco = r"\b\d{11}\b"
+        # Encontra todos os números no texto
+        numeros_onze_sem_espaco = re.findall(onze_sem_espaco, biografia)
+        if numeros_onze_sem_espaco:
+            numero = str(numeros_onze_sem_espaco[0])
+            numero = numero.replace(' ', "")
+            numero = "55"+numero
+            print(numero)
+            return numero
             
-            print('encontrado telefone level_one_mencoes_telefone')
-            return level_one_mencoes_telefone
-        
-        # Verificando telefones nos links do lead principal
-        level_one_links_telefone = self.level_one_links_telefone(links, headers)
-        if level_one_links_telefone != False:
+        dez_espaco = r"\b\d{2}\s\d{8}\b"
+        # Encontra todos os números no texto
+        numeros_dez_espaco = re.findall(dez_espaco, biografia)
+        if numeros_dez_espaco:
+            numero = str(numeros_dez_espaco[0])
+            numero = numero.replace(' ', "")
+            numero = "55"+numero
+            print(numero)
+            return numero
             
-            print('encontrado telefone level_one_link_telefone')
-            return level_one_links_telefone
-        
-    def level_one_mencoes_telefone(self, mencoes, headers):
-       
-        # Verifica as mencoes do lead principal em busca de telefones
+        dez_sem_espaco = r"\b\d{10}\b"
+        # Encontra todos os números no texto
+        numeros_dez_sem_espaco = re.findall(dez_sem_espaco, biografia)
+        if numeros_dez_sem_espaco:
+            numero = str(numeros_dez_sem_espaco[0])
+            numero = numero.replace(' ', "")
+            numero = "55"+numero
+            print(numero)
+            return numero
+            
+        print('\n [**][VERIF. TELEFONE PELA BIOGRAFIA DAS MENÇOES] \n')
+
         mencoes = mencoes.split(", ")
-
-        # print(len(mencoes))
-        # print(mencoes)
-        print('\n =========== [VERIFICANDO TELEFONE POR MENCOES] ================ \n')
-        try:
-            for mencao in mencoes:
-                
-                print(f'VISITANDO: {mencao}')
-                user_data = self.getUserProfile(headers, mencao)
         
-                numero_from_bio = self.extrair_numeros_bio(user_data['data']['user']['biography'])
-                
-                
-                
-                if numero_from_bio != False:
-                    print(f'{mencao} : {numero_from_bio}')
-                    return numero_from_bio
-                    break
-                
-        except Exception as e:
-            print('nao existem mencoes')
-            return False
-         
-    def level_one_links_telefone(self, links, headers):
-       
-        # Verifica os links lead principal em busca de telefones        
-        numero_from_links = self.extrair_numeros_links(links)
-        return numero_from_links
-         
-    def extrair_numeros_bio(self, biografia):
-        # Remover caracteres especiais e letras
-        # numeros = re.sub(r'[^0-9]', '', biografia)
-
-        # # Padronizar para o formato desejado
-        # match = re.match(r'^(55)?(\d{2})?(9\d{8})$', numeros)
-
-        # if match:
-        #     codigo_pais = match.group(1) if match.group(1) else '55'
-        #     ddd = match.group(2) if match.group(2) else ''
-        #     numero = match.group(3)
+        print(f'MENCOES: {mencoes}')
+        
+        if len(mencoes) == 1 and len(mencoes[0]) == 0:
             
-        #     numero_formatado = f'{codigo_pais}{ddd}{numero}'
-        #     return numero_formatado
-        # else:
-        #     return False
-        # Remover caracteres especiais e letras
-        numeros = re.sub(r'[^0-9]', '', biografia)
-        print('\n =========== [VERIFICANDO TELEFONE POR BIO] ================ \n')
-        # Padronizar para o formato desejado
-        match = re.match(r'^(55)?(\d{2})?(9\d{8})$', numeros)
-
-        if match:
-            codigo_pais = match.group(1) if match.group(1) else '55'
-            ddd = match.group(2) if match.group(2) else ''
-            numero = match.group(3)
+            print('NAO EXISTEM MENÇÕES')
             
-            numero_formatado = f'{codigo_pais}{ddd}{numero}'
-            return numero_formatado
         else:
-            # Verificar se o número não possui o código do país "55"
-            match_without_country_code = re.match(r'^(\d{2})?(9\d{8})$', numeros)
-            if match_without_country_code:
-                ddd = match_without_country_code.group(1) if match_without_country_code.group(1) else ''
-                numero = match_without_country_code.group(2)
-                numero_formatado = f'55{ddd}{numero}'  # Adicionando "55" como código do país
-                print(numero_formatado)
-                return numero_formatado
-            else:
-                return False
-    
-    def extrair_numeros_links(self, links):
-
-        links = links.split(", ")
-        print('\n =========== [VERIFICANDO TELEFONE POR LINKS] ================ \n')
-        for link in links:
-            
-            print(f'VISITANDO: {link}')
-            
-            if not link.startswith('https://'):
-                if link.startswith('http://'):
-                    link = link.replace('http://', 'https://')
-                else:
-                    link = 'https://' + link
-            
+      
             try:
-
-                response = requests.get(link)
-       
-                soup = BeautifulSoup(response.content, 'html.parser')
-
-                a_tags = soup.find_all('a')
-             
-                for a_tag in a_tags:
-                    href = a_tag.get('href')
-                    if href:
-                        # print(href)
-                        padrao_whatsapp = re.compile(r'\b55\d{11}')
-
-                        # Encontra todos os números do WhatsApp na string
-                        numeros_whatsapp = padrao_whatsapp.findall(href)
-
-                        if len(numeros_whatsapp) > 0:
-                            print(numeros_whatsapp[0])
-                            return numeros_whatsapp[0] 
-               
-            except Exception as e:
-                print(f"Ocorreu um erro ao acessar {link}: {e}")
-
-        return False
-
-    def extrair_numero_whatsapp(self, link):
-        # Expressão regular para identificar links do WhatsApp
-        padrao_whatsapp = r'https://(?:api\.|)wa\.me/|https://(?:web\.|)whatsapp\.com/send\?phone=|https://(?:api\.|)whatsapp\.com/send\?phone='
-        
-        # Verifica se o link corresponde ao padrão do WhatsApp
-        if re.search(padrao_whatsapp, link):
-            # Extrai o número de telefone do link
-            padrao_numero = r'(\d+)'
-            numeros = re.findall(padrao_numero, link)
-            if numeros:
-                numero = ''.join(numeros)
-                print(f"Número extraído do link: {numero}")
-                
-                if self.verificar_numero_whatsapp(numero) == True:
-                    return numero
-                else:
-                    return False
-                
-            else:
-                print("Link do WhatsApp, mas número não encontrado.")
-                return False
-        else:
-            # print("É um link externo")
-            return False
+                for mencao in mencoes:
+                    
+                    print(f'VISITANDO: {mencao}')
+                    
+                    user_data = self.getUserProfile(headers, mencao)
             
-    def verificar_numero_whatsapp(self, numero):
-        # Expressão regular para verificar o padrão de número do WhatsApp no Brasil
-        padrao_numero = r'^55\d{2}9\d{8}$'  # [55][ddd][9][número de 9 dígitos]
+                    biografia = user_data['data']['user']['biography']
+                    biografia = biografia.replace('(', "")
+                    biografia = biografia.replace(')', "")
+                    biografia = biografia.replace('-', "")
 
-        # Verifica se o número corresponde ao padrão
-        if re.match(padrao_numero, numero):
-            print(f"O número '{numero}' segue o padrão de número do WhatsApp no Brasil.")
-            return True
+                    treze = r"\b\d{13}\b"
+                    # Encontra todos os números no texto
+                    numeros_treze = re.findall(treze, biografia)
+                    if numeros_treze:
+                        numero = str(numeros_treze[0])
+                        numero = numero.replace(' ', "")
+                       
+                        print(numero)
+                        return numero
+                    
+                    onze_espaco = r"\b\d{2}\s\d{9}\b"
+                    # Encontra todos os números no texto
+                    numeros_onze_espaco = re.findall(onze_espaco, biografia)
+                    if numeros_onze_espaco:
+                        numero = str(numeros_onze_espaco[0])
+                        numero = numero.replace(' ', "")
+                        numero = "55"+numero
+                        print(numero)
+                        return numero
+                        
+                    onze_sem_espaco = r"\b\d{11}\b"
+                    # Encontra todos os números no texto
+                    numeros_onze_sem_espaco = re.findall(onze_sem_espaco, biografia)
+                    if numeros_onze_sem_espaco:
+                        numero = str(numeros_onze_sem_espaco[0])
+                        numero = numero.replace(' ', "")
+                        numero = "55"+numero
+                        print(numero)
+                        return numero
+                        
+                    dez_espaco = r"\b\d{2}\s\d{8}\b"
+                    # Encontra todos os números no texto
+                    numeros_dez_espaco = re.findall(dez_espaco, biografia)
+                    if numeros_dez_espaco:
+                        numero = str(numeros_dez_espaco[0])
+                        numero = numero.replace(' ', "")
+                        numero = "55"+numero
+                        print(numero)
+                        return numero
+                        
+                    dez_sem_espaco = r"\b\d{10}\b"
+                    # Encontra todos os números no texto
+                    numeros_dez_sem_espaco = re.findall(dez_sem_espaco, biografia)
+                    if numeros_dez_sem_espaco:
+                        numero = str(numeros_dez_sem_espaco[0])
+                        numero = numero.replace(' ', "")
+                        numero = "55"+numero
+                        print(numero)
+                        return numero       
+            except Exception as e:
+                print(f'ERRO MENCOES {mencoes}')
+                
+        print('\n [**][VERIF. TELEFONE POR LINKS] \n')
+        
+        links = links.split(", ")
+        
+        print(f'LINKS: {links}')
+        
+        if len(links) == 1 and len(links[0]) == 0:
+            
+            print('NAO EXISTEM LINKS')
+            
         else:
-            print(f"O número '{numero}' não segue o padrão esperado.")
-            return False
-    
+            
+            for link in links:
+            
+                print(f'VISITANDO: {link}')
+                
+                if not link.startswith('https://'):
+                    if link.startswith('http://'):
+                        link = link.replace('http://', 'https://')
+                    else:
+                        link = 'https://' + link
+                
+                try:
+
+                    response = requests.get(link)
+        
+                    soup = BeautifulSoup(response.content, 'html.parser')
+
+                    a_tags = soup.find_all('a')
+                
+                    for a_tag in a_tags:
+                        href = a_tag.get('href')
+                        if href:
+                            # print(href)
+                            padrao_whatsapp = re.compile(r'\b55\d{11}')
+
+                            # Encontra todos os números do WhatsApp na string
+                            numeros_whatsapp = padrao_whatsapp.findall(href)
+
+                            if len(numeros_whatsapp) > 0:
+                                print(numeros_whatsapp[0])
+                                return numeros_whatsapp[0] 
+                    biografia = str(response.content) 
+                    biografia = biografia.replace('(', "")
+                    biografia = biografia.replace(')', "")
+                    biografia = biografia.replace('-', "")
+        
+                    treze = r"\b\d{13}\b"
+                    # Encontra todos os números no texto
+                    numeros_treze = re.findall(treze, biografia)
+                    if numeros_treze:
+                        numero = str(numeros_treze[0])
+                        numero = numero.replace(' ', "")
+                     
+                        print(numero)
+                        return numero
+                    
+                    onze_espaco = r"\b\d{2}\s\d{9}\b"
+                    # Encontra todos os números no texto
+                    numeros_onze_espaco = re.findall(onze_espaco, biografia)
+                    if numeros_onze_espaco:
+                        numero = str(numeros_onze_espaco[0])
+                        numero = numero.replace(' ', "")
+                        numero = "55"+numero
+                        print(numero)
+                        return numero
+                        
+                    onze_sem_espaco = r"\b\d{11}\b"
+                    # Encontra todos os números no texto
+                    numeros_onze_sem_espaco = re.findall(onze_sem_espaco, biografia)
+                    if numeros_onze_sem_espaco:
+                        numero = str(numeros_onze_sem_espaco[0])
+                        numero = numero.replace(' ', "")
+                        numero = "55"+numero
+                        print(numero)
+                        return numero
+                        
+                    dez_espaco = r"\b\d{2}\s\d{8}\b"
+                    # Encontra todos os números no texto
+                    numeros_dez_espaco = re.findall(dez_espaco, biografia)
+                    if numeros_dez_espaco:
+                        numero = str(numeros_dez_espaco[0])
+                        numero = numero.replace(' ', "")
+                        numero = "55"+numero
+                        print(numero)
+                        return numero
+                        
+                    dez_sem_espaco = r"\b\d{10}\b"
+                    # Encontra todos os números no texto
+                    numeros_dez_sem_espaco = re.findall(dez_sem_espaco, biografia)
+                    if numeros_dez_sem_espaco:
+                        numero = str(numeros_dez_sem_espaco[0])
+                        numero = numero.replace(' ', "")
+                        numero = "55"+numero
+                        print(numero)
+                        return numero
+                    
+                
+                except Exception as e:
+                    print(f"Ocorreu um erro ao acessar {link}: {e}")
+                
+       
     # Extracao de Telefones
          
     # Extração Emails
@@ -929,107 +989,90 @@ class Scraper:
         
         print('\n =========== [EXTRAÇAO DE EMAILS] ================ \n')
         
+        print('\n [**][VERIF. EMAIL VIA API] \n')
+        
         if  email != None:
-            
-            print('[VERIFICANDO EMAIL DEFAULT DO INSTAGRAM]')
             print(email)
             return email
         
-        elif self.extrair_email_bio( biografia) != False:
-                       
-            print('[VERIFICANDO EMAIL NA BIO DO INSTAGRAM]')
-            return self.extrair_email_bio( biografia)
+        print('\n [**][VERIF. EMAIL PELA BIOGRAFIA] \n')
         
-        # Verificando telefones nas bios das mencoes do lead principal
-        level_one_mencoes_email = self.level_one_mencoes_email(mencoes, headers)
-        if level_one_mencoes_email != False:
-            
-            
-            return level_one_mencoes_email
-        
-        # Verificando telefones nos links do lead principal
-        level_one_links_email = self.level_one_links_email(links, headers)
-        if level_one_links_email != False:
-            
-            return level_one_links_email       
-          
-    def extrair_email_bio(self, biografia):
-        # Expressão regular para encontrar e-mails válidos
         padrao_email = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
-
-        # Encontrar e-mails na string fornecida
         match = re.search(padrao_email, biografia)
         
-        # Retornar lista de e-mails encontrados
         if match:
             print( match.group())
             return match.group()
-        else:
-            return False
-        
-    def level_one_mencoes_email(self, mencoes, headers):
-       
-        # Verifica as mencoes do lead principal em busca de telefones
+
+
+        print('\n [**][VERIF. EMAIL PELA BIOGRAFIA DAS MENÇOES] \n')
+
         mencoes = mencoes.split(", ")
-
-        print('\n =========== [VERIFICANDO EMAILS POR MENCOES] ================ \n')
         
-        try:
+        print(f'MENCOES: {mencoes}')
+        
+        if len(mencoes) == 1 and len(mencoes[0]) == 0:
+            
+            print('NAO EXISTEM MENÇÕES')
+            
+        else:
+            
             for mencao in mencoes:
-                
-                print(f'VISITANDO: {mencao}')
+                    
+                print(f'VISITANDO MENÇÃO: {mencao}')
                 user_data = self.getUserProfile(headers, mencao)
+                    
+                padrao_email = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+                match = re.search(padrao_email, user_data['data']['user']['biography'])
+                
+                if match:
+                    print( match.group())
+                    return match.group()
+
+        print('\n [**][VERIF. EMAIL PELOS LINKS] \n')
         
-                email = self.extrair_email_bio(user_data['data']['user']['biography'])
-                
-                if email != False:
-                    print(f'{mencao} : {email}')
-                    return email
-                    break
-            return False
-                
-        except Exception as e:
-            print('\n =========== [NAO EXISTEM MENÇOES] ================ \n')
-            return False
-         
-    def level_one_links_email(self, links, headers):
-
         links = links.split(", ")
-        print('\n =========== [VERIFICANDO EMAILS POR LINKS] ================ \n')
-        for link in links:
+        
+        print(f'LINKS: {links}')
+        
+        if len(links) == 1 and len(links[0]) == 0:
             
-            print(f'VISITANDO: {link}')
+            print('NAO EXISTEM LINKS')
             
-            if not link.startswith('https://'):
-                if link.startswith('http://'):
-                    link = link.replace('http://', 'https://')
-                else:
-                    link = 'https://' + link
-            
-            try:
+        else:
 
-                response = requests.get(link)
-       
-                    # Extrai o conteúdo HTML da resposta
-                html_content = response.text
-
-                # Regex para extrair endereços de e-mail
-                padrao_email = re.compile(r'[\w\.-]+@[\w\.-]+')
-
-                # Encontra todos os endereços de e-mail no código-fonte
-                emails_encontrados = padrao_email.findall(html_content)
-
-                if emails_encontrados:
-                    print(f'EMAIL ENCONTRADO: {emails_encontrados[0]}')
-                    return emails_encontrados[0]  # Retorna o primeiro endereço de e-mail encontrado
-             
+            for link in links:
                 
-            except Exception as e:
-                print(f"ERRO AO ACESSAR: [{link}]  {e}")
+                print(f'VISITANDO: {link}')
+                
+                if not link.startswith('https://'):
+                    if link.startswith('http://'):
+                        link = link.replace('http://', 'https://')
+                    else:
+                        link = 'https://' + link
+                try:
 
-        return False
-    #Extracao Emails
-    
+                    response = requests.get(link)
+        
+                        # Extrai o conteúdo HTML da resposta
+                    html_content = response.text
+
+                    # print(html_content)
+                    # Regex para extrair endereços de e-mail
+                    padrao_email = re.compile(r'[\w\.-]+@[\w\.-]+')
+
+                    # Encontra todos os endereços de e-mail no código-fonte
+                    emails_encontrados = padrao_email.findall(html_content)
+
+                    if emails_encontrados:
+                        print(f'EMAIL ENCONTRADO: {emails_encontrados[0]}')
+                        return emails_encontrados[0]  # Retorna o primeiro endereço de e-mail encontrado
+                
+                    
+                except Exception as e:
+                    print(f"ERRO AO ACESSAR: [{link}]  {e}")
+
+  
     # Feed
     def getUserFeed(self, headers, user_id):
         
