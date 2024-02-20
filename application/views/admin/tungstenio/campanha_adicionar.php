@@ -327,7 +327,7 @@
 
                                     $('#div-publico-sex').css('display', 'flex')
                                     $('#div-publico-categoria').css('display', 'flex')
-                                    $('#div-publico-idade').css('display', 'flex')
+                                    $('#div-publico-idade').css('display', 'block')
                                 }
                             })
                         </script>
