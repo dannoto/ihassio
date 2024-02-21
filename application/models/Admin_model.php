@@ -1001,7 +1001,7 @@ class Admin_model extends CI_Model
         $this->db->where('is_deleted', 0);
         $this->db->where('tag', $tag_id);
 
-        $this->db->limit('1500');
+        $this->db->limit('300');
         $this->db->order_by('id', 'desc');
 
         return $this->db->get('listas')->result();
