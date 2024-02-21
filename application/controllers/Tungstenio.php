@@ -544,4 +544,55 @@ class Tungstenio extends CI_Controller
     }
     // Cliques
 
+
+    // Vendas
+    public function act_add_venda()
+    {
+
+        $campanha_id = htmlspecialchars($this->input->post('campanha_id'));
+        $produto_id = htmlspecialchars($this->input->post('produto_id'));
+        $lead_id = $this->input->post('lead_id')[0];
+        $data = htmlspecialchars($this->input->post('data'));
+
+        $dateString = $data;
+        $dateTime = DateTime::createFromFormat('Y-m-d\TH:i', $dateString);
+        $formattedDateTime = $dateTime->format('d-m-Y H:i:s');
+
+        $data =  $formattedDateTime;
+
+        $valor = htmlspecialchars($this->input->post('valor'));
+        $provedor = htmlspecialchars($this->input->post('provedor'));
+        $provedor_venda_id = htmlspecialchars($this->input->post('provedor_venda_id'));
+
+        $tipo = htmlspecialchars($this->input->post('tipo'));
+
+        if ($this->stats_model->add_venda($campanha_id, $produto_id, $lead_id, $data,  $valor, $provedor, $provedor_venda_id, $tipo)) {
+
+            $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.');
+        } else {
+
+            $response = array('status' => 'false', 'message' => 'Erro ao adicionar.');
+        }
+
+        print_r(json_encode($response));
+    }
+
+    public function act_delete_vendas()
+    {
+
+        $id = htmlspecialchars($this->input->post('id'));
+
+        if ($this->stats_model->delete_venda($id)) {
+
+            $response = array('status' => 'true', 'message' => 'Excluido com sucesso.');
+        } else {
+
+            $response = array('status' => 'false', 'message' => 'Excluido com sucesso.');
+        }
+
+        print_r(json_encode($response));
+    }
+
+    // Vendas
+
 }

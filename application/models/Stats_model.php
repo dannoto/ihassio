@@ -485,5 +485,73 @@ class stats_model extends CI_Model
     }
     // Produtos
 
+
+    // Vendas
+    public function get_vendas_by_campanha($campanha_id, $tipo = null)
+    {
+
+        if ($tipo != null) {
+            $this->db->where('tipo', $tipo);
+        }
+
+        $this->db->where('campanha_id', $campanha_id);
+        $this->db->where('is_deleted', 0);
+        $this->db->order_by('id', 'desc');
+
+        return $this->db->get('hs_campanha_vendas')->result();
+    }
+
+    public function add_venda($campanha_id, $produto_id, $lead_id, $data,  $valor, $provedor, $provedor_venda_id, $tipo)
+    {
+
+
+        $data = array(
+            'campanha_id' => $campanha_id,
+            'produto_id' => $produto_id,
+            'lead_id' => $lead_id,
+            'data' => $data,
+            'valor' => $valor,
+            'provedor' => $provedor,
+            'tipo' => $tipo,
+
+            'provedor_venda_id' =>  $provedor_venda_id,
+            'is_deleted' => 0,
+        );
+
+        return $this->db->insert('hs_campanha_vendas', $data);
+    }
+
+    public function update_venda($id, $lead_id, $data, $valor, $provedor, $venda_id)
+    {
+
+        $this->db->where('id', $id);
+
+        $data = array(
+
+            'lead_id' => $lead_id,
+            'data' => $data,
+            'valor' => $valor,
+            'provedor' => $provedor,
+            'provedor_venda_id', $venda_id,
+
+        );
+
+        return $this->db->update('hs_campanha_vendas', $data);
+    }
+
+    public function delete_venda($id)
+    {
+        $this->db->where('id', $id);
+
+        $data = array(
+            'is_deleted' => 1
+        );
+
+        return $this->db->update('hs_campanha_vendas', $data);
+    }
+
+
+    // Vendas
+
     // Hassio
 }

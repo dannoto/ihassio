@@ -42,9 +42,6 @@ class Admin_model extends CI_Model
             return "";
         }
     }
-
-
-
     //  Persona Categoria
 
     public function get_categoria($id)
@@ -931,7 +928,6 @@ class Admin_model extends CI_Model
         return $query->result();
     }
 
-
     public function get_leads_by_campanha_associada($tag_id)
     {
         $this->db->distinct();
@@ -944,7 +940,6 @@ class Admin_model extends CI_Model
 
         return $query->result();
     }
-
 
     public function update_campanha($id, $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista, $classificacao)
     {
@@ -978,7 +973,6 @@ class Admin_model extends CI_Model
 
         return $this->db->update('campanhas', $data);
     }
-
 
     public function get_listas()
     {
