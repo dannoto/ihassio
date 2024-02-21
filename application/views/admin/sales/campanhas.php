@@ -179,6 +179,8 @@
                     </thead>
                     <tbody class="table-border-bottom-0">
                         <?php foreach ($this->admin_model->get_produtos() as $c) { ?>
+
+                          <?php if (count($this->admin_model->get_campanhas_by_produto($c->id) < 0 ) { ?>
                           <tr>
                           <td style="text-transform: uppercase;"><small><?= $c->nome ?></small></td>
                         <td style="text-transform: uppercase;"> <small><center><?= count($this->admin_model->get_campanhas_by_produto($c->id) )?></center></small></td>
@@ -187,6 +189,7 @@
                             <td><a href="<?=base_url()?>sales/campanhas_produtos/<?=$c->id?>"><button class="btn btn-primary"><small>VER CAMPANHAS</small></button></a></td>
                           
                           </tr>
+                          <?php } ?>
                 
                       <?php } ?>
                     </tbody>
