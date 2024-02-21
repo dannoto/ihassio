@@ -38,7 +38,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.9/css/buttons.dataTables.min.css">
 
 
-
   </head>
 
   <body>
