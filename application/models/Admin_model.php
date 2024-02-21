@@ -938,6 +938,8 @@ class Admin_model extends CI_Model
         $this->db->select('lead_id'); // Seleciona apenas o person_id para resultados distintos
         $this->db->where('campanha_id', $tag_id);
         $this->db->where('is_deleted',0 );
+        $this->db->limit('50');
+
         $query = $this->db->get('campanha_prospection');
 
         return $query->result();
@@ -1001,7 +1003,7 @@ class Admin_model extends CI_Model
         $this->db->where('is_deleted', 0);
         $this->db->where('tag', $tag_id);
 
-        $this->db->limit('500');
+        $this->db->limit('50');
         $this->db->order_by('id', 'desc');
 
         return $this->db->get('listas')->result();
