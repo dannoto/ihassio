@@ -924,7 +924,7 @@ class Admin_model extends CI_Model
         $this->db->select('person_id'); // Seleciona apenas o person_id para resultados distintos
         $this->db->where('tag_id', $tag_id);
         $this->db->where('is_deleted',0 );
-
+$this->db->limit('1500');
         $query = $this->db->get('person_classificacao');
 
         // Retorna os resultados únicos como um array de objetos
