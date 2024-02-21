@@ -662,10 +662,15 @@ class Sales extends CI_Controller
     public function act_add_sincronizacao()
     {
 
-        $lista_id = htmlspecialchars($this->input->post('lista_id'));
-        $quantidade_max =  htmlspecialchars($this->input->post('quantidade_max'));
-        $importacao =  htmlspecialchars($this->input->post('importacao'));
-        $campanha_associada =  htmlspecialchars($this->input->post('campanha_associada'));
+        // $lista_id = htmlspecialchars($this->input->post('lista_id'));
+        // $quantidade_max =  htmlspecialchars($this->input->post('quantidade_max'));
+        // $importacao =  htmlspecialchars($this->input->post('importacao'));
+        // $campanha_associada =  htmlspecialchars($this->input->post('campanha_associada'));
+
+        $lista_id = htmlspecialchars($this->input->get('lista_id'));
+        $quantidade_max =  htmlspecialchars($this->input->get('quantidade_max'));
+        $importacao =  htmlspecialchars($this->input->get('importacao'));
+        $campanha_associada =  htmlspecialchars($this->input->get('campanha_associada'));
 
         //   $lista_id = 8;
         //   $quantidade_max = 100;

@@ -535,6 +535,7 @@ $leads_json = json_encode($c);
 
             e.preventDefault()
 
+            
             var form = $(this).serialize()
 
             $.ajax({
