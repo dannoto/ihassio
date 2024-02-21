@@ -98,7 +98,7 @@ public function check_social($username) {
         return $data->result();
     }
     public function getEmpresasByCnae($cnae) {
-        $data = $this->db->query("SELECT * FROM x_estabelecimentos WHERE (`cnae_fiscal_principal` LIKE '%".$cnae."%' OR `cnae_fiscal_secundario` LIKE '%".$cnae."%') AND LENGTH(ddd_1) = 2 AND processado= 0 AND situacao_cadastral=02 AND ddd_1 REGEXP '^[0-9]+$' AND LENGTH(telefone_1) = 8 AND telefone_1 REGEXP '^[0-9]+$' LIMIT 10;");
+        $data = $this->db->query("SELECT * FROM x_estabelecimentos WHERE (`cnae_fiscal_principal` LIKE '%".$cnae."%' OR `cnae_fiscal_secundario` LIKE '%".$cnae."%') AND LENGTH(ddd_1) = 2 AND processado= 0 AND situacao_cadastral=02 AND ddd_1 REGEXP '^[0-9]+$' AND LENGTH(telefone_1) = 8 AND telefone_1 REGEXP '^[0-9]+$' LIMIT 10000;");
         return $data->result();
     }
 }

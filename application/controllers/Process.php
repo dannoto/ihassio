@@ -143,7 +143,10 @@ class Process extends CI_Controller {
 
                                     echo "<br>[!] EMAIL PARTICULAR : ".$data['email']." É ATIVO.<br>";
 
-                                    $check_email = 1;
+                                    $check_email = 0;
+
+
+                                    // $check_email = 1;
 
                                 } else {
 
@@ -355,8 +358,9 @@ class Process extends CI_Controller {
     
 
     function  verificarProvedor($email) {
-        $provedoresPublicos = ['hotmail.com','', 'yahoo.com.br', 'outlook.com', 'gmail.com', 'ig.com.br', 'terra.com.br','uol.com.br'];
-    
+        // $provedoresPublicos = ['hotmail.com','', 'yahoo.com.br', 'outlook.com', 'gmail.com', 'ig.com.br', 'terra.com.br','uol.com.br'];
+        $provedoresPublicos = ['hotmail.com','',  'outlook.com', 'gmail.com'];
+
         $dominio = explode('@', $email)[1]; // Obtém o domínio do e-mail
     
         if (in_array($dominio, $provedoresPublicos)) {
