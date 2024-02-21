@@ -180,7 +180,7 @@
                     <tbody class="table-border-bottom-0">
                         <?php foreach ($this->admin_model->get_produtos() as $c) { ?>
 
-                          <?php if (count($this->admin_model->get_campanhas_by_produto($c->id) < 0 ) { ?>
+                          <?php if (count($this->admin_model->get_campanhas_by_produto($c->id)) >0 ) { ?>
                           <tr>
                           <td style="text-transform: uppercase;"><small><?= $c->nome ?></small></td>
                         <td style="text-transform: uppercase;"> <small><center><?= count($this->admin_model->get_campanhas_by_produto($c->id) )?></center></small></td>
