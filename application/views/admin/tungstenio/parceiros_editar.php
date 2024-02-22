@@ -176,7 +176,7 @@
                     </div>
                     <div class="card-body">
                       <form id="form-update-parceiro">
-                        <input type="hidden" required name="target_id" value="<?=$t['target_id']?>" class="form-control" id="basic-default-name" placeholder="" />
+                        <input type="hidden" required name="target_id" value="<?=$t['id']?>" class="form-control" id="basic-default-name" placeholder="" />
 
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">NOME</label>
