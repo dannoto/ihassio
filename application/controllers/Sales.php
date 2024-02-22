@@ -421,6 +421,9 @@ class Sales extends CI_Controller
         $tag = htmlspecialchars($this->input->post('tag'));
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
         $importacao = htmlspecialchars($this->input->post('importacao'));
+
+        $provedor = htmlspecialchars($this->input->post('provedor'));
+
         $campanha_associada = htmlspecialchars($this->input->post('campanha_associada'));
 
         if ($classificacao == 1) {
@@ -440,7 +443,7 @@ class Sales extends CI_Controller
 
             $lista_id = $this->brevo_model->createList($nome)['id'];
 
-            if ($this->admin_model->add_lista($nome, $descricao, $tag, $lista_id, $classificacao, $importacao, $campanha_associada)) {
+            if ($this->admin_model->add_lista($nome, $descricao, $tag, $lista_id, $classificacao, $importacao, $campanha_associada, $provedor)) {
                 $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.');
             } else {
                 $response = array('status' => 'false', 'message' => 'Erro ao adicionar.');
@@ -458,6 +461,9 @@ class Sales extends CI_Controller
         $descricao = htmlspecialchars($this->input->post('descricao'));
         $tag = htmlspecialchars($this->input->post('tag'));
         $importacao = htmlspecialchars($this->input->post('importacao'));
+
+        $provedor = htmlspecialchars($this->input->post('provedor'));
+
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
         $campanha_associada = htmlspecialchars($this->input->post('campanha_associada'));
 
@@ -468,7 +474,7 @@ class Sales extends CI_Controller
          
         } else {
 
-            if ($this->admin_model->update_lista($id, $nome, $descricao, $tag, $classificacao, $importacao, $campanha_associada)) {
+            if ($this->admin_model->update_lista($id, $nome, $descricao, $tag, $classificacao, $importacao, $campanha_associada, $provedor)) {
 
                 $response = array('status' => 'true', 'message' => 'Atualizado com sucesso.');
             } else {

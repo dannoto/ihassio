@@ -1015,7 +1015,7 @@ class Admin_model extends CI_Model
         return $this->db->get('listas')->row_array();
     }
 
-    public function add_lista($nome, $descricao, $tag, $lista_id, $classificacao, $importacao, $campanha_associada)
+    public function add_lista($nome, $descricao, $tag, $lista_id, $classificacao, $importacao, $campanha_associada, $provedor)
     {
 
         $data = array(
@@ -1027,13 +1027,15 @@ class Admin_model extends CI_Model
             'data' => date('Y-m-d H:i:s'),
             'importacao' => $importacao,
             'campanha_associada' => $campanha_associada,
+            'provedor' => $provedor,
+
             'is_deleted' => 0
         );
 
         return $this->db->insert('listas', $data);
     }
 
-    public function update_lista($id, $nome, $descricao, $tag, $classificacao, $importacao, $campanha_associada)
+    public function update_lista($id, $nome, $descricao, $tag, $classificacao, $importacao, $campanha_associada, $provedor)
     {
 
         $this->db->where('id', $id);
@@ -1046,6 +1048,8 @@ class Admin_model extends CI_Model
             'classificacao' => $classificacao,
             'importacao' => $importacao,
             'campanha_associada' => $campanha_associada,
+            'provedor' => $provedor,
+
             'data' => date('Y-m-d H:i:s'),
             'is_deleted' => 0
         );

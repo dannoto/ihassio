@@ -254,6 +254,20 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                          <label for="html5-date-input" class="col-md-2 col-form-label">PROVEDOR</label>
+                          <div class="col-sm-10">
+                                <select  required name="provedor" id="provedor" class="form-select"  >
+                                <option value="">Selecionar</option>
+
+                                <?php foreach ($this->admin_model->get_campanha_provedor() as $c) { ?>
+                                    <option value="<?=$c->id?>"><?=$c->nome?></option>
+                                <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
+
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
                             <button type="submit" class="btn btn-block btn-primary">ADICIONAR</button>

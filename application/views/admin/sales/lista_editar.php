@@ -296,6 +296,30 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                          <label for="html5-date-input" class="col-md-2 col-form-label">PROVEDOR</label>
+                          <div class="col-sm-10">
+                                <select  required name="provedor" id="provedor" class="form-select"  >
+                                <option value="">Selecionar</option>
+
+                            
+                                <?php foreach ($this->admin_model->get_campanha_provedor() as $c) { ?>
+
+                                    <?php if ($c->id == $campanha['provedor']) { ?>
+
+                                        <option selected value="<?= $c->id ?>"><?= $c->nome ?></option>
+
+                                    <?php } else { ?>
+
+                                        <option value="<?= $c->id ?>"><?= $c->nome ?></option>
+
+                                    <?php } ?>
+
+                                <?php } ?>
+
+                                </select>
+                            </div>
+                        </div>
 
                   
                         <hr>
