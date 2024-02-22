@@ -207,9 +207,9 @@
                             <div class="col-sm-10">
                                 <select required name="target_publico_sexo"  class="form-select"  >
                                 <option  value="">Selecionar </option>
-                                <option <?php if ($t['target_publico_sexo'] == 1)?> value="1">Todos </option>
-                                <option <?php if ($t['target_publico_sexo'] == 2)?> value="2">Masculino </option>
-                                <option <?php if ($t['target_publico_sexo'] == 3)?> value="3">Feminino </option>
+                                <option <?php if ($t['target_publico_sexo'] == 1) { echo "selected"; }?> value="1">Todos </option>
+                                <option <?php if ($t['target_publico_sexo'] == 2) { echo "selected"; }?> value="2">Masculino </option>
+                                <option <?php if ($t['target_publico_sexo'] == 3) { echo "selected"; }?> value="3">Feminino </option>
 
                            
 
@@ -237,7 +237,7 @@
                                 <select required name="target_publico_categoria" class="form-select"  >
                                 <option value="">Selecionar </option>
 
-                                <?php foreach ($this->stats_model->getCategorias() as $c) { ?>
+                                <?php foreach ($this->stats_model->get_categorias() as $c) { ?>
 
                                     <option value="<?=$c->id?>"><?=$c->categoria_nome?></option>
                               
@@ -261,9 +261,9 @@
                                 <select required name="target_status" class="form-select"  >
                                 <option value="">Selecionar </option>
 
-                                <option <?php if ($t['target_publico_sexo'] == 1)?> value="1">ATIVO </option>
-                                <option <?php if ($t['target_publico_sexo'] == 1)?> value="2">PENDENTE </option>
-                                <option <?php if ($t['target_publico_sexo'] == 1)?> value="3">SUSPENSO </option>
+                                <option <?php if ($t['target_publico_sexo'] == 1) { echo "selected"; }?> value="1">ATIVO </option>
+                                <option <?php if ($t['target_publico_sexo'] == 1) { echo "selected"; }?> value="2">PENDENTE </option>
+                                <option <?php if ($t['target_publico_sexo'] == 1) { echo "selected"; }?> value="3">SUSPENSO </option>
 
                            
 
