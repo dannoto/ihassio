@@ -106,6 +106,27 @@ class Tungstenio extends CI_Controller
         $this->load->view('admin/tungstenio/parceiros');
     }
 
+    public function parceiros_adicionar()
+    {
+
+        $this->load->view('admin/tungstenio/parceiros_adicionar');
+    }
+
+    public function parceiros_editar($target_id)
+    {
+        $target_data = $this->stats_model->get_target($target_id);
+
+        $data = array(
+            't' => $target_data
+        );
+
+        if ($target_data) {
+            $this->load->view('admin/tungstenio/parceiros_editar', $data);
+        } else {
+            redirect(base_url('tungstenio/parceiros'));
+        }
+    }
+
     public function produtos()
     {
 
