@@ -305,7 +305,7 @@
                             
                                 <?php foreach ($this->admin_model->get_campanha_provedor() as $c) { ?>
 
-                                    <?php if ($c->id == $campanha['provedor']) { ?>
+                                    <?php if ($c->id == $lista['provedor']) { ?>
 
                                         <option selected value="<?= $c->id ?>"><?= $c->nome ?></option>
 
