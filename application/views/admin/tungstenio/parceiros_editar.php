@@ -268,8 +268,8 @@
                                 <option value="">Selecionar </option>
 
                                 <option <?php if ($t['target_publico_sexo'] == 1) { echo "selected"; }?> value="1">ATIVO </option>
-                                <option <?php if ($t['target_publico_sexo'] == 1) { echo "selected"; }?> value="2">PENDENTE </option>
-                                <option <?php if ($t['target_publico_sexo'] == 1) { echo "selected"; }?> value="3">SUSPENSO </option>
+                                <option <?php if ($t['target_publico_sexo'] == 2) { echo "selected"; }?> value="2">PENDENTE </option>
+                                <option <?php if ($t['target_publico_sexo'] == 3) { echo "selected"; }?> value="3">SUSPENSO </option>
 
                            
 
