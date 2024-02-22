@@ -187,7 +187,7 @@
                         <td style="text-transform: uppercase;"><small><?= $c->target_nome ?></small></td>
                         <td style="text-transform: uppercase;"> <small><a target="_blank" href="https://<?= $c->target_url ?>"><?= $c->target_url ?></a></small></td>
                             <td style="text-transform: uppercase;"> <small> <?= $c->target_criacao ?></small></td>
-                        <td style="text-transform: uppercase;"> <small> <?= $c->target_categoria ?></small></td>
+                        <td style="text-transform: uppercase;"> <small> <?= $c->target_publico_categoria ?></small></td>
                         <td style="text-transform: uppercase;"> <small><?= $c->target_status ?></small></td>
                         
                         <td>
@@ -249,7 +249,7 @@
               $.ajax({
                           method: 'POST',
                           url: '<?= base_url() ?>tungstenio/act_delete_target',
-                          data: {produto_id:id},
+                          data: {target_id:id},
                           success: function(data) {
                               var resp = JSON.parse(data)
 
