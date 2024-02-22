@@ -276,6 +276,10 @@ class Tungstenio extends CI_Controller
         $data['target_publico_idade_max'] = htmlspecialchars($this->input->post('target_publico_idade_max'));
         $data['target_publico_idade_min'] = htmlspecialchars($this->input->post('target_publico_idade_min'));
         $data['target_publico_categoria'] = htmlspecialchars($this->input->post('target_publico_categoria'));
+
+        $data['target_url'] = htmlspecialchars($this->input->post('target_url'));
+
+
         $data['target_ultima_atualizacao'] = date('d-m-Y H:i:s');
         $data['target_status'] = htmlspecialchars($this->input->post('target_status'));
 
