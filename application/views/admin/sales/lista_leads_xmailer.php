@@ -184,7 +184,7 @@
                                
               <div class="d-flex  align-items-center justify-content-between">
                 <div>
-                  <h5>LEADS xamiler</h5>
+                  <h5>LEADS   XMAILER </h5>
                   <p>Lista de leads segmentados para esta lista.</p>
                   <p>Importação: <?php if ($lista['importacao'] == 1) {
                                     echo "Automático - Tag";
@@ -207,12 +207,12 @@
 
               <?php if ($lista['importacao'] == 1) { ?>
                   <div>
-                    <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_tags($lista['tag'])) . ") - ";
+                    <p><?php echo "<small>ENVIADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_tags($lista['tag'])) . ") - ";
                         echo round((($total / count($this->admin_model->get_leads_by_tags($lista['tag']))) * 100), 2) . "%" ?></p>
                   </div>
                 <?php } else if ($lista['importacao'] == 2) { ?>
                   <div>
-                    <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) . ") - ";
+                    <p><?php echo "<small>ENVIADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) . ") - ";
                         echo round((($total / count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']))) * 100), 2) . "%" ?></p>
                   </div>
                 <?php } ?>
