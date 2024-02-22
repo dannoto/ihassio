@@ -363,7 +363,6 @@
     <script>
 
       $(document).ready(function(e) {
-        e.preventDefault()
 
         var provedor = "<?=$campanha['provedor']?>"
 
