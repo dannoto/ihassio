@@ -291,7 +291,7 @@ class Tungstenio extends CI_Controller
         print_r(json_encode($response));
     }
 
-    public function act_delete_target($target_id)
+    public function act_delete_target()
     {
         $target_id = htmlspecialchars($this->input->post('target_id'));
 
