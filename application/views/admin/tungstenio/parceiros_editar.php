@@ -239,7 +239,13 @@
 
                                 <?php foreach ($this->stats_model->get_categorias() as $c) { ?>
 
-                                    <option value="<?=$c->id?>"><?=$c->categoria_nome?></option>
+                                    <?php if ($c-> id == $t['target_publico_categoria']) { ?>
+                                        <option selected value="<?=$c->id?>"><?=$c->categoria_nome?></option>
+
+                                        <?php } else { ?>
+                                            <option value="<?=$c->id?>"><?=$c->categoria_nome?></option>
+
+                                            <?php } ?>
                               
                                 <?php } ?>                           
 
