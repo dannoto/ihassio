@@ -319,7 +319,10 @@
 
       if (provedor == 3) {
 
-        $('#email_content').css('display','block')
+        $('#email_content').css('display','flex')
+      } else {
+        $('#email_content').css('display','none')
+
       }
     })
 

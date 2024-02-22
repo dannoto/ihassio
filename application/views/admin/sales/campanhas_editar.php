@@ -362,17 +362,32 @@
 
     <script>
 
+      $(document).ready(function(e) {
+        e.preventDefault()
 
-$('#provedor').on('change', function(e) {
-      e.preventDefault()
+        var provedor = "<?=$campanha['provedor']?>"
 
-      var provedor = $(this).val()
+        if (provedor == 3) {
+          $('#email_content').css('display','flex')
+        }
+        
+      })
+    </script>
+    <script>
 
-      if (provedor == 3) {
 
-        $('#email_content').css('display','block')
-      }
-    })
+        $('#provedor').on('change', function(e) {
+          e.preventDefault()
+
+          var provedor = $(this).val()
+
+          if (provedor == 3) {
+
+            $('#email_content').css('display','flex')
+          } else {
+            $('#email_content').css('display','none')
+          }
+        })
 
 
 

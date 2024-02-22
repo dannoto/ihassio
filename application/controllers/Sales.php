@@ -343,6 +343,8 @@ class Sales extends CI_Controller
         $produto = htmlspecialchars($this->input->post('produto'));
         $tipo = htmlspecialchars($this->input->post('tipo'));
         $provedor = htmlspecialchars($this->input->post('provedor'));
+        $email_content = htmlspecialchars($this->input->post('email_content'));
+
         $provedor_campanha_id = htmlspecialchars($this->input->post('provedor_campanha_id'));
         $lista = htmlspecialchars($this->input->post('lista'));
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
@@ -350,7 +352,7 @@ class Sales extends CI_Controller
 
 
 
-        if ($this->admin_model->add_campanha($nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista, $classificacao)) {
+        if ($this->admin_model->add_campanha($nome, $descricao, $produto, $tipo, $provedor, $email_content, $provedor_campanha_id, $lista, $classificacao)) {
 
             $response = array('status' => 'true', 'message' => 'Adicionado com sucesso.');
         } else {
@@ -372,13 +374,15 @@ class Sales extends CI_Controller
         $produto = htmlspecialchars($this->input->post('produto'));
         $tipo = htmlspecialchars($this->input->post('tipo'));
         $provedor = htmlspecialchars($this->input->post('provedor'));
+        $email_content = htmlspecialchars($this->input->post('email_content'));
+
         $provedor_campanha_id = htmlspecialchars($this->input->post('provedor_campanha_id'));
         $lista = htmlspecialchars($this->input->post('lista'));
         $classificacao = htmlspecialchars($this->input->post('classificacao'));
 
 
 
-        if ($this->admin_model->update_campanha($id, $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista, $classificacao)) {
+        if ($this->admin_model->update_campanha($id, $nome, $descricao, $produto, $tipo,  $provedor, $email_content,  $provedor_campanha_id, $lista, $classificacao)) {
 
             $response = array('status' => 'true', 'message' => 'Atualizado com sucesso.');
         } else {

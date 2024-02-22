@@ -832,7 +832,7 @@ class Admin_model extends CI_Model
     }
 
 
-    public function add_campanha($nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista, $classificacao)
+    public function add_campanha($nome, $descricao, $produto, $tipo, $provedor, $email_content, $provedor_campanha_id, $lista, $classificacao)
     {
 
         $data = array(
@@ -842,6 +842,8 @@ class Admin_model extends CI_Model
             'tipo' => $tipo,
             'data' => date('Y-m-d H:i:s'),
             'provedor' => $provedor,
+            'email_content' => $email_content,
+
             'provedor_campanha_id' => $provedor_campanha_id,
             'lista' => $lista,
             'classificacao' => $classificacao,
@@ -941,7 +943,7 @@ class Admin_model extends CI_Model
         return $query->result();
     }
 
-    public function update_campanha($id, $nome, $descricao, $produto, $tipo, $provedor, $provedor_campanha_id, $lista, $classificacao)
+    public function update_campanha($id, $nome, $descricao, $produto, $tipo, $provedor, $email_content, $provedor_campanha_id, $lista, $classificacao)
     {
 
         $this->db->where('id', $id);
@@ -954,6 +956,8 @@ class Admin_model extends CI_Model
             'tipo' => $tipo,
             'data' => date('Y-m-d H:i:s'),
             'provedor' => $provedor,
+            'email_content' => $email_content,
+
             'provedor_campanha_id' => $provedor_campanha_id,
             'lista' => $lista,
             'classificacao' => $classificacao
