@@ -187,8 +187,8 @@
                         <td style="text-transform: uppercase;"><small><?= $c->target_nome ?></small></td>
                         <td style="text-transform: uppercase;"> <small><a target="_blank" href="https://<?= $c->target_url ?>"><?= $c->target_url ?></a></small></td>
                             <td style="text-transform: uppercase;"> <small> <?= $c->target_criacao ?></small></td>
-                        <td style="text-transform: uppercase;"> <small> <?= $c->target_publico_categoria ?></small></td>
-                        <td style="text-transform: uppercase;"> <small><?= $c->target_status ?></small></td>
+                        <td style="text-transform: uppercase;"> <small> <?= $this->stats_model->get_categoria($c->target_publico_categoria)['categoria_nome'] ?></small></td>
+                        <td style="text-transform: uppercase;"> <small><?php if ($c->target_status == "1") { echo "ATIVO"; } else if ($c->target_status == "2") { echo "PENDENTE"; } else if ($c->target_status == 3) { echo "SUSPENSO";} ?></small></td>
                         
                         <td>
                           <div class="dropdown">
