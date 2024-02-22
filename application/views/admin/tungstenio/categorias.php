@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Lista de Parceiros</title>
+    <title>Lista de Categorias</title>
 
     <meta name="description" content="" />
 
@@ -157,10 +157,10 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Parceiros /</span> Lista</h4>
+              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Categorias /</span> Lista</h4>
 
               <!-- Basic Bootstrap Table -->
-              <a href="<?=base_url()?>tungstenio/produto_adicionar">
+              <a href="<?=base_url()?>tungstenio/categoria_adicionar">
                   <button class="btn btn-primary mt-2 mb-3"  type="button" >+ ADICIONAR</button>
               </a>
 
@@ -170,24 +170,14 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>Nome do produto</th>
-                        <th>preço</th>
-                        <th>página de vendas</th>
-
-                        <th>DATA DE CRIAÇaO</th>
-
+                        <th>Nome </th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <?php foreach ($this->stats_model->get_produtos() as $c) { ?>
+                        <?php foreach ($this->stats_model->get_categorias() as $c) { ?>
                       <tr>
                         <td style="text-transform: uppercase;"><small><?= $c->produto_nome ?></small></td>
-                        <td style="text-transform: uppercase;"> <small>R$ <?= $c->produto_preco ?></small></td>
-                        <td style="text-transform: uppercase;"> <small> <a target="_blank" href=" <?= $c->produto_pagina_de_vendas ?>"><small>VISITAR O LINK</small></a></small></td>
-                        <td style="text-transform: uppercase;"> <small><?= $c->produto_data ?></small></td>
-
-
-
+                       
                         <td></td>
                         <td>
                           <div class="dropdown">
@@ -195,10 +185,10 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a  class="dropdown-item" href="<?=base_url()?>tungstenio/produto_editar/<?=$c->id?>"
+                              <a  class="dropdown-item" href="<?=base_url()?>tungstenio/categoria_editar/<?=$c->id?>"
                                 ><i class="bx bx-edit-alt me-1"></i> Editar</a
                               >
-                              <a onclick="delete_produto(<?=$c->id?>)" class="dropdown-item" href="javascript:void(0);"
+                              <a onclick="delete_categoria(<?=$c->id?>)" class="dropdown-item" href="javascript:void(0);"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>
@@ -237,7 +227,7 @@
     <script>
 
 
-        function delete_produto(id) {
+        function delete_categoria(id) {
 
           var resposta = confirm("Você deseja excluir?");
 
@@ -247,8 +237,8 @@
               
               $.ajax({
                           method: 'POST',
-                          url: '<?= base_url() ?>tungstenio/act_delete_produto',
-                          data: {produto_id:id},
+                          url: '<?= base_url() ?>tungstenio/act_delete_categoria',
+                          data: {categoria_id:id},
                           success: function(data) {
                               var resp = JSON.parse(data)
 

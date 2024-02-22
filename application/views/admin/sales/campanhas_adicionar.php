@@ -247,7 +247,7 @@
                         <div class="row mb-3">
                           <label for="html5-date-input" class="col-md-2 col-form-label">PROVEDOR</label>
                           <div class="col-sm-10">
-                                <select  required name="provedor" class="form-select"  >
+                                <select  required name="provedor" id="provedor" class="form-select"  >
                                 <option value="">Selecionar</option>
 
                                 <?php foreach ($this->admin_model->get_campanha_provedor() as $c) { ?>
@@ -256,6 +256,14 @@
                                 </select>
                             </div>
                         </div>
+
+                        <div class="row mb-3" style="display: none;" id="email_content">
+                          <label for="html5-date-input" class="col-md-2 col-form-label">CONTÉUDO DO E-MAIL</label>
+                          <div class="col-sm-10">
+                                <textarea name="email_content" height="150"></textarea>
+                            </div>
+                        </div>
+
 
                         <div class="row mb-3">
                           <label for="html5-date-input" class="col-md-2 col-form-label">LISTA</label>
@@ -303,6 +311,17 @@
 
     <script>
 
+
+    $('#provedor').on('change', function(e) {
+      e.preventDefault()
+
+      var provedor = $(this).val()
+
+      if (provedor == 3) {
+
+        $('#email_content').css('display','block')
+      }
+    })
 
 
     $('#form-add-campanha').on('submit', function(e) {

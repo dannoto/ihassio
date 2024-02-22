@@ -159,7 +159,7 @@
  
             <div class="container-xxl flex-grow-1 container-p-y">
             <div class="mb-3 mt-1">
-                <a href="<?= base_url() ?>sales/campanhas_produtos/<?=$campanha['produto']?>">
+                <a href="<?= base_url() ?>sales/campanhas_produtos/<?= $campanha['produto'] ?>">
                 <button class="btn btn-light text-primary border border-0"> <span class="bx bx-left-arrow-alt"></span> VOLTAR    </button>
                 </a>
               </div>
@@ -248,7 +248,7 @@
                         <div class="row mb-3">
                           <label for="html5-date-input" class="col-md-2 text-uppercase col-form-label">Campanha ID</label>
                           <div class="col-sm-10">
-                                <input required type="number" value="<?=$campanha['provedor_campanha_id']?>" name="provedor_campanha_id" class="form-select" type="text">
+                                <input required type="number" value="<?= $campanha['provedor_campanha_id'] ?>" name="provedor_campanha_id" class="form-select" type="text">
                             </div>
                         </div>
                      
@@ -257,9 +257,15 @@
                           <div class="col-sm-10">
                                 <select  required name="classificacao" class="form-select"  >
                                   <option value="">Selecionar</option>
-                                  <option <?php if ($campanha['classificacao'] == "1") { echo "selected";} ?> value="1">Prospecção</option>
-                                  <option <?php if ($campanha['classificacao'] == "2") { echo "selected";} ?> value="2">Ativação</option>
-                                  <option <?php if ($campanha['classificacao'] == "3") { echo "selected";} ?> value="3">Recuperação</option>
+                                  <option <?php if ($campanha['classificacao'] == "1") {
+                                            echo "selected";
+                                          } ?> value="1">Prospecção</option>
+                                  <option <?php if ($campanha['classificacao'] == "2") {
+                                            echo "selected";
+                                          } ?> value="2">Ativação</option>
+                                  <option <?php if ($campanha['classificacao'] == "3") {
+                                            echo "selected";
+                                          } ?> value="3">Recuperação</option>
                                 </select>
                             </div>
                         </div>
@@ -267,7 +273,7 @@
                         <div class="row mb-3">
                           <label for="html5-date-input" class="col-md-2 col-form-label">PROVEDOR</label>
                           <div class="col-sm-10">
-                                <select  required name="provedor" class="form-select"  >
+                                <select  required name="provedor" id="provedor" class="form-select"  >
                                 <option value="">Selecionar</option>
 
                             
@@ -286,6 +292,13 @@
                                 <?php } ?>
 
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3" style="display: none;" id="email_content">
+                          <label for="html5-date-input" class="col-md-2 col-form-label">CONTÉUDO DO E-MAIL</label>
+                          <div class="col-sm-10">
+                                <textarea name="email_content" height="150"><?= $campanha['email_content'] ?></textarea>
                             </div>
                         </div>
 
@@ -350,8 +363,20 @@
     <script>
 
 
+$('#provedor').on('change', function(e) {
+      e.preventDefault()
 
-    $('#form-update-campanha').on('submit', function(e) {
+      var provedor = $(this).val()
+
+      if (provedor == 3) {
+
+        $('#email_content').css('display','block')
+      }
+    })
+
+
+
+        $('#form-update-campanha').on('submit', function(e) {
             e.preventDefault()
 
             var form = $(this).serialize()
@@ -366,7 +391,7 @@
                     if (resp.status == "true") {
 
                         alert('Adicionado com sucesso!')
-                        window.location.href = "<?=base_url()?>sales/campanhas_produtos/<?=$campanha['produto']?>"
+                        window.location.href = "<?= base_url() ?>sales/campanhas_produtos/<?= $campanha['produto'] ?>"
 
                     } else {
                         alert('Erro ao adicionar!')
