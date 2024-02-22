@@ -298,7 +298,7 @@
                         <div class="row mb-3" style="display: none;" id="email_content">
                           <label for="html5-date-input" class="col-md-2 col-form-label">CONTÉUDO DO E-MAIL</label>
                           <div class="col-sm-10">
-                                <textarea name="email_content" height="150"><?= $campanha['email_content'] ?></textarea>
+                                <textarea  class="form-control" name="email_content" height="150"><?= $campanha['email_content'] ?></textarea>
                             </div>
                         </div>
 
@@ -370,7 +370,7 @@
         if (provedor == 3) {
           $('#email_content').css('display','flex')
         }
-        
+
       })
     </script>
     <script>

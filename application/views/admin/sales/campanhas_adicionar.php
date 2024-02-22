@@ -260,7 +260,7 @@
                         <div class="row mb-3" style="display: none;" id="email_content">
                           <label for="html5-date-input" class="col-md-2 col-form-label">CONTÉUDO DO E-MAIL</label>
                           <div class="col-sm-10">
-                                <textarea name="email_content" height="150"></textarea>
+                                <textarea class="form-control" name="email_content" height="150"></textarea>
                             </div>
                         </div>
 
