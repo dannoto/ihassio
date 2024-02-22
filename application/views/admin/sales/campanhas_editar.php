@@ -295,6 +295,8 @@
                             </div>
                         </div>
 
+                        
+
                         <div class="row mb-3" style="display: none;" id="email_content">
                           <label for="html5-date-input" class="col-md-2 col-form-label">CONTÉUDO DO E-MAIL</label>
                           <div class="col-sm-10">
@@ -302,6 +304,19 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                          <label for="html5-date-input" class="col-md-2 col-form-label">STATUS</label>
+                          <div class="col-sm-10">
+                                <select  required name="status" class="form-select"  >
+                                  <option  value="">Selecionar</option>
+                                  <option  <?php if ($campanha['status'] == "1") { echo "selected";} ?> value="1">Ativa</option>
+                                  <option  <?php if ($campanha['status'] == "2") { echo "selected";} ?> value="2">Rascunho</option>
+                                  <option  <?php if ($campanha['status'] == "3") { echo "selected";} ?> value="3">Pausada</option>
+                                  <option  <?php if ($campanha['status'] == "4") { echo "selected";} ?> value="4">Concluida</option>
+
+                                </select>
+                            </div>
+                        </div>
  
                         <div class="row mb-3">
                           <label for="html5-date-input" class="col-md-2 col-form-label">LISTA </label>
