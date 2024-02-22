@@ -170,35 +170,36 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th>Nome do produto</th>
-                        <th>preço</th>
-                        <th>página de vendas</th>
+                        <th>NOME</th>
+                        <th>URL</th>
+                        <th>DATA</th>
+                        <th>CATEGORIA</th>
 
-                        <th>DATA DE CRIAÇaO</th>
+                        <th>STATUS</th>
+                        <th></th>
+
 
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <?php foreach ($this->stats_model->get_produtos() as $c) { ?>
+                        <?php foreach ($this->stats_model->get_targets() as $c) { ?>
                       <tr>
-                        <td style="text-transform: uppercase;"><small><?= $c->produto_nome ?></small></td>
-                        <td style="text-transform: uppercase;"> <small>R$ <?= $c->produto_preco ?></small></td>
-                        <td style="text-transform: uppercase;"> <small> <a target="_blank" href=" <?= $c->produto_pagina_de_vendas ?>"><small>VISITAR O LINK</small></a></small></td>
-                        <td style="text-transform: uppercase;"> <small><?= $c->produto_data ?></small></td>
-
-
-
-                        <td></td>
+                        <td style="text-transform: uppercase;"><small><?= $c->target_nome ?></small></td>
+                        <td style="text-transform: uppercase;"> <small><a target="_blank" href="https://<?= $c->target_url ?>"><?= $c->target_url ?></a></small></td>
+                            <td style="text-transform: uppercase;"> <small> <?= $c->target_criacao ?></small></td>
+                        <td style="text-transform: uppercase;"> <small> <?= $c->target_categoria ?></small></td>
+                        <td style="text-transform: uppercase;"> <small><?= $c->target_status ?></small></td>
+                        
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a  class="dropdown-item" href="<?=base_url()?>tungstenio/produto_editar/<?=$c->id?>"
+                              <a  class="dropdown-item" href="<?=base_url()?>tungstenio/target_editar/<?=$c->id?>"
                                 ><i class="bx bx-edit-alt me-1"></i> Editar</a
                               >
-                              <a onclick="delete_produto(<?=$c->id?>)" class="dropdown-item" href="javascript:void(0);"
+                              <a onclick="delete_target(<?=$c->id?>)" class="dropdown-item" href="javascript:void(0);"
                                 ><i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>
@@ -237,7 +238,7 @@
     <script>
 
 
-        function delete_produto(id) {
+        function delete_target(id) {
 
           var resposta = confirm("Você deseja excluir?");
 
@@ -247,7 +248,7 @@
               
               $.ajax({
                           method: 'POST',
-                          url: '<?= base_url() ?>tungstenio/act_delete_produto',
+                          url: '<?= base_url() ?>tungstenio/act_delete_target',
                           data: {produto_id:id},
                           success: function(data) {
                               var resp = JSON.parse(data)
