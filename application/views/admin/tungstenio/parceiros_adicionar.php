@@ -258,7 +258,7 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">STATUS</label>
                             <div class="col-sm-10">
-                                <select required name="target_publico_sexo" class="form-select"  >
+                                <select required name="target_status" class="form-select"  >
                                 <option value="">Selecionar </option>
 
                                 <option value="1">ATIVO </option>
