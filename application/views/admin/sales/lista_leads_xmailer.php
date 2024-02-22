@@ -184,7 +184,7 @@
                                
               <div class="d-flex  align-items-center justify-content-between">
                 <div>
-                  <h5>LEADS</h5>
+                  <h5>LEADS xamiler</h5>
                   <p>Lista de leads segmentados para esta lista.</p>
                   <p>Importação: <?php if ($lista['importacao'] == 1) {
                                     echo "Automático - Tag";
