@@ -237,7 +237,7 @@
                                 <select required name="target_publico_categoria" class="form-select"  >
                                 <option value="">Selecionar </option>
 
-                                <?php foreach ($this->stats_model->getCategorias() as $c) { ?>
+                                <?php foreach ($this->stats_model->get_categorias() as $c) { ?>
 
                                     <option value="<?=$c->id?>"><?=$c->categoria_nome?></option>
                               
