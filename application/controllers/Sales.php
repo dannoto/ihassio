@@ -47,7 +47,12 @@ class Sales extends CI_Controller
                 'lista' => $lista,
             );
 
-            $this->load->view('admin/sales/lista_leads', $data);
+            if ($lista['provedor'] == 3) {
+                $this->load->view('admin/sales/lista_leads_xmailer', $data);
+            } else {
+                $this->load->view('admin/sales/lista_leads', $data);
+            }
+
         } else {
 
             redirect(base_url('sales/listas'));
