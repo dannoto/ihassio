@@ -198,7 +198,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">PHP VERSÃO</label>
                           <div class="col-sm-10">
-                            <input  type="number" required name="target_php_version" value="<?=$t['target_php_version']?>"  class="form-control" id="basic-default-name" placeholder="" />
+                            <input  type="text" required name="target_php_version" value="<?=$t['target_php_version']?>"  class="form-control" id="basic-default-name" placeholder="" />
                           </div>
                         </div>
 
@@ -258,7 +258,7 @@
                         <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="exampleFormControlSelect1" class="form-label">STATUS</label>
                             <div class="col-sm-10">
-                                <select required name="target_publico_sexo" class="form-select"  >
+                                <select required name="target_status" class="form-select"  >
                                 <option value="">Selecionar </option>
 
                                 <option <?php if ($t['target_publico_sexo'] == 1)?> value="1">ATIVO </option>

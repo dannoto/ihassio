@@ -196,7 +196,7 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a  class="dropdown-item" href="<?=base_url()?>tungstenio/target_editar/<?=$c->id?>"
+                              <a  class="dropdown-item" href="<?=base_url()?>tungstenio/parceiros_editar/<?=$c->id?>"
                                 ><i class="bx bx-edit-alt me-1"></i> Editar</a
                               >
                               <a onclick="delete_target(<?=$c->id?>)" class="dropdown-item" href="javascript:void(0);"
