@@ -197,7 +197,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">PHP VERSÃO</label>
                           <div class="col-sm-10">
-                            <input  type="number" required name="target_php_version" class="form-control" id="basic-default-name" placeholder="" />
+                            <input  type="text" required name="target_php_version" class="form-control" id="basic-default-name" placeholder="" />
                           </div>
                         </div>
 
