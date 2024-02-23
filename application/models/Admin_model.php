@@ -1572,11 +1572,7 @@ class Admin_model extends CI_Model
 
         $this->db->where('inapto', 0);
 
-        if ($limite_por_pagina != null) {
-                // $this->db->limit($limite_por_pagina, $limite_calculado);
-                $this->db->limit($limite_calculado, $limite_por_pagina);
-
-        }
+       
         // $this->db->limit(100);
         $this->db->group_start();
         $this->db->where('email IS NOT NULL AND email !=', '');
@@ -1584,6 +1580,10 @@ class Admin_model extends CI_Model
         $this->db->or_where('links IS NOT NULL AND links !=', '');
         $this->db->or_where('mencoes IS NOT NULL AND mencoes !=', '');
         $this->db->group_end();
+
+        if ($limite_por_pagina != null) {
+            $this->db->limit($limite_por_pagina, $limite_calculado);
+    }
 
         $this->db->order_by('convertido', 'asc');
 
