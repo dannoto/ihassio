@@ -197,7 +197,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-name">CPF / CNPJ</label>
                           <div class="col-sm-10">
-                            <input    value="<?= $p['cpf'] ?>" type="text" name="cpf" class="form-control" id="basic-default-name" placeholder="" />
+                            <input    value="<?php if ($p['tipo'] == "pessoa_fisica") { echo  $p['cpf']; } else if ($p['tipo'] == "pessoa_juridica") { echo  $p['cnpj'];} ?>" type="text" name="cpf" class="form-control" id="basic-default-name" placeholder="" />
                           </div>
                         </div>
 
