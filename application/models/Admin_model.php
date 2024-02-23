@@ -948,7 +948,7 @@ class Admin_model extends CI_Model
         $query = $this->db->get();
 
         // Retorna os resultados únicos como um array de objetos
-        return $query->result();
+        return $data->result_array();
     }
 
     public function get_leads_by_campanha_associada($tag_id)
