@@ -38,12 +38,12 @@ class Sales extends CI_Controller
     {
 
         // Paginacao
-        $limite_por_pagina = 2;
+        $limite_por_pagina = 1;
 
 		if (htmlspecialchars($this->input->get('p')) <= 0) {
 			$pagina_atual = 0;
 		} else {
-			$pagina_atual = (htmlspecialchars($this->input->get('p')) );
+			$pagina_atual = (htmlspecialchars($this->input->get('p')) - 1);
 		}
 
 		$limite_calculado =  $pagina_atual * $limite_por_pagina;
