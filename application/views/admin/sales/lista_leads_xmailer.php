@@ -185,6 +185,8 @@
               <div class="d-flex  align-items-center justify-content-between">
                 <div>
                   <h5>LEADS   XMAILER </h5>
+
+                  <?php print_r($leads)?>
                   <p>Lista de leads segmentados para esta lista.</p>
                   <p>Importação: <?php if ($lista['importacao'] == 1) {
                                     echo "Automático - Tag";
