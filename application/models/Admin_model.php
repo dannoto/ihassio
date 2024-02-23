@@ -926,6 +926,10 @@ class Admin_model extends CI_Model
         $this->db->where('is_deleted',0 );
 
         if ( $limite_por_pagina != null) {
+
+            echo "<br> lc: ".$limite_calculado;
+            echo "<br> lpp: ".$limite_por_pagina;
+
             $this->db->limit($limite_calculado, $limite_por_pagina);
 
         }
