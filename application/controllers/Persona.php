@@ -73,6 +73,8 @@ class Persona extends CI_Controller
         if ($tarefa) {
 
             if ($this->input->get()) {
+
+                
                 $inapto = htmlspecialchars($this->input->get('inapto'));
                 $convertido = htmlspecialchars($this->input->get('convertido'));
 

@@ -1573,7 +1573,9 @@ class Admin_model extends CI_Model
         $this->db->where('inapto', 0);
 
         if ($limite_por_pagina != null) {
-                $this->db->limit($limite_por_pagina, $limite_calculado);
+                // $this->db->limit($limite_por_pagina, $limite_calculado);
+                $this->db->limit($limite_calculado, $limite_por_pagina);
+
         }
         // $this->db->limit(100);
         $this->db->group_start();
