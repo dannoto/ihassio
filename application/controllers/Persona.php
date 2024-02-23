@@ -84,10 +84,10 @@ class Persona extends CI_Controller
 
             } else {
 
-                $data = array(
-                    't' => $tarefa,
-                    'leads' => $this->admin_model->getInstagramLeadsByTask($tarefa['id'])
-                );
+                // $data = array(
+                //     't' => $tarefa,
+                //     'leads' => $this->admin_model->getInstagramLeadsByTask($tarefa['id'])
+                // );
 
 
                 
