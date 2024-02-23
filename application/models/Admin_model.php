@@ -925,16 +925,11 @@ class Admin_model extends CI_Model
         $this->db->where('tag_id', $tag_id);
         $this->db->where('is_deleted', 0 );
 
-        $this->db->limit(0, 1);
-        // if ( $limite_por_pagina != null) {
+        if ( $limite_por_pagina != null) {
 
-        //     echo "<br> lc: ".$limite_calculado;
-        //     echo "<br> lpp: ".$limite_calculado;
+            $this->db->limit($limite_por_pagina, $limite_calculado);
 
-        //     // $this->db->limit($limite_calculado, $limite_por_pagina);
-        //     $this->db->limit(0, 1);
-
-        // }
+        }
 
 
         $query = $this->db->get('person_classificacao');
