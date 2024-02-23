@@ -298,7 +298,7 @@
 
 
                                       <!-- Paginacao -->
-            <?php if (strlen($this->input->get('p'))) {  ?>
+          
                 <div class="d-flex justify-content-center">
                     <nav aria-label="..." class="mt-5 mb-5">
                         <ul class="pagination">
@@ -352,8 +352,7 @@
                         </ul>
                     </nav>
                 </div>
-            <?php }  ?>
-
+            
 
        
                                       <!-- Paginacao -->

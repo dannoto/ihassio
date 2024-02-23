@@ -73,6 +73,12 @@ class Sales extends CI_Controller
 
             } else {
 
+                $data = array(
+                    'lista' => $lista,
+                    'leads' => $this->admin_model->get_leads_by_tags($lista['tag'],  $limite_calculado, $limite_por_pagina),
+                    'total_pages' => intval(ceil(count($this->admin_model->get_leads_by_tags($lista['tag'],  $limite_calculado, $limite_por_pagina)) / $limite_por_pagina)),
+                );
+
                 $this->load->view('admin/sales/lista_leads', $data);
             }
 
