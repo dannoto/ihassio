@@ -43,15 +43,12 @@ class Sales extends CI_Controller
 		if (htmlspecialchars($this->input->get('p')) <= 0) {
 			$pagina_atual = 0;
 		} else {
-			$pagina_atual = (htmlspecialchars($this->input->get('p')) - 1);
+			$pagina_atual = (htmlspecialchars($this->input->get('p')) );
 		}
 
 		$limite_calculado =  $pagina_atual * $limite_por_pagina;
         // Paginacao
 
-        echo "<br>limite calculado: ".$limite_calculado;
-        echo "<br>limite atual: ".$pagina_atual;
-        echo "<br>limite por pagina: ".$limite_por_pagina;
 
         $id = htmlspecialchars($id);
 
@@ -77,7 +74,7 @@ class Sales extends CI_Controller
                 $data = array(
                     'lista' => $lista,
                     'leads' => $this->admin_model->get_leads_by_tags($lista['tag'],  $limite_calculado, $limite_por_pagina),
-                    'total_pages' => intval(ceil(count($this->admin_model->get_leads_by_tags($lista['tag'],  $limite_calculado, $limite_por_pagina)) / $limite_por_pagina)),
+                    'total_pages' => intval(ceil(count($this->admin_model->get_leads_by_tags($lista['tag'])) / $limite_por_pagina)),
                 );
 
                 $this->load->view('admin/sales/lista_leads', $data);
