@@ -49,6 +49,9 @@ class Sales extends CI_Controller
 		$limite_calculado =  $pagina_atual * $limite_por_pagina;
         // Paginacao
 
+        echo "<br>limite calculado: ".$limite_calculado;
+        echo "<br>limite atual: ".$limite_atual;
+        echo "<br>limite por pagina: ".$limite_por_pagina;
 
         $id = htmlspecialchars($id);
 
@@ -69,7 +72,7 @@ class Sales extends CI_Controller
                 $this->load->view('admin/sales/lista_leads_xmailer', $data);
 
             } else {
-                
+
                 $this->load->view('admin/sales/lista_leads', $data);
             }
 
