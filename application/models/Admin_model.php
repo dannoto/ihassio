@@ -930,7 +930,7 @@ class Admin_model extends CI_Model
             echo "<br> lc: ".$limite_calculado;
             echo "<br> lpp: ".$limite_por_pagina;
 
-            $this->db->limit(0, 2);
+            $this->db->limit(1, 2);
 
         }
 
