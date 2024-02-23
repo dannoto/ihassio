@@ -920,22 +920,32 @@ class Admin_model extends CI_Model
 
     public function get_leads_by_tags($tag_id, $limite_calculado = null, $limite_por_pagina = null)
     {
-        $this->db->distinct();
-        $this->db->select('person_id'); // Seleciona apenas o person_id para resultados distintos
-        $this->db->where('tag_id', $tag_id);
-        $this->db->where('is_deleted',0 );
+        // $this->db->distinct();
+        // $this->db->select('person_id'); // Seleciona apenas o person_id para resultados distintos
+        // $this->db->where('tag_id', $tag_id);
+        // $this->db->where('is_deleted',0 );
 
         if ( $limite_por_pagina != null) {
 
-            echo "<br> lc: ".$limite_calculado;
-            echo "<br> lpp: ".$limite_por_pagina;
+            // echo "<br> lc: ".;
+            // echo "<br> lpp: ".;
 
             $this->db->limit(1, 2);
 
+            $this->db->query('SELECT DISTINCT person_id
+            FROM person_classificacao
+            WHERE tag_id = <tag_id_value> AND is_deleted = 0
+            LIMIT '.$limite_calculado.', '.$limite_por_pagina);
+
+        } else {
+            $this->db->query('SELECT DISTINCT person_id
+            FROM person_classificacao
+            WHERE tag_id = <tag_id_value> AND is_deleted = 0
+           ');
         }
 
 
-        $query = $this->db->get('person_classificacao');
+        $query = $this->db->get();
 
         // Retorna os resultados únicos como um array de objetos
         return $query->result();
