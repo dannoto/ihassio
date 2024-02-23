@@ -292,6 +292,67 @@
             </div>
             <!-- / Content -->
 
+             <!-- Paginacao -->
+          
+             <div class="d-flex justify-content-center">
+                    <nav aria-label="..." class="mt-5 mb-5">
+                        <ul class="pagination">
+
+                            <?php
+                                          $pagina = intval($this->input->get('p'));
+
+                                          $anterior = ($pagina - 1);
+                                          if ($anterior <= 0 || $anterior == "") {
+                                            $anterior = null;
+                                            $pagina = 1;
+                                          }
+                                          $atual =  $pagina;
+                                          $proxima = ($pagina + 1);
+
+                            ?>
+
+                            <?php if ($atual > 3) {  ?>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>">Inicio</a></li>
+                            <?php } ?>
+                            <?php if ($atual > 1) {  ?>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>?p=<?= $anterior ?>">Anterior</a></li>
+                            <?php } ?>
+
+                            <?php if ($atual > 1) {  ?>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>?p=<?= $anterior ?>"><?= $anterior ?></a></li>
+                            <?php } ?>
+
+
+                            <li class="page-item active bg-blue">
+                                <a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>?p=<?= $atual ?> "><?= $atual ?> <span class="sr-only"></span></a>
+                            </li>
+
+                            <?php if ($atual < $total_pages) {  ?>
+
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>?p=<?= $proxima ?>"><?= $proxima ?></a></li>
+
+                            <?php } ?>
+
+                            <?php if ($atual < $total_pages) {  ?>
+                                <?php if ($atual >= 1) {  ?>
+                                    <li class="page-item">
+                                        <a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>?p=<?= $proxima ?>">Próximo</a>
+                                    </li>
+                                <?php } ?>
+                            <?php } ?>
+
+                            <li class="page-item"><a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>?p=<?= $total_pages ?>">Última</a></li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+            
+
+       
+                                      <!-- Paginacao -->
+
+
 
             <div class="content-backdrop fade"></div>
           </div>
