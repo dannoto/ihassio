@@ -930,7 +930,7 @@ class Admin_model extends CI_Model
             // echo "<br> lc: ".;
             // echo "<br> lpp: ".;
 
-            $this->db->limit(1, 2);
+            // $this->db->limit(1, 2);
 
             $this->db->query('SELECT DISTINCT person_id
             FROM person_classificacao
