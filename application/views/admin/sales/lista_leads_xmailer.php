@@ -238,7 +238,7 @@
 
                         <?php if ($lista['importacao'] == 1) { ?>
 
-                          <?php foreach ($this->admin_model->get_leads_by_tags($lista['tag']) as $l) { ?>
+                          <?php foreach ($leads as $l) { ?>
                               <tr>
 
                                   <td><a href="<?= base_url() ?>persona/editar/<?= $l->person_id ?>" target='_blank'><?= $this->admin_model->get_person($l->person_id)['nome']; ?></a></td>
@@ -248,11 +248,11 @@
                                         echo "-";
                                       }; ?></td>
                                   <td > <?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
-                                        echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
-                                      } else {
-                                        echo "-";
-                                      } ?></td>
-                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?=$l->person_id?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
+                                          echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
+                                        } else {
+                                          echo "-";
+                                        } ?></td>
+                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?= $l->person_id ?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
 
                               </tr>
                           <?php } ?>
@@ -290,6 +290,75 @@
               </div>
             </div>
             <!-- / Content -->
+
+
+
+
+
+
+
+                                      <!-- Paginacao -->
+            <?php if (strlen($this->input->get('p'))) {  ?>
+                <div class="d-flex justify-content-center">
+                    <nav aria-label="..." class="mt-5 mb-5">
+                        <ul class="pagination">
+
+                            <?php
+                                          $pagina = intval($this->input->get('p'));
+
+                                          $anterior = ($pagina - 1);
+                                          if ($anterior <= 0 || $anterior == "") {
+                                            $anterior = null;
+                                            $pagina = 1;
+                                          }
+                                          $atual =  $pagina;
+                                          $proxima = ($pagina + 1);
+
+                            ?>
+
+                            <?php if ($atual > 3) {  ?>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>aluno/redacao">Inicio</a></li>
+                            <?php } ?>
+                            <?php if ($atual > 1) {  ?>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>aluno/redacao?p=<?= $anterior ?>">Anterior</a></li>
+                            <?php } ?>
+
+                            <?php if ($atual > 1) {  ?>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>aluno/redacao?p=<?= $anterior ?>"><?= $anterior ?></a></li>
+                            <?php } ?>
+
+
+                            <li class="page-item active bg-blue">
+                                <a class="page-link" href="<?= base_url() ?>aluno/redacao?p=<?= $atual ?> "><?= $atual ?> <span class="sr-only">(atual)</span></a>
+                            </li>
+
+                            <?php if ($atual < $total_pages) {  ?>
+
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>aluno/redacao?p=<?= $proxima ?>"><?= $proxima ?></a></li>
+
+                            <?php } ?>
+
+                            <?php if ($atual < $total_pages) {  ?>
+                                <?php if ($atual >= 1) {  ?>
+                                    <li class="page-item">
+                                        <a class="page-link" href="<?= base_url() ?>aluno/redacao?p=<?= $proxima ?>">Próximo</a>
+                                    </li>
+                                <?php } ?>
+                            <?php } ?>
+
+                            <li class="page-item"><a class="page-link" href="<?= base_url() ?>aluno/redacao?p=<?= $total_pages ?>">Última</a></li>
+
+
+                        </ul>
+                    </nav>
+                </div>
+            <?php }  ?>
+
+
+       
+                                      <!-- Paginacao -->
+
+
 
 
             <div class="content-backdrop fade"></div>

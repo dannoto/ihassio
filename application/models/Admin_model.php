@@ -918,12 +918,14 @@ class Admin_model extends CI_Model
     }
 
 
-    public function get_leads_by_tags($tag_id)
+    public function get_leads_by_tags($tag_id, $limite_calculado = null, $limite_por_pagina = null)
     {
         $this->db->distinct();
         $this->db->select('person_id'); // Seleciona apenas o person_id para resultados distintos
         $this->db->where('tag_id', $tag_id);
         $this->db->where('is_deleted',0 );
+
+        $this->db->limit($limite_calculado, $limite_por_pagina);
 
         $query = $this->db->get('person_classificacao');
 

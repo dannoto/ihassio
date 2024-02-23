@@ -130,6 +130,7 @@
                         <i class="bx bx-cog me-2"></i>
                         <span class="align-middle">Settings</span>
                       </a>
+
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
@@ -238,7 +239,7 @@
 
                         <?php if ($lista['importacao'] == 1) { ?>
 
-                          <?php foreach ($this->admin_model->get_leads_by_tags($lista['tag']) as $l) { ?>
+                          <?php foreach ($leads as $l) { ?>
                               <tr>
 
                                   <td><a href="<?= base_url() ?>persona/editar/<?= $l->person_id ?>" target='_blank'><?= $this->admin_model->get_person($l->person_id)['nome']; ?></a></td>
@@ -248,11 +249,11 @@
                                         echo "-";
                                       }; ?></td>
                                   <td > <?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
-                                        echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
-                                      } else {
-                                        echo "-";
-                                      } ?></td>
-                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?=$l->person_id?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
+                                          echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
+                                        } else {
+                                          echo "-";
+                                        } ?></td>
+                                    <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?= $l->person_id ?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
 
                               </tr>
                           <?php } ?>

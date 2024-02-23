@@ -33,8 +33,22 @@ class Sales extends CI_Controller
         $this->load->view('admin/sales/lista_adicionar');
     }
 
+
     public function lista_leads($id)
     {
+
+        // Paginacao
+        $limite_por_pagina = 12;
+
+		if (htmlspecialchars($this->input->get('p')) <= 0) {
+			$pagina_atual = 0;
+		} else {
+			$pagina_atual = (htmlspecialchars($this->input->get('p')) - 1);
+		}
+
+		$limite_calculado =  $pagina_atual * $limite_por_pagina;
+        // Paginacao
+
 
         $id = htmlspecialchars($id);
 
@@ -43,13 +57,19 @@ class Sales extends CI_Controller
         if ($lista) {
 
 
-            $data = array(
-                'lista' => $lista,
-            );
 
             if ($lista['provedor'] == 3) {
+
+                $data = array(
+                    'lista' => $lista,
+                    'leads' => $this->admin_model->get_leads_by_tags($lista['tag'],  $limite_calculado, $limite_por_pagina),
+                    'total_pages' => intval(ceil(count($this->admin_model->get_leads_by_tags($lista['tag'],  $limite_calculado, $limite_por_pagina)) / $limite_por_pagina)),
+                );
+                
                 $this->load->view('admin/sales/lista_leads_xmailer', $data);
+
             } else {
+                
                 $this->load->view('admin/sales/lista_leads', $data);
             }
 
