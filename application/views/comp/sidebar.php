@@ -124,7 +124,7 @@ $url = $protocol . $host . $uri;
       </a>
       <ul class="menu-sub">
         <li class="menu-item ">
-          <a href="<?= base_url() ?>persona/lista?filter=pessoa_juridica" class="menu-link">
+          <a href="<?= base_url() ?>persona/lista?filter=pessoa_fisica" class="menu-link">
             <div data-i18n="Account">Lista de Pessoas</div>
           </a>
         </li>

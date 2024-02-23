@@ -173,6 +173,19 @@
               </a>
 
               <div class="row mt-3 mb-3">
+                
+              <div class="col-md-6" >
+                  <a href="<?=base_url()?>persona/lista?filter=pessoa_fisica">
+                  <div class=" text-center d-flex  border border-2 rounded-1 align-items-center justify-content-center border-primary ">
+                    
+                    <p class="mt-3 text-primary semibold">PESSOA FÍSICA</p>
+                    
+                  </div>
+
+                  </a>
+                  
+
+                </div>
                 <div class="col-md-6" >
                     <a href="<?=base_url()?>persona/lista?filter=pessoa_juridica">
                     <div class=" text-center d-flex  border border-2 rounded-1 align-items-center justify-content-center border-primary ">
@@ -185,18 +198,6 @@
 
                 </div>
               
-                <div class="col-md-6" >
-                  <a href="<?=base_url()?>persona/lista?filter=pessoa_fisica">
-                  <div class=" text-center d-flex  border border-2 rounded-1 align-items-center justify-content-center border-primary ">
-                    
-                    <p class="mt-3 text-primary semibold">PESSOA FÍSICA</p>
-                    
-                  </div>
-
-                  </a>
-                  
-
-                </div>
               
                
               </div>
