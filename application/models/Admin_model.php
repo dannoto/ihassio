@@ -1566,7 +1566,7 @@ class Admin_model extends CI_Model
         return $this->db->get('insta_leads')->result();
     }
 
-    public function getInstagramLeadsByTask($task_id,  $limite_calculado, $limite_por_pagina)
+    public function getInstagramLeadsByTask($task_id,  $limite_calculado = null, $limite_por_pagina = null)
     {
         $this->db->where('tarefa_id', $task_id);
 
