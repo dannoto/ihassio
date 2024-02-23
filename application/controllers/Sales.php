@@ -38,7 +38,7 @@ class Sales extends CI_Controller
     {
 
         // Paginacao
-        $limite_por_pagina = 1;
+        $limite_por_pagina = 100;
 
 		if (htmlspecialchars($this->input->get('p')) <= 0) {
 			$pagina_atual = 0;
