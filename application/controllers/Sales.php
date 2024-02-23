@@ -69,7 +69,6 @@ class Sales extends CI_Controller
                     'total_pages' => intval(ceil(count($this->admin_model->get_leads_by_tags($lista['tag'],  $limite_calculado, $limite_por_pagina)) / $limite_por_pagina)),
                 );
 
-                print_r($data['leads']);
                 
                 $this->load->view('admin/sales/lista_leads_xmailer', $data);
 
