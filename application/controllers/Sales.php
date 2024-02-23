@@ -50,7 +50,7 @@ class Sales extends CI_Controller
         // Paginacao
 
         echo "<br>limite calculado: ".$limite_calculado;
-        echo "<br>limite atual: ".$limite_atual;
+        echo "<br>limite atual: ".$pagina_atual;
         echo "<br>limite por pagina: ".$limite_por_pagina;
 
         $id = htmlspecialchars($id);
