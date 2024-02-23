@@ -329,7 +329,7 @@
 
 
                             <li class="page-item active bg-blue">
-                                <a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>?p=<?= $atual ?> "><?= $atual ?> <span class="sr-only">(atual)</span></a>
+                                <a class="page-link" href="<?= base_url() ?>sales/lista_leads/<?=$lista['id']?>?p=<?= $atual ?> "><?= $atual ?> <span class="sr-only"></span></a>
                             </li>
 
                             <?php if ($atual < $total_pages) {  ?>
