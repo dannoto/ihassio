@@ -934,13 +934,13 @@ class Admin_model extends CI_Model
 
             $this->db->query('SELECT DISTINCT person_id
             FROM person_classificacao
-            WHERE tag_id = <tag_id_value> AND is_deleted = 0
+            WHERE tag_id = '.$tag_id.' AND is_deleted = 0
             LIMIT '.$limite_calculado.', '.$limite_por_pagina);
 
         } else {
             $this->db->query('SELECT DISTINCT person_id
             FROM person_classificacao
-            WHERE tag_id = <tag_id_value> AND is_deleted = 0
+            WHERE tag_id = '.$tag_id.' AND is_deleted = 0
            ');
         }
 
