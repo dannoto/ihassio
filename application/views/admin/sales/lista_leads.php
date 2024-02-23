@@ -243,16 +243,8 @@
                               <tr>
 
                                   <td><a href="<?= base_url() ?>persona/editar/<?= $l->person_id ?>" target='_blank'><?= $this->admin_model->get_person($l->person_id)['nome']; ?></a></td>
-                                  <td><?php if ($this->admin_model->get_emails_validated($l->person_id)) {
-                                        echo $this->admin_model->get_emails_validated($l->person_id)['email'];
-                                      } else {
-                                        echo "-";
-                                      }; ?></td>
-                                  <td > <?php if ($this->admin_model->get_telefones_validated($l->person_id)) {
-                                          echo $this->admin_model->get_telefones_validated($l->person_id)['telefone'];
-                                        } else {
-                                          echo "-";
-                                        } ?></td>
+                                  <td></td>
+                                  <td > </td>
                                     <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?= $l->person_id ?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
 
                               </tr>
