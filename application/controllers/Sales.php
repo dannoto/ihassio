@@ -41,7 +41,7 @@ class Sales extends CI_Controller
         $limite_por_pagina = 2;
 
 		if (htmlspecialchars($this->input->get('p')) <= 0) {
-			$pagina_atual = 0;
+			$pagina_atual = 1;
 		} else {
 			$pagina_atual = (htmlspecialchars($this->input->get('p')) - 1);
 		}
