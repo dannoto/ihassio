@@ -56,6 +56,18 @@ class Persona extends CI_Controller
     public function tarefas_leads($id)
     {
 
+         // Paginacao
+         $limite_por_pagina = 10;
+
+         if (htmlspecialchars($this->input->get('p')) <= 0) {
+             $pagina_atual = 0;
+         } else {
+             $pagina_atual = (htmlspecialchars($this->input->get('p')) - 1);
+         }
+ 
+         $limite_calculado =  $pagina_atual * $limite_por_pagina;
+         // Paginacao
+
         $tarefa =  $this->admin_model->getTarefa($id);
 
         if ($tarefa) {
@@ -75,6 +87,14 @@ class Persona extends CI_Controller
                 $data = array(
                     't' => $tarefa,
                     'leads' => $this->admin_model->getInstagramLeadsByTask($tarefa['id'])
+                );
+
+
+                
+                $data = array(
+                    't' => $tarefa,
+                    'leads' => $this->admin_model->getInstagramLeadsByTask($tarefa['id'],  $limite_calculado, $limite_por_pagina),
+                    'total_pages' => intval(ceil(count($this->admin_model->getInstagramLeadsByTask($tarefa['id'])) / $limite_por_pagina)),
                 );
 
             }
