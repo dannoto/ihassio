@@ -145,7 +145,7 @@
                 <div class="card mb-4">
 
                 <?=$campanha['provedor']?>
-                  <?php if ($campanha['provedor'] == "xmailer") { ?>
+                  <?php if ($campanha['provedor'] == 3) { ?>
 
                     <div class="card-header d-flex align-items-center justify-content-between">
                       <div>
