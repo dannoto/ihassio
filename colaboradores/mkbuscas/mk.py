@@ -31,6 +31,7 @@ class Mk:
 
                     for tarefa in tarefas:
                         print(tarefa)
+                        
                 else:
                     
                     print('\n [!] Nenhnuma tarefa ativa. ')
@@ -39,6 +40,8 @@ class Mk:
             except Exception as e:
                     print('\n [!] Erro no while.')
                     print(e)
+                    
+            time.sleep(5)
     
     def getTarefas(self, base_url):
         
@@ -49,13 +52,13 @@ class Mk:
 
         if response.status_code == 200:
             
-            # print("Requisição getTarefasAtivas bem-sucedida!")
+            print("Requisição getTarefasAtivas bem-sucedida!")
             data = json.loads(response.content)
-        
+            print(data)
             return data
         
         else:
-            # print("Erro na requisição getTarefasAtivas:", response.status_code)
+            print("Erro na requisição getTarefasAtivas:", response.status_code)
             return False   
         
       
