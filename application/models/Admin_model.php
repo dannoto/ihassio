@@ -1707,6 +1707,6 @@ class Admin_model extends CI_Model
 
     public function get_aberturas($campanha_id) {
         $this->db->where('abertura_lead_campanha_id', $campanha_id);
-        return $this->db->insert('campanha_aberturas')->result();
+        return $this->db->get('campanha_aberturas')->result();
     }
 }
