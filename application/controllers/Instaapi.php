@@ -21,6 +21,14 @@ class Instaapi extends CI_Controller {
 		print_r(json_encode($response));
 	}
 
+    public function get_tarefas_finalizadas()
+	{
+
+        $response = $this->insta_model->get_tarefas_finalizadas();
+
+		print_r(json_encode($response));
+	}
+
     public function update_tarefa_status()
 	{
         $tarefa_id = htmlspecialchars($this->input->get('tarefa_id'));

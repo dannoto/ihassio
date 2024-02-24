@@ -19,6 +19,15 @@ class insta_model extends CI_Model
 
     }
 
+    public function get_tarefas_finalizadas()
+	{
+        $this->db->where('tarefa_status', 3);
+        $this->db->where('is_deleted', 0);
+
+        return $this->db->get('persona_tarefas')->result();
+
+    }
+
     public function update_tarefa_status($tarefa_id, $tarefa_status)
 	{
         // 3 processando

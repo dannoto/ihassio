@@ -17,29 +17,46 @@ from bs4 import BeautifulSoup
 class Mk:
 
     def __init__(self):
-        
-        
+
        
         base_url = "https://ccoanalitica.com/hassio/instaapi/"
         
+        while True:
+   
+            tarefas =  self.getTarefas(base_url) 
+            
+            try:
+                
+                if len(tarefas) > 0 :    
+
+                    for tarefa in tarefas:
+                        print(tarefa)
+                else:
+                    
+                    print('\n [!] Nenhnuma tarefa ativa. ')
+                    time.sleep(5)
+                
+            except Exception as e:
+                    print('\n [!] Erro no while.')
+                    print(e)
+    
+    def getTarefas(self, base_url):
         
-    def updateTarefaStatus(self, base_url, tarefa_id, tarefa_status):
         
-        # print('[!] Mudando status para Processando: '+str(tarefa_id)+'')
-        
-        url = base_url+"/update_tarefa_status?tarefa_id="+str(tarefa_id)+"&tarefa_status="+str(tarefa_status)+" "
+        url = base_url+"/get_tarefas_finalizadas"
         
         response = requests.get(url)
 
         if response.status_code == 200:
             
-            # print("Requisição updateTarefaStatus bem-sucedida!")
+            # print("Requisição getTarefasAtivas bem-sucedida!")
             data = json.loads(response.content)
         
             return data
         
         else:
-            # print("Erro na requisição updateTarefaStatus:", response.status_code)
+            # print("Erro na requisição getTarefasAtivas:", response.status_code)
             return False   
+        
       
 Mk()
