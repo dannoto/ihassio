@@ -166,7 +166,7 @@
 
                           <div class="row">
                             <div class="col-md-3 text-center card  m-1 mb-3 pt-3 mr-5 p-3 ">
-                              <h2></h2>
+                              <h2>0</h2>
                               <p>ENVIADOS</p>
                             </div>
                             <div class="col-md-3 text-center card  m-1 mb-3 pt-3 mr-5 p-3 ">
