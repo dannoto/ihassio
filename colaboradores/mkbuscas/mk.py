@@ -30,6 +30,20 @@ class Mk:
                 if len(tarefas) > 0 :    
 
                     for tarefa in tarefas:
+                        
+                        # Pega leads
+                        # Trata Leads
+                        
+                        # Abra mkbuscar e pesquisa telefone
+                        # Verifica se o resultado possui o nome
+                        
+                        # Se tiver o nome pega o cpf
+                        
+                        # Abra o mkbuscas e pesquisa o cpf
+                        # procura por emails gmail, hotmail e outlook
+                        # adiciona persona 
+                        
+                        
                         print(tarefa)
                         
                 else:
