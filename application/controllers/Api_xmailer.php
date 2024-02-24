@@ -23,11 +23,11 @@ class Api_xmailer extends CI_Controller {
 
     public function add_abertura() {
          
-        $data['clique_lead_campanha_id'] = htmlspecialchars($this->input->get('ci'));
-        $data['clique_lead_email'] = htmlspecialchars($this->input->get('le'));
-        $data['clique_lead_telefone'] = htmlspecialchars($this->input->get('lt'));
-        $data['clique_lead_cnpj'] = htmlspecialchars($this->input->get('lc'));
-        $data['clique_lead_abertura_data'] = date('Y-m-d H:i:s');
+        $data['abertura_lead_campanha_id'] = htmlspecialchars($this->input->get('ci'));
+        $data['abertura_lead_email'] = htmlspecialchars($this->input->get('le'));
+        $data['abertura_lead_telefone'] = htmlspecialchars($this->input->get('lt'));
+        $data['abertura_lead_cnpj'] = htmlspecialchars($this->input->get('lc'));
+        $data['abertura_lead_abertura_data'] = date('Y-m-d H:i:s');
 
         if ($this->admin_model->add_abertura($data)) {
             $imagemSubstituta = './assets/img/icons/brands/slack.png';
