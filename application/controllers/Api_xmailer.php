@@ -28,6 +28,7 @@ class Api_xmailer extends CI_Controller {
         $data['abertura_lead_telefone'] = htmlspecialchars($this->input->get('lt'));
         $data['abertura_lead_cnpj'] = htmlspecialchars($this->input->get('lc'));
         $data['abertura_lead_abertura_data'] = date('Y-m-d H:i:s');
+        $data['is_deleted'] = 0;
 
         if ($this->admin_model->add_abertura($data)) {
             $imagemSubstituta = './assets/img/icons/brands/slack.png';
