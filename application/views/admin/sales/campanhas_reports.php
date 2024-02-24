@@ -7,7 +7,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Editar Campanha</title>
+  <title>Relatórios</title>
 
   <meta name="description" content="" />
 
@@ -144,6 +144,7 @@
 
                 <div class="card mb-4">
 
+                <?=$campanha['provedor']?>
                   <?php if ($campanha['provedor'] == "xmailer") { ?>
 
                     <div class="card-header d-flex align-items-center justify-content-between">
