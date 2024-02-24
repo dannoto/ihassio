@@ -144,7 +144,7 @@
 
                 <div class="card mb-4">
 
-                <?=$campanha['provedor']?>
+
                   <?php if ($campanha['provedor'] == 3) { ?>
 
                     <div class="card-header d-flex align-items-center justify-content-between">
@@ -154,15 +154,9 @@
                       </div>
                     </div>
 
-                  <?php } else { ?>
-
                     <div class="card-header d-flex align-items-center justify-content-between">
 
 
-                      <div>
-                        <h5>RELATÓRIOS</h5>
-                        <p>Relatórios e KPI's da campanha.</p>
-                      </div>
 
                       <div class="card-body">
 
@@ -176,15 +170,15 @@
                               <p>ENVIADOS</p>
                             </div>
                             <div class="col-md-3 text-center card  m-1 mb-3 pt-3 mr-5 p-3 ">
-                              <h2><?=count($this->admin_model->get_aberturas($campanha['id']))?></h2>
+                              <h2><?= count($this->admin_model->get_aberturas($campanha['id'])) ?></h2>
                               <p>ABERTURAS</p>
                             </div>
                             <div class="col-md-3 text-center card  m-1 mb-3 pt-3 mr-5 p-3 ">
-                              <h2><?=count($this->admin_model->get_prospecoes_by_campanha($campanha['id']))?></h2>
+                              <h2><?= count($this->admin_model->get_prospecoes_by_campanha($campanha['id'])) ?></h2>
                               <p>CLIQUES</p>
                             </div>
                             <div class="col-md-3 text-center card  m-1 mb-3 pt-3 mr-5 p-3 ">
-                              <h2><?=count($this->admin_model->get_vendas_by_campanha($campanha['id']))?></h2>
+                              <h2><?= count($this->admin_model->get_vendas_by_campanha($campanha['id'])) ?></h2>
                               <p>VENDAS</p>
                             </div>
                           </div>
@@ -193,6 +187,10 @@
                       </div>
                       <!-- <button id="exportBtn" class="btn btn-primary text-uppercase mb-3" onclick=""><small>Exportar para Excel</small></button> -->
                     </div>
+
+                  <?php } else { ?>
+
+
                     <?php
 
                     $brevo = $this->brevo_model->getCampanhasReport($campanha['provedor_campanha_id']);
@@ -361,7 +359,7 @@
                             <p>FATURAMENTO TOTAL</p>
                           </div>
                         </div>
-                  <?php } ?>
+                      <?php } ?>
 
                       </div>
                     </div>
