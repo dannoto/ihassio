@@ -550,7 +550,7 @@ class Admin_model extends CI_Model
     {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_validado', 1);
-        $this->db->where('is_deleted', 0 );
+        $this->db->where('is_deleted', 0);
 
         $this->db->limit(1);
         return $this->db->get('person_telefone')->row_array();
@@ -560,7 +560,7 @@ class Admin_model extends CI_Model
     {
         $this->db->where('person_id', $person_id);
         $this->db->where('is_validado', 1);
-        $this->db->where('is_deleted', 0 );
+        $this->db->where('is_deleted', 0);
         $this->db->limit(1);
         return $this->db->get('person_email')->row_array();
     }
@@ -642,7 +642,8 @@ class Admin_model extends CI_Model
 
         return $this->db->get('person_classificacao_intensidade')->row_array();
     }
-    public function delete_classificacao_especial($person_id, $tag_id) {
+    public function delete_classificacao_especial($person_id, $tag_id)
+    {
         $this->db->where('person_id', $person_id);
         $this->db->where('tag_id', $tag_id);
 
@@ -878,24 +879,24 @@ class Admin_model extends CI_Model
                         FROM leads_import li
                         WHERE li.lista_id = ' . $lista_id . '
                     )  LIMIT ' . $quantidade_max . '';
-    
+
         $query = $this->db->query($sql);
-    
+
         return $query->result();
     }
-//     public function getLeadsToSynchronizeCampanhaAssociada($campanha_id, $lista_id, $quantidade_max)
-// {
-//     $this->db->distinct();
-//     $this->db->select('pc.lead_id');
-//     $this->db->from('campanha_prospection pc');
-//     $this->db->where('pc.campanha_id', $campanha_id);
-//     $this->db->where('pc.is_deleted', 0);
-//     $this->db->where_not_in('pc.lead_id', "(SELECT li.person_id FROM leads_import li WHERE li.lista_id = $lista_id)");
-//     $this->db->limit($quantidade_max);
-//     $query = $this->db->get();
+    //     public function getLeadsToSynchronizeCampanhaAssociada($campanha_id, $lista_id, $quantidade_max)
+    // {
+    //     $this->db->distinct();
+    //     $this->db->select('pc.lead_id');
+    //     $this->db->from('campanha_prospection pc');
+    //     $this->db->where('pc.campanha_id', $campanha_id);
+    //     $this->db->where('pc.is_deleted', 0);
+    //     $this->db->where_not_in('pc.lead_id', "(SELECT li.person_id FROM leads_import li WHERE li.lista_id = $lista_id)");
+    //     $this->db->limit($quantidade_max);
+    //     $query = $this->db->get();
 
-//     return $query->result();
-// }
+    //     return $query->result();
+    // }
 
 
 
@@ -923,12 +924,11 @@ class Admin_model extends CI_Model
         $this->db->distinct();
         $this->db->select('person_id'); // Seleciona apenas o person_id para resultados distintos
         $this->db->where('tag_id', $tag_id);
-        $this->db->where('is_deleted', 0 );
+        $this->db->where('is_deleted', 0);
 
-        if ( $limite_por_pagina != null) {
+        if ($limite_por_pagina != null) {
 
             $this->db->limit($limite_por_pagina, $limite_calculado);
-
         }
 
 
@@ -943,8 +943,8 @@ class Admin_model extends CI_Model
         $this->db->distinct();
         $this->db->select('lead_id'); // Seleciona apenas o person_id para resultados distintos
         $this->db->where('campanha_id', $tag_id);
-        $this->db->where('is_deleted',0 );
-        
+        $this->db->where('is_deleted', 0);
+
 
         $query = $this->db->get('campanha_prospection');
 
@@ -995,7 +995,8 @@ class Admin_model extends CI_Model
         return $this->db->get('listas')->result();
     }
 
-    public function get_tag_by_listas() {
+    public function get_tag_by_listas()
+    {
 
         $this->db->distinct();
         $this->db->select('tag');
@@ -1010,7 +1011,7 @@ class Admin_model extends CI_Model
         $this->db->where('is_deleted', 0);
         $this->db->where('tag', $tag_id);
 
-        
+
         $this->db->order_by('id', 'desc');
 
         return $this->db->get('listas')->result();
@@ -1572,7 +1573,7 @@ class Admin_model extends CI_Model
 
         $this->db->where('inapto', 0);
 
-       
+
         // $this->db->limit(100);
         $this->db->group_start();
         $this->db->where('email IS NOT NULL AND email !=', '');
@@ -1581,9 +1582,9 @@ class Admin_model extends CI_Model
         $this->db->or_where('mencoes IS NOT NULL AND mencoes !=', '');
         $this->db->group_end();
 
-    //     if ($limite_por_pagina != null) {
-    //         $this->db->limit($limite_por_pagina, $limite_calculado);
-    // }
+        //     if ($limite_por_pagina != null) {
+        //         $this->db->limit($limite_por_pagina, $limite_calculado);
+        // }
 
         $this->db->order_by('convertido', 'asc');
 
@@ -1662,42 +1663,45 @@ class Admin_model extends CI_Model
     // Tarefas
 
 
-    public function checkNumberCaptured($numero) {
-    
+    public function checkNumberCaptured($numero)
+    {
+
         // Remover todos os caracteres que não sejam dígitos
         $numero = preg_replace("/[^0-9]/", "", $numero);
-        
+
         // Verificar se o número tem o tamanho esperado após a remoção dos caracteres não numéricos
         if (strlen($numero) != 13) {
             return false;
         }
-        
+
         // Verificar se o número começa com "55" (código do Brasil)
         if (substr($numero, 0, 2) != "55") {
             return false;
         }
-        
+
         // Verificar se os próximos dois dígitos são o DDD (código de área) com 2 dígitos
         $ddd = substr($numero, 2, 2);
         if (!preg_match("/^[1-9][0-9]$/", $ddd)) {
             return false;
         }
-        
+
         // Verificar se o próximo dígito é "9" (código obrigatório)
         if (substr($numero, 4, 1) != "9") {
             return false;
         }
-        
+
         // Verificar se os próximos 8 dígitos formam o número final
         $numeroFinal = substr($numero, 5);
         if (!preg_match("/^[0-9]{8}$/", $numeroFinal)) {
             return false;
         }
-        
+
         // Se todas as verificações passarem, o número é válido
         return true;
-  
-}
+    }
 
-
+    public function add_abertura($data) {
+        
+        return $this->db->insert('campanha_aberturas', $data);
+    }
 }

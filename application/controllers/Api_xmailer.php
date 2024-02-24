@@ -21,5 +21,23 @@ class Api_xmailer extends CI_Controller {
         }
     }
 
+    public function add_abertura() {
+         
+        $data['clique_lead_campanha_id'] = htmlspecialchars($this->input->get('ci'));
+        $data['clique_lead_email'] = htmlspecialchars($this->input->get('le'));
+        $data['clique_lead_telefone'] = htmlspecialchars($this->input->get('lt'));
+        $data['clique_lead_cnpj'] = htmlspecialchars($this->input->get('lc'));
+        $data['clique_lead_abertura_data'] = date('Y-m-d H:i:s');
+
+        if ($this->admin_model->add_abertura($data)) {
+            $imagemSubstituta = './assets/img/icons/brands/slack.png';
+            header('Content-Type: image/svg+xml');
+            readfile($imagemSubstituta);
+        } else {
+            $imagemSubstituta = './assets/img/icons/brands/slack.png';
+            header('Content-Type: image/svg+xml');
+            readfile($imagemSubstituta);
+        }
+    }
 
 }
