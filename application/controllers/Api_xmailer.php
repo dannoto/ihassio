@@ -31,13 +31,13 @@ class Api_xmailer extends CI_Controller {
         $data['is_deleted'] = 0;
 
         if ($this->admin_model->add_abertura($data)) {
-            // $imagemSubstituta = './assets/img/icons/brands/slack.png';
-            // header('Content-Type: image/svg+xml');
-            // readfile($imagemSubstituta);
+            $imagemSubstituta = './assets/img/icons/brands/slack.png';
+            header('Content-Type: image/svg+xml');
+            readfile($imagemSubstituta);
         } else {
-            // $imagemSubstituta = './assets/img/icons/brands/slack.png';
-            // header('Content-Type: image/svg+xml');
-            // readfile($imagemSubstituta);
+            $imagemSubstituta = './assets/img/icons/brands/slack.png';
+            header('Content-Type: image/svg+xml');
+            readfile($imagemSubstituta);
         }
     }
 
