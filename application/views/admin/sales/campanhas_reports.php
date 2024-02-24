@@ -361,7 +361,7 @@
                             <p>FATURAMENTO TOTAL</p>
                           </div>
                         </div>
-                      <?php } ?>
+                  <?php } ?>
 
                       </div>
                     </div>
