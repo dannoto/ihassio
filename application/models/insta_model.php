@@ -19,6 +19,23 @@ class insta_model extends CI_Model
 
     }
 
+    public function get_tarefas_leads($task_id)
+    {
+        $this->db->where('tarefa_id', $task_id);
+
+        $this->db->group_start();
+        $this->db->where('email IS NOT NULL AND email !=', '');
+        $this->db->or_where('telefone IS NOT NULL AND telefone !=', '');
+        $this->db->or_where('links IS NOT NULL AND links !=', '');
+        $this->db->or_where('mencoes IS NOT NULL AND mencoes !=', '');
+        $this->db->group_end();
+
+        $this->db->order_by('convertido', 'asc');
+
+        return $this->db->get('insta_leads')->result();
+    }
+
+    
     public function get_tarefas_finalizadas()
 	{
         $this->db->where('tarefa_status', 3);

@@ -23,7 +23,7 @@ class Mk:
         
         while True:
    
-            tarefas =  self.getTarefas(base_url) 
+            tarefas =  self.get_tarefas (base_url) 
             
             try:
                 
@@ -32,6 +32,9 @@ class Mk:
                     for tarefa in tarefas:
                         
                         # Pega leads
+                        tarefa_leads = self.get_tarefas_leads(tarefa['id'])
+                        print(tarefa['tarefa_nome'])
+                        print(len(tarefa_leads))
                         # Trata Leads
                         
                         # Abra mkbuscar e pesquisa telefone
@@ -44,7 +47,7 @@ class Mk:
                         # adiciona persona 
                         
                         
-                        print(tarefa)
+                      
                         
                 else:
                     
@@ -57,8 +60,7 @@ class Mk:
                     
             time.sleep(5)
     
-    def getTarefas(self, base_url):
-        
+    def get_tarefas(self, base_url):
         
         url = base_url+"/get_tarefas_finalizadas"
         
@@ -66,13 +68,30 @@ class Mk:
 
         if response.status_code == 200:
             
-            print("Requisição getTarefasAtivas bem-sucedida!")
+            print("Requisição get_tarefas Ativas bem-sucedida!")
             data = json.loads(response.content)
             print(data)
             return data
         
         else:
-            print("Erro na requisição getTarefasAtivas:", response.status_code)
+            print("Erro na requisição get_tarefas Ativas:", response.status_code)
+            return False   
+        
+    def get_tarefas_leads(self, base_url,  tarefa_id):
+        
+        url = base_url+"/get_tarefas_leads?tarefa_id="+tarefa_id
+        
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            
+            print("Requisição get_tarefas Ativas bem-sucedida!")
+            data = json.loads(response.content)
+            print(data)
+            return data
+        
+        else:
+            print("Erro na requisição get_tarefas Ativas:", response.status_code)
             return False   
         
       
