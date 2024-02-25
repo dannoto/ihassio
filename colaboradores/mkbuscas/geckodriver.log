@@ -1,0 +1,296 @@
+1708879684504	geckodriver	INFO	Listening on 127.0.0.1:54045
+1708879687645	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54046" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilevd5vhD"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708879689785	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708879690320	Marionette	INFO	Listening on port 54055
+WebDriver BiDi listening on ws://127.0.0.1:54046
+Read port: 54055
+1708879690973	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:54046/devtools/browser/a65a73c2-8f63-48be-b07e-cdc4873e2316
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708879719861	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 195: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 195: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 195: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 195: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 195: TypeError: rule is undefined
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 195: TypeError: rule is undefined
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1708882425807	Marionette	INFO	Stopped listening on port 54055
+Dynamically enable window occlusion 1
+1708882440006	geckodriver	INFO	Listening on 127.0.0.1:55335
+1708882443126	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55336" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofile2HZgXw"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708882445924	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708882446600	Marionette	INFO	Listening on port 55345
+WebDriver BiDi listening on ws://127.0.0.1:55336
+Read port: 55345
+1708882447445	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:55336/devtools/browser/24c8cf13-175a-4463-b39a-8c1f989df476
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708882477638	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1708882999119	Marionette	INFO	Stopped listening on port 55345
+Dynamically enable window occlusion 1
+1708883016388	geckodriver	INFO	Listening on 127.0.0.1:55680
+1708883019424	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55681" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileQgdy4C"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708883024728	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708883025572	Marionette	INFO	Listening on port 55690
+WebDriver BiDi listening on ws://127.0.0.1:55681
+Read port: 55690
+1708883026789	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:55681/devtools/browser/5282a1c3-327a-4464-97cd-952c06c6f552
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708883054849	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript warning: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 27: Script terminated by timeout at:
+C<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:27:264
+k2@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:680:32
+t</n<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:484:432
+H<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:138:3
+u</this.next@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:177:109
+B@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:474:481
+promise callback*r@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:475:86
+t</J<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:475:107
+t<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:475:3
+u<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:172:381
+t<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:484:264
+O</K<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:322:381
+H<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:138:3
+u</this.next@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:177:109
+t</J<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:475:110
+t<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:475:3
+u<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:172:381
+O<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:322:282
+I</I<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:552:224
+pv@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:666:175
+b@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:139:30
+S@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:539:327
+
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://devtools/shared/protocol/Front.js, line 105: Error: Connection closed, pending request to server0.conn0.windowGlobal6442450959/domnode155, type setNodeValue failed
+
+Request stack:
+request@resource://devtools/shared/protocol/Front.js:299:14
+generateRequestMethods/</frontProto[name]@resource://devtools/shared/protocol/Front/FrontClassWithSpec.js:47:19
+showTextEditor/done/</<@resource://devtools/client/inspector/markup/views/text-editor.js:103:25
+do@resource://devtools/client/shared/undo.js:70:16
+endBatch@resource://devtools/client/shared/undo.js:81:11
+do@resource://devtools/client/shared/undo.js:93:10
+showTextEditor/done/<@resource://devtools/client/inspector/markup/views/text-editor.js:101:31
+
+1708883954010	Marionette	INFO	Stopped listening on port 55690
+Dynamically enable window occlusion 1
+1708883969707	geckodriver	INFO	Listening on 127.0.0.1:56239
+1708883972865	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56240" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileRMB2F2"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708883974506	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708883975102	Marionette	INFO	Listening on port 56248
+WebDriver BiDi listening on ws://127.0.0.1:56240
+Read port: 56248
+1708883975362	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:56240/devtools/browser/708cacd9-8f00-4327-9ec5-6f29645d4531
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+1708884004625	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1708885184275	Marionette	INFO	Stopped listening on port 56248
+Dynamically enable window occlusion 1
+1708885196441	geckodriver	INFO	Listening on 127.0.0.1:56775
+1708885199512	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56776" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileVZ2QGG"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708885200971	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708885201288	Marionette	INFO	Listening on port 56785
+WebDriver BiDi listening on ws://127.0.0.1:56776
+Read port: 56785
+1708885201960	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:56776/devtools/browser/8e27cbb0-3cb3-4872-8a43-6972cbb6f8bd
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708885231092	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+1708885275583	Marionette	INFO	Stopped listening on port 56785
+Dynamically enable window occlusion 1
+1708885285702	geckodriver	INFO	Listening on 127.0.0.1:56899
+1708885288749	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56900" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileL1aqgB"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708885290071	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708885290408	Marionette	INFO	Listening on port 56907
+WebDriver BiDi listening on ws://127.0.0.1:56900
+Read port: 56907
+Read port: 56907
+1708885292688	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:56900/devtools/browser/760fbe4b-f6d4-4940-8c2a-de8008db1b7c
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708885321869	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+1708886424445	Marionette	INFO	Stopped listening on port 56907
+Dynamically enable window occlusion 1
+1708886440183	geckodriver	INFO	Listening on 127.0.0.1:57518
+1708886443204	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57519" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileTcyA35"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708886445603	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708886446112	Marionette	INFO	Listening on port 57530
+WebDriver BiDi listening on ws://127.0.0.1:57519
+Read port: 57530
+1708886447253	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:57519/devtools/browser/30c0a040-ba03-44a3-b0ee-3c6cd2869045
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708886476072	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+1708886653434	Marionette	INFO	Stopped listening on port 57530
+Dynamically enable window occlusion 1
+1708886664943	geckodriver	INFO	Listening on 127.0.0.1:57709
+1708886667981	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57710" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilegTsjJR"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708886669290	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708886669611	Marionette	INFO	Listening on port 57717
+WebDriver BiDi listening on ws://127.0.0.1:57710
+Read port: 57717
+1708886671561	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:57710/devtools/browser/f7dd4d03-e884-4300-9b95-8a56213a1def
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708886699337	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+1708887991975	Marionette	INFO	Stopped listening on port 57717
+Dynamically enable window occlusion 1
+1708888006422	geckodriver	INFO	Listening on 127.0.0.1:58293
+1708888009478	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58294" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileNXKLia"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708888011335	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708888011868	Marionette	INFO	Listening on port 58304
+WebDriver BiDi listening on ws://127.0.0.1:58294
+Read port: 58304
+1708888013071	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:58294/devtools/browser/cc639035-1dc8-46f9-a752-e1e5955ff319
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+1708888041418	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+Exiting due to channel error.
+Exiting due to channel error.
+1708888203459	geckodriver	INFO	Listening on 127.0.0.1:58456
+1708888206507	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58457" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilezVTk79"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708888208476	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708888209329	Marionette	INFO	Listening on port 58465
+WebDriver BiDi listening on ws://127.0.0.1:58457
+Read port: 58465
+Read port: 58465
+1708888211796	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:58457/devtools/browser/7c3142c9-0336-4c67-aa27-fb7d6c9c10df
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708888239414	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1708888587336	geckodriver	INFO	Listening on 127.0.0.1:58703
+1708888590371	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58704" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilehERKey"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708888592003	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708888592517	Marionette	INFO	Listening on port 58712
+WebDriver BiDi listening on ws://127.0.0.1:58704
+Read port: 58712
+1708888593261	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:58704/devtools/browser/bd3e002a-41c7-4dd0-aa82-00d30e47565a
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708888622333	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+1708889118802	Marionette	INFO	Stopped listening on port 58712
+Dynamically enable window occlusion 1
