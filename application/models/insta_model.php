@@ -106,14 +106,8 @@ class insta_model extends CI_Model
     public function add_instalead($data) {
         return $this->db->insert('insta_leads', $data);
     }
-    
-    public function add_person($person_data)
-    {
 
-        $this->db->insert('person', $person_data);
-        return $this->db->insert_id();
-    }
-
+  
  
 
 }

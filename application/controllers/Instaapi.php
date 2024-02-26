@@ -10,6 +10,8 @@ class Instaapi extends CI_Controller
         parent::__construct();
 
         $this->load->model('admin_model');
+        $this->load->model('process_model');
+
         $this->load->model('insta_model');
     }
 
@@ -205,7 +207,7 @@ class Instaapi extends CI_Controller
         $person_data['pessoa_fisica'] = "pessoa_fisica";
         $person_data['is_deleted'] = 0;
 
-        $person_id = $this->insta_model->add_person($person_data);
+        $person_id = $this->admin_model->add_person_get_id($person_data);
 
         if ($person_id) {
 

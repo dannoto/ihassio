@@ -1549,6 +1549,14 @@ class Admin_model extends CI_Model
 
     // Instagram Leads
 
+    public function add_person_get_id($person_data)
+    {
+
+        $this->db->insert('person', $person_data);
+        return $this->db->insert_id();
+    }
+
+
     public function getInstagramLeadsByTaskSearch($task_id, $inapto, $convertido)
     {
         $this->db->where('tarefa_id', $task_id);
