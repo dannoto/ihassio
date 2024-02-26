@@ -239,7 +239,7 @@ class Instaapi extends CI_Controller
             $data_email['is_validado'] = 1;
             $data_email['is_deleted'] = 0;
 
-            if ($this->admin_model->add_email($data_email)) {
+            if ($this->admin_model->add_emails($data_email)) {
 
                 echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
             }
