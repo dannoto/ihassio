@@ -204,6 +204,10 @@ class Instaapi extends CI_Controller
         $person_data['cidade'] = $data['cidade'];
         $person_data['bairro'] = $data['bairro'];
 
+        $person_data['validacao_email'] = 1;
+        $person_data['validacao_perfil'] = 1;
+        $person_data['validacao_telefone'] = 1;
+
         $person_data['tipo'] = "pessoa_fisica";
         $person_data['is_deleted'] = 0;
 
