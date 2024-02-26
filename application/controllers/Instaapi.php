@@ -135,7 +135,7 @@ class Instaapi extends CI_Controller
         $dados_recebidos = array(
             "nome" => "DAniel Ribeiro",
             "nascimento" => "2023-12-21 00:00:00",
-            "rg" => "64645",
+            "rg" => "Sem informação",
             "cpf" => "04500145176",
             "sexo" => "F",
             "endereco" => "Rua cu",
