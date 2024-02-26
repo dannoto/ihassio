@@ -214,35 +214,35 @@ class Instaapi extends CI_Controller
             echo "[!] PERSONA ADICIONADA - " . $person_data['nome'] . "";
 
             // Adicionando Telefone
-            $telefone['person_id'] = $person_id;
-            $telefone['telefone'] = $person_data['telefone'];
-            $telefone['is_validado'] = 1;
-            $telefone['is_deleted'] = 0;
+           $data_telefone['person_id'] = $person_id;
+           $data_telefone['telefone'] = $person_data['telefone'];
+           $data_telefone['is_validado'] = 1;
+           $data_telefone['is_deleted'] = 0;
 
-            if ($this->process_model->add_telefone($telefone)) {
+            if ($this->process_model->add_telefone($data_telefone)) {
                 echo "[!] TELEFONE ATRIBUIDO : " . $person_data['telefone'] . " ";
             }
 
             // Adicionando Email
-            $email['person_id'] = $person_id;
-            $email['email'] = $person_data['email'];
-            $email['is_validado'] = 1;
-            $email['is_deleted'] = 0;
+            $data_email['person_id'] = $person_id;
+            $data_email['email'] = $person_data['email'];
+            $data_email['is_validado'] = 1;
+            $data_email['is_deleted'] = 0;
 
-            if ($this->process_model->add_email($email)) {
+            if ($this->process_model->add_email($data_email)) {
 
                 echo "<br>[!] E-MAIL ATRIBUIDO : " . $person_data['email'] . " <br>";
             }
 
             // Adicionando Rede Social
-            $data['person_id'] = $person_id;
-            $data['nome'] = $person_data['nome'];
-            $data['username'] = $person_data['username'];
-            $data['url'] = "https://instagram.com/" . $person_data['username'];
-            $data['intensividade'] = 1;
-            $data['status'] = 1;
+            $data_social['person_id'] = $person_id;
+            $data_social['nome'] = $person_data['nome'];
+            $data_social['username'] = $person_data['username'];
+            $data_social['url'] = "https://instagram.com/" . $person_data['username'];
+            $data_social['intensividade'] = 1;
+            $data_social['status'] = 1;
 
-            if ($this->admin_model->add_social($data)) {
+            if ($this->admin_model->add_social($data_social)) {
                 echo "<br>[!] SOCIAL : " . $person_data['email'] . " <br>";
             }
 
@@ -257,7 +257,7 @@ class Instaapi extends CI_Controller
             $tag_data['data'] = date('d-m-Y H:i:s');
             $tag_data['is_deleted'] = 0;
 
-            if ($this->process_model->add_classificacao($tag_data)) {
+            if ($this->admin_model->add_classificacao($tag_data)) {
 
                 echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
             }
@@ -269,7 +269,7 @@ class Instaapi extends CI_Controller
 
             if ($this->admin_model->updateInstaLead($person_data['lead_id'], $convertido_idata)) {
 
-                $response = array('status' => 'true', 'message' => 'Persona já existe. Demanda adicionada com sucesso');
+               echo "convertido";
             }
         
         } else {

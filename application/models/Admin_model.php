@@ -523,7 +523,7 @@ class Admin_model extends CI_Model
     }
 
     public function get_uf_id($nome) {
-        $this->db->like('nome', $nome);
+        $this->db->where('uf', $nome);
         return $this->db->get('estado')->row_array()['id'];
     }
 
