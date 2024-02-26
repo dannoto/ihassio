@@ -148,7 +148,7 @@ class Instaapi extends CI_Controller
             "email" => "monica_albino@outlook.com.br", // Supondo que você quer apenas o e-mail do Gmail
             "telefone" =>  "5571993495165",
             "username" => "monicaalbinooficial",
-            "tag" => "170",
+            "tag" => "171",
             "lead_id" => "18021",
         );
 
@@ -160,8 +160,8 @@ class Instaapi extends CI_Controller
         }
 
         $dados_recebidos['nascimento'] = substr($dados_recebidos['nascimento'], 0, 10);
-        $dados_recebidos['estado'] = $this->admin_model->get_uf_id($dados_recebidos['estado']); 
-        $dados_recebidos['cidade'] = $this->admin_model->get_cidade_id($dados_recebidos['cidade']); 
+        $dados_recebidos['estado'] = $this->admin_model->get_uf_id($dados_recebidos['estado']);
+        $dados_recebidos['cidade'] = $this->admin_model->get_cidade_id($dados_recebidos['cidade']);
 
         if ($dados_recebidos['sexo'] == "F") {
             $dados_recebidos['sexo'] = "feminino";
@@ -189,78 +189,19 @@ class Instaapi extends CI_Controller
             "lead_id" => $dados_recebidos["lead_id"] ?? "",
         );
 
-        
+
         // Faça o que desejar com os dados formatados
-        print_r($data);
+        // print_r($data);
 
-        $person_data['nome'] = $data['nome'];
-        $person_data['nascimento'] = $data['nascimento'];
-        $person_data['rg'] = $data['rg'];
-        $person_data['cpf'] = $data['cpf'];
-        $person_data['sexo'] = $data['sexo'];
-        $person_data['endereco'] = $data['endereco'];
-        $person_data['cep'] = $data['cep'];
-        $person_data['estado'] = $data['estado'];
-        $person_data['cidade'] = $data['cidade'];
-        $person_data['bairro'] = $data['bairro'];
+        if ($this->process_model->check_telefone($data['telefone'])) {
 
-        $person_data['validacao_email'] = 1;
-        $person_data['validacao_perfil'] = 1;
-        $person_data['validacao_telefone'] = 1;
-
-
-       
-
-
-        $person_data['tipo'] = "pessoa_fisica";
-        $person_data['is_deleted'] = 0;
-
-        $person_id = $this->admin_model->add_person_get_id($person_data);
-
-        if ($person_id) {
-
-            echo "[!] PERSONA ADICIONADA id ".$person_id." - " . $person_data['nome'] . "";
-
-            // Adicionando Telefone
-           $data_telefone['person_id'] = $person_id;
-           $data_telefone['ddd'] = "";
-
-           $data_telefone['telefone'] = $data['telefone'];
-           $data_telefone['is_validado'] = 1;
-           $data_telefone['is_deleted'] = 0;
-
-            if ($this->admin_model->add_telefone($data_telefone)) {
-                echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
-            }
-
-            // Adicionando Email
-            $data_email['person_id'] = $person_id;
-            $data_email['email'] = $data['email'];
-            $data_email['is_validado'] = 1;
-            $data_email['is_deleted'] = 0;
-
-            if ($this->admin_model->add_emails($data_email)) {
-
-                echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
-            }
-
-            // Adicionando Rede Social
-            $data_social['person_id'] = $person_id;
-            $data_social['nome'] = "instagram";
-            $data_social['username'] = $data['username'];
-            $data_social['url'] = "https://instagram.com/" . $data['username'];
-            $data_social['intensividade'] = 1;
-            $data_social['status'] = 1;
-
-            if ($this->admin_model->add_social($data_social)) {
-                echo "<br>[!] SOCIAL : " . $data['email'] . " <br>";
-            }
-
-
+            $person_telefone = $this->process_model->check_telefone($data['telefone'])['person_id'];
 
             $tag_info = $this->admin_model->get_item($data['tag']);
 
-            $tag_data['person_id'] = $person_id;
+            echo "TElefone ja existe";
+
+            $tag_data['person_id'] = $person_telefone;
             $tag_data['categoria_id'] = $tag_info['categoria_id'];
             $tag_data['subcategoria_id'] = $tag_info['subcategoria_id'];
             $tag_data['tag_id'] = $data['tag'];
@@ -272,18 +213,122 @@ class Instaapi extends CI_Controller
                 echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
             }
 
+            
 
-            $convertido_idata = array(
-                'convertido' => 1
-            );
+        } else if ($this->process_model->check_email($data['email'])) {
 
-            if ($this->admin_model->updateInstaLead($data['lead_id'], $convertido_idata)) {
+            $person_email = $this->process_model->check_email($data['email'])['person_id'];
 
-               echo "convertido";
+            $tag_info = $this->admin_model->get_item($data['tag']);
+
+            echo "Email ja existe ja existe";
+
+            $tag_data['person_id'] = $person_email;
+            $tag_data['categoria_id'] = $tag_info['categoria_id'];
+            $tag_data['subcategoria_id'] = $tag_info['subcategoria_id'];
+            $tag_data['tag_id'] = $data['tag'];
+            $tag_data['data'] = date('d-m-Y H:i:s');
+            $tag_data['is_deleted'] = 0;
+
+            if ($this->admin_model->add_classificacao($tag_data)) {
+
+                echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
             }
-        
+
+            
         } else {
-            echo "n foi";
+
+            $person_data['nome'] = $data['nome'];
+            $person_data['nascimento'] = $data['nascimento'];
+            $person_data['rg'] = $data['rg'];
+            $person_data['cpf'] = $data['cpf'];
+            $person_data['sexo'] = $data['sexo'];
+            $person_data['endereco'] = $data['endereco'];
+            $person_data['cep'] = $data['cep'];
+            $person_data['estado'] = $data['estado'];
+            $person_data['cidade'] = $data['cidade'];
+            $person_data['bairro'] = $data['bairro'];
+
+            $person_data['validacao_email'] = 1;
+            $person_data['validacao_perfil'] = 1;
+            $person_data['validacao_telefone'] = 1;
+
+
+
+
+
+            $person_data['tipo'] = "pessoa_fisica";
+            $person_data['is_deleted'] = 0;
+
+            $person_id = $this->admin_model->add_person_get_id($person_data);
+
+            if ($person_id) {
+
+                echo "[!] PERSONA ADICIONADA id " . $person_id . " - " . $person_data['nome'] . "";
+
+                // Adicionando Telefone
+                $data_telefone['person_id'] = $person_id;
+                $data_telefone['ddd'] = "";
+
+                $data_telefone['telefone'] = $data['telefone'];
+                $data_telefone['is_validado'] = 1;
+                $data_telefone['is_deleted'] = 0;
+
+                if ($this->admin_model->add_telefone($data_telefone)) {
+                    echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                }
+
+                // Adicionando Email
+                $data_email['person_id'] = $person_id;
+                $data_email['email'] = $data['email'];
+                $data_email['is_validado'] = 1;
+                $data_email['is_deleted'] = 0;
+
+                if ($this->admin_model->add_emails($data_email)) {
+
+                    echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
+                }
+
+                // Adicionando Rede Social
+                $data_social['person_id'] = $person_id;
+                $data_social['nome'] = "instagram";
+                $data_social['username'] = $data['username'];
+                $data_social['url'] = "https://instagram.com/" . $data['username'];
+                $data_social['intensividade'] = 1;
+                $data_social['status'] = 1;
+
+                if ($this->admin_model->add_social($data_social)) {
+                    echo "<br>[!] SOCIAL : " . $data['email'] . " <br>";
+                }
+
+
+
+                $tag_info = $this->admin_model->get_item($data['tag']);
+
+                $tag_data['person_id'] = $person_id;
+                $tag_data['categoria_id'] = $tag_info['categoria_id'];
+                $tag_data['subcategoria_id'] = $tag_info['subcategoria_id'];
+                $tag_data['tag_id'] = $data['tag'];
+                $tag_data['data'] = date('d-m-Y H:i:s');
+                $tag_data['is_deleted'] = 0;
+
+                if ($this->admin_model->add_classificacao($tag_data)) {
+
+                    echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
+                }
+
+
+                $convertido_idata = array(
+                    'convertido' => 1
+                );
+
+                if ($this->admin_model->updateInstaLead($data['lead_id'], $convertido_idata)) {
+
+                    echo "convertido";
+                }
+            } else {
+                echo "n foi";
+            }
         }
     }
 }
