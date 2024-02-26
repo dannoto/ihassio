@@ -156,6 +156,8 @@ class Instaapi extends CI_Controller
             }
         }
 
+        $dados_recebidos['nascimento'] = substr($dados_recebidos['nascimento'], 0, 10);
+
         if ($dados_recebidos['sexo'] == "F") {
             $dados_recebidos['sexo'] = "feminino";
         } else if ($dados_recebidos['sexo'] == "M") {
@@ -186,7 +188,7 @@ class Instaapi extends CI_Controller
         print_r($data);
 
         // $person_data['nome'] = $data['nome'];
-        // $person_data['nascimento'] = substr($data['nascimento'], 0, 10);
+        // $person_data['nascimento'] = $data['nascimento'];
         // $person_data['rg'] = $data['rg'];
         // $person_data['cpf'] = $data['cpf'];
         // $person_data['sexo'] = $data['sexo'];
