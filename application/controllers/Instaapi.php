@@ -157,6 +157,8 @@ class Instaapi extends CI_Controller
         }
 
         $dados_recebidos['nascimento'] = substr($dados_recebidos['nascimento'], 0, 10);
+        $dados_recebidos['estado'] = $this->admin_model->get_uf_id($dados_recebidos['estado']); 
+        $dados_recebidos['cidade'] = $this->admin_model->get_cidade_id($dados_recebidos['cidade']); 
 
         if ($dados_recebidos['sexo'] == "F") {
             $dados_recebidos['sexo'] = "feminino";

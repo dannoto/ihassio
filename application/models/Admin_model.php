@@ -522,6 +522,16 @@ class Admin_model extends CI_Model
         return $this->db->get('cidade')->row_array()['nome'];
     }
 
+    public function get_uf_id($nome) {
+        $this->db->like('nome', $nome);
+        return $this->db->get('estado')->row_array()['id'];
+    }
+
+    public function get_cidade_id($nome) {
+        $this->db->like('nome', $nome);
+        return $this->db->get('cidade')->row_array()['id'];
+    }
+
     public function get_estado_label($estado_id)
     {
 
