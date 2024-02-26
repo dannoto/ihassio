@@ -208,6 +208,10 @@ class Instaapi extends CI_Controller
         $person_data['validacao_perfil'] = 1;
         $person_data['validacao_telefone'] = 1;
 
+
+       
+
+
         $person_data['tipo'] = "pessoa_fisica";
         $person_data['is_deleted'] = 0;
 
@@ -215,39 +219,41 @@ class Instaapi extends CI_Controller
 
         if ($person_id) {
 
-            echo "[!] PERSONA ADICIONADA - " . $person_data['nome'] . "";
+            echo "[!] PERSONA ADICIONADA id ".$person_id." - " . $person_data['nome'] . "";
 
             // Adicionando Telefone
            $data_telefone['person_id'] = $person_id;
-           $data_telefone['telefone'] = $person_data['telefone'];
+           $data_telefone['ddd'] = "";
+
+           $data_telefone['telefone'] = $data['telefone'];
            $data_telefone['is_validado'] = 1;
            $data_telefone['is_deleted'] = 0;
 
-            if ($this->process_model->add_telefone($data_telefone)) {
-                echo "[!] TELEFONE ATRIBUIDO : " . $person_data['telefone'] . " ";
+            if ($this->admin_model->add_telefone($data_telefone)) {
+                echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
             }
 
             // Adicionando Email
             $data_email['person_id'] = $person_id;
-            $data_email['email'] = $person_data['email'];
+            $data_email['email'] = $data['email'];
             $data_email['is_validado'] = 1;
             $data_email['is_deleted'] = 0;
 
-            if ($this->process_model->add_email($data_email)) {
+            if ($this->admin_model->add_email($data_email)) {
 
-                echo "<br>[!] E-MAIL ATRIBUIDO : " . $person_data['email'] . " <br>";
+                echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
             }
 
             // Adicionando Rede Social
             $data_social['person_id'] = $person_id;
-            $data_social['nome'] = $person_data['nome'];
-            $data_social['username'] = $person_data['username'];
-            $data_social['url'] = "https://instagram.com/" . $person_data['username'];
+            $data_social['nome'] = "instagram";
+            $data_social['username'] = $data['username'];
+            $data_social['url'] = "https://instagram.com/" . $data['username'];
             $data_social['intensividade'] = 1;
             $data_social['status'] = 1;
 
             if ($this->admin_model->add_social($data_social)) {
-                echo "<br>[!] SOCIAL : " . $person_data['email'] . " <br>";
+                echo "<br>[!] SOCIAL : " . $data['email'] . " <br>";
             }
 
 
@@ -271,7 +277,7 @@ class Instaapi extends CI_Controller
                 'convertido' => 1
             );
 
-            if ($this->admin_model->updateInstaLead($person_data['lead_id'], $convertido_idata)) {
+            if ($this->admin_model->updateInstaLead($data['lead_id'], $convertido_idata)) {
 
                echo "convertido";
             }
