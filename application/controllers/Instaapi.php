@@ -156,6 +156,13 @@ class Instaapi extends CI_Controller
             }
         }
 
+        if ($dados_recebidos['sexo'] == "F") {
+            $dados_recebidos['sexo'] = "feminino";
+        } else if ($dados_recebidos['sexo'] == "M") {
+            $dados_recebidos['sexo'] = "masculino";
+        }
+
+
         // Transforme os dados em um array com as chaves desejadas
         $data = array(
             "nome" => $dados_recebidos["nome"] ?? "",
@@ -174,12 +181,7 @@ class Instaapi extends CI_Controller
             "tag" => $dados_recebidos["tag"] ?? "",
         );
 
-        if ($data['sexo'] == "F") {
-            $data['sexo'] = "feminino";
-        } else if ($data['sexo'] == "M") {
-            $data['sexo'] = "masculino";
-        }
-
+        
         // Faça o que desejar com os dados formatados
         print_r($data);
 
