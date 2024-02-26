@@ -294,3 +294,780 @@ JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/ap
 JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
 1708889118802	Marionette	INFO	Stopped listening on port 58712
 Dynamically enable window occlusion 1
+1708889242854	geckodriver	INFO	Listening on 127.0.0.1:59103
+1708889245923	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59104" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilecLvgEx"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708889247837	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708889248267	Marionette	INFO	Listening on port 59124
+WebDriver BiDi listening on ws://127.0.0.1:59104
+Read port: 59124
+1708889249283	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:59104/devtools/browser/2fa8ee43-4551-44c5-a966-e0d064fe1686
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708889277917	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript warning: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 308: Script terminated by timeout at:
+O<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:308:125
+I<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:504:93
+$B@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:673:479
+L<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:422:249
+O<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:349:350
+Y<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:240:344
+O<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:338:376
+t</n<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:484:444
+H<@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:138:3
+u</this.next@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:177:109
+B@https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js:474:481
+
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+1708889592595	geckodriver	INFO	Listening on 127.0.0.1:59333
+1708889595635	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59334" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofile62kVfz"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708889596945	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708889597280	Marionette	INFO	Listening on port 59342
+WebDriver BiDi listening on ws://127.0.0.1:59334
+Read port: 59342
+1708889597792	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:59334/devtools/browser/457a5a3d-3a64-4849-ae15-d1215dc03e92
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708889627050	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708889943676	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://www.hapvida.com.br/site/sites/all/modules/avanz/avanz.js?s8jw5a, line 9: unreachable code after return statement
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+Exiting due to channel error.
+1708890496365	geckodriver	INFO	Listening on 127.0.0.1:59805
+1708890499394	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59806" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilewjvmQN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708890501073	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708890501517	Marionette	INFO	Listening on port 59819
+Read port: 59819
+WebDriver BiDi listening on ws://127.0.0.1:59806
+1708890501782	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:59806/devtools/browser/e5924ce6-7fc9-400a-bf45-5d65ea066000
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708890531284	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+1708890784482	geckodriver	INFO	Listening on 127.0.0.1:60001
+1708890787567	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60002" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileOvtZDc"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708890790312	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708890790860	Marionette	INFO	Listening on port 60012
+Read port: 60012
+WebDriver BiDi listening on ws://127.0.0.1:60002
+1708890791795	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:60002/devtools/browser/465977db-2ddb-4b59-a191-21b47a72ef5c
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708890820534	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+Exiting due to channel error.
+Exiting due to channel error.
+1708891432263	geckodriver	INFO	Listening on 127.0.0.1:60463
+1708891435281	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "60464" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofile6SK3hU"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708891436924	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708891437312	Marionette	INFO	Listening on port 60474
+WebDriver BiDi listening on ws://127.0.0.1:60464
+Read port: 60474
+1708891437902	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:60464/devtools/browser/7e89fc4f-22b3-4f23-bf3c-2ff47b6a412c
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708891467595	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: resource://gre/modules/Prompter.sys.mjs, line 1060: AbortError: Actor 'Prompt' destroyed before query 'Prompt:Open' was resolved
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+1708891665033	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:468:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:219:33
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+1708891708307	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:468:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:219:33
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708894773417	geckodriver	INFO	Listening on 127.0.0.1:61642
+1708894777540	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61643" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileid13JZ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708894781125	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708894781678	Marionette	INFO	Listening on port 61653
+Read port: 61653
+WebDriver BiDi listening on ws://127.0.0.1:61643
+1708894782066	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:61643/devtools/browser/25625391-74bd-4a67-9e76-32775893ea55
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708894806332	Marionette	INFO	Stopped listening on port 61653
+Dynamically enable window occlusion 1
+1708895912658	geckodriver	INFO	Listening on 127.0.0.1:62273
+1708895915805	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62274" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileMYFD3N"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708895918803	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708895919640	Marionette	INFO	Listening on port 62283
+WebDriver BiDi listening on ws://127.0.0.1:62274
+Read port: 62283
+1708895920451	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:62274/devtools/browser/604092b5-5cf8-4687-a840-70e87f08e206
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708895949764	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+1708896223332	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:468:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:219:33
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1708898292638	geckodriver	INFO	Listening on 127.0.0.1:63129
+1708898295723	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63130" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilec6nE1X"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708898298210	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708898298673	Marionette	INFO	Listening on port 63138
+WebDriver BiDi listening on ws://127.0.0.1:63130
+Read port: 63138
+1708898299466	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:63130/devtools/browser/99f50018-484d-4d2a-938b-5e53cc691209
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708898331956	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+Exiting due to channel error.
+Exiting due to channel error.
+1708962477121	geckodriver	INFO	Listening on 127.0.0.1:53543
+1708962480243	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53544" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilebvMmkx"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708962482319	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708962482661	Marionette	INFO	Listening on port 53554
+Read port: 53554
+WebDriver BiDi listening on ws://127.0.0.1:53544
+1708962482912	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:53544/devtools/browser/a292aa83-d3d2-404b-bd74-ce1d54da067f
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708962514359	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/jquery/jquery.min.js, line 2: TypeError: n.head.appendChild(...).parentNode is null
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1708962624425	Marionette	INFO	Stopped listening on port 53554
+Dynamically enable window occlusion 1
+1708962652581	geckodriver	INFO	Listening on 127.0.0.1:53730
+1708962655682	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53731" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileZGKz4q"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708962657836	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708962658365	Marionette	INFO	Listening on port 53740
+WebDriver BiDi listening on ws://127.0.0.1:53731
+Read port: 53740
+1708962659197	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:53731/devtools/browser/2678ad3d-58aa-424a-aecd-b861d62293c6
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708962687938	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/jquery/jquery.min.js, line 2: TypeError: n.head.appendChild(...).parentNode is null
+1708963076938	geckodriver	INFO	Listening on 127.0.0.1:54109
+1708963079993	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54110" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofile2b9pnm"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708963082391	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708963085046	Marionette	INFO	Listening on port 54120
+Read port: 54120
+WebDriver BiDi listening on ws://127.0.0.1:54110
+1708963085611	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1708963094361	Marionette	INFO	Stopped listening on port 54120
+Dynamically enable window occlusion 1
+1708963094430	CDP	WARN	Failed to remove undefined (Could not parse path (undefined): NS_ERROR_FILE_UNRECOGNIZED_PATH)
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1708963216731	geckodriver	INFO	Listening on 127.0.0.1:54226
+1708963219786	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54227" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilehw5gXE"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708963222728	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708963223935	Marionette	INFO	Listening on port 54236
+Read port: 54236
+WebDriver BiDi listening on ws://127.0.0.1:54227
+1708963225517	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:54227/devtools/browser/23565b2b-0374-4fad-ade5-e225b62d2809
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708963252881	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/jquery/jquery.min.js, line 2: TypeError: n.head.appendChild(...).parentNode is null
+Exiting due to channel error.
+1708963369521	geckodriver	INFO	Listening on 127.0.0.1:54389
+1708963372585	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54390" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileI7qSgJ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708963374046	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708963374388	Marionette	INFO	Listening on port 54399
+WebDriver BiDi listening on ws://127.0.0.1:54390
+Read port: 54399
+1708963374934	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:54390/devtools/browser/413e6924-9b15-4cda-8ccd-2e1965624bcf
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708963404099	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+Exiting due to channel error.
+1708963471103	geckodriver	INFO	Listening on 127.0.0.1:54518
+1708963474219	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54519" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileITVC7g"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708963475424	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708963475767	Marionette	INFO	Listening on port 54529
+WebDriver BiDi listening on ws://127.0.0.1:54519
+Read port: 54529
+1708963476306	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:54519/devtools/browser/932859af-c97d-4885-a4cc-405748f6df8f
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708963505467	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/jquery/jquery.min.js, line 2: TypeError: n.head.appendChild(...).parentNode is null
+1708963707105	Marionette	INFO	Stopped listening on port 54529
+Dynamically enable window occlusion 1
+1708963714917	geckodriver	INFO	Listening on 127.0.0.1:54730
+1708963718065	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54731" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilektQF8R"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708963719288	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708963719619	Marionette	INFO	Listening on port 54740
+WebDriver BiDi listening on ws://127.0.0.1:54731
+Read port: 54740
+1708963720151	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:54731/devtools/browser/6e517d56-0c1e-4f44-9008-d4d63b326e1e
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708963749371	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/jquery/jquery.min.js, line 2: TypeError: n.head.appendChild(...).parentNode is null
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 570: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1708964484619	Marionette	INFO	Stopped listening on port 54740
+Dynamically enable window occlusion 1
+1708964499839	geckodriver	INFO	Listening on 127.0.0.1:55189
+1708964503216	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55190" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileA4lYeN"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708964504501	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708964504811	Marionette	INFO	Listening on port 55199
+WebDriver BiDi listening on ws://127.0.0.1:55190
+Read port: 55199
+1708964505332	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:55190/devtools/browser/d6fa9ac7-fce8-45bf-a758-6a56e5f004a3
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708964534711	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/jquery/jquery.min.js, line 2: TypeError: n.head.appendChild(...).parentNode is null
+1708965623422	Marionette	INFO	Stopped listening on port 55199
+Dynamically enable window occlusion 1
+1708965642189	geckodriver	INFO	Listening on 127.0.0.1:55920
+1708965645442	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55921" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileEXYlBn"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708965648290	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708965648710	Marionette	INFO	Listening on port 55931
+WebDriver BiDi listening on ws://127.0.0.1:55921
+Read port: 55931
+1708965649190	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:55921/devtools/browser/e8a1406f-ae20-4dd1-abe0-4ac9c8eb7754
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708965678519	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+1708965916912	Marionette	INFO	Stopped listening on port 55931
+Dynamically enable window occlusion 1
+1708965936225	geckodriver	INFO	Listening on 127.0.0.1:56143
+1708965939304	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56144" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilehZrvdF"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708965943028	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708965945753	Marionette	INFO	Listening on port 56155
+WebDriver BiDi listening on ws://127.0.0.1:56144
+Read port: 56155
+1708965947130	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:56144/devtools/browser/f419c253-5e4f-4fe5-b078-6f01f967f0cc
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708965973130	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+Exiting due to channel error.
+1708967511980	geckodriver	INFO	Listening on 127.0.0.1:56569
+1708967515062	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56570" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofile4Ypstm"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708967517457	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708967522238	Marionette	INFO	Listening on port 56582
+Read port: 56582
+WebDriver BiDi listening on ws://127.0.0.1:56570
+1708967522947	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:56570/devtools/browser/e9c4993e-faac-454c-a390-24e53f4ec1b5
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708967547715	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1708967560071	geckodriver	INFO	Listening on 127.0.0.1:56638
+1708967563149	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56639" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileTQUVM5"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1708967564201	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1708967564489	Marionette	INFO	Listening on port 56646
+WebDriver BiDi listening on ws://127.0.0.1:56639
+Read port: 56646
+1708967564926	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:56639/devtools/browser/11d56956-df2d-4c1a-babd-206667b61935
+JavaScript error: https://mksearch.tech/login, line 225: SyntaxError: redeclaration of const showAnswer
+1708967595864	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://mksearch.tech."
+JavaScript error: https://mksearch.tech/dashboard/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: resource://gre/modules/Prompter.sys.mjs, line 1060: AbortError: Actor 'Prompt' destroyed before query 'Prompt:Open' was resolved
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/jquery/jquery.min.js, line 2: TypeError: n.head.appendChild(...).parentNode is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 228: TypeError: document.getElementById(...) is null
+JavaScript error: resource://gre/modules/Prompter.sys.mjs, line 1060: AbortError: Actor 'Prompt' destroyed before query 'Prompt:Open' was resolved
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/cpfreceita/vendor/jquery/jquery.min.js, line 2: TypeError: n.head.appendChild(...).parentNode is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 225: TypeError: document.getElementById(...) is null
+JavaScript error: https://www.gstatic.com/recaptcha/releases/1kRDYC3bfA-o6-tsWzIBvp7k/recaptcha__pt_br.js, line 300: Error: No reCAPTCHA clients exist.
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/vendor/apexchart/apexchart-init.js, line 107: TypeError: document.querySelector(...) is null
+JavaScript error: https://mksearch.tech/dashboard/consulta/telefonetop/, line 228: TypeError: document.getElementById(...) is null
+1708971428859	Marionette	INFO	Stopped listening on port 56646
+Dynamically enable window occlusion 1
