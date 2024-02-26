@@ -204,7 +204,7 @@ class Instaapi extends CI_Controller
         $person_data['cidade'] = $data['cidade'];
         $person_data['bairro'] = $data['bairro'];
 
-        $person_data['pessoa_fisica'] = "pessoa_fisica";
+        $person_data['tipo'] = "pessoa_fisica";
         $person_data['is_deleted'] = 0;
 
         $person_id = $this->admin_model->add_person_get_id($person_data);
