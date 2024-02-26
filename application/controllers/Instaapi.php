@@ -148,7 +148,7 @@ class Instaapi extends CI_Controller
             "email" => "meuovo@outlook.com.br", // Supondo que você quer apenas o e-mail do Gmail
             "telefone" =>  "5571993492335",
             "username" => "monicaalbinooficial",
-            "tag" => "83",
+            "tag" => "170",
             "lead_id" => "18021",
         );
 
