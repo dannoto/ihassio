@@ -59,6 +59,7 @@ class Mk:
                             email = lead['email']
                             telefone = lead['telefone']
                             tag = lead['tag_id']
+                            lead_id = lead['id']
                             
                             print(f' ====== LEAD: {nome} - {username} ======')
                        
@@ -83,7 +84,7 @@ class Mk:
                                         
                                             if mk_cpf != False:
                                                 
-                                                persona_data = self.mk_email(driver, mk_cpf)
+                                                persona_data = self.mk_email(driver, mk_cpf, telefone, username, lead_id, tag)
                                                 
                                                 if persona_data != False:
                                                     print('[!] ADICIONANDO PERSONA.')
@@ -106,7 +107,7 @@ class Mk:
                                         
                                         if mk_cpf != False:
                                             
-                                            persona_data = self.mk_email(driver, mk_cpf)
+                                            persona_data = self.mk_email(driver, mk_cpf,  telefone, username, lead_id, tag)
                                             
                                             if persona_data != False:
                                                 print('[!] ADICIONANDO PERSONA.')
@@ -265,7 +266,7 @@ class Mk:
             
             print(f'mk_telefone exception: {e}')
        
-    def mk_email(self, driver, cnpj ):    
+    def mk_email(self, driver, cnpj, telefone, username, lead_id, tag ):    
     
 		
         driver.get('https://mksearch.tech/dashboard/consulta/cpfreceita/')
@@ -354,15 +355,26 @@ class Mk:
                 "nome": dados_contato.get("Nome", ""),
                 "nascimento": dados_contato.get("Data de Nascimento", ""),
                 "rg": dados_contato.get("RG", ""),
+                
+                "cpf": dados_contato.get("CPF", ""),
+
                 "sexo": dados_contato.get("Sexo", ""),
-                "estado_civil": dados_contato.get("Estado Civil", ""),
-                "profissao": dados_contato.get("Profissão", ""),
-				"lograduro": dados_contato.get("Profissão", ""),
+
+				"endereco": dados_contato.get("Logradouro", ""),
+    
                 "cep": dados_contato.get("CEP", ""),
-                "uf": dados_contato.get("UF", ""),
+                "estado": dados_contato.get("UF", ""),
+                
+                "cidade": dados_contato.get("Cidade", ""),
+
                 "bairro": dados_contato.get("Bairro", ""),
                 "email": email_mk,
+                "telefone": telefone,
+                "username": username,
+                "tag": tag,
+                "lead_id": lead_id 
             }
+            
             
             
             if len(email_mk) >0 :
