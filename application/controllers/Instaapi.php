@@ -272,6 +272,8 @@ class Instaapi extends CI_Controller
                 $response = array('status' => 'true', 'message' => 'Persona já existe. Demanda adicionada com sucesso');
             }
         
+        } else {
+            echo "n foi";
         }
     }
 }
