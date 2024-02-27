@@ -1515,11 +1515,8 @@ class Admin_model extends CI_Model
         $this->db->where('inapto', 1);
         $this->db->where('is_deleted', 0);
    
-        if ($this->db->get('insta_leads')->result()) {
-            return $this->db->get('insta_leads')->result();
-        } else {
-            return false;
-        }
+        return $this->db->get('insta_leads')->result();
+
     } 
 
     public function get_aptos($tarefa_id) {
@@ -1537,6 +1534,8 @@ class Admin_model extends CI_Model
    
         return $this->db->get('insta_leads')->result();
     } 
+
+    
 
     public function getTarefa($id)
     {
