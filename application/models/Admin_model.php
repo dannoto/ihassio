@@ -1515,7 +1515,7 @@ class Admin_model extends CI_Model
         $this->db->where('inapto', 1);
         $this->db->where('is_deleted', 0);
    
-        return $this->db->get('persona_tarefas')->row_array();
+        return $this->db->get('insta_leads')->row_array();
     } 
 
     public function count_aptos($tarefa_id) {
@@ -1523,7 +1523,7 @@ class Admin_model extends CI_Model
         $this->db->where('inapto', 0);
         $this->db->where('is_deleted', 0);
    
-        return $this->db->get('persona_tarefas')->row_array();
+        return $this->db->get('insta_leads')->row_array();
     } 
 
     public function count_convertidos($tarefa_id) {
@@ -1531,7 +1531,7 @@ class Admin_model extends CI_Model
         $this->db->where('convertido', 1);
         $this->db->where('is_deleted', 0);
    
-        return $this->db->get('persona_tarefas')->row_array();
+        return $this->db->get('insta_leads')->row_array();
     } 
 
     public function getTarefa($id)
