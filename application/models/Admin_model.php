@@ -1511,7 +1511,7 @@ class Admin_model extends CI_Model
 
 
     public function count_inaptos($tarefa_id) {
-        $this->db->where('id', $tarefa_id );
+        $this->db->where('tarefa_id', $tarefa_id );
         $this->db->where('inapto', 1);
         $this->db->where('is_deleted', 0);
    
@@ -1519,7 +1519,7 @@ class Admin_model extends CI_Model
     } 
 
     public function count_aptos($tarefa_id) {
-        $this->db->where('id', $tarefa_id );
+        $this->db->where('tarefa_id', $tarefa_id );
         $this->db->where('inapto', 0);
         $this->db->where('is_deleted', 0);
    
@@ -1527,7 +1527,7 @@ class Admin_model extends CI_Model
     } 
 
     public function count_convertidos($tarefa_id) {
-        $this->db->where('id', $tarefa_id );
+        $this->db->where('tarefa_id', $tarefa_id );
         $this->db->where('convertido', 1);
         $this->db->where('is_deleted', 0);
    
