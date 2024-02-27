@@ -276,6 +276,8 @@ class Instaapi extends CI_Controller
 
                 if ($this->admin_model->add_telefone($data_telefone)) {
                     echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                } else {
+                    echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
                 }
 
                 // Adicionando Email
@@ -287,6 +289,8 @@ class Instaapi extends CI_Controller
                 if ($this->admin_model->add_emails($data_email)) {
 
                     echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
+                } else {
+                    echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
                 }
 
                 // Adicionando Rede Social
@@ -295,10 +299,12 @@ class Instaapi extends CI_Controller
                 $data_social['username'] = $data['username'];
                 $data_social['url'] = "https://instagram.com/" . $data['username'];
                 $data_social['intensividade'] = 1;
-                $data_social['status'] = 1;
+                $data_social['status'] = 0;
 
                 if ($this->admin_model->add_social($data_social)) {
                     echo "<br>[!] SOCIAL : " . $data['email'] . " <br>";
+                } else {
+                    echo "[!] erro Social atribuido : " . $data['telefone'] . " ";
                 }
 
 
@@ -315,6 +321,8 @@ class Instaapi extends CI_Controller
                 if ($this->admin_model->add_classificacao($tag_data)) {
 
                     echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
+                } else {
+                    echo "[!] erro TAG ATRIBUIDA: " . $data['telefone'] . " ";
                 }
 
 
@@ -325,6 +333,8 @@ class Instaapi extends CI_Controller
                 if ($this->admin_model->updateInstaLead($data['lead_id'], $convertido_idata)) {
 
                     echo "convertido";
+                } else {
+                    echo "[!] erro ao CONVERTER : " . $data['telefone'] . " ";
                 }
             } else {
                 echo "n foi";

@@ -37,107 +37,121 @@ class Mk:
         
         driver.get('https://mksearch.tech/login')
         next = input('Aperte após fazer login')
+        
+        
+        cnpj = "22529787832"
+        telefone = "5516991738784"
+        username = "insta_thiago"
+        lead_id = "2563"
+        tag = "161"
+        persona_data = self.mk_email(driver, cnpj, telefone, username, lead_id, tag )
+        
+        self.add_persona(base_url, persona_data)
                
-        while True:
+        # while True:
    
-            tarefas =  self.get_tarefas (base_url) 
+        #     tarefas =  self.get_tarefas (base_url) 
             
-            try:
+        #     try:
                 
-                if len(tarefas) > 0 :    
+        #         if len(tarefas) > 0 :    
 
-                    for tarefa in tarefas:
+        #             for tarefa in tarefas:
                         
-                        # Pega leads
-                        leads = self.get_tarefas_leads(base_url, tarefa['id'])
-                        print(f"\n================= {tarefa['tarefa_nome']} --- {tarefa['id']} ===========\n")
+        #                 # Pega leads
+        #                 leads = self.get_tarefas_leads(base_url, tarefa['id'])
+
+        #                 print(f"\n======LEAD ENCONTRADOS:{len(leads)} =========== {tarefa['tarefa_nome']} --- {tarefa['id']} ===========\n")
                         
-                        for lead in leads:
+        #                 for lead in leads:
                              
-                            nome = lead['full_name']
-                            username = lead['username']
-                            email = lead['email']
-                            telefone = lead['telefone']
-                            tag = lead['tag_id']
-                            lead_id = lead['id']
+        #                     nome = lead['full_name']
+        #                     username = lead['username']
+        #                     email = lead['email']
+        #                     telefone = lead['telefone']
+        #                     tag = lead['tag_id']
+        #                     lead_id = lead['id']
                             
-                            print(f' ====== LEAD: {nome} - {username} ======')
+                            
                        
-                            # Trata Leads
-                            try:
-                                if len(email) > 0:
+        #                     # Trata Leads
+        #                     try:
+        #                         if len(email) > 0:
                                     
-                                    if self.check_provedor(email):
+        #                             if self.check_provedor(email):
                                         
-                                        print('[*] Já tem e-mail válido \n')
+        #                                 print('[*] Já tem e-mail válido \n')
                                         
-                                    else: 
+        #                             else: 
                                         
-                                        # print('[*] check_provedor E-mail sem validação. Visitando mk')
+        #                                 # print('[*] check_provedor E-mail sem validação. Visitando mk')
                                         
-                                        if self.higienizacao_telefone_instagram(telefone):
-                                        
-                                            mk_cpf = self.mk_telefone(driver, telefone, nome)
+        #                                 if self.higienizacao_telefone_instagram(telefone):
+        #                                     print(f" ====== LEAD: {nome} - {tarefa['id']} ======")
+        #                                     mk_cpf = self.mk_telefone(driver, telefone, nome)
                                             
-                                            print(f"[!] Cpf Encontrado: {mk_cpf} \n")
+        #                                     print(f"[!] Cpf Encontrado: {mk_cpf} \n")
 
                                         
-                                            if mk_cpf != False:
+        #                                     if mk_cpf != False:
                                                 
-                                                persona_data = self.mk_email(driver, mk_cpf, telefone, username, lead_id, tag)
+        #                                         persona_data = self.mk_email(driver, mk_cpf, telefone, username, lead_id, tag)
                                                 
-                                                if persona_data != False:
-                                                    print('[!] ADICIONANDO PERSONA.')
+        #                                         if persona_data != False:
+        #                                             print('[!] ADICIONANDO PERSONA.')
                                                     
-                                                    self.add_persona(base_url, persona_data)
+        #                                             self.add_persona(base_url, persona_data)
                                                     
-                                                else:
-                                                    print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
+        #                                         else:
+        #                                             print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
                                             
-                                            time.sleep(5)    
-                                        else:
-                                            print('[!] Telefone Inválido \n')
+        #                                     time.sleep(5)    
+        #                                 else:
+        #                                     pff = ""
+        #                                     # print('[!] Telefone Inválido \n')
                                     
-                                else:
+        #                         else:
                                 
-                                    if self.higienizacao_telefone_instagram(telefone):
-                                        mk_cpf = self.mk_telefone(driver, telefone, nome)
+        #                             if self.higienizacao_telefone_instagram(telefone):
+        #                                 print(f" ====== LEAD: {nome} - {tarefa['id']} ======")
+        #                                 mk_cpf = self.mk_telefone(driver, telefone, nome)
                                         
-                                        print(f"[!] Cpf Encontrado: {mk_cpf} \n")
+        #                                 print(f"[!] Cpf Encontrado: {mk_cpf} \n")
                                         
-                                        if mk_cpf != False:
+        #                                 if mk_cpf != False:
                                             
-                                            persona_data = self.mk_email(driver, mk_cpf,  telefone, username, lead_id, tag)
+        #                                     persona_data = self.mk_email(driver, mk_cpf,  telefone, username, lead_id, tag)
                                             
-                                            if persona_data != False:
-                                                print('[!] ADICIONANDO PERSONA.')
+        #                                     if persona_data != False:
+        #                                         print('[!] ADICIONANDO PERSONA.')
                                                 
-                                                self.add_persona(base_url, persona_data)
+        #                                         self.add_persona(base_url, persona_data)
                                                 
-                                            else:
-                                                print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
+        #                                     else:
+        #                                         print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
                                         
-                                        time.sleep(5)    
-                                    else:
-                                            print('[!] Telefone Inválido \n')
+        #                                 time.sleep(5)    
+        #                             else:
+        #                                 pff = ""
+        #                                 # print('[!] Telefone Inválido \n')
                                             
-                            except Exception as e:
-                                print(f'EXCEPTION NO MK {e}')
-                                winsound.Beep(1000, 1500)  
-                                next = input('Aperte enter para continuar')
+        #                     except Exception as e:
+        #                         print(f'EXCEPTION NO MK {e}')
+        #                         winsound.Beep(1000, 1500)  
+        #                         next = input('Aperte enter para continuar')
                                 
                                 
                                                
-                else:
+        #         else:
                     
-                    print('\n [!] Nenhnuma tarefa ativa. ')
-                    time.sleep(5)
+        #             print('\n [!] Nenhnuma tarefa ativa. ')
+        #             time.sleep(5)
                 
-            except Exception as e:
-                    print('\n [!] Erro no while.')
-                    print(e)
+        #     except Exception as e:
+        #             print('\n [!] Erro no while.')
+        #             print(e)
                     
-            time.sleep(5)
+        #     time.sleep(5)
     
     def get_tarefas(self, base_url):
         
@@ -224,7 +238,7 @@ class Mk:
             botao_pesquisar = driver.find_element(By.XPATH, '/html/body/div[2]/div[3]/div/div/div/div/div[2]/div[2]/div/div/center/div/button[1]')
             botao_pesquisar.click()
             
-            time.sleep(8)
+            time.sleep(13)
             
             # -------- resultado ----------
             
@@ -265,6 +279,7 @@ class Mk:
         except Exception as e:
             
             print(f'mk_telefone exception: {e}')
+            next = input('continuar apert enteder')
        
     def mk_email(self, driver, cnpj, telefone, username, lead_id, tag ):    
     
@@ -425,7 +440,11 @@ class Mk:
         if response.status_code == 200:
             
             print("Requisição add_person bem-sucedida!")
-            data = json.loads(response.content)
+            data = response.content
+            
+            print('\n ============= INICIO RESPOSTA ADD PERSONA ============= \n')
+            print(data)
+            print('\n ============= FIM RESPOSTA ADD PERSONA ============= \n')
             
             return data
         
