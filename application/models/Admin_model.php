@@ -1515,7 +1515,11 @@ class Admin_model extends CI_Model
         $this->db->where('inapto', 1);
         $this->db->where('is_deleted', 0);
    
-        return $this->db->get('insta_leads')->result();
+        if ($this->db->get('insta_leads')->result()) {
+            return $this->db->get('insta_leads')->result();
+        } else {
+            return false
+        }
     } 
 
     public function coutxaptos($tarefa_id) {
