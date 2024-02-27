@@ -186,8 +186,7 @@
                       <div class="d-flex  align-items-center justify-content-between">
                         <div>
                         <H4>Leads - Filtro</H4>
-                       <?=$t['id']?>
-                        <p> <small>INAPTOS: <?=count($this->admin_model->get_inaptos($t['tarefa_id']))?> | APTOS: <?=count($this->admin_model->get_aptos($t['tarefa_id']))?> | CONVERTIDOS: <?=count($this->admin_model->get_convertidos($t['tarefa_id']))?>  </small>    </p>
+                       <?php print_r($this->admin_model->get_inaptos($t['tarefa_id'])); ?>
                             <p><?= $t['tarefa_nome'] ?></p>
 
                         </div>
