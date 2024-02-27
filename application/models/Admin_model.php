@@ -1518,7 +1518,7 @@ class Admin_model extends CI_Model
         if ($this->db->get('insta_leads')->result()) {
             return $this->db->get('insta_leads')->result();
         } else {
-            return false
+            return false;
         }
     } 
 
