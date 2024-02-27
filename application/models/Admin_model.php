@@ -1515,7 +1515,8 @@ class Admin_model extends CI_Model
         $this->db->where('inapto', 1);
         $this->db->where('is_deleted', 0);
    
-        return $this->db->get('insta_leads')->result();
+       $query = $this->db->get('insta_leads');
+    return $query->num_rows();
     } 
 
     public function coutx_aptos($tarefa_id) {
@@ -1523,7 +1524,8 @@ class Admin_model extends CI_Model
         $this->db->where('inapto', 0);
         $this->db->where('is_deleted', 0);
    
-        return $this->db->get('insta_leads')->result();
+       $query = $this->db->get('insta_leads');
+    return $query->num_rows();
     } 
 
     public function coutx_convertidos($tarefa_id) {
@@ -1531,7 +1533,8 @@ class Admin_model extends CI_Model
         $this->db->where('convertido', 1);
         $this->db->where('is_deleted', 0);
    
-        return $this->db->get('insta_leads')->result();
+       $query = $this->db->get('insta_leads');
+    return $query->num_rows();
     } 
 
     public function getTarefa($id)
