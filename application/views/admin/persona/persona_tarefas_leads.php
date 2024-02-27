@@ -187,7 +187,7 @@
                         <div>
                         <H4>Leads - Filtro</H4>
                     
-                        <p> <small>INAPTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1))?> | APTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0))?> | CONVERTIDOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1))?>  </small>    </p>
+                        <p> <small>INAPTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1, null))?> | APTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0, null))?> | CONVERTIDOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1))?>  </small>    </p>
                             <p><?= $t['tarefa_nome'] ?></p>
 
                         </div>
