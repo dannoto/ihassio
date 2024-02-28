@@ -265,7 +265,7 @@ class Instaapi extends CI_Controller
             $tag_data['tag_id'] = $data['tag'];
             $tag_data['data'] = date('d-m-Y H:i:s');
             $tag_data['is_deleted'] = 0;
-            
+
             if ($this->admin_model->check_classificacao_tag($tag_data['tag_id'], $tag_data['person_id'])) {
 
                 echo "<br>[!] TAG JÁ EXISTE : " . $data['tag'] . " <br>";
@@ -391,6 +391,7 @@ class Instaapi extends CI_Controller
 
                 $lead_att = array(
                     'convertido' => 1,
+                    'full_name' => $data['nome'],
                     'email' => $data_email['email'],
                     'telefone' => $data_telefone['telefone']
                 );

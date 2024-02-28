@@ -25,6 +25,11 @@ from bs4 import BeautifulSoup
 class Scraper:
 
     def __init__(self):
+
+        
+        headers_count = "3"
+        headers_current = ""
+        
         
         headers = {
             'Accept': '*/*',
