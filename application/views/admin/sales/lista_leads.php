@@ -206,7 +206,7 @@
               <?php } ?>
 
 
-              <!-- <?php if ($lista['importacao'] == 1) { ?>
+             <?php if ($lista['importacao'] == 1) { ?>
                   <div>
                     <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_tags($lista['tag'])) . ") - ";
                         echo round((($total / count($this->admin_model->get_leads_by_tags($lista['tag']))) * 100), 2) . "%" ?></p>
@@ -216,7 +216,7 @@
                     <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) . ") - ";
                         echo round((($total / count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']))) * 100), 2) . "%" ?></p>
                   </div>
-                <?php } ?> -->
+                <?php } ?> 
 
                     </div>
                     <div class="card-body">
