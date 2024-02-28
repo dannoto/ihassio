@@ -549,12 +549,16 @@ class Scraper:
                 # time.sleep(atraso)
                 winsound.Beep(1000, 1500) 
                 print("=========== ERRO NA REQUISICAO - TROQUE AS HEADERS =============== getUserProfile:", response.status_code)
+                next = input('Aperte enteder para continuar: ')
+                print(next)
                 print(response)
                 return False
             
         except Exception as e:
-            print("=========== ERRO NA REQUISICAO - TROQUE AS HEADERS =============== getUserProfile:", e)
             winsound.Beep(1000, 1500) 
+            print("=========== ERRO NA REQUISICAO - TROQUE AS HEADERS =============== getUserProfile:", e)
+            next = input('Aperte enteder para continuar: ')
+            print(next)
             return False
             
             
