@@ -130,7 +130,7 @@ class Mk:
                                                         "nome": nome,
                                                         "nascimento": "",
                                                         "rg": "",
-                                                        "cpf": "",
+                                                        "cpf": mk_cpf,
                                                         "sexo": "",
                                                         "endereco":"",
                                                         "cep": "",
@@ -202,7 +202,7 @@ class Mk:
                                                         "nome": nome,
                                                         "nascimento": "",
                                                         "rg": "",
-                                                        "cpf": "",
+                                                        "cpf": mk_cpf,
                                                         "sexo": "",
                                                         "endereco":"",
                                                         "cep": "",
@@ -255,8 +255,10 @@ class Mk:
                                 next = input('Aperte enter para continuar')
                                 print(next)
                      
-                        print(f'==== TAREFA CONCLUIDA  =========')           
+                        print(f'==== TAREFA CONCLUIDA  =========')   
+                        winsound.Beep(1000, 1500)          
                         self.add_concluido(base_url, tarefa['id'])
+                        next = input("Digita para continuar")
                                                
                 else:
                     

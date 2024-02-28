@@ -166,12 +166,12 @@ class Instaapi extends CI_Controller
     {
         $data['tarefa_id'] = htmlspecialchars($this->input->get('tarefa_id'));
 
-        $inapto_data = array(
+        $tarefa_data = array(
             'tarefa_status' => 5,
 
         );
 
-        if ($this->admin_model->updateTarefa($data['tarefa_id'], $inapto_data)) {
+        if ($this->admin_model->updateTarefa($data['tarefa_id'], $tarefa_data)) {
 
             echo "TAREFA CONCLUIDA";
         } else {
@@ -374,21 +374,37 @@ class Instaapi extends CI_Controller
                 }
 
 
-                $convertido_idata = array(
+                $lead_att = array(
                     'convertido' => 1,
                     'email' => $data_email['email'],
                     'telefone' => $data_telefone['telefone']
                 );
 
-                if ($this->admin_model->updateInstaLead($data['lead_id'], $convertido_idata)) {
+                if ($this->admin_model->updateInstaLead($data['lead_id'], $lead_att)) {
 
-                    echo "convertido";
+                    echo "LEAD ATUALIZADO";
                 } else {
-                    echo "[!] erro ao CONVERTER : " . $data['telefone'] . " ";
+                    echo "[!] erro ao ATUALIZAR LEADS : " . $data['telefone'] . " ";
                 }
             } else {
                 echo "n foi";
             }
         }
     }
+
+    public function update_att() {
+
+        $lead_att = array(
+            'convertido' => 1,
+            'email' => "meuovo@meuovo.com",
+            'telefone' => "55629936155555"
+        );
+
+        if ($this->admin_model->updateInstaLead("3840", $lead_att)) {
+
+            echo "LEAD ATUALIZADO";
+        } else {
+            echo "[!] erro ao ATUALIZAR LEADS : " . $data['telefone'] . " ";
+        }
+    } 
 }
