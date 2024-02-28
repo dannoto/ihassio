@@ -101,7 +101,7 @@ class Mk:
                                         }
                                         
                                         self.add_persona(base_url, persona_data)
-                                        self.add_convertido(lead_id)
+                                        self.add_convertido(base_url,lead_id)
                                         
                                     else: 
                                         
@@ -124,7 +124,7 @@ class Mk:
                                                     
                                                     self.add_persona(base_url, persona_data)
                                                     print('Adicionando CONVERTIDO')
-                                                    self.add_convertido(lead_id)
+                                                    self.add_convertido(base_url,lead_id)
                                                     
                                                 else:
                                                     print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
@@ -133,7 +133,7 @@ class Mk:
                                         else:
                                             
                                             print(lead['full_name']+' Telefone Inválido - INAPTO')
-                                            self.add_inapto(lead_id)
+                                            self.add_inapto(base_url,lead_id)
                                            
                                     
                                 else:
@@ -153,7 +153,7 @@ class Mk:
                                                 
                                                 self.add_persona(base_url, persona_data)
                                                 print('Adicionando CONVERTIDO')
-                                                self.add_convertido(lead_id)
+                                                self.add_convertido(base_url,lead_id)
                                                 
                                             else:
                                                 print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
@@ -162,7 +162,7 @@ class Mk:
                                     else:
                                         
                                         print(lead['full_name']+' Telefone Inválido - INAPTO')
-                                        self.add_inapto(lead_id)
+                                        self.add_inapto(base_url,lead_id)
                                        
                                             
                             except Exception as e:
@@ -519,18 +519,41 @@ class Mk:
 
         if response.status_code == 200:
             
-            print("Requisição add_convertido bem-sucedida!")
+            print("Requisição add_inapto bem-sucedida!")
             data = response.content
             
-            print('\n ============= INICIO RESPOSTA ADD CONVERTIDO ============= \n')
+            print('\n ============= INICIO RESPOSTA ADD INAPTO ============= \n')
             print(data)
-            print('\n ============= FIM RESPOSTA ADD CONVERTIDO ============= \n')
+            print('\n ============= FIM RESPOSTA ADD INAPTO ============= \n')
             
         
             return data
         
         else:
-            print("Erro na requisição add_convertido :", response.status_code)
+            print("Erro na requisição add_inapto :", response.status_code)
+            return False 
+    
+    def add_concluido(self,  base_url, tarefa_id):
+        
+        url = base_url+"/add_concluido?tarefa_id="+tarefa_id
+        
+        response = requests.get(url)
+
+
+        if response.status_code == 200:
+            
+            print("Requisição add_concluido bem-sucedida!")
+            data = response.content
+            
+            print('\n ============= INICIO RESPOSTA ADD CONCLUIDO ============= \n')
+            print(data)
+            print('\n ============= FIM RESPOSTA ADD CONCLUIDO ============= \n')
+            
+        
+            return data
+        
+        else:
+            print("Erro na requisição add_concluido :", response.status_code)
             return False 
         
 Mk()

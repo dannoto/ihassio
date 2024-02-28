@@ -130,7 +130,8 @@ class Instaapi extends CI_Controller
     }
 
 
-    public function add_convertido() {
+    public function add_convertido()
+    {
         $data['lead_id'] = htmlspecialchars($this->input->get('lead_id'));
         $convertido_idata = array(
             'convertido' => 1,
@@ -144,15 +145,33 @@ class Instaapi extends CI_Controller
         }
     }
 
-    public function add_inapto() {
+    public function add_inapto()
+    {
         $data['lead_id'] = htmlspecialchars($this->input->get('lead_id'));
 
         $inapto_data = array(
             'inapto' => 1,
-   
+
         );
 
         if ($this->admin_model->updateInstaLead($data['lead_id'], $inapto_data)) {
+
+            echo "convertido";
+        } else {
+            echo "[!] erro ao CONVERTER : " . $data['telefone'] . " ";
+        }
+    }
+
+    public function add_concluido()
+    {
+        $data['tarefa_id'] = htmlspecialchars($this->input->get('tarefa_id'));
+
+        $inapto_data = array(
+            'inapto' => 1,
+
+        );
+
+        if ($this->admin_model->updateTarefa($data['lead_id'], $inapto_data)) {
 
             echo "convertido";
         } else {
@@ -225,9 +244,6 @@ class Instaapi extends CI_Controller
 
                 echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
             }
-
-            
-
         } else if ($this->process_model->check_email($data['email'])) {
 
             $person_email = $this->process_model->check_email($data['email'])['person_id'];
@@ -247,8 +263,6 @@ class Instaapi extends CI_Controller
 
                 echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
             }
-
-            
         } else {
 
             $person_data['nome'] = $data['nome'];
@@ -262,9 +276,21 @@ class Instaapi extends CI_Controller
             $person_data['cidade'] = $data['cidade'];
             $person_data['bairro'] = $data['bairro'];
 
-            $person_data['validacao_email'] = 1;
+
+            if (strlen($data['email']) > 0) {
+                $person_data['validacao_email'] = 1;
+            } else {
+                $person_data['validacao_email'] = 0;
+            }
+
             $person_data['validacao_perfil'] = 1;
-            $person_data['validacao_telefone'] = 1;
+
+
+            if (strlen($data['telefone']) > 0) {
+                $person_data['validacao_telefone'] = 1;
+            } else {
+                $person_data['validacao_telefone'] = 0;
+            }
 
 
 
@@ -287,7 +313,7 @@ class Instaapi extends CI_Controller
                 $data_telefone['is_validado'] = 1;
                 $data_telefone['is_deleted'] = 0;
 
-                if (strlen($data['username']) > 0 ) {
+                if (strlen($data['telefone']) > 0) {
                     if ($this->admin_model->add_telefone($data_telefone)) {
                         echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
                     } else {
@@ -302,7 +328,7 @@ class Instaapi extends CI_Controller
                 $data_email['is_deleted'] = 0;
 
 
-                if (strlen($data['email']) > 0 ) {
+                if (strlen($data['email']) > 0) {
                     if ($this->admin_model->add_emails($data_email)) {
 
                         echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
@@ -310,7 +336,7 @@ class Instaapi extends CI_Controller
                         echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
                     }
                 }
-                
+
 
                 // Adicionando Rede Social
                 $data_social['person_id'] = $person_id;
@@ -320,7 +346,7 @@ class Instaapi extends CI_Controller
                 $data_social['intensividade'] = 1;
                 $data_social['status'] = 0;
 
-                if (strlen($data['username']) > 0 ) {
+                if (strlen($data['username']) > 0) {
 
                     if ($this->admin_model->add_social($data_social)) {
                         echo "<br>[!] SOCIAL : " . $data['email'] . " <br>";
@@ -351,7 +377,7 @@ class Instaapi extends CI_Controller
                 $convertido_idata = array(
                     'convertido' => 1,
                     'email' => $data_email['email'],
-                    'telefone' => $data_telefone['telefone'] 
+                    'telefone' => $data_telefone['telefone']
                 );
 
                 if ($this->admin_model->updateInstaLead($data['lead_id'], $convertido_idata)) {
