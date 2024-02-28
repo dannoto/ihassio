@@ -141,7 +141,7 @@ class Instaapi extends CI_Controller
 
             echo "convertido";
         } else {
-            echo "[!] erro ao CONVERTER : " . $data['telefone'] . " ";
+            echo "[!] erro ao CONVERTER : " . $data['lead_id'] . " ";
         }
     }
 
@@ -158,7 +158,7 @@ class Instaapi extends CI_Controller
 
             echo "convertido";
         } else {
-            echo "[!] erro ao CONVERTER : " . $data['telefone'] . " ";
+            echo "[!] erro ao CONVERTER : " . $data['lead_id'] . " ";
         }
     }
 
@@ -167,15 +167,15 @@ class Instaapi extends CI_Controller
         $data['tarefa_id'] = htmlspecialchars($this->input->get('tarefa_id'));
 
         $inapto_data = array(
-            'inapto' => 1,
+            'tarefa_status' => 5,
 
         );
 
-        if ($this->admin_model->updateTarefa($data['lead_id'], $inapto_data)) {
+        if ($this->admin_model->updateTarefa($data['tarefa_id'], $inapto_data)) {
 
-            echo "convertido";
+            echo "TAREFA CONCLUIDA";
         } else {
-            echo "[!] erro ao CONVERTER : " . $data['telefone'] . " ";
+            echo "[!] erro ao CONCLUIR TAREFA : " . $data['tarefa_id'] . " ";
         }
     }
 

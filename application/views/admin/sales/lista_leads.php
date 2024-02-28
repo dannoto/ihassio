@@ -199,24 +199,24 @@
                 <button data-bs-toggle="modal" data-bs-target="#modalAddBrevo"  class="btn btn-success text-uppercase mb-3"><small>+ Sincronizar - Brevo</small></button>
               </div>
 
-              <?php// if ($lista['importacao'] == 1) { ?>
-                  <?php// $total =  (count($this->admin_model->get_leads_by_tags($lista['tag'])) -  count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
-              <?php //} else if ($lista['importacao'] == 2) { ?>
-                <?php //$total =  (count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) -  count($this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista['id'], $lista['campanha_associada'], 100000000))); ?>
-              <?php //} ?>
+              <?php if ($lista['importacao'] == 1) { ?>
+                  <?php $total =  (count($this->admin_model->get_leads_by_tags($lista['tag'])) -  count($this->admin_model->getLeadsToSynchronize($lista['id'], $lista['tag'], 100000000))); ?>
+              <?php } else if ($lista['importacao'] == 2) { ?>
+                <?php $total =  (count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) -  count($this->admin_model->getLeadsToSynchronizeCampanhaAssociada($lista['id'], $lista['campanha_associada'], 100000000))); ?>
+              <?php } ?>
 
 
-              <!-- <?php //if ($lista['importacao'] == 1) { ?>
+              <!-- <?php if ($lista['importacao'] == 1) { ?>
                   <div>
-                    <p><?php// echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_tags($lista['tag'])) . ") - ";
-                       // echo round((($total / count($this->admin_model->get_leads_by_tags($lista['tag']))) * 100), 2) . "%" ?></p>
+                    <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_tags($lista['tag'])) . ") - ";
+                        echo round((($total / count($this->admin_model->get_leads_by_tags($lista['tag']))) * 100), 2) . "%" ?></p>
                   </div>
-                <?php //} else if ($lista['importacao'] == 2) { ?>
+                <?php } else if ($lista['importacao'] == 2) { ?>
                   <div>
-                    <p><?php// echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) . ") - ";
-                     //   echo round((($total / count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']))) * 100), 2) . "%" ?></p>
+                    <p><?php echo "<small>SINCRONIZADOS: </small>(" . $total . " / " . count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada'])) . ") - ";
+                        echo round((($total / count($this->admin_model->get_leads_by_campanha_associada($lista['campanha_associada']))) * 100), 2) . "%" ?></p>
                   </div>
-                <?php //} ?> -->
+                <?php } ?> -->
 
                     </div>
                     <div class="card-body">
@@ -243,8 +243,16 @@
                               <tr>
 
                                   <td><a href="<?= base_url() ?>persona/editar/<?= $l->person_id ?>" target='_blank'><?= $this->admin_model->get_person($l->person_id)['nome']; ?></a></td>
-                                  <td></td>
-                                  <td > </td>
+                                  <td><?php if ($this->admin_model->get_emails_validated($l->lead_id)) {
+                                        echo $this->admin_model->get_emails_validated($l->lead_id)['email'];
+                                      } else {
+                                        echo "-";
+                                      }; ?></td>
+                                  <td > <?php if ($this->admin_model->get_telefones_validated($l->lead_id)) {
+                                        echo $this->admin_model->get_telefones_validated($l->lead_id)['telefone'];
+                                      } else {
+                                        echo "-";
+                                      } ?></td>
                                     <td> <button class="btn btn-danger text-white font-weight-bolder " onclick="deleteClassificacao(<?= $l->person_id ?>, <?= $lista['tag'] ?>)" ><small>X</small></button></td>
 
                               </tr>

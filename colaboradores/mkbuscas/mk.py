@@ -37,7 +37,7 @@ class Mk:
         
         driver.get('https://mksearch.tech/login')
         next = input('Aperte após fazer login')
-        
+        print(next)
         
         # cnpj = "22529787832"
         # telefone = "5516991738784"
@@ -72,8 +72,6 @@ class Mk:
                             tag = lead['tag_id']
                             lead_id = lead['id']
                             
-                            
-                       
                             # Trata Leads
                             try:
                                 if len(email) > 0:
@@ -127,7 +125,50 @@ class Mk:
                                                     self.add_convertido(base_url,lead_id)
                                                     
                                                 else:
+                                                    
+                                                    persona_data = {
+                                                        "nome": nome,
+                                                        "nascimento": "",
+                                                        "rg": "",
+                                                        "cpf": "",
+                                                        "sexo": "",
+                                                        "endereco":"",
+                                                        "cep": "",
+                                                        "estado": "",
+                                                        "cidade": "",
+                                                        "bairro": "",
+                                                        "email": email,
+                                                        "telefone": telefone,
+                                                        "username": username,
+                                                        "tag": tag,
+                                                        "lead_id": lead_id 
+                                                    }
+                                                    
+                                                    self.add_persona(base_url, persona_data)
+                                                    self.add_convertido(base_url,lead_id)
                                                     print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
+                                            else:
+                                                
+                                                persona_data = {
+                                                    "nome": nome,
+                                                    "nascimento": "",
+                                                    "rg": "",
+                                                    "cpf": "",
+                                                    "sexo": "",
+                                                    "endereco":"",
+                                                    "cep": "",
+                                                    "estado": "",
+                                                    "cidade": "",
+                                                    "bairro": "",
+                                                    "email": email,
+                                                    "telefone": telefone,
+                                                    "username": username,
+                                                    "tag": tag,
+                                                    "lead_id": lead_id 
+                                                }
+                                                
+                                                self.add_persona(base_url, persona_data)
+                                                self.add_convertido(base_url,lead_id)
                                             
                                             time.sleep(5)    
                                         else:
@@ -156,7 +197,50 @@ class Mk:
                                                 self.add_convertido(base_url,lead_id)
                                                 
                                             else:
+                                                
+                                                persona_data = {
+                                                        "nome": nome,
+                                                        "nascimento": "",
+                                                        "rg": "",
+                                                        "cpf": "",
+                                                        "sexo": "",
+                                                        "endereco":"",
+                                                        "cep": "",
+                                                        "estado": "",
+                                                        "cidade": "",
+                                                        "bairro": "",
+                                                        "email": email,
+                                                        "telefone": telefone,
+                                                        "username": username,
+                                                        "tag": tag,
+                                                        "lead_id": lead_id 
+                                                }
+                                                    
+                                                self.add_persona(base_url, persona_data)
+                                                self.add_convertido(base_url,lead_id)
                                                 print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
+                                        else:
+                                            
+                                            persona_data = {
+                                                    "nome": nome,
+                                                    "nascimento": "",
+                                                    "rg": "",
+                                                    "cpf": "",
+                                                    "sexo": "",
+                                                    "endereco":"",
+                                                    "cep": "",
+                                                    "estado": "",
+                                                    "cidade": "",
+                                                    "bairro": "",
+                                                    "email": email,
+                                                    "telefone": telefone,
+                                                    "username": username,
+                                                    "tag": tag,
+                                                    "lead_id": lead_id 
+                                            }
+                                                
+                                            self.add_persona(base_url, persona_data)
+                                            self.add_convertido(base_url,lead_id)
                                         
                                         time.sleep(5)    
                                     else:
@@ -169,8 +253,10 @@ class Mk:
                                 print(f'EXCEPTION NO MK {e}')
                                 winsound.Beep(1000, 1500)  
                                 next = input('Aperte enter para continuar')
-                                
-                                
+                                print(next)
+                     
+                        print(f'==== TAREFA CONCLUIDA  =========')           
+                        self.add_concluido(base_url, tarefa['id'])
                                                
                 else:
                     
@@ -257,7 +343,7 @@ class Mk:
                 print('[*] Recaptcha encontrado')
                 winsound.Beep(1000, 1500)  
                 next = input('[!!!] Aperte enter depois do repatcha')
-                
+                print(next)
             else:
                 print('[*] Recaptcha NÃO encontrado')
             # Verificando captcha
@@ -310,6 +396,7 @@ class Mk:
             
             print(f'mk_telefone exception: {e}')
             next = input('continuar apert enteder')
+            print(next)
        
     def mk_email(self, driver, cnpj, telefone, username, lead_id, tag ):    
     
@@ -332,7 +419,7 @@ class Mk:
             print('[*] Recaptcha encontrado')
             winsound.Beep(1000, 1500)  
             next = input('[!!!] Aperte enter depois do repatcha')
-                
+            print(next)
         else:
             print('[*] Recaptcha NÃO encontrado')
             # Verificando captcha
