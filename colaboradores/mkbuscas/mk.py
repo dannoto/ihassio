@@ -29,14 +29,14 @@ class Mk:
 
        
         base_url = "https://ccoanalitica.com/hassio/instaapi/"
-        # options = Options()
-        # options.headless = False  # Você pode definir como True para executar em modo headless
-        # profile = FirefoxProfile()
-        # driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options, firefox_profile=profile)
+        options = Options()
+        options.headless = False  # Você pode definir como True para executar em modo headless
+        profile = FirefoxProfile()
+        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options, firefox_profile=profile)
         
         
-        # driver.get('https://mksearch.tech/login')
-        # next = input('Aperte após fazer login')
+        driver.get('https://mksearch.tech/login')
+        next = input('Aperte após fazer login')
         
         
         # cnpj = "22529787832"

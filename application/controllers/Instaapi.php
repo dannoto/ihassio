@@ -287,10 +287,12 @@ class Instaapi extends CI_Controller
                 $data_telefone['is_validado'] = 1;
                 $data_telefone['is_deleted'] = 0;
 
-                if ($this->admin_model->add_telefone($data_telefone)) {
-                    echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
-                } else {
-                    echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                if (strlen($data['username']) > 0 ) {
+                    if ($this->admin_model->add_telefone($data_telefone)) {
+                        echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                    } else {
+                        echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                    }
                 }
 
                 // Adicionando Email
@@ -299,12 +301,16 @@ class Instaapi extends CI_Controller
                 $data_email['is_validado'] = 1;
                 $data_email['is_deleted'] = 0;
 
-                if ($this->admin_model->add_emails($data_email)) {
 
-                    echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
-                } else {
-                    echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                if (strlen($data['email']) > 0 ) {
+                    if ($this->admin_model->add_emails($data_email)) {
+
+                        echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
+                    } else {
+                        echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                    }
                 }
+                
 
                 // Adicionando Rede Social
                 $data_social['person_id'] = $person_id;
@@ -314,10 +320,13 @@ class Instaapi extends CI_Controller
                 $data_social['intensividade'] = 1;
                 $data_social['status'] = 0;
 
-                if ($this->admin_model->add_social($data_social)) {
-                    echo "<br>[!] SOCIAL : " . $data['email'] . " <br>";
-                } else {
-                    echo "[!] erro Social atribuido : " . $data['telefone'] . " ";
+                if (strlen($data['username']) > 0 ) {
+
+                    if ($this->admin_model->add_social($data_social)) {
+                        echo "<br>[!] SOCIAL : " . $data['email'] . " <br>";
+                    } else {
+                        echo "[!] erro Social atribuido : " . $data['telefone'] . " ";
+                    }
                 }
 
 
