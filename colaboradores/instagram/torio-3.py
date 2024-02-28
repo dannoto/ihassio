@@ -17,6 +17,7 @@ from urllib.parse import urlparse
 import time
 import datetime
 import random
+import winsound
 
 from bs4 import BeautifulSoup
 
@@ -26,9 +27,6 @@ class Scraper:
 
     def __init__(self):
 
-        
-        headers_count = "3"
-        headers_current = ""
         
         
         headers = {
@@ -530,26 +528,36 @@ class Scraper:
 
         url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username='+username
         
-        atraso = random.uniform(30, 60)
+        atraso = random.uniform(10, 30)
         time.sleep(atraso)
         # time.sleep(10)
         
         response = requests.get(url, headers=headers)
-
-        if response.status_code == 200:
-
-            data = json.loads(response.content)
-            # print(data['data']['user']['username'])
-            return data
         
-        else:
+        try:
+
+            if response.status_code == 200:
+
+                data = json.loads(response.content)
+                # print(data['data']['user']['username'])
+                return data
             
-            # atraso = random.uniform(600, 1200)
-            # print('[!!] Erro de Requisicao, aguardando: '+str(atraso)+' minutos.')
-            # time.sleep(atraso)
-            print("Erro na requisição getUserProfile:", response.status_code)
-            print(response)
+            else:
+                
+                # atraso = random.uniform(600, 1200)
+                # print('[!!] Erro de Requisicao, aguardando: '+str(atraso)+' minutos.')
+                # time.sleep(atraso)
+                winsound.Beep(1000, 1500) 
+                print("=========== ERRO NA REQUISICAO - TROQUE AS HEADERS =============== getUserProfile:", response.status_code)
+                print(response)
+                return False
+            
+        except Exception as e:
+            print("=========== ERRO NA REQUISICAO - TROQUE AS HEADERS =============== getUserProfile:", e)
+            winsound.Beep(1000, 1500) 
             return False
+            
+            
             
     def extractFromLocation(self, headers, location):
          return True
