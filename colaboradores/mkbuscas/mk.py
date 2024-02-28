@@ -60,10 +60,14 @@ class Mk:
                         
                         # Pega leads
                         leads = self.get_tarefas_leads(base_url, tarefa['id'])
+                        
+                        
 
                         print(f"\n======LEAD ENCONTRADOS:{len(leads)} =========== {tarefa['tarefa_nome']} --- {tarefa['id']} ===========\n")
                         
                         for lead in leads:
+                            
+                            
                              
                             nome = lead['full_name']
                             username = lead['username']

@@ -240,10 +240,17 @@ class Instaapi extends CI_Controller
             $tag_data['data'] = date('d-m-Y H:i:s');
             $tag_data['is_deleted'] = 0;
 
-            if ($this->admin_model->add_classificacao($tag_data)) {
 
-                echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
+            if ($this->admin_model->check_classificacao_tag($tag_data['tag_id'], $tag_data['person_id'])) {
+
+                echo "<br>[!] TAG JÁ EXISTE : " . $data['tag'] . " <br>";
+            } else {
+                if ($this->admin_model->add_classificacao($tag_data)) {
+
+                    echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
+                }
             }
+
         } else if ($this->process_model->check_email($data['email'])) {
 
             $person_email = $this->process_model->check_email($data['email'])['person_id'];
@@ -258,10 +265,18 @@ class Instaapi extends CI_Controller
             $tag_data['tag_id'] = $data['tag'];
             $tag_data['data'] = date('d-m-Y H:i:s');
             $tag_data['is_deleted'] = 0;
+            
+            if ($this->admin_model->check_classificacao_tag($tag_data['tag_id'], $tag_data['person_id'])) {
 
-            if ($this->admin_model->add_classificacao($tag_data)) {
+                echo "<br>[!] TAG JÁ EXISTE : " . $data['tag'] . " <br>";
 
-                echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
+
+            } else {
+
+                if ($this->admin_model->add_classificacao($tag_data)) {
+
+                    echo "<br>[!] TAG ATRIBUIDA : " . $data['tag'] . " <br>";
+                }
             }
         } else {
 
@@ -391,20 +406,4 @@ class Instaapi extends CI_Controller
             }
         }
     }
-
-    public function update_att() {
-
-        $lead_att = array(
-            'convertido' => 1,
-            'email' => "meuovo@meuovo.com",
-            'telefone' => "55629936155555"
-        );
-
-        if ($this->admin_model->updateInstaLead("3840", $lead_att)) {
-
-            echo "LEAD ATUALIZADO";
-        } else {
-            echo "[!] erro ao ATUALIZAR LEADS : " . $data['telefone'] . " ";
-        }
-    } 
 }

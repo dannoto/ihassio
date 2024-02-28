@@ -181,7 +181,15 @@ class Admin_model extends CI_Model
     }
 
 
+    function check_classificacao_tag($tag_id, $person_id)
+    {
+        $this->db->where('tag_id', $tag_id);
+        $this->db->where('person_id', $person_id);
 
+        $this->db->where('is_deleted', 0);
+
+        return $this->db->get('person_classificacao')->row_array();
+    }
 
     function check_classificacao($data)
     {
