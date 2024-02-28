@@ -29,129 +29,159 @@ class Mk:
 
        
         base_url = "https://ccoanalitica.com/hassio/instaapi/"
-        options = Options()
-        options.headless = False  # Você pode definir como True para executar em modo headless
-        profile = FirefoxProfile()
-        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options, firefox_profile=profile)
+        # options = Options()
+        # options.headless = False  # Você pode definir como True para executar em modo headless
+        # profile = FirefoxProfile()
+        # driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options, firefox_profile=profile)
         
         
-        driver.get('https://mksearch.tech/login')
-        next = input('Aperte após fazer login')
+        # driver.get('https://mksearch.tech/login')
+        # next = input('Aperte após fazer login')
         
         
-        cnpj = "22529787832"
-        telefone = "5516991738784"
-        username = "insta_thiago"
-        lead_id = "2563"
-        tag = "161"
-        persona_data = self.mk_email(driver, cnpj, telefone, username, lead_id, tag )
+        # cnpj = "22529787832"
+        # telefone = "5516991738784"
+        # username = "insta_thiago"
+        # lead_id = "2563"
+        # tag = "161"
+        # persona_data = self.mk_email(driver, cnpj, telefone, username, lead_id, tag )
         
-        self.add_persona(base_url, persona_data)
+        # self.add_persona(base_url, persona_data)
                
-        # while True:
+        while True:
    
-        #     tarefas =  self.get_tarefas (base_url) 
+            tarefas =  self.get_tarefas (base_url) 
             
-        #     try:
+            try:
                 
-        #         if len(tarefas) > 0 :    
+                if len(tarefas) > 0 :    
 
-        #             for tarefa in tarefas:
+                    for tarefa in tarefas:
                         
-        #                 # Pega leads
-        #                 leads = self.get_tarefas_leads(base_url, tarefa['id'])
+                        # Pega leads
+                        leads = self.get_tarefas_leads(base_url, tarefa['id'])
 
-        #                 print(f"\n======LEAD ENCONTRADOS:{len(leads)} =========== {tarefa['tarefa_nome']} --- {tarefa['id']} ===========\n")
+                        print(f"\n======LEAD ENCONTRADOS:{len(leads)} =========== {tarefa['tarefa_nome']} --- {tarefa['id']} ===========\n")
                         
-        #                 for lead in leads:
+                        for lead in leads:
                              
-        #                     nome = lead['full_name']
-        #                     username = lead['username']
-        #                     email = lead['email']
-        #                     telefone = lead['telefone']
-        #                     tag = lead['tag_id']
-        #                     lead_id = lead['id']
+                            nome = lead['full_name']
+                            username = lead['username']
+                            email = lead['email']
+                            telefone = lead['telefone']
+                            tag = lead['tag_id']
+                            lead_id = lead['id']
                             
                             
                        
-        #                     # Trata Leads
-        #                     try:
-        #                         if len(email) > 0:
+                            # Trata Leads
+                            try:
+                                if len(email) > 0:
                                     
-        #                             if self.check_provedor(email):
+                                    if self.check_provedor(email):
                                         
-        #                                 print('[*] Já tem e-mail válido \n')
+                                        print('[*] Já tem e-mail válido \n')
                                         
-        #                             else: 
+                                        persona_data = {
+                                            "nome": nome,
+                                            "nascimento": "",
+                                            "rg": "",
+                                            "cpf": "",
+                                            "sexo": "",
+                                            "endereco":"",
+                                            "cep": "",
+                                            "estado": "",
+                                            "cidade": "",
+                                            "bairro": "",
+                                            "email": email,
+                                            "telefone": telefone,
+                                            "username": username,
+                                            "tag": tag,
+                                            "lead_id": lead_id 
+                                        }
                                         
-        #                                 # print('[*] check_provedor E-mail sem validação. Visitando mk')
+                                        self.add_persona(base_url, persona_data)
+                                        self.add_convertido(lead_id)
                                         
-        #                                 if self.higienizacao_telefone_instagram(telefone):
-        #                                     print(f" ====== LEAD: {nome} - {tarefa['id']} ======")
-        #                                     mk_cpf = self.mk_telefone(driver, telefone, nome)
+                                    else: 
+                                        
+                                        # print('[*] check_provedor E-mail sem validação. Visitando mk')
+                                        
+                                        if self.higienizacao_telefone_instagram(telefone):
                                             
-        #                                     print(f"[!] Cpf Encontrado: {mk_cpf} \n")
+                                            print(f" ====== LEAD: {nome} - {tarefa['id']} ======")
+                                            mk_cpf = self.mk_telefone(driver, telefone, nome)
+                                            
+                                            print(f"[!] Cpf Encontrado: {mk_cpf} \n")
 
                                         
-        #                                     if mk_cpf != False:
+                                            if mk_cpf != False:
                                                 
-        #                                         persona_data = self.mk_email(driver, mk_cpf, telefone, username, lead_id, tag)
+                                                persona_data = self.mk_email(driver, mk_cpf, telefone, username, lead_id, tag)
                                                 
-        #                                         if persona_data != False:
-        #                                             print('[!] ADICIONANDO PERSONA.')
+                                                if persona_data != False:
+                                                    print('[!] ADICIONANDO PERSONA.')
                                                     
-        #                                             self.add_persona(base_url, persona_data)
+                                                    self.add_persona(base_url, persona_data)
+                                                    print('Adicionando CONVERTIDO')
+                                                    self.add_convertido(lead_id)
                                                     
-        #                                         else:
-        #                                             print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
+                                                else:
+                                                    print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
                                             
-        #                                     time.sleep(5)    
-        #                                 else:
-        #                                     pff = ""
-        #                                     # print('[!] Telefone Inválido \n')
+                                            time.sleep(5)    
+                                        else:
+                                            
+                                            print(lead['full_name']+' Telefone Inválido - INAPTO')
+                                            self.add_inapto(lead_id)
+                                           
                                     
-        #                         else:
+                                else:
                                 
-        #                             if self.higienizacao_telefone_instagram(telefone):
-        #                                 print(f" ====== LEAD: {nome} - {tarefa['id']} ======")
-        #                                 mk_cpf = self.mk_telefone(driver, telefone, nome)
+                                    if self.higienizacao_telefone_instagram(telefone):
+                                        print(f" ====== LEAD: {nome} - {tarefa['id']} ======")
+                                        mk_cpf = self.mk_telefone(driver, telefone, nome)
                                         
-        #                                 print(f"[!] Cpf Encontrado: {mk_cpf} \n")
+                                        print(f"[!] Cpf Encontrado: {mk_cpf} \n")
                                         
-        #                                 if mk_cpf != False:
+                                        if mk_cpf != False:
                                             
-        #                                     persona_data = self.mk_email(driver, mk_cpf,  telefone, username, lead_id, tag)
+                                            persona_data = self.mk_email(driver, mk_cpf,  telefone, username, lead_id, tag)
                                             
-        #                                     if persona_data != False:
-        #                                         print('[!] ADICIONANDO PERSONA.')
+                                            if persona_data != False:
+                                                print('[!] ADICIONANDO PERSONA.')
                                                 
-        #                                         self.add_persona(base_url, persona_data)
+                                                self.add_persona(base_url, persona_data)
+                                                print('Adicionando CONVERTIDO')
+                                                self.add_convertido(lead_id)
                                                 
-        #                                     else:
-        #                                         print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
+                                            else:
+                                                print('[!] NAO VAMOS ADICIONANDO PERSONA. SEM EMAIL ENCONTRADO')
                                         
-        #                                 time.sleep(5)    
-        #                             else:
-        #                                 pff = ""
-        #                                 # print('[!] Telefone Inválido \n')
+                                        time.sleep(5)    
+                                    else:
+                                        
+                                        print(lead['full_name']+' Telefone Inválido - INAPTO')
+                                        self.add_inapto(lead_id)
+                                       
                                             
-        #                     except Exception as e:
-        #                         print(f'EXCEPTION NO MK {e}')
-        #                         winsound.Beep(1000, 1500)  
-        #                         next = input('Aperte enter para continuar')
+                            except Exception as e:
+                                print(f'EXCEPTION NO MK {e}')
+                                winsound.Beep(1000, 1500)  
+                                next = input('Aperte enter para continuar')
                                 
                                 
                                                
-        #         else:
+                else:
                     
-        #             print('\n [!] Nenhnuma tarefa ativa. ')
-        #             time.sleep(5)
+                    print('\n [!] Nenhnuma tarefa ativa. ')
+                    time.sleep(5)
                 
-        #     except Exception as e:
-        #             print('\n [!] Erro no while.')
-        #             print(e)
+            except Exception as e:
+                    print('\n [!] Erro no while.')
+                    print(e)
                     
-        #     time.sleep(5)
+            time.sleep(5)
     
     def get_tarefas(self, base_url):
         
@@ -446,10 +476,61 @@ class Mk:
             print(data)
             print('\n ============= FIM RESPOSTA ADD PERSONA ============= \n')
             
+            
+
+            
             return data
         
         else:
             print("Erro na requisição add_person :", response.status_code)
             return False  
+       
+    def add_convertido(self, base_url, lead_id):
+        
+        url = base_url+"/add_convertido?lead_id="+lead_id
+        
+        response = requests.get(url)
+
+
+        if response.status_code == 200:
+            
+            print("Requisição add_convertido bem-sucedida!")
+            data = response.content
+            
+            print('\n ============= INICIO RESPOSTA ADD CONVERTIDO ============= \n')
+            print(data)
+            print('\n ============= FIM RESPOSTA ADD CONVERTIDO ============= \n')
+            
+            
+
+            
+            return data
+        
+        else:
+            print("Erro na requisição add_convertido :", response.status_code)
+            return False 
+        
+    def add_inapto(self,  base_url, lead_id):
+        
+        url = base_url+"/add_inapto?lead_id="+lead_id
+        
+        response = requests.get(url)
+
+
+        if response.status_code == 200:
+            
+            print("Requisição add_convertido bem-sucedida!")
+            data = response.content
+            
+            print('\n ============= INICIO RESPOSTA ADD CONVERTIDO ============= \n')
+            print(data)
+            print('\n ============= FIM RESPOSTA ADD CONVERTIDO ============= \n')
+            
+        
+            return data
+        
+        else:
+            print("Erro na requisição add_convertido :", response.status_code)
+            return False 
         
 Mk()

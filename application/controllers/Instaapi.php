@@ -130,28 +130,41 @@ class Instaapi extends CI_Controller
     }
 
 
+    public function add_convertido() {
+        $data['lead_id'] = htmlspecialchars($this->input->get('lead_id'));
+        $convertido_idata = array(
+            'convertido' => 1,
+        );
+
+        if ($this->admin_model->updateInstaLead($data['lead_id'], $convertido_idata)) {
+
+            echo "convertido";
+        } else {
+            echo "[!] erro ao CONVERTER : " . $data['telefone'] . " ";
+        }
+    }
+
+    public function add_inapto() {
+        $data['lead_id'] = htmlspecialchars($this->input->get('lead_id'));
+
+        $inapto_data = array(
+            'inapto' => 1,
+   
+        );
+
+        if ($this->admin_model->updateInstaLead($data['lead_id'], $inapto_data)) {
+
+            echo "convertido";
+        } else {
+            echo "[!] erro ao CONVERTER : " . $data['telefone'] . " ";
+        }
+    }
+
+
     public function add_person()
     {
 
         $dados_recebidos = json_decode(file_get_contents('php://input'), true);
-        // $dados_recebidos = array(
-        //     "nome" => "daniel analitica",
-        //     "nascimento" => "2023-12-21 00:00:00",
-        //     "rg" => "Sem informação",
-        //     "cpf" => "04500145132",
-        //     "sexo" => "F",
-        //     "endereco" => "Rua cu",
-        //     "cep" => "74957720",
-        //     "estado" =>  "GO",
-        //     "cidade" =>  "Aparecida de Goiânia",
-        //     "bairro" =>  "Cabral",
-        //     "email" => "meuovo@outlook.com.br", // Supondo que você quer apenas o e-mail do Gmail
-        //     "telefone" =>  "5571993492335",
-        //     "username" => "monicaalbinooficial",
-        //     "tag" => "170",
-        //     "lead_id" => "18021",
-        // );
-
 
         foreach ($dados_recebidos as $chave => $valor) {
             if ($valor === "Sem informação") {
@@ -326,10 +339,10 @@ class Instaapi extends CI_Controller
                 }
 
 
-                
-
                 $convertido_idata = array(
-                    'convertido' => 1
+                    'convertido' => 1,
+                    'email' => $data_email['email'],
+                    'telefone' => $data_telefone['telefone'] 
                 );
 
                 if ($this->admin_model->updateInstaLead($data['lead_id'], $convertido_idata)) {
