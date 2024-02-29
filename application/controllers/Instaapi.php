@@ -329,11 +329,18 @@ class Instaapi extends CI_Controller
                 $data_telefone['is_deleted'] = 0;
 
                 if (strlen($data['telefone']) > 0) {
-                    if ($this->admin_model->add_telefone($data_telefone)) {
-                        echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+
+
+                    if ($this->admin_model->checkNumberCaptured($data['telefone'])) {
+                        if ($this->admin_model->add_telefone($data_telefone)) {
+                            echo "[!] TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                        } else {
+                            echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                        }
                     } else {
-                        echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                        echo "TELEFONE INVÁLIDO";
                     }
+                   
                 }
 
                 // Adicionando Email
@@ -344,12 +351,22 @@ class Instaapi extends CI_Controller
 
 
                 if (strlen($data['email']) > 0) {
-                    if ($this->admin_model->add_emails($data_email)) {
 
-                        echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
+
+                    if ($this->admin_model->checkEmailCaptured($data['email'])) {
+
+                        if ($this->admin_model->add_emails($data_email)) {
+
+                            echo "<br>[!] E-MAIL ATRIBUIDO : " . $data['email'] . " <br>";
+                        } else {
+                            echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                        }
+
                     } else {
-                        echo "[!] erro TELEFONE ATRIBUIDO : " . $data['telefone'] . " ";
+                        echo "E-MAIL INVÁLIDO";
+
                     }
+                    
                 }
 
 
@@ -405,6 +422,17 @@ class Instaapi extends CI_Controller
             } else {
                 echo "n foi";
             }
+        }
+    }
+
+
+    public function teste_email() {
+        $email = htmlspecialchars($this->input->get('email'));
+
+        if ($this->admin_model->checkEmailCaptured($email)) {
+            echo "valido: ".$email;
+        } else {
+            echo "invalido: ".$email;
         }
     }
 }

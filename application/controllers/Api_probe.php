@@ -12,6 +12,7 @@ class Api_probe extends CI_Controller {
         $this->load->model('probe_model');
 
     }
+    
 
     public function index()
     {

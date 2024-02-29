@@ -530,12 +530,14 @@ class Admin_model extends CI_Model
         return $this->db->get('cidade')->row_array()['nome'];
     }
 
-    public function get_uf_id($nome) {
+    public function get_uf_id($nome)
+    {
         $this->db->where('uf', $nome);
         return $this->db->get('estado')->row_array()['id'];
     }
 
-    public function get_cidade_id($nome) {
+    public function get_cidade_id($nome)
+    {
         $this->db->like('nome', $nome);
         return $this->db->get('cidade')->row_array()['id'];
     }
@@ -1520,7 +1522,7 @@ class Admin_model extends CI_Model
 
 
 
-    
+
 
     public function getTarefa($id)
     {
@@ -1693,6 +1695,18 @@ class Admin_model extends CI_Model
 
     // Tarefas
 
+    public function checkEmailCaptured($email)
+    {
+        // Extrai o domínio do e-mail
+        $domain = substr(strrchr($email, "@"), 1);
+
+        // Verifica se o domínio pertence a um dos provedores mencionados
+        if ($domain === 'gmail.com' || $domain === 'hotmail.com' || $domain === 'outlook.com') {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public function checkNumberCaptured($numero)
     {
@@ -1731,12 +1745,14 @@ class Admin_model extends CI_Model
         return true;
     }
 
-    public function add_abertura($data) {
-        
+    public function add_abertura($data)
+    {
+
         return $this->db->insert('campanha_aberturas', $data);
     }
 
-    public function get_aberturas($campanha_id) {
+    public function get_aberturas($campanha_id)
+    {
         $this->db->where('abertura_lead_campanha_id', $campanha_id);
         return $this->db->get('campanha_aberturas')->result();
     }
