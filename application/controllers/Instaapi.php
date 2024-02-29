@@ -435,4 +435,14 @@ class Instaapi extends CI_Controller
             echo "invalido: ".$email;
         }
     }
+
+    public function teste_telefone() {
+        $telefone = htmlspecialchars($this->input->get('telefone'));
+
+        if ($this->admin_model->checkNumberCaptured($telefone)) {
+            echo "valido: ".$telefone;
+        } else {
+            echo "invalido: ".$telefone;
+        }
+    }
 }
