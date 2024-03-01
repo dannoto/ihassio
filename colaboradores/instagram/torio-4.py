@@ -1,13 +1,9 @@
-#  Captura dados de contato e interaçoes do instagram 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
-
-
 import mysql.connector
 import logging
-
 
 import time
 import requests
@@ -26,7 +22,9 @@ from bs4 import BeautifulSoup
 class Scraper:
 
     def __init__(self):
-        #boaoferta_
+        
+        
+
         headers = {
             'Accept': '*/*',
             'Accept-Encoding': 'gzip, deflate, br',
@@ -53,130 +51,105 @@ class Scraper:
             'X-Requested-With': 'XMLHttpRequest'
         }
 
-        
-        #  watchwithoutfear
-        # headers = {
-        #     'Accept': '*/*',
-        #     'Accept-Encoding': 'gzip, deflate, br',
-        #     'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
-        #     'Cookie': 'ig_did=393560CC-54FB-4EC2-B039-675BE71DC24B; datr=MdZSZY-jagBUo9wTQKzc-gBv; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; mid=ZaS_XQALAAHjqL_c82_6N8_woF1-; ps_n=0; ps_l=0; shbid="7447\05461013886138\0541740628397:01f7f00db9150da02a1f2cd08020a9bb9898c05f3783f6d65aff22dee20ae96e1b459c3c"; shbts="1709092397\05461013886138\0541740628397:01f77ba07e9b6fad03845e3e0010d0eef3bf4915ee863d38e51237e250d4e2eb84770320"; ds_user_id=61013886138; csrftoken=w46x7hJJLhOd65HAY5B6Hd8ovqh34c5H; sessionid=61013886138%3AJjE7Udxbx9ABrO%3A8%3AAYe6EqMGMid4HwGJUkTaLECVt-w07ks90BS2swJNag; fbsr_124024574287414=3EEMjB81jLAlLmLXcWKarzUZmOLBJwCIILsQaDWzGcg.eyJ1c2VyX2lkIjoiMTAwMDg5NDAyNTYzMTE3IiwiY29kZSI6IkFRQ2xmQjF3Ml9hTFNMTTZIZE9Ma294WXJTN1daWUVXbmlwdDdOaUl2dUJ5amwwMDVlQjZxX2M2eFpLWnB4R3doTkJBNTk0VTltNXY3TWllZmItZWQ2SFp6SlZMMkN2eUJEckRIYTEwMlc4YWxtWUo5bkt1TUVqOUhZemxIa3lVZGJ0RzBlaGkwMV94TUV1M2FhVHpCakN0NlRyTEhhMFFTTTIxdzJGVDNmTWlyYUE3RnFqQUVJVlo2UkRIUFhpX0N5R1gxdzE1dE0zMXFpbUpyVnBOck5IVmh6b2h6NWc2N2Fwdk1UcjFTS3QzOENOUG5ycjBZTDBSbUZzUDItX2lPOGZkTDVyd2M0Vy0zX2dZWS1fZm02VzIxQnBUNk5NT1NSZkhZazdYQ3JjRHBjRm1EZkItbzJpXzhhN1pMVGFHcVBncW5oSDUyNzBwU3BEeGtnRDMxRmFfVTlSLUNPLXVpM1M3WlpnOGRReTRBdyIsIm9hdXRoX3Rva2VuIjoiRUFBQnd6TGl4bmpZQk84SnZRT3drSGVJbmJYMnRtc3plSVRkUENFY1pBT1pBYnFzWkF5cURzakczc0N5dUdYUVpDSmlrODd3VkpnUXlCNDNCNXRyRlpDa3FIWVpDdXFRS1g5ZTdaQW9VdTlGUGV0NEJGN242T3hrOENRUkZaQUF2eTBwZVc5S2hLT0ZYdmt6MVdyYlBaQThXem9FS2FLOW9SZlNaQ24wS2ptR0pVZlhJUThhNVN1WkNtZk1maURBR1pDdkFkRVpCNThPZHhaQldvQmZSOGUyOFpCOWFnZ1pEIiwiYWxnb3JpdGhtIjoiSE1BQy1TSEEyNTYiLCJpc3N1ZWRfYXQiOjE3MDkyMzE5MzV9; rur="NHA\05461013886138\0541740768119:01f7b4d91aa8a0b749a5de7beceb269057bafacfd9e1e4e774248475c1a45979bb8cfa7a"',
-        #     'Dpr': '1',
-        #     'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
-        #     'Sec-Ch-Prefers-Color-Scheme': 'light',
-        #     'Sec-Ch-Ua': '"Opera";v="105", "Chromium";v="119", "Not?A_Brand";v="24"',
-        #     'Sec-Ch-Ua-Full-Version-List': '"Opera";v="105.0.4970.60", "Chromium";v="119.0.6045.199", "Not?A_Brand";v="24.0.0.0"',
-        #     'Sec-Ch-Ua-Mobile': '?0',
-        #     'Sec-Ch-Ua-Model': '""',
-        #     'Sec-Ch-Ua-Platform': '"Windows"',
-        #     'Sec-Ch-Ua-Platform-Version': '"10.0.0"',
-        #     'Sec-Fetch-Dest': 'empty',
-        #     'Sec-Fetch-Mode': 'cors',
-        #     'Sec-Fetch-Site': 'same-origin',
-        #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 OPR/105.0.0.0',
-        #     'Viewport-Width': '1312',
-        #     'X-Asbd-Id': '129477',
-        #     'X-Csrftoken': 'w46x7hJJLhOd65HAY5B6Hd8ovqh34c5H',
-        #     'X-Ig-App-Id': '936619743392459',
-        #     'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
-        #     'X-Requested-With': 'XMLHttpRequest'
-        # }
-
-        # _devcors
-        # headers = {
-        #     'Accept': '*/*',
-        #     'Accept-Encoding': 'gzip, deflate, br',
-        #     'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
-        #     'Cookie': 'ig_did=393560CC-54FB-4EC2-B039-675BE71DC24B; datr=MdZSZY-jagBUo9wTQKzc-gBv; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; mid=ZaS_XQALAAHjqL_c82_6N8_woF1-; ps_n=0; ps_l=0; shbid="7447\05461013886138\0541740628397:01f7f00db9150da02a1f2cd08020a9bb9898c05f3783f6d65aff22dee20ae96e1b459c3c"; shbts="1709092397\05461013886138\0541740628397:01f77ba07e9b6fad03845e3e0010d0eef3bf4915ee863d38e51237e250d4e2eb84770320"; fbsr_124024574287414=zr4b7uZAoK6KYHG6UNPBYQuEQ6IygoY-YsYTNio3T4g.eyJ1c2VyX2lkIjoiMTAwMDg5NDAyNTYzMTE3IiwiY29kZSI6IkFRQmJGa1VNVDRXa0VSNF96Qmg2cExpSHVxb1c3M3ZQRGZVUC1qb2hHcGgxX2xlTkVWSmdQS1FVT0poZEJ0VTF0aHV5U2M3akVSeFVvc3VSTHo2LVBINmEzaURpS3JqQWRLaS1YNXM2bXIxcS1zTUMyQkJHNkVGYzMtN3cxdEhxLV9qaDZGbjNBd3RjaHN6X2NxR0lMVDlfVjh3Q1BkSDl0NG1NTmhjaERxclBmYlhkT01JWnJPS0pwX2JiTTBUbElfVkpBOFlvbEZ2TmNuUDdTUmdEeXByakpiUFhRT3prTU84U2x3cldQWW4yNDk5MzBnRmFhd2hLcFNFVDlqNEpJY0dvNXpBUUFkQm00bFhSVUJfX2JtNVBGOW92U3IzYWFIOTBQWGFDNG5XTnNqX2F5YTNlVFd1YkYtbktNbUlFTjltYmpvSWVlMUxra0NscVAxME9nOURkQ3U0QzhzNi10aE92ejhYX18xT1NUdyIsIm9hdXRoX3Rva2VuIjoiRUFBQnd6TGl4bmpZQk84cHY1bXUxakVtYldyUjh0dzBMMzlTVURCMUdGS3MxV3l2OTk4aGI3ZVNRQ1diU2l2S09YWkJ2eG1VRGZ3NHdyeGhNUFcxUkRFUmZ5QVpCdWpIQWx6Qm5xOGlzeUtWalpCVXZEOWtqcGo0MHJMVHF0bjAzRG12WkFVa3Rha29uanBHRGczWGh5VGRtT1BONW5rWFZUVGtnRVpBZU5mV3FBMGlGWUFIeFpBU3BoWkFyd1pEWkQiLCJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTcwOTE1NDU4NX0; fbsr_124024574287414=zr4b7uZAoK6KYHG6UNPBYQuEQ6IygoY-YsYTNio3T4g.eyJ1c2VyX2lkIjoiMTAwMDg5NDAyNTYzMTE3IiwiY29kZSI6IkFRQmJGa1VNVDRXa0VSNF96Qmg2cExpSHVxb1c3M3ZQRGZVUC1qb2hHcGgxX2xlTkVWSmdQS1FVT0poZEJ0VTF0aHV5U2M3akVSeFVvc3VSTHo2LVBINmEzaURpS3JqQWRLaS1YNXM2bXIxcS1zTUMyQkJHNkVGYzMtN3cxdEhxLV9qaDZGbjNBd3RjaHN6X2NxR0lMVDlfVjh3Q1BkSDl0NG1NTmhjaERxclBmYlhkT01JWnJPS0pwX2JiTTBUbElfVkpBOFlvbEZ2TmNuUDdTUmdEeXByakpiUFhRT3prTU84U2x3cldQWW4yNDk5MzBnRmFhd2hLcFNFVDlqNEpJY0dvNXpBUUFkQm00bFhSVUJfX2JtNVBGOW92U3IzYWFIOTBQWGFDNG5XTnNqX2F5YTNlVFd1YkYtbktNbUlFTjltYmpvSWVlMUxra0NscVAxME9nOURkQ3U0QzhzNi10aE92ejhYX18xT1NUdyIsIm9hdXRoX3Rva2VuIjoiRUFBQnd6TGl4bmpZQk84cHY1bXUxakVtYldyUjh0dzBMMzlTVURCMUdGS3MxV3l2OTk4aGI3ZVNRQ1diU2l2S09YWkJ2eG1VRGZ3NHdyeGhNUFcxUkRFUmZ5QVpCdWpIQWx6Qm5xOGlzeUtWalpCVXZEOWtqcGo0MHJMVHF0bjAzRG12WkFVa3Rha29uanBHRGczWGh5VGRtT1BONW5rWFZUVGtnRVpBZU5mV3FBMGlGWUFIeFpBU3BoWkFyd1pEWkQiLCJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTcwOTE1NDU4NX0; csrftoken=F14uAC63unuExGxGO1kaS8tN0l2bwd81; ds_user_id=42804341242; sessionid=42804341242%3Ao8nZWY7pp3oFyH%3A0%3AAYfixJ6jf3BGhSdWQqJbEidwupO2mMlJt_kxLrL6LQ; rur="EAG\05442804341242\0541740690733:01f7e7343ead18d54c01438a73f073c3b0a6aa75c66d100c72746a64c21efc3cd2b38dfa"',
-        #     'Dpr': '1',
-        #     'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
-        #     'Sec-Ch-Prefers-Color-Scheme': 'light',
-        #     'Sec-Ch-Ua': '"Opera";v="105", "Chromium";v="119", "Not?A_Brand";v="24"',
-        #     'Sec-Ch-Ua-Full-Version-List': '"Opera";v="105.0.4970.60", "Chromium";v="119.0.6045.199", "Not?A_Brand";v="24.0.0.0"',
-        #     'Sec-Ch-Ua-Mobile': '?0',
-        #     'Sec-Ch-Ua-Model': '""',
-        #     'Sec-Ch-Ua-Platform': '"Windows"',
-        #     'Sec-Ch-Ua-Platform-Version': '"10.0.0"',
-        #     'Sec-Fetch-Dest': 'empty',
-        #     'Sec-Fetch-Mode': 'cors',
-        #     'Sec-Fetch-Site': 'same-origin',
-        #     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 OPR/105.0.0.0',
-        #     'Viewport-Width': '1312',
-        #     'X-Asbd-Id': '129477',
-        #     'X-Csrftoken': 'F14uAC63unuExGxGO1kaS8tN0l2bwd81',
-        #     'X-Ig-App-Id': '936619743392459',
-        #     'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
-        #     'X-Requested-With': 'XMLHttpRequest'
-        # }
-
         base_url = "https://ccoanalitica.com/hassio/instaapi/"
         
+        self.header_data = self.get_headers(base_url)
+        # self.header_count = len(self.header_data)
+        # print(self.header_data)
+        # self.header_current = 0
         
-        while True:
+        
+        # headers = self.header_data[self.header_current]
+        
+        # self.getUserProfile(headers, "realdanielribeiro")
+        
+      
+        # while True:
    
-            tarefas =  self.getTarefasAtivas(base_url) 
+        #     tarefas =  self.getTarefasAtivas(base_url) 
             
-            try:
+        #     try:
             
-                if len(tarefas) > 0 :    
+        #         if len(tarefas) > 0 :    
 
-                    for tarefa in tarefas:
+        #             for tarefa in tarefas:
                         
-                        if (tarefa['tarefa_tipo'] == "post"):
+        #                 if (tarefa['tarefa_tipo'] == "post"):
                             
-                            print('\n [!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+        #                     print('\n [!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
                             
-                            self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
+        #                     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
                             
-                            # Extraindo Informaçoes
-                            self.extractFromPost( headers, base_url,  tarefa['tarefa_url'], tarefa['id'], tarefa['tarefa_tag'])
+        #                     # Extraindo Informaçoes
+        #                     self.extractFromPost( headers, base_url,  tarefa['tarefa_url'], tarefa['id'], tarefa['tarefa_tag'])
                             
-                            self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+        #                     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
 
                     
-                        elif (tarefa['tarefa_tipo'] == "feed"):
+        #                 elif (tarefa['tarefa_tipo'] == "feed"):
                             
-                            print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+        #                     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
                             
-                            self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
+        #                     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
                             
-                            username = self.extrair_username_url(tarefa['tarefa_url'])
-                            print(username)
+        #                     username = self.extrair_username_url(tarefa['tarefa_url'])
+        #                     print(username)
                             
-                            self.extractFromFeed(headers, username, base_url, tarefa['id'], tarefa['tarefa_tag'])
+        #                     self.extractFromFeed(headers, username, base_url, tarefa['id'], tarefa['tarefa_tag'])
                             
-                            self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+        #                     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
 
                         
-                        # elif (tarefa['tarefa_tipo'] == "tag"):
-                        #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+        #                 # elif (tarefa['tarefa_tipo'] == "tag"):
+        #                 #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
                             
-                        #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
+        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
                             
-                        #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
+        #                 #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
                             
-                        #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
 
                             
-                        # elif (tarefa['tarefa_tipo'] == "location"):
+        #                 # elif (tarefa['tarefa_tipo'] == "location"):
                             
-                        #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+        #                 #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
                             
-                        #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
+        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
                             
-                        #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
+        #                 #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
                             
-                        #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
-                else:
+        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+        #         else:
                     
-                    print('\n [!] Nenhnuma tarefa ativa. ')
-                    time.sleep(5)
+        #             print('\n [!] Nenhnuma tarefa ativa. ')
+        #             time.sleep(5)
                     
-            except Exception as e:
-                print('\n [!] Erro no while - TROQUE A HEADER.')
-                print(e)
-                next = input('Digite enter para coontinuar: ')
-                print(next)
+        #     except Exception as e:
+        #         print('\n [!] Erro no while - TROQUE A HEADER.')
+        #         print(e)
+        #         next = input('Digite enter para coontinuar: ')
+        #         print(next)
                     
+    def get_headers(self, base_url):
+        
+        # print('[!] Mudando status para Processando: '+str(tarefa_id)+'')
+        
+        url = base_url+"/get_headers"
+        
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            
+            # print("Requisição updateTarefaStatus bem-sucedida!")
+            data = json.loads(response.content)
+            print(data)
+        
+            return data
+        
+        else:
+            # print("Erro na requisição updateTarefaStatus:", response.status_code)
+            return False   
+        
     def updateTarefaStatus(self, base_url, tarefa_id, tarefa_status):
         
         # print('[!] Mudando status para Processando: '+str(tarefa_id)+'')
@@ -467,118 +440,7 @@ class Scraper:
             print('Erro: ', e)
         
     def getUserProfile(self, headers, username):   
-        
-        
-        # {
-        #     "data": {
-        #         "user": {
-        #             "ai_agent_type": null,
-        #             "biography": "Âncora @cnnbrasil \nBastidores CNN, 14h às 16h. \nNotícias no “X”: @tainafalcao \nNordestina. Sagitariana. Poetisa. \nMeu livro: “Não te devo respostas”",
-        #             "bio_links": [],
-        #             "fb_profile_biolink": null,
-        #             "biography_with_entities": {
-        #                 "raw_text": "Âncora @cnnbrasil \nBastidores CNN, 14h às 16h. \nNotícias no “X”: @tainafalcao \nNordestina. Sagitariana. Poetisa. \nMeu livro: “Não te devo respostas”",
-        #                 "entities": [
-        #                     {
-        #                         "user": {
-        #                             "username": "cnnbrasil"
-        #                         },
-        #                         "hashtag": null
-        #                     },
-        #                     {
-        #                         "user": {
-        #                             "username": "tainafalcao"
-        #                         },
-        #                         "hashtag": null
-        #                     }
-        #                 ]
-        #             },
-        #             "blocked_by_viewer": false,
-        #             "restricted_by_viewer": false,
-        #             "country_block": false,
-        #             "eimu_id": "109740567087323",
-        #             "external_url": null,
-        #             "external_url_linkshimmed": null,
-        #             "edge_followed_by": {
-        #                 "count": 73599
-        #             },
-        #             "fbid": "17841401521960023",
-        #             "followed_by_viewer": true,
-        #             "edge_follow": {
-        #                 "count": 1996
-        #             },
-        #             "follows_viewer": false,
-        #             "full_name": "Tainá Falcão",
-        #             "group_metadata": null,
-        #             "has_ar_effects": false,
-        #             "has_clips": true,
-        #             "has_guides": false,
-        #             "has_channel": false,
-        #             "has_blocked_viewer": false,
-        #             "highlight_reel_count": 25,
-        #             "has_requested_viewer": false,
-        #             "hide_like_and_view_counts": true,
-        #             "id": "1522732",
-        #             "is_business_account": false,
-        #             "is_professional_account": true,
-        #             "is_supervision_enabled": false,
-        #             "is_guardian_of_viewer": false,
-        #             "is_supervised_by_viewer": false,
-        #             "is_supervised_user": false,
-        #             "is_embeds_disabled": false,
-        #             "is_joined_recently": false,
-        #             "guardian_id": null,
-        #             "business_address_json": null,
-        #             "business_contact_method": "UNKNOWN",
-        #             "business_email": null,
-        #             "business_phone_number": null,
-        #             "business_category_name": null,
-        #             "overall_category_name": null,
-        #             "category_enum": null,
-        #             "category_name": "Jornalista",
-        #             "is_private": false,
-        #             "is_verified": true,
-        #             "is_verified_by_mv4b": false,
-        #             "is_regulated_c18": false,
-        #             "edge_mutual_followed_by": {
-        #                 "count": 2,
-        #                 "edges": [
-        #                     {
-        #                         "node": {
-        #                             "username": "carolnogueira_jornalista"
-        #                         }
-        #                     },
-        #                     {
-        #                         "node": {
-        #                             "username": "elisaveeck"
-        #                         }
-        #                     }
-        #                 ]
-        #             },
-        #             "pinned_channels_list_count": 0,
-        #             "profile_pic_url": "https://instagram.fgyn11-1.fna.fbcdn.net/v/t51.2885-19/283697360_719514882428394_4790863883756660183_n.jpg?stp=dst-jpg_s150x150\u0026_nc_ht=instagram.fgyn11-1.fna.fbcdn.net\u0026_nc_cat=106\u0026_nc_ohc=B2y_li5o7f0AX9Bs4Xj\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfAgwFpzcAeMT8KnnUo9JaGrjyTCMT_uxa3vY_IRIxp-iw\u0026oe=659BDD0D\u0026_nc_sid=8b3546",
-        #             "profile_pic_url_hd": "https://instagram.fgyn11-1.fna.fbcdn.net/v/t51.2885-19/283697360_719514882428394_4790863883756660183_n.jpg?stp=dst-jpg_s320x320\u0026_nc_ht=instagram.fgyn11-1.fna.fbcdn.net\u0026_nc_cat=106\u0026_nc_ohc=B2y_li5o7f0AX9Bs4Xj\u0026edm=AOQ1c0wBAAAA\u0026ccb=7-5\u0026oh=00_AfA_VvCVPBYCUcEzDszPSWbzQ2SMXYq-AesCFtTb3YbCOg\u0026oe=659BDD0D\u0026_nc_sid=8b3546",
-        #             "requested_by_viewer": false,
-        #             "should_show_category": true,
-        #             "should_show_public_contacts": false,
-        #             "show_account_transparency_details": true,
-        #             "transparency_label": null,
-        #             "transparency_product": null,
-        #             "username": "tainafalcao",
-        #             "connected_fb_page": null,
-        #             "pronouns": [],
-        #             "edge_owner_to_timeline_media": {
-        #                 "count": 1039,
-        #                 "page_info": {
-        #                     "has_next_page": true,
-        #                     "end_cursor": ""
-        #                 },
-        #                 "edges": []
-        #             }
-        #         }
-        #     },
-        #     "status": "ok"
-        # }
+  
 
         url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username='+username
         
@@ -589,6 +451,9 @@ class Scraper:
         response = requests.get(url, headers=headers)
         
         try:
+            
+            print(f'currente header: {self.header_current}')
+            self.header_current = 32
 
             if response.status_code == 200:
 
@@ -602,17 +467,18 @@ class Scraper:
                 # print('[!!] Erro de Requisicao, aguardando: '+str(atraso)+' minutos.')
                 # time.sleep(atraso)
                 winsound.Beep(1000, 1500) 
-                print("=========== ERRO NA REQUISICAO - TROQUE AS HEADERS =============== getUserProfile:", response.status_code)
-                next = input('Aperte enteder para continuar: ')
-                print(next)
-                print(response)
+                print("=========== ERRO NA REQUISICAO - TROCANDO AS HEADERS =============== getUserProfile:", response.status_code)
+                # next = input('Aperte enteder para continuar: ')
+                # print(next)
+                # print(response)
                 # return False
             
         except Exception as e:
+            
             winsound.Beep(1000, 1500) 
-            print("=========== EXCEPTION NA REQUISICAO - TROQUE AS HEADERS =============== getUserProfile:", e)
-            next = input('Aperte enteder para continuar: ')
-            print(next)
+            print("=========== EXCEPTION NA REQUISICAO - TROCANDO AS HEADERS =============== getUserProfile:", e)
+            # next = input('Aperte enteder para continuar: ')
+            # print(next)
             # return False
             
             

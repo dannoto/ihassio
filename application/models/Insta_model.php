@@ -19,6 +19,9 @@ class insta_model extends CI_Model
 
     }
 
+    public function get_headers() {
+        return $this->db->get('persona_tarefas_agentes')->result();
+    }
 
 
     // testando2

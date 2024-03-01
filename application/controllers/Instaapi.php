@@ -23,6 +23,14 @@ class Instaapi extends CI_Controller
         print_r(json_encode($response));
     }
 
+    public function get_headers()
+    {
+
+        $response = $this->insta_model->get_headers();
+
+        print_r(json_encode($response));
+    }
+
     public function get_tarefas_finalizadas()
     {
 
@@ -144,6 +152,8 @@ class Instaapi extends CI_Controller
             echo "[!] erro ao CONVERTER : " . $data['lead_id'] . " ";
         }
     }
+
+
 
     public function add_inapto()
     {
@@ -426,23 +436,23 @@ class Instaapi extends CI_Controller
     }
 
 
-    public function teste_email() {
-        $email = htmlspecialchars($this->input->get('email'));
+    // public function teste_email() {
+    //     $email = htmlspecialchars($this->input->get('email'));
 
-        if ($this->admin_model->checkEmailCaptured($email)) {
-            echo "valido: ".$email;
-        } else {
-            echo "invalido: ".$email;
-        }
-    }
+    //     if ($this->admin_model->checkEmailCaptured($email)) {
+    //         echo "valido: ".$email;
+    //     } else {
+    //         echo "invalido: ".$email;
+    //     }
+    // }
 
-    public function teste_telefone() {
-        $telefone = htmlspecialchars($this->input->get('telefone'));
+    // public function teste_telefone() {
+    //     $telefone = htmlspecialchars($this->input->get('telefone'));
 
-        if ($this->admin_model->checkNumberCaptured($telefone)) {
-            echo "valido: ".$telefone;
-        } else {
-            echo "invalido: ".$telefone;
-        }
-    }
+    //     if ($this->admin_model->checkNumberCaptured($telefone)) {
+    //         echo "valido: ".$telefone;
+    //     } else {
+    //         echo "invalido: ".$telefone;
+    //     }
+    // }
 }
