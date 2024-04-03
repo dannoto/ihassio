@@ -88,7 +88,19 @@ class Scraper:
                             
                             print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])                                 
                             username = self.extrair_username_url(tarefa['tarefa_url'])
-                            self.extractFromFeed(headers, username, base_url, tarefa['id'], tarefa['tarefa_tag'])
+                            
+                            if self.testando_header( username, headers) != False:
+                                self.extractFromFeed(headers, username, base_url, tarefa['id'], tarefa['tarefa_tag'])
+                            else:
+                                
+                                print(f'\n\n ERRO HEADER FEED => MUDANDO AGENTE  \n')
+            
+                                if self.header_current >= self.header_count:
+                                    self.header_current = 0
+                                else:
+                                    self.header_current = self.header_current + 1
+                                
+                                
                   
                 else:
                     
@@ -105,10 +117,11 @@ class Scraper:
                     
     def testando_header(self, username, headers):
     
-        url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username='+username     
+        url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username='+username  
       
         response = requests.get(url, headers=headers)
         
+        print('tetando ehader')
         try:
             
             if response.status_code == 200:
@@ -116,7 +129,7 @@ class Scraper:
                 
 
                 data = json.loads(response.content)
-                # print(data['data']['user']['username'])
+                print(data['data']['user']['username'])
                 return True
             
             else:
@@ -467,33 +480,23 @@ class Scraper:
             
             else:
                 
-                print("=========== GET PROFILE !200 =============== getUserProfile:", e)
-                winsound.Beep(1000, 1500) 
-       
+                print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
+            
                 if self.header_current >= self.header_count:
-                        
                     self.header_current = 0
-                        
                 else:
-                        
                     self.header_current = self.header_current + 1
-                pass
             
         except Exception as e:
             
             # winsound.Beep(1000, 1500) 
             # print("=========== GET PROFILE EXCEPTION =============== getUserProfile:", e)
             
-            print(f'\n EXCEPTION getUserProfile - TROCANDO HEADER \n')
-            winsound.Beep(1000, 1500) 
+            print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
             
-       
             if self.header_current >= self.header_count:
-                    
                 self.header_current = 0
-                    
             else:
-                    
                 self.header_current = self.header_current + 1
                 
             # print(f'HEADER COUNT : '+str(self.header_count))
@@ -1139,7 +1142,8 @@ class Scraper:
                     'post_slug':post_slug,
                     'post_data': post_data,
                     'post_descricao': post_descricao,
-                    'post_imagem':post_imagem                 
+                    'post_imagem':post_imagem,
+                    'processado': 0               
                 })
 
         print("\n ======= Exibindo Comentários ======= \n")
@@ -1188,7 +1192,8 @@ class Scraper:
                     'post_slug':post_slug,
                     'post_data': post_data,
                     'post_descricao': post_descricao,
-                    'post_imagem':post_imagem 
+                    'post_imagem':post_imagem,
+                    'processado': 0               
                 })
                 
         
@@ -1207,6 +1212,8 @@ class Scraper:
             user_data = self.getUserProfile(headers, username)
             user_feed = self.getUserFeed(headers, user_data['data']['user']['id'])
             
+            # print(f"============= HEADER ATUAL {self.header_username} - INDEX {self.header_current}/{self.header_count} - {headers['X-Csrftoken']} =================")
+            
             for post in user_feed['items']:
                 
                 try:
@@ -1221,30 +1228,28 @@ class Scraper:
 
                     self.extractFromFeePost( headers, base_url, str(post['pk']), tarefa_id, tag_id)
                     
+                                       
                     
                 except Exception as e:
                     
-                    print('\n [!] Erro na extracao de post/por feeed.')
-                    print(e)
+                    print(f'\n\n ERRO EXTRAIR POST DO FEED => MUDANDO AGENTE  \n')
+            
+                    if self.header_current >= self.header_count:
+                        self.header_current = 0
+                    else:
+                        self.header_current = self.header_current + 1
                     
-            self.updateTarefaStatus(base_url, tarefa_id, 3) 
+                    
+            self.updateTarefaStatus(base_url, tarefa_id, 2) 
             
         except Exception as e:
             
-            print(f'\n EXCEPTION extractFromFeed \n')
+            print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
             
-            
-            # winsound.Beep(1000, 1500) 
-       
-            # if self.header_current >= self.header_count:
-                    
-            #     self.header_current = 0
-                    
-            # else:
-                    
-            #     self.header_current = self.header_current + 1
-                
-            # pass
+            if self.header_current >= self.header_count:
+                self.header_current = 0
+            else:
+                self.header_current = self.header_current + 1
         
                 
                 
