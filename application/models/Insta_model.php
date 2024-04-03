@@ -20,7 +20,7 @@ class insta_model extends CI_Model
     }
 
     public function get_headers() {
-        $this->db->where('agente_status',0);
+        $this->db->where('agente_status', 1);
         return $this->db->get('persona_tarefas_agentes')->result();
     }
 
