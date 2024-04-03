@@ -1,3 +1,6 @@
+# VERSAO 4.0
+# HEADERS MUDAM DINAMICAMENTE APOS SEREM BLOQUEADAS
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -25,111 +28,105 @@ class Scraper:
         
         
 
-        headers = {
-            'Accept': '*/*',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
-            'Cookie': 'mid=Za3bsQALAAHLYNzBTZb261Ix_FGu; ig_did=4BEF3526-6852-49ED-90EA-D3ECB83AFB02; datr=sdutZWNkTufTIFoebxODGU3d; ps_n=0; ps_l=0; ig_nrcb=1; csrftoken=rX3pA46Rn8fwBHijfIjfAfplAvqooySR; ds_user_id=64756447548; sessionid=64756447548%3AnCfIMdGoCsbgRX%3A0%3AAYcHZ8DUSqB2i1PfjYOGbTY19WcQlZtDo3xLwawKGA; rur="VLL\05464756447548\0541740770008:01f77445f6b18a090dcfe515202c5ee4455995cffdec9a61ecef9195c847a0df4643903e"',
-            'Dpr': '1',
-            'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
-            'Sec-Ch-Prefers-Color-Scheme': 'light',
-            'Sec-Ch-Ua': '"Opera";v="105", "Chromium";v="119", "Not?A_Brand";v="24"',
-            'Sec-Ch-Ua-Full-Version-List': '"Opera";v="105.0.4970.60", "Chromium";v="119.0.6045.199", "Not?A_Brand";v="24.0.0.0"',
-            'Sec-Ch-Ua-Mobile': '?0',
-            'Sec-Ch-Ua-Model': '""',
-            'Sec-Ch-Ua-Platform': '"Windows"',
-            'Sec-Ch-Ua-Platform-Version': '"10.0.0"',
-            'Sec-Fetch-Dest': 'empty',
-            'Sec-Fetch-Mode': 'cors',
-            'Sec-Fetch-Site': 'same-origin',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 OPR/105.0.0.0',
-            'Viewport-Width': '1312',
-            'X-Asbd-Id': '129477',
-            'X-Csrftoken': 'rX3pA46Rn8fwBHijfIjfAfplAvqooySR',
-            'X-Ig-App-Id': '936619743392459',
-            'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
-            'X-Requested-With': 'XMLHttpRequest'
-        }
-
+        
         base_url = "https://ccoanalitica.com/hassio/instaapi/"
         
+       
         self.header_data = self.get_headers(base_url)
-        # self.header_count = len(self.header_data)
-        # print(self.header_data)
-        # self.header_current = 0
+        self.header_count = len(self.header_data) - 1
+        self.header_current = 0
         
-        
-        # headers = self.header_data[self.header_current]
-        
-        # self.getUserProfile(headers, "realdanielribeiro")
-        
-      
-        # while True:
+        while True:
+            
+            self.header_username = self.header_data[self.header_current]['agente_username']
+            
+            headers = {
+                'Accept': '*/*',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Cookie': self.header_data[self.header_current]['agente_cookie'],
+                'Dpr': '1',
+                'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
+                'Sec-Ch-Prefers-Color-Scheme': 'light',
+                'Sec-Ch-Ua': '"Opera";v="105", "Chromium";v="119", "Not?A_Brand";v="24"',
+                'Sec-Ch-Ua-Full-Version-List': '"Opera";v="105.0.4970.60", "Chromium";v="119.0.6045.199", "Not?A_Brand";v="24.0.0.0"',
+                'Sec-Ch-Ua-Mobile': '?0',
+                'Sec-Ch-Ua-Model': '""',
+                'Sec-Ch-Ua-Platform': '"Windows"',
+                'Sec-Ch-Ua-Platform-Version': '"10.0.0"',
+                'Sec-Fetch-Dest': 'empty',
+                'Sec-Fetch-Mode': 'cors',
+                'Sec-Fetch-Site': 'same-origin',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 OPR/105.0.0.0',
+                'Viewport-Width': '1312',
+                'X-Asbd-Id': '129477',
+                'X-Csrftoken': self.header_data[self.header_current]['agente_crsf'],
+                'X-Ig-App-Id': '936619743392459',
+                'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+
+            # self.testando_troca_header()
+            print(f"============= HEADER ATUAL {self.header_username} - INDEX {self.header_current}/{self.header_count} - {headers['X-Csrftoken']} =================")
    
-        #     tarefas =  self.getTarefasAtivas(base_url) 
+   
+            tarefas =  self.getTarefasAtivas(base_url) 
+
             
-        #     try:
+            try:
             
-        #         if len(tarefas) > 0 :    
+                if len(tarefas) > 0 :    
 
-        #             for tarefa in tarefas:
+                    for tarefa in tarefas:
                         
-        #                 if (tarefa['tarefa_tipo'] == "post"):
+                        if (tarefa['tarefa_tipo'] == "post"):
                             
-        #                     print('\n [!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
-                            
-        #                     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
-                            
-        #                     # Extraindo Informaçoes
-        #                     self.extractFromPost( headers, base_url,  tarefa['tarefa_url'], tarefa['id'], tarefa['tarefa_tag'])
-                            
-        #                     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+                            print('\n [!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
+                            self.extractFromPost( headers, base_url,  tarefa['tarefa_url'], tarefa['id'], tarefa['tarefa_tag'])
 
+                        elif (tarefa['tarefa_tipo'] == "feed"):
+                            
+                            print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])                                 
+                            username = self.extrair_username_url(tarefa['tarefa_url'])
+                            self.extractFromFeed(headers, username, base_url, tarefa['id'], tarefa['tarefa_tag'])
+                  
+                else:
                     
-        #                 elif (tarefa['tarefa_tipo'] == "feed"):
-                            
-        #                     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
-                            
-        #                     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
-                            
-        #                     username = self.extrair_username_url(tarefa['tarefa_url'])
-        #                     print(username)
-                            
-        #                     self.extractFromFeed(headers, username, base_url, tarefa['id'], tarefa['tarefa_tag'])
-                            
-        #                     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
+                    print('\n [!] Nenhnuma tarefa ativa. ')
+                    time.sleep(5)
+                    
+            except Exception as e:
+                
+                winsound.Beep(1000, 1500) 
+                
+                print("===========  WHILE EXCEPTION =============== getUserProfile:", e)
+                pass
+                    
+                    
+    def testando_header(self, username, headers):
+    
+        url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username='+username     
+      
+        response = requests.get(url, headers=headers)
+        
+        try:
+            
+            if response.status_code == 200:
+                
+                
 
-                        
-        #                 # elif (tarefa['tarefa_tipo'] == "tag"):
-        #                 #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
-                            
-        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
-                            
-        #                 #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
-                            
-        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
-
-                            
-        #                 # elif (tarefa['tarefa_tipo'] == "location"):
-                            
-        #                 #     print('[!] Iniciando tarefa tipo: '+tarefa['tarefa_tipo'])
-                            
-        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 2)  # Stautus Processando
-                            
-        #                 #     # self.extractFromPost( headers, tarefa['tarefa_url'] )
-                            
-        #                 #     self.updateTarefaStatus(base_url, tarefa['id'], 3)  # Stautus Finalizado
-        #         else:
-                    
-        #             print('\n [!] Nenhnuma tarefa ativa. ')
-        #             time.sleep(5)
-                    
-        #     except Exception as e:
-        #         print('\n [!] Erro no while - TROQUE A HEADER.')
-        #         print(e)
-        #         next = input('Digite enter para coontinuar: ')
-        #         print(next)
-                    
+                data = json.loads(response.content)
+                # print(data['data']['user']['username'])
+                return True
+            
+            else:
+                
+                return False
+            
+        except Exception as e:
+            
+            return False
+        
     def get_headers(self, base_url):
         
         # print('[!] Mudando status para Processando: '+str(tarefa_id)+'')
@@ -142,7 +139,7 @@ class Scraper:
             
             # print("Requisição updateTarefaStatus bem-sucedida!")
             data = json.loads(response.content)
-            print(data)
+       
         
             return data
         
@@ -203,20 +200,21 @@ class Scraper:
             'post_slug': demanda['post_slug'],
             'post_data': demanda['post_data'],
             'post_descricao': demanda['post_descricao'],
-            'post_imagem': demanda['post_imagem']
+            'post_imagem': demanda['post_imagem'],
+            'processado':demanda['processado']
         }
         # print(data)
 
         response = requests.post(url, data=data)
 
         if response.status_code == 200:
-            print("Requisição updateTarefaStatus bem-sucedida!")
+            print("Requisição addDemanda bem-sucedida: "+data['username'])
             response_data = json.loads(response.content)
             
             # print(response_data)
             return response_data
         else:
-            print("Erro na requisição updateTarefaStatus:", response.status_code)
+            print("Erro na requisição addDemanda:", response.status_code)
             return False  
 
     def addInstaLead(self, base_url, persona):
@@ -252,17 +250,20 @@ class Scraper:
             return False  
 
     def timeStampToDateTime(self, timestamp):
-        # Converter o timestamp para um objeto de data e hora
-        data_hora = datetime.datetime.fromtimestamp(timestamp)
+        try:
+            # Converter o timestamp para um objeto de data e hora
+            data_hora = datetime.datetime.fromtimestamp(timestamp)
 
-        # Imprimir a data e hora no formato desejado (por exemplo, AAAA-MM-DD HH:MM:SS)
-        formato_desejado = "%Y-%m-%d %H:%M:%S"
-        data_hora_formatada = data_hora.strftime(formato_desejado)
+            # Imprimir a data e hora no formato desejado (por exemplo, AAAA-MM-DD HH:MM:SS)
+            formato_desejado = "%Y-%m-%d %H:%M:%S"
+            data_hora_formatada = data_hora.strftime(formato_desejado)
 
-        # print("Timestamp:", timestamp)
-        # print("Data e Hora:", data_hora_formatada)    
-        
-        return data_hora_formatada
+            # print("Timestamp:", timestamp)
+            # print("Data e Hora:", data_hora_formatada)    
+            
+            return data_hora_formatada
+        except Exception as e:
+            print('Exception timeStampToDateTime', e)
     
     def getURLPostSlug(self, url):
         # Extrai a slu
@@ -390,8 +391,7 @@ class Scraper:
         path = parsed_url.path.rstrip('/')  # Remove a barra final, se houver
         username = path.rsplit('/', 1)[-1]  # Obtém o último segmento da URL
         return username
-
-        
+   
     def getUserProfileManually(self, headers, username, driver):  
         
         try:
@@ -444,18 +444,22 @@ class Scraper:
 
         url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username='+username
         
-        atraso = random.uniform(10, 30)
-        time.sleep(atraso)
-        # time.sleep(10)
         
+        print(f"============= GET PROFILE - HEADER ATUAL {self.header_username} - INDEX {self.header_current}/{self.header_count} - {headers['X-Csrftoken']} =================")
+        
+        atraso = random.uniform(5, 15)
+        time.sleep(atraso)
+      
+      
         response = requests.get(url, headers=headers)
         
         try:
             
-            print(f'currente header: {self.header_current}')
-            self.header_current = 32
+
 
             if response.status_code == 200:
+                
+                
 
                 data = json.loads(response.content)
                 # print(data['data']['user']['username'])
@@ -463,25 +467,40 @@ class Scraper:
             
             else:
                 
-                # atraso = random.uniform(600, 1200)
-                # print('[!!] Erro de Requisicao, aguardando: '+str(atraso)+' minutos.')
-                # time.sleep(atraso)
+                print("=========== GET PROFILE !200 =============== getUserProfile:", e)
                 winsound.Beep(1000, 1500) 
-                print("=========== ERRO NA REQUISICAO - TROCANDO AS HEADERS =============== getUserProfile:", response.status_code)
-                # next = input('Aperte enteder para continuar: ')
-                # print(next)
-                # print(response)
-                # return False
+       
+                if self.header_current >= self.header_count:
+                        
+                    self.header_current = 0
+                        
+                else:
+                        
+                    self.header_current = self.header_current + 1
+                pass
             
         except Exception as e:
             
+            # winsound.Beep(1000, 1500) 
+            # print("=========== GET PROFILE EXCEPTION =============== getUserProfile:", e)
+            
+            print(f'\n EXCEPTION getUserProfile - TROCANDO HEADER \n')
             winsound.Beep(1000, 1500) 
-            print("=========== EXCEPTION NA REQUISICAO - TROCANDO AS HEADERS =============== getUserProfile:", e)
-            # next = input('Aperte enteder para continuar: ')
-            # print(next)
-            # return False
             
-            
+       
+            if self.header_current >= self.header_count:
+                    
+                self.header_current = 0
+                    
+            else:
+                    
+                self.header_current = self.header_current + 1
+                
+            # print(f'HEADER COUNT : '+str(self.header_count))
+
+            # print(f'HEADER MUDADA INDEX: '+str(self.header_current))
+                
+            pass
             
     def extractFromLocation(self, headers, location):
          return True
@@ -492,183 +511,212 @@ class Scraper:
     def extractFromPost(self, headers, base_url, post_url, tarefa_id, tag_id):
         
         print("[!] Analisando URL: "+post_url)
-
-        media_id = self.getPostId(headers, post_url)
-        post_dados = self.getPost( headers, media_id)
         
-        post_likes = self.getLikes(headers, media_id)
-        post_comments = self.getComments(headers, media_id)
-        
-        user_data = []
-        
-        print("\n ======= Extraindo Interacoes ======= \n")
-        
-        print("\n [!] Extraindo Likes \n")
-        
-        for like in post_likes['users']:
-                        
-            username = like['username']
-            full_name = like['full_name']
-            text = ""
-            interacao_tipo = "like"
-            interacao_data = self.timeStampToDateTime(post_dados['caption']['created_at_utc'])
-           
-            post_id = post_dados['pk']
-            post_slug = post_dados['code']
-            post_data = self.timeStampToDateTime(post_dados['caption']['created_at_utc'])
+        try:
             
-            post_descricao = post_dados['caption']['text']
-            post_imagem = post_dados['image_versions2']['candidates'][0]['url']
+            media_id = self.getPostId(headers, post_url)
+            post_dados = self.getPost( headers, media_id)
             
-            # Verifica se o username já existe no user_data
-            user_exists = False
-            for user_info in user_data:
-                if user_info['username'] == username:
-                    # print('substituindo: '+user_info['username'])
-                    user_info['full_name'] = full_name  # Atualiza o nome completo
-                    user_info['interacao_tipo'] = interacao_tipo  # Atualiza o tipo de interação
-                    user_info['interacao_data'] = interacao_data 
-                    user_exists = True
-                    break
-
-            # Se o username não existir, adiciona ao user_data
-            if not user_exists:
-                user_data.append({
-                    'tarefa_id': tarefa_id,
-                    'tag_id': tag_id,
-                    'username': username,
-                    'full_name': full_name,
-                    'interacao_tipo': interacao_tipo,
-                    'interacao_conteudo': text,
-                    'interacao_data': interacao_data,
-                    'post_id':post_id,
-                    'post_slug':post_slug,
-                    'post_data': post_data,
-                    'post_descricao': post_descricao,
-                    'post_imagem':post_imagem                 
-                })
-
-        print("\n ======= Exibindo Comentários ======= \n")
+            post_likes = self.getLikes(headers, media_id)
+            post_comments = self.getComments(headers, media_id)
+            
+            user_data = []
+            
+            print("\n ======= Extraindo Interacoes ======= \n")
+            print("\n [!] Extraindo Likes \n")
         
-        print("\n [!] Extraindo Comentários \n")
-
-        for comment in post_comments['comments']:
-  
-            username = comment['user']['username']
-            full_name =comment['user']['full_name']
-            text = comment['text']
-            interacao_tipo = "comentario"
-            interacao_data =  self.timeStampToDateTime(comment['created_at_utc'])
-            
-            post_id = post_dados['pk']
-            post_slug = post_dados['code']
-            post_data = self.timeStampToDateTime(post_dados['caption']['created_at_utc'])
-            
-            post_descricao = post_dados['caption']['text']
-            post_imagem = post_dados['image_versions2']['candidates'][0]['url']
-
-            
-            # Verifica se o username já existe no user_data
-            user_exists = False
-            for user_info in user_data:
-                if user_info['username'] == username:
-                    # print('substituindo: '+user_info['username'])
-                    user_info['full_name'] = full_name  # Atualiza o nome completo
-                    user_info['interacao_tipo'] = interacao_tipo  # Atualiza o tipo de interação
-                    user_info['text'] = text  # Atualiza o texto do comentário
-                    user_info['interacao_data'] = interacao_data 
-                    user_exists = True
-                    break
-
-            # Se o username não existir, adiciona ao user_data
-            if not user_exists:
-                user_data.append({
-                    'tarefa_id': tarefa_id,
-                    'tag_id': tag_id,
-                    'username': username,
-                    'full_name': full_name,
-                    'interacao_tipo': interacao_tipo,
-                    'interacao_conteudo': text,
-                    'interacao_data': interacao_data,
-                    'post_id':post_id,
-                    'post_slug':post_slug,
-                    'post_data': post_data,
-                    'post_descricao': post_descricao,
-                    'post_imagem':post_imagem 
-                })
+            try:
+                for like in post_likes['users']:
+                                
+                    username = like['username']
+                    full_name = like['full_name']
+                    text = ""
+                    interacao_tipo = "like"
+                    interacao_data = self.timeStampToDateTime(post_dados['caption']['created_at_utc'])
                 
-        print("Demandas Capturadas: ", len(user_data))
-        
-        for user in user_data:
-            
-            self.addInstaLeadDemanda( base_url, user)
-        
-        # Entrair Usuarios             
-        self.extractUserInfo( headers, user_data, base_url, tarefa_id, tag_id)
-
-    def extractUserInfo(self, headers, demandas, base_url, tarefa_id, tag_id):
-        
-        print('[!] Extraindo user infos pelas demandas')
-        
-        # driver = webdriver.Firefox()
-        
-        personas = []
-        
-        demandas = demandas
-        
-        for demanda in demandas:
-            
-            try: 
-            
-                user_data = self.getUserProfile(headers, demanda['username'])
-                # user_data = self.getUserProfileManually(headers, demanda['username'], driver)
-
-                # Links
-                links = ""
-                
-                try:
-                    for link in user_data['data']['user']['bio_links']:
-                        
-                        if links:  # Verifica se a string já possui conteúdo
-                            links += ", " + link['url']  # Adiciona o link à string, separado por vírgula
-                        else:
-                            links += link['url']
-                except Exception as e:
-                    print('[**] Erro ao capturar links:', e)
+                    post_id = post_dados['pk']
+                    post_slug = post_dados['code']
+                    post_data = self.timeStampToDateTime(post_dados['caption']['created_at_utc'])
                     
-                # Mencoes
-                
-                mencoes= ""
-                
-                try:
-                    for mencao in user_data['data']['user']['biography_with_entities']['entities']:
-                        if mencoes:  # Verifica se a string já possui conteúdo
-                            mencoes += ", " + mencao['user']['username']  # Adiciona a menção à string, separada por vírgula
-                        else:
-                            mencoes += mencao['user']['username']
-                except Exception as e:
-                    print('[**] Erro ao capturar menções:', e)
-        
-                persona = {
-                        'tarefa_id': tarefa_id,
-                        'tag_id': tag_id,
-                        'username': user_data['data']['user']['username'],
-                        'full_name': user_data['data']['user']['full_name'],
-                        'is_private': user_data['data']['user']['is_private'],
-                        'biografia': user_data['data']['user']['biography'],
-                        'links': links,
-                        'mencoes': mencoes,
-                        'categoria': user_data['data']['user']['category_name'],
-                        'email': self.extractEmail(user_data['data']['user']['business_email'], user_data['data']['user']['biography'], links, headers, mencoes),
-                        'telefone': self.extractTelefone(user_data['data']['user']['business_phone_number'], links, user_data['data']['user']['biography'], mencoes, headers),
-                    }
-                
-                
-                self.addInstaLead( base_url, persona)
-          
+                    post_descricao = post_dados['caption']['text']
+                    post_imagem = post_dados['image_versions2']['candidates'][0]['url']
+                    
+                    # Verifica se o username já existe no user_data
+                    user_exists = False
+                    for user_info in user_data:
+                        if user_info['username'] == username:
+                            # print('substituindo: '+user_info['username'])
+                            user_info['full_name'] = full_name  # Atualiza o nome completo
+                            user_info['interacao_tipo'] = interacao_tipo  # Atualiza o tipo de interação
+                            user_info['interacao_data'] = interacao_data 
+                            user_exists = True
+                            break
+
+                    # Se o username não existir, adiciona ao user_data
+                    if not user_exists:
+                        user_data.append({
+                            'tarefa_id': tarefa_id,
+                            'tag_id': tag_id,
+                            'username': username,
+                            'full_name': full_name,
+                            'interacao_tipo': interacao_tipo,
+                            'interacao_conteudo': text,
+                            'interacao_data': interacao_data,
+                            'post_id':post_id,
+                            'post_slug':post_slug,
+                            'post_data': post_data,
+                            'post_descricao': post_descricao,
+                            'post_imagem':post_imagem,
+                            'processado': 0               
+                        })
             except Exception as e:
-                print('[**] Erro ao capturar person:', e)
-    
+                print(f'\n Erro foreach Extraindo Likes', e)
+                
+            print("\n ======= Exibindo Comentários ======= \n")
+            print("\n [!] Extraindo Comentários \n")
+
+            try:
+                for comment in post_comments['comments']:
+        
+                    username = comment['user']['username']
+                    full_name =comment['user']['full_name']
+                    text = comment['text']
+                    interacao_tipo = "comentario"
+                    interacao_data =  self.timeStampToDateTime(comment['created_at_utc'])
+                    
+                    post_id = post_dados['pk']
+                    post_slug = post_dados['code']
+                    post_data = self.timeStampToDateTime(post_dados['caption']['created_at_utc'])
+                    
+                    post_descricao = post_dados['caption']['text']
+                    post_imagem = post_dados['image_versions2']['candidates'][0]['url']
+
+                    
+                    # Verifica se o username já existe no user_data
+                    user_exists = False
+                    for user_info in user_data:
+                        if user_info['username'] == username:
+                            # print('substituindo: '+user_info['username'])
+                            user_info['full_name'] = full_name  # Atualiza o nome completo
+                            user_info['interacao_tipo'] = interacao_tipo  # Atualiza o tipo de interação
+                            user_info['text'] = text  # Atualiza o texto do comentário
+                            user_info['interacao_data'] = interacao_data 
+                            user_exists = True
+                            break
+
+                    # Se o username não existir, adiciona ao user_data
+                    if not user_exists:
+                        user_data.append({
+                            'tarefa_id': tarefa_id,
+                            'tag_id': tag_id,
+                            'username': username,
+                            'full_name': full_name,
+                            'interacao_tipo': interacao_tipo,
+                            'interacao_conteudo': text,
+                            'interacao_data': interacao_data,
+                            'post_id':post_id,
+                            'post_slug':post_slug,
+                            'post_data': post_data,
+                            'post_descricao': post_descricao,
+                            'post_imagem':post_imagem,
+                            'processado': 0
+                        })    
+            except Exception as e:
+                print(f'\n Erro foreach Extraindo Comentários', e)    
+            
+            for user in user_data:
+                self.addInstaLeadDemanda( base_url, user)
+            
+            # Entrair Usuarios             
+            # self.extractUserInfo( headers, user_data, base_url, tarefa_id, tag_id)
+            
+            self.updateTarefaStatus(base_url, tarefa_id, 2)
+
+        except Exception as e:
+
+            print(f'\n\n ERRO EXTRAIR POST => MUDANDO AGENTE  \n')
+            
+            if self.header_current >= self.header_count:
+                self.header_current = 0
+            else:
+                self.header_current = self.header_current + 1
+                
+
+    # def extractUserInfo(self, headers, demandas, base_url, tarefa_id, tag_id):
+        
+    #     print('[!] Extraindo user infos pelas demandas')
+        
+    #     # driver = webdriver.Firefox()
+        
+    #     personas = []
+        
+    #     demandas = demandas
+        
+    #     for demanda in demandas:
+            
+    #         try: 
+            
+    #             user_data = self.getUserProfile(headers, demanda['username'])
+    #             # user_data = self.getUserProfileManually(headers, demanda['username'], driver)
+
+    #             # Links
+    #             links = ""
+                
+    #             try:
+    #                 for link in user_data['data']['user']['bio_links']:
+                        
+    #                     if links:  # Verifica se a string já possui conteúdo
+    #                         links += ", " + link['url']  # Adiciona o link à string, separado por vírgula
+    #                     else:
+    #                         links += link['url']
+    #             except Exception as e:
+    #                 print('[**] Erro ao capturar links:', e)
+                    
+    #             # Mencoes
+                
+    #             mencoes= ""
+                
+    #             try:
+    #                 for mencao in user_data['data']['user']['biography_with_entities']['entities']:
+    #                     if mencoes:  # Verifica se a string já possui conteúdo
+    #                         mencoes += ", " + mencao['user']['username']  # Adiciona a menção à string, separada por vírgula
+    #                     else:
+    #                         mencoes += mencao['user']['username']
+    #             except Exception as e:
+    #                 print('[**] Erro ao capturar menções:', e)
+        
+    #             persona = {
+    #                     'tarefa_id': tarefa_id,
+    #                     'tag_id': tag_id,
+    #                     'username': user_data['data']['user']['username'],
+    #                     'full_name': user_data['data']['user']['full_name'],
+    #                     'is_private': user_data['data']['user']['is_private'],
+    #                     'biografia': user_data['data']['user']['biography'],
+    #                     'links': links,
+    #                     'mencoes': mencoes,
+    #                     'categoria': user_data['data']['user']['category_name'],
+    #                     'email': self.extractEmail(user_data['data']['user']['business_email'], user_data['data']['user']['biography'], links, headers, mencoes),
+    #                     'telefone': self.extractTelefone(user_data['data']['user']['business_phone_number'], links, user_data['data']['user']['biography'], mencoes, headers),
+    #                 }
+                
+                
+    #             self.addInstaLead( base_url, persona)
+          
+    #         except Exception as e:
+            
+    #             print(f'\n EXCEPTION extractUserInfo - TROCANDO HEADER -> \n')
+    #             # winsound.Beep(1000, 1500) 
+                
+    #             # if self.header_current >= self.header_count:
+                        
+    #             #     self.header_current = 0
+                        
+    #             # else:
+                        
+    #             #     self.header_current = self.header_current + 1
+                    
+    #             # pass
+        
        
     # Extracao de Telefones
     def extractTelefone(self, telefone, links, biografia, mencoes, headers):
@@ -1143,39 +1191,64 @@ class Scraper:
                     'post_imagem':post_imagem 
                 })
                 
-        print("Demandas Capturadas: ", len(user_data))
         
         for user in user_data:
             
             self.addInstaLeadDemanda( base_url, user)
          
+        print("Demandas Capturadas: ", len(user_data))
         
         # Entrair Usuarios             
-        self.extractUserInfo( headers, user_data, base_url, tarefa_id, tag_id)
+        # self.extractUserInfo( headers, user_data, base_url, tarefa_id, tag_id)
          
     def extractFromFeed(self, headers, username, base_url, tarefa_id, tag_id):
       
-        user_data = self.getUserProfile(headers, username)
-        user_feed = self.getUserFeed(headers, user_data['data']['user']['id'])
-        
-        for post in user_feed['items']:
+        try:
+            user_data = self.getUserProfile(headers, username)
+            user_feed = self.getUserFeed(headers, user_data['data']['user']['id'])
             
-            try:
+            for post in user_feed['items']:
                 
-                print('\n[!] Analisando POST/POR FEED\n')
-                print('\n[!] Usuário: ', str(user_data['data']['user']['username']))
-                print('\n[!] Post URL: https://instagram.com/p/'+str(post['code']))
-                print('\n[!] Post ID: https://instagram.com/p/'+str(post['pk']))
+                try:
+                    
+                    print('\n[!] Analisando POST/POR FEED\n')
+                    print('\n[!] Usuário: ', str(user_data['data']['user']['username']))
+                    print('\n[!] Post URL: https://instagram.com/p/'+str(post['code']))
+                    print('\n[!] Post ID: https://instagram.com/p/'+str(post['pk']))
 
-                # print('\n[!] Post Conteudo: ', str(post['caption']['text']))
+                    # print('\n[!] Post Conteudo: ', str(post['caption']['text']))
 
 
-                self.extractFromFeePost( headers, base_url, str(post['pk']), tarefa_id, tag_id)
+                    self.extractFromFeePost( headers, base_url, str(post['pk']), tarefa_id, tag_id)
+                    
+                    
+                except Exception as e:
+                    
+                    print('\n [!] Erro na extracao de post/por feeed.')
+                    print(e)
+                    
+            self.updateTarefaStatus(base_url, tarefa_id, 3) 
+            
+        except Exception as e:
+            
+            print(f'\n EXCEPTION extractFromFeed \n')
+            
+            
+            # winsound.Beep(1000, 1500) 
+       
+            # if self.header_current >= self.header_count:
+                    
+            #     self.header_current = 0
+                    
+            # else:
+                    
+            #     self.header_current = self.header_current + 1
                 
-            except Exception as e:
+            # pass
+        
                 
-                print('\n [!] Erro na extracao de post/por feeed.')
-                print(e)
+                
+                
             
         
         

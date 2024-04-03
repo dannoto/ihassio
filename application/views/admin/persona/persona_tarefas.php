@@ -178,10 +178,10 @@
                                       } ?> value="1">ATIVO</option>
                               <option <?php if ($this->input->get('tarefa_status') == '2') {
                                         echo "selected";
-                                      } ?> value="2">PROCESSANDO</option>
+                                      } ?> value="2">PROCESSANDO DEMANDA</option>
                               <option <?php if ($this->input->get('tarefa_status') == '3') {
                                         echo "selected";
-                                      } ?> value="3">FINALIZADO</option>
+                                      } ?> value="3">PROCESSANDO USUÁRIO</option>
                               <option <?php if ($this->input->get('tarefa_status') == '4') {
                                         echo "selected";
                                       } ?> value="4">INATIVO</option>
@@ -250,9 +250,9 @@
                                                                                                                         if ($c->tarefa_status == 1) {
                                                                                                                           echo "ATIVO";
                                                                                                                         } else if ($c->tarefa_status == 2) {
-                                                                                                                          echo "PROCESSANDO";
+                                                                                                                          echo "PROCESSANDO DEMANDA";
                                                                                                                         } else if ($c->tarefa_status == 3) {
-                                                                                                                          echo "FINALIZADO";
+                                                                                                                          echo "PROCESSANDO USUÁRIO";
                                                                                                                         } else if ($c->tarefa_status == 4) {
                                                                                                                           echo "INATIVO";
                                                                                                                         } else if ($c->tarefa_status == 5) {

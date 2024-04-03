@@ -79,6 +79,7 @@ class Instaapi extends CI_Controller
         $data['post_data'] = htmlspecialchars($this->input->post('post_data'));
         $data['post_descricao'] = htmlspecialchars($this->input->post('post_descricao'));
         $data['post_imagem'] = htmlspecialchars($this->input->post('post_imagem'));
+        $data['processado'] = htmlspecialchars($this->input->post('processado'));
 
         if ($this->insta_model->check_lead_demanda($data['username'], $data['post_id'], $data['tarefa_id'], $data['tag_id'])) {
 

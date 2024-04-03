@@ -1,0 +1,530 @@
+1710103994525	geckodriver	INFO	Listening on 127.0.0.1:57784
+1710103997632	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57785" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileZUxz1B"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710103999130	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710103999456	Marionette	INFO	Listening on port 57796
+WebDriver BiDi listening on ws://127.0.0.1:57785
+Read port: 57796
+1710103999921	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:57785/devtools/browser/44bbb6e6-2e76-403c-bd9d-6e0f753ca426
+1710104029554	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=G-HYWKMHR981&l=dataLayer&cx=c, line 205: Script terminated by timeout at:
+Ra@https://www.googletagmanager.com/gtag/js?id=G-HYWKMHR981&l=dataLayer&cx=c:205:437
+Cl@https://www.googletagmanager.com/gtag/js?id=G-HYWKMHR981&l=dataLayer&cx=c:362:551
+mm@https://www.googletagmanager.com/gtag/js?id=G-HYWKMHR981&l=dataLayer&cx=c:367:613
+nH/<@https://www.googletagmanager.com/gtag/js?id=G-HYWKMHR981&l=dataLayer&cx=c:657:178
+aa.Yk/<@https://www.googletagmanager.com/gtag/js?id=G-HYWKMHR981&l=dataLayer&cx=c:608:126
+aa.Yk/c/<@https://www.googletagmanager.com/gtag/js?id=G-HYWKMHR981&l=dataLayer&cx=c:607:420
+i@https://pt.semrush.com/static/spa.vendors.ccdd7d1d72f4b6694987.js:2:3650
+
+1710104056658	Marionette	INFO	Stopped listening on port 57796
+Dynamically enable window occlusion 1
+1710104064135	geckodriver	INFO	Listening on 127.0.0.1:57925
+1710104067181	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57926" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileLDzMBE"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710104068473	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710104068771	Marionette	INFO	Listening on port 57936
+WebDriver BiDi listening on ws://127.0.0.1:57926
+Read port: 57936
+1710104069228	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:57926/devtools/browser/4bb7e2f8-3fb5-4b99-909e-d91cbca8aa58
+1710104100161	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+JavaScript error: https://lp.semrush.com/js/forms2/js/forms2.min.js, line 4: TypeError: a is null
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 72900 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/72900.feafde41.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 72900 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/72900.feafde41.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 60164 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/60164.e15dd273.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 60164 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/60164.e15dd273.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 27476 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/27476.0dc1993b.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 27476 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/27476.0dc1993b.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 32756 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/Overview.3a028cfb.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 32756 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/Overview.3a028cfb.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 1392 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/1392.00d4367a.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 1392 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/1392.00d4367a.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 72952 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/72952.1754502e.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 72952 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/72952.1754502e.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 72952 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/72952.1754502e.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 72952 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/72952.1754502e.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 19716 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/19716.5b7047c8.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 19716 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/19716.5b7047c8.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 12756 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/FeedbackTA.2f2b3b1b.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 12756 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/FeedbackTA.2f2b3b1b.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 44324 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/44324.4487e578.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 44324 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/44324.4487e578.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 79948 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/79948.854e148d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 79948 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/79948.854e148d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 76820 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/76820.35f7abe5.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 76820 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/76820.35f7abe5.async.js)
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.error: "Unable to find target with innerWindowId:6442450997"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.error: "Unable to find target with innerWindowId:6442451004"
+console.error: "Unable to find target with innerWindowId:6442451004"
+console.error: "Unable to find target with innerWindowId:6442451004"
+console.error: "Unable to find target with innerWindowId:6442451004"
+console.error: "Unable to find target with innerWindowId:6442451004"
+console.error: "Unable to find target with innerWindowId:6442451004"
+console.error: "Unable to find target with innerWindowId:6442451004"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.error: "Unable to find target with innerWindowId:6442451011"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.error: "Unable to find target with innerWindowId:6442451018"
+console.error: "Unable to find target with innerWindowId:6442451018"
+console.error: "Unable to find target with innerWindowId:6442451018"
+console.error: "Unable to find target with innerWindowId:6442451018"
+console.error: "Unable to find target with innerWindowId:6442451018"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.error: "Unable to find target with innerWindowId:6442451025"
+console.error: "Unable to find target with innerWindowId:6442451025"
+console.error: "Unable to find target with innerWindowId:6442451025"
+console.error: "Unable to find target with innerWindowId:6442451025"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.error: "Unable to find target with innerWindowId:6442451032"
+console.error: "Unable to find target with innerWindowId:6442451032"
+console.error: "Unable to find target with innerWindowId:6442451032"
+console.error: "Unable to find target with innerWindowId:6442451032"
+console.error: "Unable to find target with innerWindowId:6442451032"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+JavaScript error: resource://devtools/client/inspector/rules/utils/utils.js, line 195: TypeError: rule is undefined
+console.error: "Unable to find target with innerWindowId:6442451039"
+console.error: "Unable to find target with innerWindowId:6442451039"
+console.error: "Unable to find target with innerWindowId:6442451039"
+console.error: "Unable to find target with innerWindowId:6442451039"
+console.error: "Unable to find target with innerWindowId:6442451039"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.error: "Unable to find target with innerWindowId:6442451046"
+console.error: "Unable to find target with innerWindowId:6442451046"
+console.error: "Unable to find target with innerWindowId:6442451046"
+console.error: "Unable to find target with innerWindowId:6442451046"
+console.error: "Unable to find target with innerWindowId:6442451046"
+console.error: "Unable to find target with innerWindowId:6442451046"
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+console.warn: "Listener for event 'frame' did not return a promise."
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1710104878431	geckodriver	INFO	Listening on 127.0.0.1:58698
+1710104881514	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58699" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilerKakXQ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710104882981	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710104883280	Marionette	INFO	Listening on port 58709
+WebDriver BiDi listening on ws://127.0.0.1:58699
+Read port: 58709
+1710104884319	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:58699/devtools/browser/3cb251ad-fcae-4e77-8b81-5d0ce8d2dbf4
+1710104913616	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+JavaScript error: https://lp.semrush.com/js/forms2/js/forms2.min.js, line 4: TypeError: a is null
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1710105076802	geckodriver	INFO	Listening on 127.0.0.1:59001
+1710105079883	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59002" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileNdPgbW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710105081121	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710105081395	Marionette	INFO	Listening on port 59013
+WebDriver BiDi listening on ws://127.0.0.1:59002
+Read port: 59013
+1710105081844	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:59002/devtools/browser/cd11dc5e-839d-4ac0-8ed9-5f06a548dfa0
+1710105111171	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+JavaScript error: https://lp.semrush.com/js/forms2/js/forms2.min.js, line 4: TypeError: a is null
+JavaScript error: https://pt.semrush.com/__static__/webpack/runtime.017020df.js, line 1: ChunkLoadError: Loading chunk 4768 failed.
+(error: https://pt.semrush.com/__static__/webpack/4768-4768.c98e3484.js)
+JavaScript error: https://static.semrush.com/seo-dashboard/release/manifest-241ca332b4963ae7c66e.min.js, line 1: ChunkLoadError: Loading chunk 6315 failed.
+(error: https://static.semrush.com/seo-dashboard/release/6315-08c898005ddc6da0f145.min.js)
+Exiting due to channel error.
+Exiting due to channel error.
+1710105373985	geckodriver	INFO	Listening on 127.0.0.1:59388
+1710105377059	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59389" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileVFIhjq"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710105378324	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710105378639	Marionette	INFO	Listening on port 59399
+WebDriver BiDi listening on ws://127.0.0.1:59389
+Read port: 59399
+1710105379067	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:59389/devtools/browser/e85bb151-3ccb-4646-ad84-fa990100a826
+1710105408481	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+JavaScript error: https://lp.semrush.com/js/forms2/js/forms2.min.js, line 4: TypeError: a is null
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1710113535582	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1710113587466	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+JavaScript warning: https://static.xx.fbcdn.net/rsrc.php/v3iXgx4/yj/l/pt_BR/VYDy4xvT73U.js?_nc_x=Ij3Wp8lg5Kz, line 21: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1710113630095	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+JavaScript warning: https://www.google.com/xjs/_/js/k=xjs.s.pt_BR.Kgyc0TUKJjY.O/am=AEAAAAEpQAAAAAAAAAAAAAAABQABAAAANApBAOEgABsQAHw5AQIRgAAACbQBWQgQIAQAAwAIAvj8JwAAAAAAAMAEBAYA4wpIITgIAEBgAlEFIHcAAAABAAzgfgABAQTAAwIAAIAF4Q-AAgRwSBCgAAQAAACQB-B5YDhIYQEAAAAAAAAAAACAACYIhgPSHxAABAAAAAAAAAAAAACk0sTKgwAAAw/d=1/ed=1/dg=2/rs=ACT90oGVu6lWphGIhoiz68hqVDinbMkYhw/ee=AfeaP:TkrAjf;Afksuc:wMx0R;BMxAGc:E5bFse;BgS6mb:fidj5d;BjwMce:cXX2Wb;CxXAWb:YyRLvc;DULqB:RKfG5c;Dkk6ge:wJqrrd;DpcR3d:zL72xf;EABSZ:MXZt9d;ESrPQc:mNTJvc;EVNhjf:pw70Gc;EmZ2Bf:zr1jrb;EnlcNd:WeHg4;Erl4fe:FloWmf,FloWmf;F9mqte:UoRcbe;Fmv9Nc:O1Tzwc;G0KhTb:LIaoZ;G6wU6e:hezEbd;GleZL:J1A7Od;HMDDWe:G8QUdb;HqeXPd:cmbnH;IBADCc:RYquRb;IoGlCf:b5lhvb;IsdWVc:qzxzOb;JXS8fb:Qj0suc;JbMT3:M25sS;JsbNhc:Xd8iUd;KOxcK:OZqGte;KQzWid:ZMKkN;KcokUb:KiuZBf;KeeMUb:HiPxjc;KpRAue:Tia57b;LBgRLc:XVMNvd;LEikZe:byfTOb,lsjVmc;LsNahb:ucGLNb;Me32dd:MEeYgc;NPKaK:PVlQOd;NSEoX:lazG7b;Np8Qkd:Dpx6qc;Nyt6ic:jn2sGd;OgagBe:cNTe0;Oj465e:KG2eXe,KG2eXe;OohIYe:mpEAQb;Pjplud:EEDORb,PoEs9b;PqHfGe:im2cZe;Q1Ow7b:x5CSu;QGR0gd:Mlhmy;R2kc8b:ALJqWb;R4IIIb:QWfeKf;R9Ulx:CR7Ufe;RDNBlf:zPRCJb;SLtqO:Kh1xYe;SMDL4c:fTfGO,fTfGO;SNUn3:ZwDk9d,x8cHvb;ShpF6e:N0pvGc;TxfV6d:YORN0b;U96pRd:FsR04;UDrY1c:eps46d;UVmjEd:EesRsb;UyG7Kb:wQd0G;V2HTTe:RolTY;VGRfx:VFqbr;VN6jIc:ddQyuf;VOcgDe:YquhTb;VsAqSb:PGf2Re;VxQ32b:k0XsBb;WCEKNd:I46Hvd;WDGyFe:jcVOxd;Wfmdue:g3MJlb;XUezZ:sa7lqb;YV5bee:IvPZ6d;YkQtAf:rx8ur;ZMvdv:PHFPjb;ZWEUA:afR4Cf;a56pNe:JEfCwb;aAJE9c:WHW6Ef;aZ61od:arTwJ;bFZ6gf:RsDQqe;bcPXSc:gSZLJb;cEt90b:ws9Tlc;cFTWae:gT8qnd;coJ8e:KvoW8;dIoSBb:ZgGg9b;dLlj2:Qqt3Gf;daB6be:lMxGPd;dtl0hd:lLQWFe;eBAeSb:Ck63tb;eBZ5Nd:audvde;eHDfl:ofjVkb;eO3lse:nFClrf;fWLTFc:TVBJbf;g8nkx:U4MzKc;gaub4:TN6bMe;gtVSi:ekUOYd;h3MYod:cEt90b;hK67qb:QWEO5b;heHB1:sFczq;hjRo6e:F62sG;iFQyKf:QIhFr,vfuNJf;imqimf:jKGL2e;io8t5d:sgY6Zb;jY0zg:Q6tNgc;k2Qxcb:XY51pe;kCQyJ:ueyPK;kMFpHd:OTA3Ae;kbAm9d:MkHyGd;lkq0A:JyBE3e;nAFL3:NTMZac,s39S4;oGtAuc:sOXFj;oSUNyd:fTfGO,fTfGO;oUlnpc:RagDlc;okUaUd:wItadb;pKJiXd:VCenhc;pNsl2d:j9Yuyc;pXdRYb:JKoKVe;pj82le:mg5CW;qGV2uc:HHi04c;qZx2Fc:j0xrE;qaS3gd:yiLg6e;qavrXe:zQzcXe;qddgKe:d7YSfd,x4FYXe;rQSrae:C6D5Fc;sP4Vbe:VwDzFe;sTsDMc:kHVSUb;tH4IIe:Ymry6;tosKvd:ZCqP3;trZL0b:qY8PFe;uY49fb:COQbmf;uknmt:GkPrzb;uuQkY:u2V3ud;vGrMZ:lPJJ0c;vfVwPd:lcrkwe;w3bZCb:ZPGaIb;w4rSdf:XKiZ9;w9w86d:dt4g2b;wQlYve:aLUfP;wR5FRb:TtcOte;wV5Pjc:L8KGxe;whEZac:F4AmNb;xBbsrc:NEW1Qc;xbe2wc:wbTLEd;yGxLoc:FmAr0c;yxTchf:KUM7Z;z97YGf:oug9te;zOsCQe:Ko78Df;zaIgPb:Qtpxbd/m=attn,cdos,cr,gwc,hsm,jsa,mb4ZUb,d,csi,cEt90b,SNUn3,qddgKe,sTsDMc,dtl0hd,eHDfl, line 449: Script terminated by timeout at:
+b@https://www.google.com/xjs/_/js/k=xjs.s.pt_BR.Kgyc0TUKJjY.O/am=AEAAAAEpQAAAAAAAAAAAAAAABQABAAAANApBAOEgABsQAHw5AQIRgAAACbQBWQgQIAQAAwAIAvj8JwAAAAAAAMAEBAYA4wpIITgIAEBgAlEFIHcAAAABAAzgfgABAQTAAwIAAIAF4Q-AAgRwSBCgAAQAAACQB-B5YDhIYQEAAAAAAAAAAACAACYIhgPSHxAABAAAAAAAAAAAAACk0sTKgwAAAw/d=1/ed=1/dg=2/rs=ACT90oGVu6lWphGIhoiz68hqVDinbMkYhw/ee=AfeaP:TkrAjf;Afksuc:wMx0R;BMxAGc:E5bFse;BgS6mb:fidj5d;BjwMce:cXX2Wb;CxXAWb:YyRLvc;DULqB:RKfG5c;Dkk6ge:wJqrrd;DpcR3d:zL72xf;EABSZ:MXZt9d;ESrPQc:mNTJvc;EVNhjf:pw70Gc;EmZ2Bf:zr1jrb;EnlcNd:WeHg4;Erl4fe:FloWmf,FloWmf;F9mqte:UoRcbe;Fmv9Nc:O1Tzwc;G0KhTb:LIaoZ;G6wU6e:hezEbd;GleZL:J1A7Od;HMDDWe:G8QUdb;HqeXPd:cmbnH;IBADCc:RYquRb;IoGlCf:b5lhvb;IsdWVc:qzxzOb;JXS8fb:Qj0suc;JbMT3:M25sS;JsbNhc:Xd8iUd;KOxcK:OZqGte;KQzWid:ZMKkN;KcokUb:KiuZBf;KeeMUb:HiPxjc;KpRAue:Tia57b;LBgRLc:XVMNvd;LEikZe:byfTOb,lsjVmc;LsNahb:ucGLNb;Me32dd:MEeYgc;NPKaK:PVlQOd;NSEoX:lazG7b;Np8Qkd:Dpx6qc;Nyt6ic:jn2sGd;OgagBe:cNTe0;Oj465e:KG2eXe,KG2eXe;OohIYe:mpEAQb;Pjplud:EEDORb,PoEs9b;PqHfGe:im2cZe;Q1Ow7b:x5CSu;QGR0gd:Mlhmy;R2kc8b:ALJqWb;R4IIIb:QWfeKf;R9Ulx:CR7Ufe;RDNBlf:zPRCJb;SLtqO:Kh1xYe;SMDL4c:fTfGO,fTfGO;SNUn3:ZwDk9d,x8cHvb;ShpF6e:N0pvGc;TxfV6d:YORN0b;U96pRd:FsR04;UDrY1c:eps46d;UVmjEd:EesRsb;UyG7Kb:wQd0G;V2HTTe:RolTY;VGRfx:VFqbr;VN6jIc:ddQyuf;VOcgDe:YquhTb;VsAqSb:PGf2Re;VxQ32b:k0XsBb;WCEKNd:I46Hvd;WDGyFe:jcVOxd;Wfmdue:g3MJlb;XUezZ:sa7lqb;YV5bee:IvPZ6d;YkQtAf:rx8ur;ZMvdv:PHFPjb;ZWEUA:afR4Cf;a56pNe:JEfCwb;aAJE9c:WHW6Ef;aZ61od:arTwJ;bFZ6gf:RsDQqe;bcPXSc:gSZLJb;cEt90b:ws9Tlc;cFTWae:gT8qnd;coJ8e:KvoW8;dIoSBb:ZgGg9b;dLlj2:Qqt3Gf;daB6be:lMxGPd;dtl0hd:lLQWFe;eBAeSb:Ck63tb;eBZ5Nd:audvde;eHDfl:ofjVkb;eO3lse:nFClrf;fWLTFc:TVBJbf;g8nkx:U4MzKc;gaub4:TN6bMe;gtVSi:ekUOYd;h3MYod:cEt90b;hK67qb:QWEO5b;heHB1:sFczq;hjRo6e:F62sG;iFQyKf:QIhFr,vfuNJf;imqimf:jKGL2e;io8t5d:sgY6Zb;jY0zg:Q6tNgc;k2Qxcb:XY51pe;kCQyJ:ueyPK;kMFpHd:OTA3Ae;kbAm9d:MkHyGd;lkq0A:JyBE3e;nAFL3:NTMZac,s39S4;oGtAuc:sOXFj;oSUNyd:fTfGO,fTfGO;oUlnpc:RagDlc;okUaUd:wItadb;pKJiXd:VCenhc;pNsl2d:j9Yuyc;pXdRYb:JKoKVe;pj82le:mg5CW;qGV2uc:HHi04c;qZx2Fc:j0xrE;qaS3gd:yiLg6e;qavrXe:zQzcXe;qddgKe:d7YSfd,x4FYXe;rQSrae:C6D5Fc;sP4Vbe:VwDzFe;sTsDMc:kHVSUb;tH4IIe:Ymry6;tosKvd:ZCqP3;trZL0b:qY8PFe;uY49fb:COQbmf;uknmt:GkPrzb;uuQkY:u2V3ud;vGrMZ:lPJJ0c;vfVwPd:lcrkwe;w3bZCb:ZPGaIb;w4rSdf:XKiZ9;w9w86d:dt4g2b;wQlYve:aLUfP;wR5FRb:TtcOte;wV5Pjc:L8KGxe;whEZac:F4AmNb;xBbsrc:NEW1Qc;xbe2wc:wbTLEd;yGxLoc:FmAr0c;yxTchf:KUM7Z;z97YGf:oug9te;zOsCQe:Ko78Df;zaIgPb:Qtpxbd/m=attn,cdos,cr,gwc,hsm,jsa,mb4ZUb,d,csi,cEt90b,SNUn3,qddgKe,sTsDMc,dtl0hd,eHDfl:449:40
+
+JavaScript warning: https://connect.facebook.net/en_US/fbevents.js, line 24: Script terminated by timeout at:
+value@https://connect.facebook.net/en_US/fbevents.js:24:7878
+@https://connect.facebook.net/en_US/fbevents.js:24:71940
+
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c, line 166: Script terminated by timeout at:
+jb@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:166:124
+nb@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:167:49
+um@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:324:221
+tm.prototype.flush@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:328:266
+tm.prototype.push@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:326:207
+mm@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:323:636
+nH/<@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:613:178
+aa.Yk/<@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:564:126
+aa.Yk/c/<@https://www.googletagmanager.com/gtag/js?id=G-EQJ6BGK25S&l=dataLayer&cx=c:563:420
+
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 98880 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-top-pages-pt-json.4596baca.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 98880 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-top-pages-pt-json.4596baca.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 98880 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-top-pages-pt-json.4596baca.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 26170 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-traffic-journey-pt-json.8b4b69e9.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 26170 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-traffic-journey-pt-json.8b4b69e9.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 35904 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/35904.2bc45df9.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 35904 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/35904.2bc45df9.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 26170 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-traffic-journey-pt-json.8b4b69e9.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 26170 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-traffic-journey-pt-json.8b4b69e9.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 7376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/7376.c6256a0f.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 7376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/7376.c6256a0f.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 67344 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/67344.9d734d17.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 58138 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/WidgetOverlay-Chart.ca6897c8.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 58138 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/WidgetOverlay-Chart.ca6897c8.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 88740 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-trending.c0f548e4.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 7376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/7376.c6256a0f.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 27540 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/27540.1fdb4e7b.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 85376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/85376.c783fbb3.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 85376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/85376.c783fbb3.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 85376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/85376.c783fbb3.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 85376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/85376.c783fbb3.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 85376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/85376.c783fbb3.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 85376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/85376.c783fbb3.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 67344 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/67344.9d734d17.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 67344 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/67344.9d734d17.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 98408 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/98408.9aaadb8f.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 98408 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/98408.9aaadb8f.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 61508 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/61508.7cf5b7fe.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 61508 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/61508.7cf5b7fe.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 50140 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/50140.54fe2f02.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 50140 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/50140.54fe2f02.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.ce02938e.js, line 2: ChunkLoadError: Loading chunk 91196 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/History-Chart-Ranges.230a6062.async.js)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1710146036391	geckodriver	INFO	Listening on 127.0.0.1:64278
+1710146039497	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64279" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofilenKmgXo"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710146041694	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710146042326	Marionette	INFO	Listening on port 64294
+WebDriver BiDi listening on ws://127.0.0.1:64279
+Read port: 64294
+1710146043200	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:64279/devtools/browser/d7c3e6b9-7f2d-4b7f-ac06-432c7992c222
+1710146072087	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+JavaScript error: https://lp.semrush.com/js/forms2/js/forms2.min.js, line 4: TypeError: a is null
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://static.semrush.com/competitive-list-widget/isolatedRemoteEntry.c9cc6b65e69c19a769f6.js, line 1: ChunkLoadError: Loading chunk 677 failed.
+(error: https://static.semrush.com/competitive-list-widget/677.3f8828fcbd68023486eb.chunk.js)
+JavaScript error: , line 0: AbortError: The operation was aborted. 
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1710165470831	geckodriver	INFO	Listening on 127.0.0.1:51004
+1710165473941	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51005" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileeASAmJ"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710165475566	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710165475913	Marionette	INFO	Listening on port 51027
+WebDriver BiDi listening on ws://127.0.0.1:51005
+Read port: 51027
+1710165476383	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:51005/devtools/browser/93587f7e-d236-4946-a2d1-bb2e7044b0f2
+1710165505624	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+JavaScript error: https://lp.semrush.com/js/forms2/js/forms2.min.js, line 4: TypeError: a is null
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.8fc7d1cf.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.8fc7d1cf.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.8fc7d1cf.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.8fc7d1cf.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1710209395299	geckodriver	INFO	Listening on 127.0.0.1:53389
+1710209398402	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53390" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofiletXwKVv"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710209400558	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710209401082	Marionette	INFO	Listening on port 53408
+Read port: 53408
+WebDriver BiDi listening on ws://127.0.0.1:53390
+1710209401506	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:53390/devtools/browser/50963642-c9d9-4689-85db-d0fbc91d0d95
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+JavaScript error: https://lp.semrush.com/js/forms2/js/forms2.min.js, line 4: TypeError: a is null
+1710209430627	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 45152 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/storage.326e136d.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 68552 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/68552.16926c67.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 68552 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/68552.16926c67.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 68552 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/68552.16926c67.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 68552 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/68552.16926c67.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 85376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/85376.c783fbb3.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 85376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/85376.c783fbb3.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 50140 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/50140.54fe2f02.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 88740 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-trending.c0f548e4.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 98408 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/98408.9aaadb8f.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 61508 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/61508.7cf5b7fe.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 61508 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/61508.7cf5b7fe.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 61508 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/61508.7cf5b7fe.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 27540 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/27540.1fdb4e7b.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 27540 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/27540.1fdb4e7b.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 67344 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/67344.9d734d17.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 67344 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/67344.9d734d17.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 7376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/7376.c6256a0f.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 7376 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/7376.c6256a0f.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 14692 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/widget-overview-sources.980851fd.async.js)
+JavaScript error: https://static.semrush.com/trends-platform/widgets/locales/client.js, line 1: ChunkLoadError: Loading chunk 1142 failed.
+(error: https://static.semrush.com/trends-platform/widgets/locales/e6752bf3.engine.locale.js)
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 72900 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/72900.feafde41.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 72900 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/72900.feafde41.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 26170 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-traffic-journey-pt-json.8b4b69e9.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 26170 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/locale-traffic-journey-pt-json.8b4b69e9.async.js)
+JavaScript error: https://static.semrush.com/traffic-analytics/ta/production/app.1ce4f0ff.js, line 2: ChunkLoadError: Loading chunk 91196 failed.
+(error: https://static.semrush.com/traffic-analytics/ta/production/History-Chart-Ranges.230a6062.async.js)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1710226330103	geckodriver	INFO	Listening on 127.0.0.1:58569
+1710226333228	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58570" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\danta\\AppData\\Local\\Temp\\rust_mozprofileQ4VATR"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1710226335413	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1710226335904	Marionette	INFO	Listening on port 58579
+Read port: 58579
+WebDriver BiDi listening on ws://127.0.0.1:58570
+1710226336150	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:58570/devtools/browser/5c8d4fc9-1cbc-450f-9b55-3fc7c35a0566
+1710226365466	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://pt.semrush.com."
+JavaScript error: https://lp.semrush.com/js/forms2/js/forms2.min.js, line 4: TypeError: a is null
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c, line 431: Script terminated by timeout at:
+getEventName@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:431:1255
+za/this.M@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:195:592
+md/f/q<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:219:428
+ed.prototype.invoke@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:217:976
+r@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:218:40
+bh@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:268:326
+ch@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:269:156
+d@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:270:326
+$g@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:271:63
+Zg@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:267:1189
+Og/c<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:266:184
+ed.prototype.invoke@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:217:976
+eb@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:200:576
+I@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:217:1235
+$d@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:237:279
+ed.prototype.invoke@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:217:976
+eb@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:200:576
+db@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:200:375
+Jd@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:231:73
+Od@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:234:137
+Qd@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:233:73
+ed.prototype.invoke@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:217:976
+eb@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:200:576
+db@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:200:375
+Td/<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:236:384
+ed.prototype.invoke@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:217:976
+VH/<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:656:486
+gr@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:432:231
+aa.dn@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:644:466
+aa.bn/</<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:631:133
+il@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:353:26
+wl@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:355:123
+aa.bn/<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:631:119
+c@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:456:169
+ct@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:457:269
+aa.bn@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:631:105
+c@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:649:914
+um@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:362:298
+tm.prototype.flush@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:365:266
+tm.prototype.push@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:363:207
+mm@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:360:636
+nH/<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:650:178
+aa.Yk/<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:601:126
+aa.Yk/c/<@https://www.googletagmanager.com/gtag/js?id=G-BPNLXP3JQG&l=dataLayer&cx=c:600:420
+r@https://pt.semrush.com/__static__/webpack/sentry.0e752d23.js:1:76635
+
+1710257698954	Marionette	INFO	Stopped listening on port 58579
+Dynamically enable window occlusion 1

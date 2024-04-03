@@ -207,8 +207,8 @@
                                 <select required name="tarefa_status" class="form-select"  >
                                 <option value="">Selecionar</option>
                                 <option value="1">ATIVO</option>
-                                <option value="2">PROCESSANDO</option>
-                                <option value="3">FINALIZADO</option>
+                                <option value="2">PROCESSANDO DEMANDA</option>
+                                <option value="3">PROCESSANDO USUÁRIO</option>
                                 <option value="4">INATIVO</option>
                                 <option value="5">CONCLUÍDO</option>
 

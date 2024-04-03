@@ -206,8 +206,8 @@
                                 <select required name="tarefa_status" class="form-select"  >
                                 <option value="">Selecionar</option>
                                 <option <?php if ($t['tarefa_status'] == 1) { echo "selected"; }?> value="1">ATIVO</option>
-                                <option  <?php if ($t['tarefa_status'] == 2) { echo "selected"; }?> value="2">PROCESSANDO</option>
-                                <option  <?php if ($t['tarefa_status'] == 3) { echo "selected"; }?> value="3">FINALIZADO</option>
+                                <option  <?php if ($t['tarefa_status'] == 2) { echo "selected"; }?> value="2">PROCESSANDO DEMANDA</option>
+                                <option  <?php if ($t['tarefa_status'] == 3) { echo "selected"; }?> value="3">PROCESSANDO USUÁRIO</option>
                                 <option  <?php if ($t['tarefa_status'] == 4) { echo "selected"; }?> value="4">INATIVO</option>
                                 <option  <?php if ($t['tarefa_status'] == 5) { echo "selected"; }?> value="5">CONCLUÍDO</option>
 
