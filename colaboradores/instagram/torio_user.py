@@ -33,15 +33,12 @@ class Scraper:
         self.header_count = len(self.header_data) - 1
         self.header_current = 0
         
-        while True:
-            
-            self.header_username = self.header_data[self.header_current]['agente_username']
-            
-            headers = {
+        headers = {
                 'Accept': '*/*',
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
-                'Cookie': self.header_data[self.header_current]['agente_cookie'],
+                # 'Cookie': self.header_data[self.header_current]['agente_cookie'],
+                'Cookie': 'ig_did=1E36CBE8-F02A-49AA-BD2B-E1A5C0111ED0; datr=i-UrZsTnMEkNQqCkeoO2UKJu; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; ds_user_id=61013886138; ps_n=1; ps_l=1; shbid="7447\05461013886138\0541750005882:01f79cd93e2e89eefe7ec36d20267403606901f3bbd8bd4eb52830f493cda3aaf359a322"; shbts="1718469882\05461013886138\0541750005882:01f74c85668b419c09ed79d326e8679d8836c5a5ead2d6aa415aa284a1bcd54e1f818cd3"; csrftoken=AJjWWN7v6wnnxQUG8EZMjkYZr05uJVpS; mid=Zm4XgQALAAEMoTlQzk2A2V8ajQLo; sessionid=61013886138%3AMtd9qIhFZX0TNU%3A21%3AAYfwK1fz19tKSygAvZbJOiVAgp_0ajeYGUjUUQP1KwQ; fbsr_124024574287414=4wppSztFpD96gp2jkMrTQ_jUin607LzR9c7mDFvtRWc.eyJ1c2VyX2lkIjoiMTAwMDg5NDAyNTYzMTE3IiwiY29kZSI6IkFRQnBRQWpwb0ZzYmFiUXVHSUt0SkQzNUpkSmFhY0hRcjhHRDNiRXNTRTJLMXh4T25nbmdKR0pMcW1nOURtS1VST25fclRZWUJCTDR5aER1UllaT1hNRkQ5Q2t4aEdZdTZSc2YydkZucjE2NkczRzhiWFBmTmpIUXNpZ2FUTGZFTFNLUlJWWmF2M3VsSjZxSUFfT2FFcmxyNWl0WGZITE5JMG9xRUVCdmRBRjdTWmljTmRlMlhGT3pJRXFoeU1xc3RFQ3NuQ3dkWDJEUVlOeVRnTDBieThTZV9UUF8tUjRSbk5LcktpREVISFgtakJ4ZmdJSVJlUUZUaTBpc29kR3VmWmpUMll4UjZFb2ZqMEp4b0NlV0ljUUc0WUZGQnJObml3WHV3TnRMbUxZU2xNTEkxTEM5T2dwaHdMSG1CRmpFQkFic3czeUtlQmNLMkRTVGg1ZUZYX1Y3MVJUMjZfSFFNckpaVUVqSGR3RUQ4USIsIm9hdXRoX3Rva2VuIjoiRUFBQnd6TGl4bmpZQk82amJNYjhuSmhaQmh1RUdBQTJ4NVFVdUVMdjh5clpDc3hURFFJVXp1YjBtcW5ZdUtWWFd0QWtKNzhRN1RUSVF4M0VnV2x6YzhhakVaQWpzVzdiOUh6endlckg2RXprd1RKbTh5MlZsRUhNcXREZzZOdTlPd2JzdnhrZ2czVThaQkZSaEpMeDlBUE0xYkRoUjFaQnpONFhOelJtcFlXT1d2Y3VObElqUmtKTFR1WkJQOUdveVNrdzNZWkQiLCJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTcxODY1OTcwNn0; wd=1312x150; rur="NHA\05461013886138\0541750195744:01f75a68a4faf2986f22ad0d20479984d52c796f49f7761f227e5d88b7cc33558c8a93f0"',
                 'Dpr': '1',
                 'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
                 'Sec-Ch-Prefers-Color-Scheme': 'light',
@@ -57,107 +54,99 @@ class Scraper:
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 OPR/105.0.0.0',
                 'Viewport-Width': '1312',
                 'X-Asbd-Id': '129477',
-                'X-Csrftoken': self.header_data[self.header_current]['agente_crsf'],
+                # 'X-Csrftoken': self.header_data[self.header_current]['agente_crsf'],
+                'X-Csrftoken': 'AJjWWN7v6wnnxQUG8EZMjkYZr05uJVpS',
                 'X-Ig-App-Id': '936619743392459',
                 'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
                 'X-Requested-With': 'XMLHttpRequest'
             }
+        while True:
             
-            print(f"============= GET PROFILE - HEADER ATUAL {self.header_username} - INDEX {self.header_current}/{self.header_count} - {headers['X-Csrftoken']} =================")
-
+            self.header_username = self.header_data[self.header_current]['agente_username']
+            
+        
             demandas_pendentes =  self.get_demandas_pendentes(base_url) 
             
-            print(demandas_pendentes)
-
-            time.sleep(5)
+            try:
             
-            # print('atualizando')
+                if len(demandas_pendentes) > 0 :  
 
-            # self.update_demanda_pendente(base_url, demanda_id)
-            # try:
-            
-            #     if len(demandas_pendentes) > 0 :  
-
-            #         for demanda in demandas_pendentes:
+                    for demanda in demandas_pendentes:
+                                                
+                        try: 
                         
-            #             try: 
-                        
-            #                 user_data = self.getUserProfile(headers, demanda['username'])
-            #                 # user_data = self.getUserProfileManually(headers, demanda['username'], driver)
+                            user_data = self.getUserProfile(headers, demanda['username'])
+                            # user_data = self.getUserProfileManually(headers, demanda['username'], driver)
 
-            #                 # Links
-            #                 links = ""
+                            # Links
+                            links = ""
                             
-            #                 try:
-            #                     for link in user_data['data']['user']['bio_links']:
+                            try:
+                                for link in user_data['data']['user']['bio_links']:
                                     
-            #                         if links:  # Verifica se a string já possui conteúdo
-            #                             links += ", " + link['url']  # Adiciona o link à string, separado por vírgula
-            #                         else:
-            #                             links += link['url']
-            #                 except Exception as e:
-            #                     print('[**] Erro ao capturar links:', e)
+                                    if links:  # Verifica se a string já possui conteúdo
+                                        links += ", " + link['url']  # Adiciona o link à string, separado por vírgula
+                                    else:
+                                        links += link['url']
+                            except Exception as e:
+                                print('[**] Erro ao capturar links:', e)
                                 
-            #                 # Mencoes
+                            # Mencoes
                             
-            #                 mencoes= ""
+                            mencoes= ""
                             
-            #                 try:
-            #                     for mencao in user_data['data']['user']['biography_with_entities']['entities']:
-            #                         if mencoes:  # Verifica se a string já possui conteúdo
-            #                             mencoes += ", " + mencao['user']['username']  # Adiciona a menção à string, separada por vírgula
-            #                         else:
-            #                             mencoes += mencao['user']['username']
-            #                 except Exception as e:
-            #                     print('[**] Erro ao capturar menções:', e)
+                            try:
+                                for mencao in user_data['data']['user']['biography_with_entities']['entities']:
+                                    if mencoes:  # Verifica se a string já possui conteúdo
+                                        mencoes += ", " + mencao['user']['username']  # Adiciona a menção à string, separada por vírgula
+                                    else:
+                                        mencoes += mencao['user']['username']
+                            except Exception as e:
+                                print('[**] Erro ao capturar menções:', e)
                     
-            #                 persona = {
-            #                         'tarefa_id': tarefa_id,
-            #                         'tag_id': tag_id,
-            #                         'username': user_data['data']['user']['username'],
-            #                         'full_name': user_data['data']['user']['full_name'],
-            #                         'is_private': user_data['data']['user']['is_private'],
-            #                         'biografia': user_data['data']['user']['biography'],
-            #                         'links': links,
-            #                         'mencoes': mencoes,
-            #                         'categoria': user_data['data']['user']['category_name'],
-            #                         'email': self.extractEmail(user_data['data']['user']['business_email'], user_data['data']['user']['biography'], links, headers, mencoes),
-            #                         'telefone': self.extractTelefone(user_data['data']['user']['business_phone_number'], links, user_data['data']['user']['biography'], mencoes, headers),
-            #                     }
+                            persona = {
+                                    'tarefa_id': demanda['tarefa_id'],
+                                    'tag_id': demanda['tag_id'],
+                                    'username': user_data['data']['user']['username'],
+                                    'full_name': user_data['data']['user']['full_name'],
+                                    'is_private': user_data['data']['user']['is_private'],
+                                    'biografia': user_data['data']['user']['biography'],
+                                    'links': links,
+                                    'mencoes': mencoes,
+                                    'categoria': user_data['data']['user']['category_name'],
+                                    'email': self.extractEmail(user_data['data']['user']['business_email'], user_data['data']['user']['biography'], links, headers, mencoes),
+                                    'telefone': self.extractTelefone(user_data['data']['user']['business_phone_number'], links, user_data['data']['user']['biography'], mencoes, headers),
+                                }
                             
                             
-            #                 self.addInstaLead( base_url, persona)
+                            self.addInstaLead( base_url, persona , demanda['id'])
                     
-            #             except Exception as e:
+                        except Exception as e:
                         
-            #                 print(f'\n EXCEPTION extractUserInfo - TROCANDO HEADER -> \n')
-            #                 # winsound.Beep(1000, 1500) 
+                            print(f'\n EXCEPTION extractUserInfo - TROCANDO HEADER -> \n', e)
                             
-            #                 # if self.header_current >= self.header_count:
-                                    
-            #                 #     self.header_current = 0
-                                    
-            #                 # else:
-                                    
-            #                 #     self.header_current = self.header_current + 1
-                                
-            #                 # pass
+                            if self.header_current >= self.header_count:
+                                self.header_current = 0   
+                            else:
+                                self.header_current = self.header_current + 1
+                            pass
                     
                          
-            #     else:
+                else:
                                 
-            #         print('\n [!] Nenhnuma demanda pendente. ')
-            #         time.sleep(5)
+                    print('\n [!] Nenhnuma demanda pendente. ')
+                    time.sleep(5)
                                 
-            # except Exception as e:
+            except Exception as e:
                             
-            #     print(f'\n\n ERRO OBTER PERFIL => MUDANDO AGENTE  \n')
+                print(f'\n\n ERRO OBTER PERFIL => MUDANDO AGENTE  \n')
             
-            #     if self.header_current >= self.header_count:
-            #         self.header_current = 0
-            #     else:
-            #         self.header_current = self.header_current + 1
+                if self.header_current >= self.header_count:
+                    self.header_current = 0
+                else:
+                    self.header_current = self.header_current + 1
     
+            
     def get_demandas_pendentes(self, base_url):
         
         # print('[!] Mudando status para Processando: '+str(tarefa_id)+'')
@@ -190,7 +179,7 @@ class Scraper:
             
             # print("Requisição updateTarefaStatus bem-sucedida!")
             data = json.loads(response.content)
-        
+            print('Demanda atualizada'+str(demanda_id))
             return data
         
         else:
@@ -312,7 +301,7 @@ class Scraper:
             print("Erro na requisição addDemanda:", response.status_code)
             return False  
 
-    def addInstaLead(self, base_url, persona):
+    def addInstaLead(self, base_url, persona, demanda_id):
                 
         url = base_url + "add_instalead"
         # print(persona['username'])
@@ -337,6 +326,8 @@ class Scraper:
         if response.status_code == 200:
             # print("Requisição updateTarefaStatus bem-sucedida!")
             response_data = json.loads(response.content)
+            
+            self.update_demanda_pendente(base_url, demanda_id)
             
             # print(response_data)
             return response_data
@@ -540,13 +531,14 @@ class Scraper:
         url = 'https://www.instagram.com/api/v1/users/web_profile_info/?username='+username
         
         
-        print(f"============= GET PROFILE - HEADER ATUAL {self.header_username} - INDEX {self.header_current}/{self.header_count} - {headers['X-Csrftoken']} =================")
         
-        atraso = random.uniform(5, 15)
-        time.sleep(atraso)
+        # atraso = random.uniform(5, 15)
+        # time.sleep(atraso)
       
       
         response = requests.get(url, headers=headers)
+        # print(response.content)
+
         
         try:
             
@@ -557,35 +549,37 @@ class Scraper:
                 
 
                 data = json.loads(response.content)
-                # print(data['data']['user']['username'])
+            
+
                 return data
             
             else:
-                
-                print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
+                print("=========== GET PROFILE else EXCEPTION =============== getUserProfile:")
+
+                # print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
             
-                if self.header_current >= self.header_count:
-                    self.header_current = 0
-                else:
-                    self.header_current = self.header_current + 1
+                # if self.header_current >= self.header_count:
+                #     self.header_current = 0
+                # else:
+                #     self.header_current = self.header_current + 1
             
         except Exception as e:
             
             # winsound.Beep(1000, 1500) 
-            # print("=========== GET PROFILE EXCEPTION =============== getUserProfile:", e)
+            print("=========== GET PROFILE EXCEPTION =============== getUserProfile:", e)
             
-            print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
+            # print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
             
-            if self.header_current >= self.header_count:
-                self.header_current = 0
-            else:
-                self.header_current = self.header_current + 1
+            # if self.header_current >= self.header_count:
+            #     self.header_current = 0
+            # else:
+            #     self.header_current = self.header_current + 1
                 
             # print(f'HEADER COUNT : '+str(self.header_count))
 
             # print(f'HEADER MUDADA INDEX: '+str(self.header_current))
                 
-            pass
+            # pass
             
     def extractFromLocation(self, headers, location):
          return True
@@ -792,15 +786,15 @@ class Scraper:
                 print(f'\n EXCEPTION extractUserInfo - TROCANDO HEADER -> \n')
                 # winsound.Beep(1000, 1500) 
                 
-                # if self.header_current >= self.header_count:
+                if self.header_current >= self.header_count:
                         
-                #     self.header_current = 0
+                    self.header_current = 0
                         
-                # else:
+                else:
                         
-                #     self.header_current = self.header_current + 1
+                    self.header_current = self.header_current + 1
                     
-                # pass
+                pass
         
        
     # Extracao de Telefones

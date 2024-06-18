@@ -77,7 +77,7 @@ $url = $protocol . $host . $uri;
     </li>
 
 
-
+<!-- 
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Tungstênio</span>
     </li>
@@ -109,7 +109,7 @@ $url = $protocol . $host . $uri;
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Produtos</div>
       </a>
-    </li>
+    </li> -->
 
     <!-- Layouts -->
   
