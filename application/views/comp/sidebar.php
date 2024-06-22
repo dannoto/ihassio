@@ -176,11 +176,11 @@ $url = $protocol . $host . $uri;
             <div data-i18n="Notifications">Subcategorias</div>
           </a>
         </li>
-        <li class="menu-item">
+        <!-- <li class="menu-item">
           <a href="<?= base_url() ?>persona/intensidade" class="menu-link">
             <div data-i18n="Connections">Intensidade</div>
           </a>
-        </li>
+        </li> -->
         <li class="menu-item">
           <a href="<?= base_url() ?>persona/tags" class="menu-link">
             <div data-i18n="Connections">Tags</div>
