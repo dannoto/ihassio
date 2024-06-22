@@ -188,7 +188,7 @@
                         <H4>Leads - Filtro</H4>
                     
                         <p> <small>INAPTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1, null))?> | APTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0, null))?> | CONVERTIDOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1))?>  | RATIO 
-                        (<small><?php echo count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )?> - <?php echo count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?></small> ) 
+                        (<small><?php echo count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?> /  <?php echo count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )?> </small> ) 
                         
                         <?php $t = ( count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) / count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )  ) * 100; echo round($t, 2)." %";?> 
                       
