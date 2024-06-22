@@ -1572,6 +1572,13 @@ class Admin_model extends CI_Model
     }
 
 
+    public function get_instagram_demanda_leads_count($task_id) {
+
+        $this->db->where('tarefa_id', $task_id);
+
+        return $this->db->get('insta_leads')->result();
+    }
+
     public function getInstagramLeadsByTaskSearch($task_id, $inapto, $convertido)
     {
         $this->db->where('tarefa_id', $task_id);

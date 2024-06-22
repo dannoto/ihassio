@@ -187,7 +187,7 @@
                         <div>
                         <H4>Leads - Filtro</H4>
                     
-                        <p> <small>INAPTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1, null))?> | APTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0, null))?> | CONVERTIDOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1))?>  </small>    </p>
+                        <p> <small>INAPTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1, null))?> | APTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0, null))?> | CONVERTIDOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1))?>  | RATIO (<?php echo count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )?> - <?php echo count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?> ) <?php $t = (count($this->admin_model->get_instagram_demanda_leads_count($t['id']) ) - count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ) * 100; echo $t;?> </small>    </p>
                             <p><?= $t['tarefa_nome'] ?></p>
 
                         </div>
