@@ -134,7 +134,7 @@ $url = $protocol . $host . $uri;
                           } ?> ">
       <a href="<?= base_url() ?>persona/lista?filter=pessoa_fisica" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
-        <div data-i18n="Basic">Tarefas</div>
+        <div data-i18n="Basic">Personas</div>
       </a>
     </li>
 
