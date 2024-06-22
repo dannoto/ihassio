@@ -175,19 +175,19 @@
                               <option  value="">Selecionar</option>
                               <option <?php if ($this->input->get('tarefa_status') == '1') {
                                         echo "selected";
-                                      } ?> value="1">ATIVO</option>
+                                      } ?>  value="1">ATIVO</option>
                               <option <?php if ($this->input->get('tarefa_status') == '2') {
                                         echo "selected";
-                                      } ?> value="2">PROCESSANDO DEMANDA</option>
+                                      } ?>  value="2">PROCESSANDO DEMANDA</option>
                               <option <?php if ($this->input->get('tarefa_status') == '3') {
                                         echo "selected";
-                                      } ?> value="3">PROCESSANDO USUÁRIO</option>
+                                      } ?>  value="3">PROCESSANDO USUÁRIO</option>
                               <option <?php if ($this->input->get('tarefa_status') == '4') {
                                         echo "selected";
-                                      } ?> value="4">INATIVO</option>
+                                      } ?>  value="4">INATIVO</option>
                               <option <?php if ($this->input->get('tarefa_status') == '5') {
                                         echo "selected";
-                                      } ?> value="5">CONCLUÍDO</option>
+                                      } ?>  value="5">CONCLUÍDO</option>
                             </select>
                           </div>
                           <div class="col-md-4">
@@ -234,18 +234,18 @@
                         <?php foreach ($tarefas as $c) { ?>
 
                              <tr>
-                              <td style="text-transform: uppercase;" ><small>[#<?= $c->id ?>] <?= $c->tarefa_nome ?></small></td>
-                              <td style="text-transform: uppercase;" ><span class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
-                              <td style="text-transform: uppercase;" ><small><a href="<?= base_url() ?>persona/tarefas_leads/<?= $c->id ?>">VER</a></small></td>
+                              <td style="text-transform: uppercase;" ><small style="font-size:10px">[#<?= $c->id ?>] <?= $c->tarefa_nome ?></small></td>
+                              <td style="text-transform: uppercase;" ><span style="font-size:10px" class=" text-black  badge bg-label-success"><?= $this->admin_model->get_item($c->tarefa_tag)['nome'] ?></span></td>
+                              <td style="text-transform: uppercase;" ><small style="font-size:10px" ><a href="<?= base_url() ?>persona/tarefas_leads/<?= $c->id ?>">VER</a></small></td>
 
-                              <td style="text-transform: uppercase;"><small>(<?= count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) ?> / <?= count($this->admin_model->getInstagramLeadsByTask($c->id)) ?>) - <?php
+                              <td style="text-transform: uppercase;"><small style="font-size:10px" >(<?= count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) ?> / <?= count($this->admin_model->getInstagramLeadsByTask($c->id)) ?>) - <?php
                                                                                                                                                                                                                             if (count($this->admin_model->getInstagramLeadsByTask($c->id))  != 0) {
                                                                                                                                                                                                                               echo round((count($this->admin_model->getInstagramLeadsByTaskValid($c->id)) / count($this->admin_model->getInstagramLeadsByTask($c->id))) * 100, 2);
                                                                                                                                                                                                                             } ?>%</small></td>
 
-                              <td style="text-transform: uppercase;"><small><a target="_blank" href="<?= $c->tarefa_url ?>">ACESSAR</a></small></td>
+                              <td style="text-transform: uppercase;"><small style="font-size:10px" ><a target="_blank" href="<?= $c->tarefa_url ?>">ACESSAR</a></small></td>
 
-                              <td style="text-transform: uppercase;" ><span class=" text-black badge bg-label-success"><?php
+                              <td style="text-transform: uppercase;" ><span style="font-size:10px" class=" text-black badge bg-label-success"><?php
 
                                                                                                                         if ($c->tarefa_status == 1) {
                                                                                                                           echo "ATIVO";
