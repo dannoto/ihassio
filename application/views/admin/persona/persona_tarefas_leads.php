@@ -189,7 +189,7 @@
                     
                         <p> <small>INAPTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1, null))?> | APTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0, null))?> | CONVERTIDOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1))?>  | RATIO (<?php echo count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )?> - <?php echo count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?> ) 
                         
-                        <?php $t = ( count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) / count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )  ) * 100; echo $t;?> 
+                        <?php $t = ( count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) / count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )  ) * 100; echo round($t, 2);?> 
                       
                       </small>    </p>
                             <p><?= $t['tarefa_nome'] ?></p>
