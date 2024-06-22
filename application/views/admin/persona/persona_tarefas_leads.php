@@ -294,26 +294,26 @@
 
                                   <td><?= $l->email; ?></td>
                                   <td><?php if ($this->admin_model->checkNumberCaptured($l->telefone)) { echo "<span style='color:green'>".$l->telefone."</span>"; } else { echo "<span style='color:red'>".$l->telefone."</span>";}  ; ?></td>
-                                  <td class="mb-5" > <button onclick="getInstaLeadDemanda(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small>VER</small></button> </td>
+                                  <td class="mb-5" > <button onclick="getInstaLeadDemanda(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small style="font-size:10px">VER</small></button> </td>
                                   <?php if ($l->convertido == 0) { ?>
                                     <?php if ($l->inapto == 0) { ?>
-                                      <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small>INAPTO</small></button> </td>
+                                      <td > <button onclick="convertInapto(<?= $l->id ?>)"   class="btn btn-light" ><small style="font-size:10px">INAPTO</small></button> </td>
                                     <?php } else if ($l->inapto == 1) { ?>
-                                      <td > <button onclick="convertApto(<?= $l->id ?>)"   class="btn btn-success" ><small>APTO</small></button> </td>
+                                      <td > <button onclick="convertApto(<?= $l->id ?>)"   class="btn btn-success" ><small style="font-size:10px">APTO</small></button> </td>
 
                                     <?php }  ?>
                                   <?php }  ?>
                                     <?php if ($l->convertido == 0) { ?>
-                                        <td> <button onclick="getInstaLead(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')" data-bs-toggle="modal" data-bs-target="#modalEditar"  class="btn btn-warning"><small>EDITAR</small></button>  </td>
+                                        <td> <button onclick="getInstaLead(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')" data-bs-toggle="modal" data-bs-target="#modalEditar"  class="btn btn-warning"><small style="font-size:10px">EDITAR</small></button>  </td>
                                     <?php } else { ?>
                                         <td></td>
                                     <?php }  ?>
 
 
                                   <td> <?php if ($l->convertido == 0) { ?>
-                                            <button onclick="convertInstaLeadToPerson(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>' )"  class="btn btn-success"><small>CONVERTER</small></button>
+                                            <button onclick="convertInstaLeadToPerson(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>' )"  class="btn btn-success"><small style="font-size:10px">CONVERTER</small></button>
                                       <?php } else { ?>
-                                            <span  class=" text-black  badge bg-label-success" ><small>CONVERTIDO</small></span>
+                                            <span  class=" text-black  badge bg-label-success" ><small style="font-size:10px">CONVERTIDO</small></span>
                                       <?php } ?> </td>
 
                               </tr>
