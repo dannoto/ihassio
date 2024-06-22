@@ -67,9 +67,9 @@ $url = $protocol . $host . $uri;
   <div class="menu-inner-shadow"></div>
 
   <ul class="menu-inner py-1">
-    
-    
-  <li class="menu-item ">
+
+
+    <li class="menu-item ">
       <a href="<?= base_url() ?>dashboard" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Dashboard</div>
@@ -77,19 +77,23 @@ $url = $protocol . $host . $uri;
     </li>
 
 
-<!-- 
+    <!-- 
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Tungstênio</span>
     </li>
 
-    <li class="menu-item <?php if (strpos("campanhas", $uri) !== false) {echo "active";} ?> ">
+    <li class="menu-item <?php if (strpos("campanhas", $uri) !== false) {
+                            echo "active";
+                          } ?> ">
       <a href="<?= base_url() ?>tungstenio/campanhas" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Campanhas</div>
       </a>
     </li>
 
-    <li class="menu-item <?php if (strpos("categorias", $uri) !== false) {echo "active";} ?> ">
+    <li class="menu-item <?php if (strpos("categorias", $uri) !== false) {
+                            echo "active";
+                          } ?> ">
       <a href="<?= base_url() ?>tungstenio/categorias" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Categorias</div>
@@ -97,14 +101,18 @@ $url = $protocol . $host . $uri;
     </li>
 
     
-    <li class="menu-item <?php if (strpos("parceiros", $uri) !== false) {echo "active";} ?> ">
+    <li class="menu-item <?php if (strpos("parceiros", $uri) !== false) {
+                            echo "active";
+                          } ?> ">
       <a href="<?= base_url() ?>tungstenio/parceiros" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Parceiros</div>
       </a>
     </li>
 
-    <li class="menu-item <?php if (strpos("produtos", $uri) !== false) {echo "active";} ?> ">
+    <li class="menu-item <?php if (strpos("produtos", $uri) !== false) {
+                            echo "active";
+                          } ?> ">
       <a href="<?= base_url() ?>tungstenio/produtos" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Produtos</div>
@@ -112,33 +120,47 @@ $url = $protocol . $host . $uri;
     </li> -->
 
     <!-- Layouts -->
-  
+
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Personas</span>
     </li>
+<!-- 
+    <li class="menu-item <?php if ("/ihassio/persona/categorias/" == $uri || "/ihassio/persona/lista?filter=pessoa_juridica" == $uri || "/ihassio/persona/lista?filter=pessoa_fisica" == $uri || "/ihassio/persona/lista" == $uri  || "/ihassio/persona/adicionar" == $uri) {
+                            echo "active";
+                          } ?>"> -->
 
-    <li class="menu-item <?php if ("/ihassio/persona/categorias/" == $uri || "/ihassio/persona/lista?filter=pessoa_juridica" == $uri || "/ihassio/persona/lista?filter=pessoa_fisica" == $uri|| "/ihassio/persona/lista" == $uri  || "/ihassio/persona/adicionar" == $uri  ) {echo "active";} ?>">
-      <a href="<?= base_url() ?>persona/categorias" class="menu-link menu-toggle">
-        <i class="menu-icon tf-icons bx bx-dock-top"></i>
-        <div data-i18n="Account Settings">Personas</div>
+    <li class="menu-item <?php if (strpos("tarefas", $uri) !== false) {
+                            echo "active";
+                          } ?> ">
+      <a href="<?= base_url() ?>persona/lista?filter=pessoa_fisica" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-collection"></i>
+        <div data-i18n="Basic">Tarefas</div>
       </a>
-      <ul class="menu-sub">
-        <li class="menu-item ">
-          <a href="<?= base_url() ?>persona/lista?filter=pessoa_fisica" class="menu-link">
-            <div data-i18n="Account">Lista de Pessoas</div>
-          </a>
-        </li>
-        <li class="menu-item">
-          <a href="<?= base_url() ?>persona/adicionar" class="menu-link">
-            <div data-i18n="Account">Adicionar Pessoa</div>
-          </a>
-        </li>
-
-  
-
-      </ul>
     </li>
-    <li class="menu-item <?php if ("/ihassio/persona/categorias" == $uri || "/ihassio/persona/subcategorias" == $uri || "/ihassio/persona/intensidade" == $uri  || "/ihassio/persona/tags" == $uri  ) {echo "active";} ?>">
+
+    <!-- <a href="<?= base_url() ?>persona/categorias" class="menu-link menu-toggle">
+      <i class="menu-icon tf-icons bx bx-dock-top"></i>
+      <div data-i18n="Account Settings">Personas</div>
+    </a>
+    <ul class="menu-sub">
+      <li class="menu-item ">
+        <a href="<?= base_url() ?>persona/lista?filter=pessoa_fisica" class="menu-link">
+          <div data-i18n="Account">Lista de Pessoas</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="<?= base_url() ?>persona/adicionar" class="menu-link">
+          <div data-i18n="Account">Adicionar Pessoa</div>
+        </a>
+      </li>
+
+
+
+    </ul>
+    </li> -->
+    <li class="menu-item <?php if ("/ihassio/persona/categorias" == $uri || "/ihassio/persona/subcategorias" == $uri || "/ihassio/persona/intensidade" == $uri  || "/ihassio/persona/tags" == $uri) {
+                            echo "active";
+                          } ?>">
       <a href="<?= base_url() ?>persona/categorias" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-dock-top"></i>
         <div data-i18n="Account Settings">Tags</div>
@@ -167,7 +189,9 @@ $url = $protocol . $host . $uri;
       </ul>
     </li>
 
-    <li class="menu-item <?php if (strpos("tarefas", $uri) !== false) {echo "active";} ?> ">
+    <li class="menu-item <?php if (strpos("tarefas", $uri) !== false) {
+                            echo "active";
+                          } ?> ">
       <a href="<?= base_url() ?>persona/tarefas" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Tarefas</div>
@@ -177,46 +201,58 @@ $url = $protocol . $host . $uri;
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">VENDAS / MARKETING</span>
     </li>
-  
 
-    <li class="menu-item <?php if (strpos("/ihassio/sales/campanhas", $uri) !== false) {echo "active";} ?>">
+
+    <li class="menu-item <?php if (strpos("/ihassio/sales/campanhas", $uri) !== false) {
+                            echo "active";
+                          } ?>">
       <a href="<?= base_url() ?>sales/campanhas" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Campanhas</div>
       </a>
     </li>
-    <li class="menu-item <?php if (strpos("/ihassio/sales/listas", $uri) !== false) {echo "active";} ?> ">
+    <li class="menu-item <?php if (strpos("/ihassio/sales/listas", $uri) !== false) {
+                            echo "active";
+                          } ?> ">
       <a href="<?= base_url() ?>sales/listas" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Listas</div>
       </a>
     </li>
-    <li class="menu-item <?php if (strpos("/ihassio/sales/produtos", $uri) !== false) {echo "active";} ?>">
+    <li class="menu-item <?php if (strpos("/ihassio/sales/produtos", $uri) !== false) {
+                            echo "active";
+                          } ?>">
       <a href="<?= base_url() ?>sales/produtos" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Produtos</div>
       </a>
     </li>
-  
+
 
     <!-- <li class="menu-header small text-uppercase">
       <span class="menu-header-text">WHATSAPP / PROBE</span>
     </li>
   
 
-    <li class="menu-item <?php if (strpos("/ihassio/probe/ofertas", $uri) !== false) {echo "active";} ?>">
+    <li class="menu-item <?php if (strpos("/ihassio/probe/ofertas", $uri) !== false) {
+                            echo "active";
+                          } ?>">
       <a href="<?= base_url() ?>probe/ofertas" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Ofertas</div>
       </a>
     </li>
-    <li class="menu-item <?php if (strpos("/ihassio/probe/agentes", $uri) !== false) {echo "active";} ?> ">
+    <li class="menu-item <?php if (strpos("/ihassio/probe/agentes", $uri) !== false) {
+                            echo "active";
+                          } ?> ">
       <a href="<?= base_url() ?>probe/agentes" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Agentes</div>
       </a>
     </li>
-    <li class="menu-item <?php if (strpos("/ihassio/probe/historico", $uri) !== false) {echo "active";} ?>">
+    <li class="menu-item <?php if (strpos("/ihassio/probe/historico", $uri) !== false) {
+                            echo "active";
+                          } ?>">
       <a href="<?= base_url() ?>probe/historico" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div data-i18n="Basic">Histórico</div>
