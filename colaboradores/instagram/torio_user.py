@@ -79,15 +79,18 @@ class Scraper:
                             user_data = self.getUserProfile(headers, demanda['username'])
                             # user_data = self.getUserProfileManually(headers, demanda['username'], driver)
 
+                            print(user_data)
+
                             if user_data == None:
                                 print('\n NAO EXISTE O PERFIL: '+demanda['username']+'\n\n')
+                                self.update_demanda_offline(self, base_url, demanda['id'])
 
                                 time.sleep(5)
 
                             else:
 
                                 print('\n ACESSANDO: '+demanda['username']+'\n\n')
-                                print(user_data)
+                               
                                 # Links
                                 links = ""
                                 
@@ -176,6 +179,24 @@ class Scraper:
         # print('[!] Mudando status para Processando: '+str(tarefa_id)+'')
         
         url = base_url+"/update_demanda_pendente?demanda_id="+str(demanda_id)+""
+        
+        response = requests.get(url)
+
+        if response.status_code == 200:
+            
+            # print("Requisição updateTarefaStatus bem-sucedida!")
+            data = json.loads(response.content)
+            print('Demanda atualizada'+str(demanda_id))
+            return data
+        
+        else:
+            # print("Erro na requisição updateTarefaStatus:", response.status_code)
+            return False  
+    def update_demanda_offline(self, base_url, demanda_id):
+        
+        # print('[!] Mudando status para Processando: '+str(tarefa_id)+'')
+        
+        url = base_url+"/update_demanda_offline?demanda_id="+str(demanda_id)+""
         
         response = requests.get(url)
 

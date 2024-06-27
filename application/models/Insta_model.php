@@ -93,6 +93,18 @@ class insta_model extends CI_Model
         return $this->db->get('insta_leads_demandas')->result();
     }
 
+    public function update_demanda_offline($demanda_id)
+    {
+        
+        $this->db->where('id', $demanda_id);
+
+        $data = array(
+            'processado' => 2
+        );
+
+        return $this->db->update('insta_leads_demandas', $data);
+    }
+
     public function update_demanda_pendente($demanda_id)
     {
         

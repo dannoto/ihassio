@@ -57,6 +57,15 @@ class Instaapi extends CI_Controller
         print_r(json_encode($response));
     }
 
+    public function update_demanda_offline()
+    {
+        $demanda_id = htmlspecialchars($this->input->get('demanda_id'));
+        $response = $this->insta_model->update_demanda_offline($demanda_id);
+
+        print_r(json_encode($response));
+    }
+
+
     public function update_demanda_pendente()
     {
         $demanda_id = htmlspecialchars($this->input->get('demanda_id'));
