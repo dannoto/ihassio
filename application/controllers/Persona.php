@@ -57,7 +57,7 @@ class Persona extends CI_Controller
     {
 
         // Paginacao
-        $limite_por_pagina = 50;
+        $limite_por_pagina = 30;
 
         if (htmlspecialchars($this->input->get('p')) <= 0) {
             $pagina_atual = 0;
