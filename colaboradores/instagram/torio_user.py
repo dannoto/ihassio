@@ -35,7 +35,7 @@ class Scraper:
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
                 # 'Cookie': self.header_data[self.header_current]['agente_cookie'],
-                'Cookie': 'ig_did=1E36CBE8-F02A-49AA-BD2B-E1A5C0111ED0; datr=i-UrZsTnMEkNQqCkeoO2UKJu; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; ds_user_id=61013886138; ps_n=1; ps_l=1; mid=Zm4XgQALAAEMoTlQzk2A2V8ajQLo; csrftoken=anNHKhZK8HDQ0QoPdEifvokAUg58QfB8; shbid="7447\05461013886138\0541750816125:01f7515db6e0d28b14412e7f2b743325ca1665361c3c3023724eb2e0cda0adec7f70e9c4"; shbts="1719280125\05461013886138\0541750816125:01f7b9910cbddfeda3fc6b2570388de883f230d65625a7e51d717556f0f99ed2994235bd"; sessionid=61013886138%3AMtd9qIhFZX0TNU%3A21%3AAYeuLR0paQbzIo9ZNaguOOvbzNgTdHrbLTw8xKYTMyk; wd=1312x160; rur="NHA\05461013886138\0541751049690:01f7fe90c7bed8a7146c517547c49e33fe99a1cc32ad935d0c1e1fd1db7bc89066c3e2b2"',
+                'Cookie': 'ig_did=1E36CBE8-F02A-49AA-BD2B-E1A5C0111ED0; datr=i-UrZsTnMEkNQqCkeoO2UKJu; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; ps_n=1; ps_l=1; mid=Zm4XgQALAAEMoTlQzk2A2V8ajQLo; shbid="7447\05461013886138\0541750816125:01f7515db6e0d28b14412e7f2b743325ca1665361c3c3023724eb2e0cda0adec7f70e9c4"; shbts="1719280125\05461013886138\0541750816125:01f7b9910cbddfeda3fc6b2570388de883f230d65625a7e51d717556f0f99ed2994235bd"; csrftoken=k5FFtcg3HSThwiWKWuYEVHw4g7oGuykQ; ds_user_id=64756447548; sessionid=64756447548%3AJnfURX8QwXb6In%3A19%3AAYcZ_fxUC3lisD_P1f_PS9EdFwcgcZ0zlTvjIE_PhQ; wd=1312x150; rur="PRN\05464756447548\0541751058642:01f7bdd5c888e252eb5f1a33047239d182e54e708b7f128f85fd0a934011132c89350179"',
                 'Dpr': '1',
                 'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
                 'Sec-Ch-Prefers-Color-Scheme': 'light',
@@ -52,7 +52,7 @@ class Scraper:
                 'Viewport-Width': '1312',
                 'X-Asbd-Id': '129477',
                 # 'X-Csrftoken': self.header_data[self.header_current]['agente_crsf'],
-                'X-Csrftoken': 'anNHKhZK8HDQ0QoPdEifvokAUg58QfB8',
+                'X-Csrftoken': 'k5FFtcg3HSThwiWKWuYEVHw4g7oGuykQ',
                 'X-Ig-App-Id': '936619743392459',
                 'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
                 'X-Requested-With': 'XMLHttpRequest'
@@ -62,6 +62,8 @@ class Scraper:
         while True:
             
             demandas_pendentes =  self.get_demandas_pendentes(base_url) 
+
+            
             
             try:
             
@@ -69,58 +71,68 @@ class Scraper:
 
                     for demanda in demandas_pendentes:
                                                 
+                                               
                         try: 
+
+                            print('--- DEMANDAS PENDENTES: '+str(len(demandas_pendentes)))
                         
                             user_data = self.getUserProfile(headers, demanda['username'])
                             # user_data = self.getUserProfileManually(headers, demanda['username'], driver)
 
-                            print('\n ACESSANDO: '+demanda['username']+'\n\n')
-                            print(user_data)
-                            # Links
-                            links = ""
-                            
-                            try:
-                                for link in user_data['data']['user']['bio_links']:
-                                    
-                                    if links:  # Verifica se a string já possui conteúdo
-                                        links += ", " + link['url']  # Adiciona o link à string, separado por vírgula
-                                    else:
-                                        links += link['url']
-                            except Exception as e:
-                                print('[**] Erro ao capturar links:', e)
-                                pass
+                            if user_data == None:
+                                print('\n NAO EXISTE O PERFIL: '+demanda['username']+'\n\n')
+
+                                time.sleep(5)
+
+                            else:
+
+                                print('\n ACESSANDO: '+demanda['username']+'\n\n')
+                                print(user_data)
+                                # Links
+                                links = ""
                                 
-                            # Mencoes
-                            
-                            mencoes= ""
-                            
-                            try:
-                                for mencao in user_data['data']['user']['biography_with_entities']['entities']:
-                                    if mencoes:  # Verifica se a string já possui conteúdo
-                                        mencoes += ", " + mencao['user']['username']  # Adiciona a menção à string, separada por vírgula
-                                    else:
-                                        mencoes += mencao['user']['username']
-                            except Exception as e:
-                                print('[**] Erro ao capturar menções:', e)
-                                pass
-                    
-                            persona = {
-                                    'tarefa_id': demanda['tarefa_id'],
-                                    'tag_id': demanda['tag_id'],
-                                    'username': user_data['data']['user']['username'],
-                                    'full_name': user_data['data']['user']['full_name'],
-                                    'is_private': user_data['data']['user']['is_private'],
-                                    'biografia': user_data['data']['user']['biography'],
-                                    'links': links,
-                                    'mencoes': mencoes,
-                                    'categoria': user_data['data']['user']['category_name'],
-                                    'email': self.extractEmail(user_data['data']['user']['business_email'], user_data['data']['user']['biography'], links, headers, mencoes),
-                                    'telefone': self.extractTelefone(user_data['data']['user']['business_phone_number'], links, user_data['data']['user']['biography'], mencoes, headers),
-                                }
-                            
-                            
-                            self.addInstaLead( base_url, persona , demanda['id'])
-                            time.sleep(15)
+                                try:
+                                    for link in user_data['data']['user']['bio_links']:
+                                        
+                                        if links:  # Verifica se a string já possui conteúdo
+                                            links += ", " + link['url']  # Adiciona o link à string, separado por vírgula
+                                        else:
+                                            links += link['url']
+                                except Exception as e:
+                                    print('[**] Erro ao capturar links:', e)
+                                    pass
+                                    
+                                # Mencoes
+                                
+                                mencoes= ""
+                                
+                                try:
+                                    for mencao in user_data['data']['user']['biography_with_entities']['entities']:
+                                        if mencoes:  # Verifica se a string já possui conteúdo
+                                            mencoes += ", " + mencao['user']['username']  # Adiciona a menção à string, separada por vírgula
+                                        else:
+                                            mencoes += mencao['user']['username']
+                                except Exception as e:
+                                    print('[**] Erro ao capturar menções:', e)
+                                    pass
+                        
+                                persona = {
+                                        'tarefa_id': demanda['tarefa_id'],
+                                        'tag_id': demanda['tag_id'],
+                                        'username': user_data['data']['user']['username'],
+                                        'full_name': user_data['data']['user']['full_name'],
+                                        'is_private': user_data['data']['user']['is_private'],
+                                        'biografia': user_data['data']['user']['biography'],
+                                        'links': links,
+                                        'mencoes': mencoes,
+                                        'categoria': user_data['data']['user']['category_name'],
+                                        'email': self.extractEmail(user_data['data']['user']['business_email'], user_data['data']['user']['biography'], links, headers, mencoes),
+                                        'telefone': self.extractTelefone(user_data['data']['user']['business_phone_number'], links, user_data['data']['user']['biography'], mencoes, headers),
+                                    }
+                                
+                                
+                                self.addInstaLead( base_url, persona , demanda['id'])
+                                time.sleep(15)
                     
                         except Exception as e:
                         
