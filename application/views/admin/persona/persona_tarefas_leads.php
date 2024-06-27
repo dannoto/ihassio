@@ -696,7 +696,7 @@ $('#btn-concluir').on('click', function() {
                 if (resp.status == "true") {
 
                     alert(resp.message)
-                    location.reload()
+                    // location.reload()
                 } else {
                     alert(resp.message)
                 }
