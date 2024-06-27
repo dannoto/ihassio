@@ -190,8 +190,8 @@
                         <p> <small>INAPTOS: <?= count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1, null)) ?> | APTOS: <?= count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0, null)) ?> | CONVERTIDOS: <?= count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?>  | RATIO 
                         (<small><?php echo count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?> /  <?php echo count($this->admin_model->get_instagram_demanda_leads_count($t['id'])) ?> </small> ) 
                         
-                        <?php $t = (count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) / count($this->admin_model->get_instagram_demanda_leads_count($t['id']))) * 100;
-                        echo round($t, 2) . " %"; ?> 
+                        <?php $tct = (count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) / count($this->admin_model->get_instagram_demanda_leads_count($t['id']))) * 100;
+                        echo round($tct, 2) . " %"; ?> 
                       
                       </small>    </p>
                             <p><?= $t['tarefa_nome'] ?></p>
@@ -400,7 +400,7 @@
                                 <?php } ?>
                             <?php } ?>
 
-                            <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?php print_r($t); ?>?p=<?= $total_pages ?>">Última</a></li>
+                            <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>?p=<?= $total_pages ?>">Última</a></li>
 
 
                         </ul>
