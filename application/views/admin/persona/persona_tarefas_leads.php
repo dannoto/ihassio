@@ -351,7 +351,6 @@
               </div>
             </div>
             <!-- / Content -->
-    <!-- Paginacao --><?php print_r($t); ?>
           
     <div class="d-flex justify-content-center">
                     <nav aria-label="..." class="mt-5 mb-5">
