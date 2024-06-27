@@ -83,7 +83,7 @@ class Scraper:
 
                             if user_data == None:
                                 print('\n NAO EXISTE O PERFIL: '+demanda['username']+'\n\n')
-                                self.update_demanda_offline(self, base_url, demanda['id'])
+                                self.update_demanda_offline( base_url, demanda['id'])
 
                                 time.sleep(5)
 
