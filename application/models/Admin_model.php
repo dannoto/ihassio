@@ -1602,7 +1602,7 @@ class Admin_model extends CI_Model
         $this->db->or_where('mencoes IS NOT NULL AND mencoes !=', '');
         $this->db->group_end();
 
-        $this->db->order_by('id', 'asc');
+        $this->db->order_by('convertido', 'asc');
 
         return $this->db->get('insta_leads')->result();
     }
@@ -1626,7 +1626,7 @@ class Admin_model extends CI_Model
                 $this->db->limit($limite_por_pagina, $limite_calculado);
         }
 
-        $this->db->order_by('id', 'asc');
+        $this->db->order_by('convertido', 'asc');
 
         return $this->db->get('insta_leads')->result();
     }
