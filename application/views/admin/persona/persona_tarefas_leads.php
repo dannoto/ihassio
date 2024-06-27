@@ -187,10 +187,11 @@
                         <div>
                         <H4>Leads - Filtro</H4>
                     
-                        <p> <small>INAPTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1, null))?> | APTOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0, null))?> | CONVERTIDOS: <?=count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1))?>  | RATIO 
-                        (<small><?php echo count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?> /  <?php echo count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )?> </small> ) 
+                        <p> <small>INAPTOS: <?= count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 1, null)) ?> | APTOS: <?= count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], 0, null)) ?> | CONVERTIDOS: <?= count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?>  | RATIO 
+                        (<small><?php echo count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) ?> /  <?php echo count($this->admin_model->get_instagram_demanda_leads_count($t['id'])) ?> </small> ) 
                         
-                        <?php $t = ( count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) / count($this->admin_model->get_instagram_demanda_leads_count($t['id']) )  ) * 100; echo round($t, 2)." %";?> 
+                        <?php $t = (count($this->admin_model->getInstagramLeadsByTaskSearch($t['id'], null, 1)) / count($this->admin_model->get_instagram_demanda_leads_count($t['id']))) * 100;
+                        echo round($t, 2) . " %"; ?> 
                       
                       </small>    </p>
                             <p><?= $t['tarefa_nome'] ?></p>
@@ -276,7 +277,11 @@
                               <tr class="mt-5 mb-5" style="margin-bottom:20px">
                              
 
-                                  <td title="<?= $l->id; ?>"><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?php if (strlen($l->full_name) > 15) { echo substr($l->full_name, 0, 15)."..."; } else { echo $l->full_name; } ?></a></td>
+                                  <td title="<?= $l->id; ?>"><a target="_blank" href="https://instagram.com/<?= $l->username ?>"><?php if (strlen($l->full_name) > 15) {
+                                                                                                                                    echo substr($l->full_name, 0, 15) . "...";
+                                                                                                                                  } else {
+                                                                                                                                    echo $l->full_name;
+                                                                                                                                  } ?></a></td>
 
                                   <td><?php if (strlen($l->links) > 0) {
                                         echo "SIM";
@@ -293,7 +298,11 @@
                             
 
                                   <td><?= $l->email; ?></td>
-                                  <td><?php if ($this->admin_model->checkNumberCaptured($l->telefone)) { echo "<span style='color:green'>".$l->telefone."</span>"; } else { echo "<span style='color:red'>".$l->telefone."</span>";}  ; ?></td>
+                                  <td><?php if ($this->admin_model->checkNumberCaptured($l->telefone)) {
+                                        echo "<span style='color:green'>" . $l->telefone . "</span>";
+                                      } else {
+                                        echo "<span style='color:red'>" . $l->telefone . "</span>";
+                                      }; ?></td>
                                   <td class="mb-5" > <button onclick="getInstaLeadDemanda(<?= $l->tarefa_id ?>, <?= $l->tag_id ?>, '<?= $l->username ?>')"  data-bs-toggle="modal" data-bs-target="#modalInfo"  class="btn btn-danger" ><small style="font-size:10px">VER</small></button> </td>
                                   <?php if ($l->convertido == 0) { ?>
                                     <?php if ($l->inapto == 0) { ?>
@@ -349,49 +358,49 @@
                         <ul class="pagination">
 
                             <?php
-                                          $pagina = intval($this->input->get('p'));
+                            $pagina = intval($this->input->get('p'));
 
-                                          $anterior = ($pagina - 1);
-                                          if ($anterior <= 0 || $anterior == "") {
-                                            $anterior = null;
-                                            $pagina = 1;
-                                          }
-                                          $atual =  $pagina;
-                                          $proxima = ($pagina + 1);
+                            $anterior = ($pagina - 1);
+                            if ($anterior <= 0 || $anterior == "") {
+                              $anterior = null;
+                              $pagina = 1;
+                            }
+                            $atual =  $pagina;
+                            $proxima = ($pagina + 1);
 
                             ?>
 
                             <?php if ($atual > 3) {  ?>
-                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?=$t['id']?>">Inicio</a></li>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>">Inicio</a></li>
                             <?php } ?>
                             <?php if ($atual > 1) {  ?>
-                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?=$t['id']?>?p=<?= $anterior ?>">Anterior</a></li>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>?p=<?= $anterior ?>">Anterior</a></li>
                             <?php } ?>
 
                             <?php if ($atual > 1) {  ?>
-                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?=$t['id']?>?p=<?= $anterior ?>"><?= $anterior ?></a></li>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>?p=<?= $anterior ?>"><?= $anterior ?></a></li>
                             <?php } ?>
 
 
                             <li class="page-item active bg-blue">
-                                <a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?=$t['id']?>?p=<?= $atual ?> "><?= $atual ?> <span class="sr-only"></span></a>
+                                <a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>?p=<?= $atual ?> "><?= $atual ?> <span class="sr-only"></span></a>
                             </li>
 
                             <?php if ($atual < $total_pages) {  ?>
 
-                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?=$t['id']?>?p=<?= $proxima ?>"><?= $proxima ?></a></li>
+                                <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>?p=<?= $proxima ?>"><?= $proxima ?></a></li>
 
                             <?php } ?>
 
                             <?php if ($atual < $total_pages) {  ?>
                                 <?php if ($atual >= 1) {  ?>
                                     <li class="page-item">
-                                        <a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?=$t['id']?>?p=<?= $proxima ?>">Próximo</a>
+                                        <a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>?p=<?= $proxima ?>">Próximo</a>
                                     </li>
                                 <?php } ?>
                             <?php } ?>
 
-                            <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?=$t['id']?>?p=<?= $total_pages ?>">Última</a></li>
+                            <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>?p=<?= $total_pages ?>">Última</a></li>
 
 
                         </ul>

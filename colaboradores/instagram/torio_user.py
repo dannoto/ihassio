@@ -28,17 +28,14 @@ class Scraper:
         
         base_url = "https://ccoanalitica.com/hassio/instaapi/"
         
-       
-        self.header_data = self.get_headers(base_url)
-        self.header_count = len(self.header_data) - 1
-        self.header_current = 0
+  
         
         headers = {
                 'Accept': '*/*',
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
                 # 'Cookie': self.header_data[self.header_current]['agente_cookie'],
-                'Cookie': 'ig_did=1E36CBE8-F02A-49AA-BD2B-E1A5C0111ED0; datr=i-UrZsTnMEkNQqCkeoO2UKJu; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; ds_user_id=61013886138; ps_n=1; ps_l=1; shbid="7447\05461013886138\0541750005882:01f79cd93e2e89eefe7ec36d20267403606901f3bbd8bd4eb52830f493cda3aaf359a322"; shbts="1718469882\05461013886138\0541750005882:01f74c85668b419c09ed79d326e8679d8836c5a5ead2d6aa415aa284a1bcd54e1f818cd3"; csrftoken=AJjWWN7v6wnnxQUG8EZMjkYZr05uJVpS; mid=Zm4XgQALAAEMoTlQzk2A2V8ajQLo; sessionid=61013886138%3AMtd9qIhFZX0TNU%3A21%3AAYfwK1fz19tKSygAvZbJOiVAgp_0ajeYGUjUUQP1KwQ; fbsr_124024574287414=4wppSztFpD96gp2jkMrTQ_jUin607LzR9c7mDFvtRWc.eyJ1c2VyX2lkIjoiMTAwMDg5NDAyNTYzMTE3IiwiY29kZSI6IkFRQnBRQWpwb0ZzYmFiUXVHSUt0SkQzNUpkSmFhY0hRcjhHRDNiRXNTRTJLMXh4T25nbmdKR0pMcW1nOURtS1VST25fclRZWUJCTDR5aER1UllaT1hNRkQ5Q2t4aEdZdTZSc2YydkZucjE2NkczRzhiWFBmTmpIUXNpZ2FUTGZFTFNLUlJWWmF2M3VsSjZxSUFfT2FFcmxyNWl0WGZITE5JMG9xRUVCdmRBRjdTWmljTmRlMlhGT3pJRXFoeU1xc3RFQ3NuQ3dkWDJEUVlOeVRnTDBieThTZV9UUF8tUjRSbk5LcktpREVISFgtakJ4ZmdJSVJlUUZUaTBpc29kR3VmWmpUMll4UjZFb2ZqMEp4b0NlV0ljUUc0WUZGQnJObml3WHV3TnRMbUxZU2xNTEkxTEM5T2dwaHdMSG1CRmpFQkFic3czeUtlQmNLMkRTVGg1ZUZYX1Y3MVJUMjZfSFFNckpaVUVqSGR3RUQ4USIsIm9hdXRoX3Rva2VuIjoiRUFBQnd6TGl4bmpZQk82amJNYjhuSmhaQmh1RUdBQTJ4NVFVdUVMdjh5clpDc3hURFFJVXp1YjBtcW5ZdUtWWFd0QWtKNzhRN1RUSVF4M0VnV2x6YzhhakVaQWpzVzdiOUh6endlckg2RXprd1RKbTh5MlZsRUhNcXREZzZOdTlPd2JzdnhrZ2czVThaQkZSaEpMeDlBUE0xYkRoUjFaQnpONFhOelJtcFlXT1d2Y3VObElqUmtKTFR1WkJQOUdveVNrdzNZWkQiLCJhbGdvcml0aG0iOiJITUFDLVNIQTI1NiIsImlzc3VlZF9hdCI6MTcxODY1OTcwNn0; wd=1312x150; rur="NHA\05461013886138\0541750195744:01f75a68a4faf2986f22ad0d20479984d52c796f49f7761f227e5d88b7cc33558c8a93f0"',
+                'Cookie': 'ig_did=1E36CBE8-F02A-49AA-BD2B-E1A5C0111ED0; datr=i-UrZsTnMEkNQqCkeoO2UKJu; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; ds_user_id=61013886138; ps_n=1; ps_l=1; mid=Zm4XgQALAAEMoTlQzk2A2V8ajQLo; csrftoken=anNHKhZK8HDQ0QoPdEifvokAUg58QfB8; shbid="7447\05461013886138\0541750816125:01f7515db6e0d28b14412e7f2b743325ca1665361c3c3023724eb2e0cda0adec7f70e9c4"; shbts="1719280125\05461013886138\0541750816125:01f7b9910cbddfeda3fc6b2570388de883f230d65625a7e51d717556f0f99ed2994235bd"; sessionid=61013886138%3AMtd9qIhFZX0TNU%3A21%3AAYeuLR0paQbzIo9ZNaguOOvbzNgTdHrbLTw8xKYTMyk; wd=1312x160; rur="NHA\05461013886138\0541751049690:01f7fe90c7bed8a7146c517547c49e33fe99a1cc32ad935d0c1e1fd1db7bc89066c3e2b2"',
                 'Dpr': '1',
                 'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
                 'Sec-Ch-Prefers-Color-Scheme': 'light',
@@ -55,16 +52,15 @@ class Scraper:
                 'Viewport-Width': '1312',
                 'X-Asbd-Id': '129477',
                 # 'X-Csrftoken': self.header_data[self.header_current]['agente_crsf'],
-                'X-Csrftoken': 'AJjWWN7v6wnnxQUG8EZMjkYZr05uJVpS',
+                'X-Csrftoken': 'anNHKhZK8HDQ0QoPdEifvokAUg58QfB8',
                 'X-Ig-App-Id': '936619743392459',
                 'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
                 'X-Requested-With': 'XMLHttpRequest'
             }
+        
+        
         while True:
             
-            self.header_username = self.header_data[self.header_current]['agente_username']
-            
-        
             demandas_pendentes =  self.get_demandas_pendentes(base_url) 
             
             try:
@@ -78,6 +74,8 @@ class Scraper:
                             user_data = self.getUserProfile(headers, demanda['username'])
                             # user_data = self.getUserProfileManually(headers, demanda['username'], driver)
 
+                            print('\n ACESSANDO: '+demanda['username']+'\n\n')
+                            print(user_data)
                             # Links
                             links = ""
                             
@@ -90,6 +88,7 @@ class Scraper:
                                         links += link['url']
                             except Exception as e:
                                 print('[**] Erro ao capturar links:', e)
+                                pass
                                 
                             # Mencoes
                             
@@ -103,6 +102,7 @@ class Scraper:
                                         mencoes += mencao['user']['username']
                             except Exception as e:
                                 print('[**] Erro ao capturar menções:', e)
+                                pass
                     
                             persona = {
                                     'tarefa_id': demanda['tarefa_id'],
@@ -120,31 +120,23 @@ class Scraper:
                             
                             
                             self.addInstaLead( base_url, persona , demanda['id'])
+                            time.sleep(15)
                     
                         except Exception as e:
                         
                             print(f'\n EXCEPTION extractUserInfo - TROCANDO HEADER -> \n', e)
-                            
-                            if self.header_current >= self.header_count:
-                                self.header_current = 0   
-                            else:
-                                self.header_current = self.header_current + 1
-                            pass
+                            time.sleep(15)
                     
                          
                 else:
                                 
                     print('\n [!] Nenhnuma demanda pendente. ')
-                    time.sleep(5)
                                 
             except Exception as e:
                             
-                print(f'\n\n ERRO OBTER PERFIL => MUDANDO AGENTE  \n')
+                print(f'\n EXCEPTION extractUserInfo - TROCANDO HEADER -> \n', e)
             
-                if self.header_current >= self.header_count:
-                    self.header_current = 0
-                else:
-                    self.header_current = self.header_current + 1
+
     
             
     def get_demandas_pendentes(self, base_url):

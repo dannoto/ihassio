@@ -94,6 +94,7 @@ class insta_model extends CI_Model
 
     public function update_demanda_pendente($demanda_id)
     {
+        
         $this->db->where('id', $demanda_id);
 
         $data = array(

@@ -1622,9 +1622,9 @@ class Admin_model extends CI_Model
         $this->db->or_where('mencoes IS NOT NULL AND mencoes !=', '');
         $this->db->group_end();
 
-        //     if ($limite_por_pagina != null) {
-        //         $this->db->limit($limite_por_pagina, $limite_calculado);
-        // }
+            if ($limite_por_pagina != null) {
+                $this->db->limit($limite_por_pagina, $limite_calculado);
+        }
 
         $this->db->order_by('convertido', 'asc');
 
