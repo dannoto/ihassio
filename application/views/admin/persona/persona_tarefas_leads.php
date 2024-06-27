@@ -400,7 +400,7 @@
                                 <?php } ?>
                             <?php } ?>
 
-                            <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/<?= $t['id'] ?>?p=<?= $total_pages ?>">Última</a></li>
+                            <li class="page-item"><a class="page-link" href="<?= base_url() ?>persona/tarefas_leads/x<?= $t['id'] ?>?p=<?= $total_pages ?>">Última</a></li>
 
 
                         </ul>
