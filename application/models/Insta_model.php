@@ -89,7 +89,7 @@ class insta_model extends CI_Model
     public function get_demandas_pendentes()
     {
         $this->db->where('processado', 0);
-        $this->db->order_by('id', 'RAND');
+        $this->db->order_by('id', 'rand');
         return $this->db->get('insta_leads_demandas')->result();
     }
 
