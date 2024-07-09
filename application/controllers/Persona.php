@@ -981,7 +981,7 @@ class Persona extends CI_Controller
 
             if ($this->admin_model->updateInstaLead($lead_data['id'], $data)) {
 
-                $response = array('status' => 'true', 'message' => 'Persona  adicionada com sucesso');
+                $response = array('status' => 'true', 'message' => 'Esta persona já existe. Torne-a inapta.');
             } else {
 
                 $response = array('status' => 'false', 'message' => 'Falha ao adicionar demanda. Lead já existe.');
