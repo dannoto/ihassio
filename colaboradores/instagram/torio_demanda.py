@@ -628,6 +628,7 @@ class Scraper:
                 print(f'\n Erro foreach Extraindo Comentários', e)    
             
             for user in user_data:
+                print(user)
                 self.addInstaLeadDemanda( base_url, user)
             
             # Entrair Usuarios             
