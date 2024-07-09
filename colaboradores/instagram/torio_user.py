@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 
 import mysql.connector
 import logging
-
+from random import randint
 import time
 import requests
 import json
@@ -27,15 +27,12 @@ class Scraper:
     def __init__(self):
         
         base_url = "https://ccoanalitica.com/hassio/instaapi/"
-        
-  
-        
         headers = {
                 'Accept': '*/*',
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
                 # 'Cookie': self.header_data[self.header_current]['agente_cookie'],
-                'Cookie': 'ig_did=1E36CBE8-F02A-49AA-BD2B-E1A5C0111ED0; datr=i-UrZsTnMEkNQqCkeoO2UKJu; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; ps_n=1; ps_l=1; mid=Zm4XgQALAAEMoTlQzk2A2V8ajQLo; shbid="7447\05461013886138\0541750816125:01f7515db6e0d28b14412e7f2b743325ca1665361c3c3023724eb2e0cda0adec7f70e9c4"; shbts="1719280125\05461013886138\0541750816125:01f7b9910cbddfeda3fc6b2570388de883f230d65625a7e51d717556f0f99ed2994235bd"; csrftoken=k5FFtcg3HSThwiWKWuYEVHw4g7oGuykQ; ds_user_id=64756447548; sessionid=64756447548%3AJnfURX8QwXb6In%3A19%3AAYcZ_fxUC3lisD_P1f_PS9EdFwcgcZ0zlTvjIE_PhQ; wd=1312x150; rur="PRN\05464756447548\0541751058642:01f7bdd5c888e252eb5f1a33047239d182e54e708b7f128f85fd0a934011132c89350179"',
+                'Cookie': 'ig_did=1E36CBE8-F02A-49AA-BD2B-E1A5C0111ED0; datr=i-UrZsTnMEkNQqCkeoO2UKJu; ig_nrcb=1; fbm_124024574287414=base_domain=.instagram.com; ps_n=1; ps_l=1; mid=Zm4XgQALAAEMoTlQzk2A2V8ajQLo; shbid="7447\05461013886138\0541751120468:01f711fc8a6900b8f3ec4d8f19de391eb159b67aae9edf0a3e26f1866ae298eb994ed2df"; shbts="1719584468\05461013886138\0541751120468:01f7f68afdb002289094d3b2c7c0b55c2b97070e9f0eb6a4552e04d5e011ea873c670e12"; csrftoken=RA1IiEIAoUNBTKqgFW6ks9S5hNlHi64A; ds_user_id=61013886138; sessionid=61013886138%3AHCAq5Xr31Etmny%3A17%3AAYd8xYUTYSYgoiUzAq_FR_TPbgVKJJXNZ5Jzu8fqmw; wd=1312x240; rur="NHA\05461013886138\0541751375537:01f7383da94bc82c082d53417af29aef9fc0225fab55de898c8ae078439e6b5781abc816"',
                 'Dpr': '1',
                 'Referer': 'https://www.instagram.com/p/C07F4jjrEy2/?img_index=1',
                 'Sec-Ch-Prefers-Color-Scheme': 'light',
@@ -52,44 +49,50 @@ class Scraper:
                 'Viewport-Width': '1312',
                 'X-Asbd-Id': '129477',
                 # 'X-Csrftoken': self.header_data[self.header_current]['agente_crsf'],
-                'X-Csrftoken': 'k5FFtcg3HSThwiWKWuYEVHw4g7oGuykQ',
+                'X-Csrftoken': 'RA1IiEIAoUNBTKqgFW6ks9S5hNlHi64A',
                 'X-Ig-App-Id': '936619743392459',
                 'X-Ig-Www-Claim': 'hmac.AR2kovJ4-DcOAF0d43NiUcqAx69DUcqPe2rRZLMjoHsdi9v6',
                 'X-Requested-With': 'XMLHttpRequest'
             }
         
-        
         while True:
             
             demandas_pendentes =  self.get_demandas_pendentes(base_url) 
 
-            
-            
             try:
             
                 if len(demandas_pendentes) > 0 :  
 
                     for demanda in demandas_pendentes:
-                                                
-                                               
+                                                            
                         try: 
 
-                            print('--- DEMANDAS PENDENTES: '+str(len(demandas_pendentes)))
+                            # print('--- DEMANDAS PENDENTES: '+str(len(demandas_pendentes)))
                         
                             user_data = self.getUserProfile(headers, demanda['username'])
                             # user_data = self.getUserProfileManually(headers, demanda['username'], driver)
 
-                            print(user_data)
+                            if user_data == None :
 
-                            if user_data == None:
-                                print('\n NAO EXISTE O PERFIL: '+demanda['username']+'\n\n')
+                                print('\n  ==================>> PERFIL OFFLINE: '+demanda['username']+'\n\n')
                                 self.update_demanda_offline( base_url, demanda['id'])
 
-                                time.sleep(5)
+                                interval = randint(5,60)
+                                print('\n [ AGUARDANDO '+str(interval)+" SEGUNDOS... ]")
+                                time.sleep(interval)
+
+                            elif user_data == False:
+
+                                print('\n ==================>> LIMITE ATINGIDO: '+demanda['username']+'\n\n')
+                            
+
+                                interval = randint(5,60)
+                                print('\n [ AGUARDANDO '+str(interval)+" SEGUNDOS... ]")
+                                time.sleep(interval)
 
                             else:
 
-                                print('\n ACESSANDO: '+demanda['username']+'\n\n')
+                                print('\n ==================>> ACESSANDO: '+demanda['username']+'\n\n')
                                
                                 # Links
                                 links = ""
@@ -102,7 +105,7 @@ class Scraper:
                                         else:
                                             links += link['url']
                                 except Exception as e:
-                                    print('[**] Erro ao capturar links:', e)
+                                    # print('[**] Erro ao capturar links:', e)
                                     pass
                                     
                                 # Mencoes
@@ -116,7 +119,7 @@ class Scraper:
                                         else:
                                             mencoes += mencao['user']['username']
                                 except Exception as e:
-                                    print('[**] Erro ao capturar menções:', e)
+                                    # print('[**] Erro ao capturar menções:', e)
                                     pass
                         
                                 persona = {
@@ -135,12 +138,20 @@ class Scraper:
                                 
                                 
                                 self.addInstaLead( base_url, persona , demanda['id'])
-                                time.sleep(15)
+
+                                interval = randint(5,60)
+                                print('\n [ AGUARDANDO '+str(interval)+" SEGUNDOS... ]")
+                                time.sleep(interval)
+                              
                     
                         except Exception as e:
                         
-                            print(f'\n EXCEPTION extractUserInfo - TROCANDO HEADER -> \n', e)
-                            time.sleep(15)
+                            print(f'\n >> SEM DADOS, SKIPING... \n')
+                            # interval = randint(5,30)
+                            # print('\n [ AGUARDANDO '+str(interval)+" SEGUNDOS... ]")
+                            # time.sleep(interval)
+
+                            pass
                     
                          
                 else:
@@ -578,8 +589,17 @@ class Scraper:
 
                 return data
             
+            elif response.status_code == 404:
+
+                return None
+            
+            elif response.status_code == 429:
+
+                print("=========== GET PROFILE LIMIT REACH :"+ str(response.status_code))
+                return False
             else:
-                print("=========== GET PROFILE else EXCEPTION =============== getUserProfile:")
+                print("=========== NEW FAILED RESPONSE :"+ str(response.status_code))
+                return False
 
                 # print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
             
@@ -591,7 +611,9 @@ class Scraper:
         except Exception as e:
             
             # winsound.Beep(1000, 1500) 
-            print("=========== GET PROFILE EXCEPTION =============== getUserProfile:", e)
+            print("=========== GET PROFILE EXCEPTION: ", e)
+            return "skip"
+            
             
             # print(f'\n\n ERRO OBTER FEED => MUDANDO AGENTE  \n')
             
@@ -825,15 +847,15 @@ class Scraper:
     # Extracao de Telefones
     def extractTelefone(self, telefone, links, biografia, mencoes, headers):
         
-        print('\n =========== [EXTRAÇAO DE TELEFONE] ================ \n')
+        print('\n [EXTRAÇAO DE TELEFONE] \n')
         
-        print('\n [**][VERIF. TELEFONE VIA API] \n')
+        # print('\n [**][VERIF. TELEFONE VIA API] \n')
         
         if  telefone != None:
             print(telefone)            
             return telefone
         
-        print('\n [**][VERIF. TELEFONE PELA BIOGRAFIA] \n')
+        # print('\n [**][VERIF. TELEFONE PELA BIOGRAFIA] \n')
         
         biografia = biografia.replace('(', "")
         biografia = biografia.replace(')', "")
@@ -889,7 +911,7 @@ class Scraper:
             print(numero)
             return numero
             
-        print('\n [**][VERIF. TELEFONE PELA BIOGRAFIA DAS MENÇOES] \n')
+        # print('\n [**][VERIF. TELEFONE PELA BIOGRAFIA DAS MENÇOES] \n')
 
         mencoes = mencoes.split(", ")
         
@@ -965,7 +987,7 @@ class Scraper:
             except Exception as e:
                 print(f'ERRO MENCOES {mencoes}')
                 
-        print('\n [**][VERIF. TELEFONE POR LINKS] \n')
+        # print('\n [**][VERIF. TELEFONE POR LINKS] \n')
         
         links = links.split(", ")
         
@@ -1072,15 +1094,15 @@ class Scraper:
     # Extração Emails
     def extractEmail(self, email, biografia, links, headers, mencoes):
         
-        print('\n =========== [EXTRAÇAO DE EMAILS] ================ \n')
+        print('\n [EXTRAÇAO DE EMAILS] \n')
         
-        print('\n [**][VERIF. EMAIL VIA API] \n')
+        # print('\n [**][VERIF. EMAIL VIA API] \n')
         
         if  email != None:
             print(email)
             return email
         
-        print('\n [**][VERIF. EMAIL PELA BIOGRAFIA] \n')
+        # print('\n [**][VERIF. EMAIL PELA BIOGRAFIA] \n')
         
         padrao_email = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
         match = re.search(padrao_email, biografia)
@@ -1090,7 +1112,7 @@ class Scraper:
             return match.group()
 
 
-        print('\n [**][VERIF. EMAIL PELA BIOGRAFIA DAS MENÇOES] \n')
+        # print('\n [**][VERIF. EMAIL PELA BIOGRAFIA DAS MENÇOES] \n')
 
         mencoes = mencoes.split(", ")
         
@@ -1114,7 +1136,7 @@ class Scraper:
                     print( match.group())
                     return match.group()
 
-        print('\n [**][VERIF. EMAIL PELOS LINKS] \n')
+        # print('\n [**][VERIF. EMAIL PELOS LINKS] \n')
         
         links = links.split(", ")
         

@@ -1065,11 +1065,14 @@ class Persona extends CI_Controller
 
                 $this->process_model->add_classificacao($tag);
 
-
                 $data = array(
                     'convertido' => 1
                 );
 
+
+
+                // daniel ribeiro do amaral
+                //  to chegando ai ate as 18;38
                 if ($this->admin_model->updateInstaLead($lead_data['id'], $data)) {
 
                     $response = array('status' => 'true', 'message' => 'Adicionado com sucesso');

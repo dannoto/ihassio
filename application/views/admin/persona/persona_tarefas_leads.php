@@ -695,11 +695,15 @@ $('#btn-concluir').on('click', function() {
 
                 if (resp.status == "true") {
 
-                    // alert(resp.message)
-                    location.reload()
+                    alert(resp.message).then(() => {
+
+                      location.reload()
+                    })
                 } else {
-                    alert(resp.message)
-                }
+                  alert(resp.message).then(() => {
+
+location.reload()
+})                }
           
         },
         error: function(data) {
